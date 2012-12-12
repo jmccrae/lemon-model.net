@@ -1,10 +1,19 @@
 #!/bin/bash
 
-for file in cookbook.html download.html index.html api.html source.html 5mins.html lemon.html
+mkdir -p htdocs/
+
+cd src/
+
+for fileBody in *.body
 do
-  cat >$file < header.htmlfrag
-  cat >>$file "$file.body"
-  cat >>$file < footer.htmlfrag
+  target=../htdocs/${fileBody%.body}
+  cat >$target < header.htmlfrag
+  cat >>$target $fileBody
+  cat >>$target < footer.htmlfrag
 done
+
+cd ..
+
+cp -r resources/* htdocs/
 
 
