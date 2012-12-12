@@ -1,0 +1,680 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Formal model of lemon senses</TITLE>
+<META NAME="description" CONTENT="Formal model of lemon senses">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node43.html">
+<LINK REL="up" HREF="node43.html">
+<LINK REL="next" HREF="node45.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html677"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html673"
+  HREF="node43.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html669"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html675"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html678"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Up:</B> <A NAME="tex2html674"
+  HREF="node43.html">The semantics of the</A>
+<B> Previous:</B> <A NAME="tex2html670"
+  HREF="node43.html">The semantics of the</A>
+ &nbsp; <B>  <A NAME="tex2html676"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00052100000000000000">
+Formal model of <I>lemon</I> senses</A>
+</H3>
+
+<P>
+The primary model that we use to describe the semantics of <I>lemon</I> is inspired by this and views these tasks is that of an aligned semantic interpretation. Assume we have a language, <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$L$"></SPAN>, on a vocabulary, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$\Sigma$"></SPAN>, i.e., <!-- MATH
+ $L \subseteq \Sigma^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$L \subseteq \Sigma^*$"></SPAN>. Say we have a lexicon, <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$\mathcal{X}$"></SPAN>, and we can define a language, <!-- MATH
+ $X \subseteq \mathcal{X}^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$X \subseteq \mathcal{X}^*$"></SPAN>, that constitutes all description of sentences in terms of the lexical entries it uses and the dependencies between the entries. Furthermore, we assume we have a lexicalization function <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$l$"></SPAN> that maps a sentence in the language to a list of lexical representations taken from a lexicon, <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$\mathcal{X}$"></SPAN>, that is that <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$l$"></SPAN> is a function with the signature:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+l : L \rightarrow X
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="68" HEIGHT="24" BORDER="0"
+ SRC="img19.png"
+ ALT="\begin{displaymath}
+l : L \rightarrow X
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+We call such an <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$l$"></SPAN> a <SPAN  CLASS="textit">lexical interpretation</SPAN> and represents the result of the lexical parsing stages applied above, we simplify the definition here by assuming that this results in a single unambiguous representation relative to the lexicon.  
+
+<P>
+Similarly assume we have an ontology <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$\mathcal{O}$"></SPAN>, which can be used with a logic, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$\mathcal{L}$"></SPAN>, such that we have a language <!-- MATH
+ $O \subseteq (\mathcal{O} \cup \mathcal{L})^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$O \subseteq (\mathcal{O} \cup \mathcal{L})^*$"></SPAN>. Again, we define a function <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$s$"></SPAN> that maps a sentence in the language to its semantic representations, this function is called the <SPAN  CLASS="textit">semantic interpretation</SPAN> and has the signature:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+s : L \rightarrow \mathcal{P}(O)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="92" HEIGHT="28" BORDER="0"
+ SRC="img24.png"
+ ALT="\begin{displaymath}
+s : L \rightarrow \mathcal{P}(O)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+This function is indicated to input the set of correct results from all the lexical, correspondence and reasoning based analysis processes.
+
+<P>
+For example we take a simple sentence “The man bites the dog,” we assume that the lexicon contains the entities <!-- MATH
+ $\{ \mathrm{man}, \mathrm{dog}, \mathrm{bite(\cdot,\cdot)} \}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="144" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\{ \mathrm{man}, \mathrm{dog}, \mathrm{bite(\cdot,\cdot)} \}$"></SPAN> and the ontology contains two classes <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="$Man$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$Dog$"></SPAN> and a property <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$bite$"></SPAN>. Now, for example, we could have the folllowing interpretations:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+l(\mathrm{“The\:man\:bites\:the\:dog”}) = \mathrm{bite(man,dog)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="306" HEIGHT="28" BORDER="0"
+ SRC="img29.png"
+ ALT="\begin{displaymath}
+l(\mathrm{“The\:man\:bites\:the\:dog”}) = \mathrm{bite(man,dog)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+s(\mathrm{“The\:man\:bites\:the\:dog”}) = \exists x,y : Man(x) \wedge Dog(y) \wedge bite(x,y)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="458" HEIGHT="28" BORDER="0"
+ SRC="img30.png"
+ ALT="\begin{displaymath}
+s(\mathrm{“The\:man\:bites\:the\:dog”}) = \exists x,y : Man(x) \wedge Dog(y) \wedge bite(x,y)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+We may then define an aligment, <!-- MATH
+ $A \subseteq (\mathcal{X} \times \mathcal{O})^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$A \subseteq (\mathcal{X} \times \mathcal{O})^*$"></SPAN> such that if we have <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$\mu \in X$"></SPAN>, then for all <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$\sigma \in L$"></SPAN> such that <!-- MATH
+ $l(\sigma) = \mu$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$l(\sigma) = \mu$"></SPAN>, we have <!-- MATH
+ $a_{\mu,p} \in A$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$a_{\mu,p} \in A$"></SPAN> for each <!-- MATH
+ $p \in s(\sigma)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$p \in s(\sigma)$"></SPAN>. Furthermore we require that if <!-- MATH
+ $\mu = \lambda_1\ldots\lambda_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="94" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\mu = \lambda_1\ldots\lambda_n$"></SPAN>, <!-- MATH
+ $p =o_1\ldots o_m$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$p =o_1\ldots o_m$"></SPAN> then we have <!-- MATH
+ $a_{\mu,p} = \alpha_1\ldots\alpha_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$a_{\mu,p} = \alpha_1\ldots\alpha_n$"></SPAN> such that <!-- MATH
+ $\alpha_i = (\lambda_i,o_j)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\alpha_i = (\lambda_i,o_j)$"></SPAN> for some <!-- MATH
+ $j : 1 \leq j \leq m$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$j : 1 \leq j \leq m$"></SPAN>. 
+
+<P>
+We then define the set of senses in the lexicon, <!-- MATH
+ $S \subseteq (\mathcal{X}\times\mathcal{O})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$S \subseteq (\mathcal{X}\times\mathcal{O})$"></SPAN>, as the set satisfying
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(\lambda,o) \in S \Leftrightarrow \exists \alpha_1\ldots\alpha_n \in A, i \textrm{ such that } 1 \leq i \leq n \wedge \alpha_i = (\lambda,o)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="434" HEIGHT="28" BORDER="0"
+ SRC="img43.png"
+ ALT="\begin{displaymath}
+(\lambda,o) \in S \Leftrightarrow \exists \alpha_1\ldots\alp...
+...rm{ such that } 1 \leq i \leq n \wedge \alpha_i = (\lambda,o)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+As such our example may be explained by the following:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+a_{\mu,p} = (\mathrm{bite(\cdot,\cdot)},bite) (\textrm{man},Man) (\textrm{dog},Dog)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="305" HEIGHT="29" BORDER="0"
+ SRC="img44.png"
+ ALT="\begin{displaymath}
+a_{\mu,p} = (\mathrm{bite(\cdot,\cdot)},bite) (\textrm{man},Man) (\textrm{dog},Dog)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\{ (\mathrm{man},Man) , (\mathrm{dog},Dog), (\mathrm{bite(\cdot,\cdot)},bite) \} \subseteq S
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="319" HEIGHT="28" BORDER="0"
+ SRC="img45.png"
+ ALT="\begin{displaymath}
+\{ (\mathrm{man},Man) , (\mathrm{dog},Dog), (\mathrm{bite(\cdot,\cdot)},bite) \} \subseteq S
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+This can be illustrated as follows:
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="315" HEIGHT="73" ALIGN="BOTTOM" BORDER="0"
+ SRC="./aligned-semantics.png"
+ ALT="Image aligned-semantics">
+
+</DIV>
+
+<P>
+We view the sense as having three aspects:
+
+<UL>
+<LI>From the lexical point of view <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$s$"></SPAN> indicates a disambiguated usage of a term, we call this a <SPAN  CLASS="textit">Disambiguated Lexical Entry</SPAN> or DALE. We can formally define the set of DALEs, <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$D_{\lambda}$"></SPAN> for a lexical entry <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.png"
+ ALT="$\lambda$"></SPAN> as follows:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+D_{\lambda} = \{ d_{\lambda,o} | (\lambda,o) \in S \}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="155" HEIGHT="29" BORDER="0"
+ SRC="img48.png"
+ ALT="\begin{displaymath}
+D_{\lambda} = \{ d_{\lambda,o} \vert (\lambda,o) \in S \}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+<LI>From the semantic view, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$s$"></SPAN> represents a sub-entity representing only the usage of a given class or property or individual when the given lexical entry is used to describe it. We call this an <SPAN  CLASS="textit">projected ontology sub-entity</SPAN> or POSE. We can formally define this as an ontology entity <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$\pi_s$"></SPAN> such that:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\pi_s \sqsubseteq o
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="46" HEIGHT="26" BORDER="0"
+ SRC="img50.png"
+ ALT="\begin{displaymath}
+\pi_s \sqsubseteq o
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\pi_s \equiv \bot \Leftrightarrow o \equiv \bot
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="115" HEIGHT="26" BORDER="0"
+ SRC="img51.png"
+ ALT="\begin{displaymath}
+\pi_s \equiv \bot \Leftrightarrow o \equiv \bot
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+<LI>Finally we can view <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img52.png"
+ ALT="$S$"></SPAN> as a pair representing a possible alignment between the lexicographic and the semantic representations. We call this a <SPAN  CLASS="textit">correspondence</SPAN>. 
+</LI>
+</UL>
+
+<P>
+We define the  <I>lemon</I> <TT>senseRelations</TT>, <TT>equivalent</TT>, <TT>narrower</TT>, <TT>broader</TT> and <TT>incompatible</TT> and their relationship to the ontology as follows:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+s_1 = s_2 \Leftrightarrow \pi_{s_1} \equiv \pi_{s_2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="138" HEIGHT="28" BORDER="0"
+ SRC="img53.png"
+ ALT="\begin{displaymath}
+s_1 = s_2 \Leftrightarrow \pi_{s_1} \equiv \pi_{s_2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+s_1 < s_2 \Leftrightarrow \pi_{s_1} \sqsubset \pi_{s_2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="138" HEIGHT="28" BORDER="0"
+ SRC="img54.png"
+ ALT="\begin{displaymath}
+s_1 &lt; s_2 \Leftrightarrow \pi_{s_1} \sqsubset \pi_{s_2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+s_1 > s_2 \Leftrightarrow \pi_{s_1} \sqsupset \pi_{s_2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="138" HEIGHT="28" BORDER="0"
+ SRC="img55.png"
+ ALT="\begin{displaymath}
+s_1 &gt; s_2 \Leftrightarrow \pi_{s_1} \sqsupset \pi_{s_2}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+s_1 \otimes s_2 \Leftrightarrow \pi_{s_1} \sqcap \pi_{s_2} = \bot
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="169" HEIGHT="28" BORDER="0"
+ SRC="img56.png"
+ ALT="\begin{displaymath}
+s_1 \otimes s_2 \Leftrightarrow \pi_{s_1} \sqcap \pi_{s_2} = \bot
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+<SPAN  CLASS="textbf">Theorem</SPAN>
+
+<P>
+If we have <!-- MATH
+ $o_1,o_2 \in \mathcal{O}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$o_1,o_2 \in \mathcal{O}$"></SPAN> and some corresponding senses <SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$s_1,s_2 \in S$"></SPAN> then the following hold:
+
+<OL>
+<LI><!-- MATH
+ $o_1 \sqcap o_2 \equiv \bot \vdash s_1 \otimes s_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$o_1 \sqcap o_2 \equiv \bot \vdash s_1 \otimes s_2$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $s_1 = s_2 \vdash o_1 \sqcap o_2 \not\equiv \bot \vee o_2 \equiv  o_1 \equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$s_1 = s_2 \vdash o_1 \sqcap o_2 \not\equiv \bot \vee o_2 \equiv o_1 \equiv \bot$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $s_1 > s_2 \vdash o_1 \sqcap o_2 \not\equiv \bot \vee o_2 \equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$s_1 &gt; s_2 \vdash o_1 \sqcap o_2 \not\equiv \bot \vee o_2 \equiv \bot$"></SPAN>
+</LI>
+</OL>
+
+<P>
+<SPAN  CLASS="textbf">Proof</SPAN>
+
+<P>
+
+<OL>
+<LI>We have <!-- MATH
+ $\pi_{s_1} \sqsubseteq o_1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$\pi_{s_1} \sqsubseteq o_1$"></SPAN> and <!-- MATH
+ $\pi_{s_2} \sqsubseteq o_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$\pi_{s_2} \sqsubseteq o_2$"></SPAN> hence <!-- MATH
+ $\pi_{s_1} \sqcap \pi_{s_2} \sqsubseteq o_1 \sqcap o_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$\pi_{s_1} \sqcap \pi_{s_2} \sqsubseteq o_1 \sqcap o_2$"></SPAN> hence we have <!-- MATH
+ $\pi_{s_1} \sqcap \pi_{s_2} \equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$\pi_{s_1} \sqcap \pi_{s_2} \equiv \bot$"></SPAN> hence <!-- MATH
+ $s_1 \otimes s_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$s_1 \otimes s_2$"></SPAN>
+</LI>
+<LI>Assume <!-- MATH
+ $o_2 \not\equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$o_2 \not\equiv \bot$"></SPAN> hence it follows that <!-- MATH
+ $\pi_{s_2} \not\equiv\bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\pi_{s_2} \not\equiv\bot$"></SPAN>, but we have <!-- MATH
+ $\pi_{s_2} \equiv \pi_{s_1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$\pi_{s_2} \equiv \pi_{s_1}$"></SPAN> hence <!-- MATH
+ $o_1 \sqcap o_2 \sqsupseteq \pi_{s_1} \sqcap \pi_{s_2} \equiv \pi_{s_2} \not\equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="212" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$o_1 \sqcap o_2 \sqsupseteq \pi_{s_1} \sqcap \pi_{s_2} \equiv \pi_{s_2} \not\equiv \bot$"></SPAN>. Similarly for <!-- MATH
+ $o_1 \not\equiv \bot$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$o_1 \not\equiv \bot$"></SPAN>.
+</LI>
+<LI>(As 2.)
+</LI>
+</OL>
+
+<P>
+As a motivating example for making this distinction consider the example of “student” and “person”, these are asserted to be hypernyms in WordNet however in a strict ontology sense are not in a subsumption (subclass) relation. In fact “student” is a role of a “person” and would not be modeled the same in a well-reasoned ontology (i.e., DOLCE, which would distinguish “student” as anti-rigid and “person” as rigid). However for certain tasks, such as coreference resolution, it is necessary to have these “lexical” semantics, and as such we include them within the lexicon. As such it is possible to state the “student“ is a narrower sense of “person”, without affecting the correctness or the ontology.
+
+<P>
+In the context of coreference this modelling can be used for word sense disambiguation and coreference as it contains lexical semantics that are weaker than those in the ontology. In particular, there are four relations defined in <I>lemon</I> that are used to aid these tasks: equivalent, disjoint, broader and narrower. Each of these can be understood in the following manner.
+
+<P>
+
+<UL>
+<LI>equivalent: Two DALEs which have equivalent senses can be substituted for each other without changing the semantics of the text. This should be assumed to be a positive feature for coreference.
+</LI>
+<LI>incompatible: Two DALEs which have incompatible (disjoint) senses cannot be substituted for each other without changing the semantics of the text. This should be considered to be a negative feature for coreference.
+</LI>
+<LI>broader/narrower: If a DALE is asserted to be broader than another DALE, then it can be substituted to give a more general semantics. This should be considered a positive feature for coreference, if the preceding term is narrower.
+</LI>
+</UL>
+
+<P>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html677"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html673"
+  HREF="node43.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html669"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html675"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html678"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Up:</B> <A NAME="tex2html674"
+  HREF="node43.html">The semantics of the</A>
+<B> Previous:</B> <A NAME="tex2html670"
+  HREF="node43.html">The semantics of the</A>
+ &nbsp; <B>  <A NAME="tex2html676"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

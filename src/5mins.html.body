@@ -1,0 +1,148 @@
+
+        <div class="pageMid">
+
+            <P>
+                Lemon is an RDF model for representing lexical information relative to ontologies. We assume that you are familiar with RDF and Turtle, if not
+                consider reading the tutorial <a href="http://www.rdfabout.com/quickintro.xpd">here</a>. Note, that we will use Turtle for this tutorial, however
+                Lemon can also be serialized in any RDF format, such as <a href="http://www.w3.org/TR/REC-rdf-syntax/">RDF/XML</a>
+
+            <P>
+
+            <h1>The core path</h1>
+                <center>
+                    <img src="lemon-core-logoless.png" alt="The lemon core model"/>
+                </center>
+                The lemon model consists of a core path defined as:
+
+                <ul>
+                    <li>
+                        <b>Ontology Entity:</b> The ontology entity that describes the meaning of the concept in a language-independent manner
+                    </li>
+                    <li>
+                        <b>Lexical Sense:</b> This object is used to attach all meaning-dependent properties of the word or term.
+                    </li>
+                    <li>
+                        <b>Lexical Entry:</b> This represents the word or term itself.
+                    </li>
+                    <li>
+                        <b>Lexical Form:</b> This object is used to describe a single form (e.g., plural, perfect, etc.) or an entry
+                    </li>
+                    <li>
+                        <b>Written Representation:</b> The actual string that the lexical entry is realized as.
+                    </li>
+                </ul>
+
+            <P>
+                For example the lexical entry for a simple word such as ``tuberculosis'' would be as follows:
+
+            <P>
+                <PRE>
+:tuberculosis lemon:canonicalForm [
+    lemon:writtenRep "tuberculosis"@en ] ;
+  lemon:sense [
+    lemon:reference &lt;http://dbpedia.org/resource/Tuberculosis&gt; ] .
+</PRE>
+
+            <P>
+
+                <H1>Lexica</H1>
+
+            <P>
+                Each lexicon collects all entries for a given language, as such language is normally marked on the lexicon object. e.g.,
+
+            <P>
+                <PRE>
+:lexicon lemon:language "en" ;
+  lemon:topic &lt;http://dbpedia.org/resource/Disease&gt; ;
+  lemon:entry :tuberculosis , :consumption , :hepatitis .
+</PRE>
+
+            <P>
+                Note that forms are also by convention marked with a language tag, this tag may be more specific (e.g., <TT>"en-GB"</TT> for ``UK English'' and <TT>"en-fonipa"</TT> for ``English IPA'' are allowed in the lexicon above)
+
+            <P>
+
+                <H1>Morphosyntax</H1>
+
+            <P>
+                Each entry in a lexicon is assumed to have the same part-of-speech class and if it is multi-word the same parse tree. e.g.,
+
+            <P>
+                <PRE>
+# Derived forms are separate entries
+:garlic lemon:canonicalForm [ 
+    lemon:writtenRep "garlic"@en ] .
+    
+:garlicky lemon:canonicalForm [
+    lemon:writtenRep "garlicky"@en ] .
+    
+# Term variations are separate entries
+:garlic_clove lemon:canonicalForm [
+    lemon:writtenRep "garlic clove"@en ] ;
+  lemon:sense [
+    lemon:reference &lt;http://dbpedia.org/resource/Garlic&gt; ] .
+
+:clove_of_garlic lemon:canonicalForm [
+    lemon:writtenRep "clove of garlic"@en ] ;
+  lemon:sense [
+    lenon:reference &lt;http://dbpedia.org/resource/Garlic&gt; ] .
+</PRE>
+
+            <P>
+
+                <H1>Forms and Representations</H1>
+
+            <P>
+                A form may have multiple representations, for example to capture phonetics and spelling variation, however it must always be pronounced the same way. A different form is used for each inflection variant:
+
+            <P>
+                <PRE>
+:color lemon:canonicalForm [
+     lemon:writtenRep "color"@en-US ;
+     lemon:writtenRep "colour"@en-GB ;
+     lemon:representation "ˈkʌl.ə(ɹ)"@en-fonipa ] ;
+   lemon:otherForm [
+     lemon:writtenRep "colors"@en-US ;
+     lemon:writtenRep "colours"@en-GB ;
+     lemon:representation "ˈkʌl.əːs"@en-fonipa ] ;
+   lemon:sense [
+     lemon:reference &lt;http://dbpedia.org/resource/Color&gt; ] .
+</PRE>
+
+            <P>
+
+                <H1>Senses and Meanings</H1>
+
+            <P>
+                The sense object represents a mapping between a lexical entry and an ontology entity. As such, no two lexical entries may have the same sense object, and the sense object should have only one reference, except in the case when the ontology entities are known to be equivalent by a link such as <TT>owl:sameAs</TT>.
+
+            <P>
+                <PRE>
+:tuberculosis lemon:canonicalForm [
+     lemon:writtenRep "tuberculosis"@en ] ;
+   lemon:sense [
+     lemon:reference &lt;http://dbpedia.org/resource/Tuberculosis&gt; ] .
+
+# Consumption is an alternative term for tuberculosis, only antiquated.
+# The word also has a modern meaning in economics. 
+:consumption lemon:canonicalForm [
+     lemon:writtenRep "consumption"@en ] ;
+   lemon:sense [
+     lemon:reference &lt;http://dbpedia.org/resource/Tuberculosis&gt; ; 
+     lemon:context :antiquated  ] ;
+   lemon:sense [
+     lemon:reference &lt;http://dbpedia.org/resource/Consumption_(economics)&gt; ] .
+
+# OK as we know that
+# &lt;http://dbpedia.org/resource/Garlic&gt; owl:sameAs 
+#        &lt;http://rdf.freebase.com/ns/m/0dbrl&gt; .   
+:garlic lemon:canonicalForm [
+     lemon:writtenRep "garlic"@en ] ;
+   lemon:sense [
+     lemon:reference &lt;http://dbpedia.org/resource/Garlic&gt; ,
+                     &lt;http://rdf.freebase.com/ns/m/0dbrl&gt; ] .
+</PRE>
+
+            <P>
+        </div>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Linguistic properties</TITLE>
+<META NAME="description" CONTENT="Linguistic properties">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html245"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html241"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html235"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html243"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html246"
+  HREF="node10.html">Describing phonetics</A>
+<B> Up:</B> <A NAME="tex2html242"
+  HREF="node8.html">Linguistic Description Module</A>
+<B> Previous:</B> <A NAME="tex2html236"
+  HREF="node8.html">Linguistic Description Module</A>
+ &nbsp; <B>  <A NAME="tex2html244"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00041100000000000000">
+Linguistic properties</A>
+</H3>
+
+<P>
+One of the key challenges that <I>lemon</I> attempts to solve is the attachment of linguistic information to an ontology, which is essential to providing linguistic annotations to the text. This is achieved by using a linguistic taxonomy also known as a <SPAN  CLASS="textit">linguistic description ontology</SPAN> or <SPAN  CLASS="textit">data category registry</SPAN>&nbsp;(<A
+ HREF="node60.html#romary">Romary, 2010</A>). Examples of these resources include the GOLD ontology or the ISOcat data category registry. For example, indicating that “cat” has a singular canonical form “cat” and a plural form “cats” can be done as follows.<A NAME="tex2html4"
+  HREF="footnode.html#foot673"><SUP><SPAN CLASS="arabic">3</SPAN></SUP></A>
+<P>
+<PRE>
+:cat lemon:canonicalForm [ lemon:writtenRep "cat"@en ;
+                           lemon:property isocat:singular ] .
+:cat lemon:otherForm [ lemon:writtenRep "cats"@en ;
+                     lemon:property isocat:plural ] .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="591" HEIGHT="119" ALIGN="BOTTOM" BORDER="0"
+ SRC="./description-ex2.png"
+ ALT="Image description-ex2">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">10</SPAN>
+</DIV>
+
+<P>
+In practice it is neither feasible nor desirable to impose a complete set of all possible annotations, thus <I>lemon</I> does not attempt to do so, and is intended to be used with a source of linguistic categories. Also <I>lemon</I> is used to define the structure and relations of the lexicon, and properties from data categories are introduced by asserting them as sub-properties of existing <I>lemon</I> properties (in particular <TT>lemon:property</TT>). For example we will now show an example that marks “ICBM” as a noun and an initialism, using sub-properties of <I>lemon</I>'s property<A NAME="tex2html5"
+  HREF="footnode.html#foot582"><SUP><SPAN CLASS="arabic">4</SPAN></SUP></A>
+<P>
+<PRE>
+@prefix rdfs: &lt;"http://www.w3.org/2000/01/rdf-schema#"&gt;
+
+:ICBM isocat:partOfSpeech isocat:noun ;
+      isocat:termType isocat:initialism .
+
+isocat:partOfSpeech rdfs:subPropertyOf lemon:property .
+isocat:termType rdfs:subPropertyOf lemon:property .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">11</SPAN>
+</DIV>
+
+<P>
+These sub-property declarations only need to be made once per lexicon. An alternative is to use a controlled vocabulary for <I>lemon</I>, such as LexInfo 2<A NAME="tex2html6"
+  HREF="footnode.html#foot588"><SUP><SPAN CLASS="arabic">5</SPAN></SUP></A> which defines a practical set of data categories for general NLP tasks.
+
+<P>
+It is of course possible to define a lexical entry or form as having several linguistic properties. For example, in many cases we might wish to introduce this set of data categories again from a source such as ISOcat or GOLD. The use of multiple properties makes it much simpler for applications to query different properties.
+
+<P>
+<PRE>
+:eat lemon:otherForm [ lemon:writtenRep "eats"@en ; 
+                     isocat:person isocat:thirdPerson ;
+                     isocat:grammaticalNumber isocat:singular ;
+                     isocat:tense isocat:present ] .
+                     
+isocat:person  rdfs:subPropertyOf lemon:property .
+isocat:grammaticalNumber rdfs:subPropertyOf lemon:property .
+isocat:tense rdfs:subPropertyOf lemon:property .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">12</SPAN>
+</DIV>
+
+<P>
+It may also be used to define the linguistic properties of forms, e.g. to indicate whether they are roots or stems etc. For example, the Spanish verb “pescar” has alternative stems “pesc-” and “pesqu-” that may be useful for generating inflectional variants.
+
+<P>
+<PRE>
+:pescar lemon:abstractForm 
+      [ lemon:writtenRep "pesc"@es ;
+        isocat:morphologicalUnit isocat:stem ] ;
+   lemon:abstractForm
+      [ lemon:writtenRep "pesqu"@es ;
+        isocat:morphologicalUnit isocat:stem ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">13</SPAN>
+</DIV>
+
+<P>
+Morphology can also be partly handled by assigning the morphological pattern as a type of linguistic annotation. For example the Latin verb “amare” may be stated to have the “first conjugation” morphological pattern as such.
+
+<P>
+<PRE>
+:amare isocat:morphologicalPattern :first_conjugation .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">14</SPAN>
+</DIV>
+
+<P>
+This means that it is possible to use this modelling to avoid stating all inflected forms of a word. The implication for implementation however should still be that stated forms override forms generated from a morphological pattern. This is useful as for example the verb “speak” has a regular third person singular present form “speaks” but irregular simple past and past participle forms “spoke” and “spoken”.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html245"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html241"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html235"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html243"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html246"
+  HREF="node10.html">Describing phonetics</A>
+<B> Up:</B> <A NAME="tex2html242"
+  HREF="node8.html">Linguistic Description Module</A>
+<B> Previous:</B> <A NAME="tex2html236"
+  HREF="node8.html">Linguistic Description Module</A>
+ &nbsp; <B>  <A NAME="tex2html244"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

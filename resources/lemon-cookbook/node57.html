@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>FAQ</TITLE>
+<META NAME="description" CONTENT="FAQ">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="lemon-cookbook.html.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html844"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html840"
+  HREF="lemon-cookbook.html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html834"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html842"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html845"
+  HREF="node58.html">LMF comparison</A>
+<B> Up:</B> <A NAME="tex2html841"
+  HREF="lemon-cookbook.html.html">The lemon cookbook</A>
+<B> Previous:</B> <A NAME="tex2html835"
+  HREF="node56.html">Thanks</A>
+ &nbsp; <B>  <A NAME="tex2html843"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00090000000000000000">
+FAQ</A>
+</H1>
+
+<P>
+<DL>
+<DT><STRONG>Q</STRONG></DT>
+<DD>What is a form and what is a lexical entry? For example should initialisms be considered different forms? 
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>In general a form is considered to be “orthography-invariant”, that is that the form should be a single entity across different orthographies or media. In contrast a lexical entry is “syntax-invariant”, this means that it should always become the same entity once syntactic processing is complete. Initialism are clearly not “syntax-invariant” (as they consist of a different number of words), so should be different lexical entries.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Regarding the relations between lexical entries, if I understood it correctly, what are formVariant and lexicalVariant?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>In general this follows from the question of what is a form and what is a lexical entry?
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Regarding the relations to be established between Senses, I am not so sure of the advantages in using the broarderSense and narrower relations compared to underspecification of these relations? Does introducing such relations not duplicate information already in an ontology?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>In fact the senses are quite underspecified, and the referenced ontology is intended to contain the precise and rigorous semantics. The use of sense relations is intended primarily for lexical processing using the lexicon.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Regarding the morphological information, is all this information needed for my application? Do we really need so much detail?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>No, of course not. In fact the minimal <I>lemon</I> model needs use only forms and lexical entries (and senses and references if referring to an ontology). But many applications may need something more than already exists in the model and <I>lemon</I> aims to be extensible; we do not require that the entire model is always implemented!
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>I do not understand the sentence “Although <I>lemon</I> also includes features to assign words to a pragmatic context, as this requires defining a pragmatic taxonomy it may not be a wise idea for many applications”. What do you mean by a pragmatic taxonomy? I personally believe that the pragmatic sense of the word is already given by the word, but that we may want to make it explicit for practical reasons, in order to be able to ask the ontology to give us the most appropriate vocabulary for a certain context. 
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>In fact pragmatic context is really about the mapping, it is not even strictly necessary if there is no mapping. There are also examples where the meaning of the word is defined by its pragmatic context, for example “bitch” refers to a “female dog” in veterinary context, but has a vulgar meaning in another context.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Regarding the "three-faceted understanding of sense", is this not too subtle to be incorporated into the model?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>For many applications it may be, but for some applications a strong definition of how the mappings correspond to implementations is useful. Much like any format different levels of understanding can be used, i.e., RDF manages to be used quite effectively in contexts where its extensional model semantics are not relevant.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Components are used to describe both word tokenization and term decomposition. How should I represent “deutsches Schweineschnitzel”
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>This should generally be represented by decomposing it first into “deutsch(es)” and “Schweineschnitzel” and marking both of these as <TT>lemon:Word</TT>s, then applying a decomposition of “Schweineschnitzel” to “Schwein(e)” and “Schnitzel”.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Can a property of a lexical entry have multiple values? E.g., can I assign a lexical entry to multiple subject fields?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>Sure, RDF also you to assert multiple triples with the same subject and property
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>Could I have a hierachical value for the property of a lexical entry?. E.g., if I say my lexical entry is a proper noun, could I deduce it is also a noun?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>Limitations of RDF/OWL make this very difficult to do in general. There are three solutions
+
+<OL>
+<LI>Handle it yourself. Especially if you are referring to a lexicon standard in a non-RDF format (e.g., ISOcat's DCIF) then this may be the best approach
+</LI>
+<LI>Use punning. OWL2 allows classes to be punned to individuals, this is suitable for some modelling (e.g., GOLD), but will not deduce the desired triples automatically
+</LI>
+<LI>Add OWL axioms to the description ontology. For example the above case could be handled with
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+∃partOfSpeech.properNoun ⊑ ∃partOfSpeech.noun
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="359" HEIGHT="27" BORDER="0"
+ SRC="img72.png"
+ ALT="\begin{displaymath}
+∃partOfSpeech.properNoun ⊑ ∃partOfSpeech.noun
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+</OL>
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>You use blank nodes frequently through out this document is this required in <I>lemon</I>?
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>No. It just keeps the examples more readable
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>How do I represent how superlatives (e.g., “biggest”) map to an ontology
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>Superlatives are difficult to represent well, as they clash with the open world semantics inherent to OWL and RDF. In particular it is difficult to say what the greatest element of a non-closed set would in fact be. You could of course map it to an object property, whose range is some finite set (e.g., RDF's List or an OWL enumeration), and then it could be mapped like a comparative.
+
+<P>
+</DD>
+<DT><STRONG>Q</STRONG></DT>
+<DD>As in multi-word expressions elements are inflected shouldn't decomposition be by forms not lexical entries?
+
+<P>
+</DD>
+<DT><STRONG>A</STRONG></DT>
+<DD>We have chosen to place it at the lexical entry level and use properties for several reasons, but in particular that the decomposition should be the same for all forms of the lexical entry. For example in the case of “number of employees” it is clear that both that canonical form and the plural form “numbers of employees” should have the same decomposition, even though they both use the inflected form “employees.” Doing otherwise would require that the decomposition be repeated (potentially many times). Also it should be noted that this decomposition is semantically disambiguated with “number” strictly in the sense of an amount and not as a word or symbol. For general compactness and the ability to interface with the phrase structure model we limit decomposition to the lexical entry level and then assume that this decomposition can also be soundly applied at the lexical and semantic level. 
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html844"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html840"
+  HREF="lemon-cookbook.html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html834"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html842"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html845"
+  HREF="node58.html">LMF comparison</A>
+<B> Up:</B> <A NAME="tex2html841"
+  HREF="lemon-cookbook.html.html">The lemon cookbook</A>
+<B> Previous:</B> <A NAME="tex2html835"
+  HREF="node56.html">Thanks</A>
+ &nbsp; <B>  <A NAME="tex2html843"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

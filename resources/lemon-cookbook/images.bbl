@@ -1,0 +1,43 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cimiano et~al.(2011)Cimiano, Buitelaar, McCrae, and
+  Sintek]{lexinfo-jws}
+P.~Cimiano, P.~Buitelaar, J.~McCrae, and M.~Sintek.
+\newblock {LexInfo: A Declarative Model for the Lexicon-Ontology Interface}.
+\newblock \emph{{Web Semantics: Science, Services and Agents on the World Wide
+  Web}}, 9\penalty0 (1):\penalty0 29 -- 51, 2011.
+
+\bibitem[Francopoulo et~al.(2006)Francopoulo, George, Calzolari, Monachini,
+  Bel, Pet, and Soria]{lmf}
+G.~Francopoulo, M.~George, N.~Calzolari, M.~Monachini, N.~Bel, M.~Pet, and
+  C.~Soria.
+\newblock {Lexical markup framework (LMF)}.
+\newblock In \emph{{Proceedings of the Fifth International Conference on
+  Language Resource and Evaluation (LREC'O6)}}, 2006.
+
+\bibitem[Miles and Bechhofer(2009)]{skos-reference}
+A.~Miles and S.~Bechhofer.
+\newblock \emph{{SKOS Simple Knowledge Organization System Reference}}, 2009.
+\newblock URL \url{http://www.w3.org/TR/skos-reference/}.
+\newblock {Accessed 19 October 2010}.
+
+\bibitem[Montiel-Ponsoda et~al.(2008)Montiel-Ponsoda, Aguado~de Cea,
+  G{\'o}mez-P{\'e}rez, and Peters]{lir}
+E.~Montiel-Ponsoda, G.~Aguado~de Cea, A.~G{\'o}mez-P{\'e}rez, and W.~Peters.
+\newblock {Modelling multilinguality in ontologies}.
+\newblock In \emph{{Proceedings of the 21st International Conference on
+  Computational Linguistics (COLING)}}, 2008.
+
+\bibitem[Romary(2010)]{romary}
+L.~Romary.
+\newblock {Standardization of the formal representation of lexical information
+  for NLP}.
+\newblock In \emph{{Dictionaries: An International Encyclopedia of
+  Lexicography.}} Mouton de Gruyter, 2010.
+
+\end{thebibliography}

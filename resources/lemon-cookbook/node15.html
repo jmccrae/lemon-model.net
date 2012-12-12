@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Lexical variants</TITLE>
+<META NAME="description" CONTENT="Lexical variants">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html321"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html317"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html311"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html319"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html322"
+  HREF="node16.html">Subphrases as variation</A>
+<B> Up:</B> <A NAME="tex2html318"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html312"
+  HREF="node14.html">Lexicosemantic relationships</A>
+ &nbsp; <B>  <A NAME="tex2html320"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00042200000000000000">
+Lexical variants</A>
+</H3>
+
+<P>
+Another important factor of <I>lemon</I> is the ability to model the differences between various words and forms of a word. This is performed by the properties <TT>lexicalVariant</TT>, <TT>formVariant</TT> and <TT>senseRelation</TT>. Again here we handle the large number of potential annotations by referring to a data category registry to define these relations.<A NAME="tex2html8"
+  HREF="footnode.html#foot944"><SUP><SPAN CLASS="arabic">7</SPAN></SUP></A>
+<P>
+<PRE>
+:hiv lemon:canonicalForm [ lemon:writtenRep "HIV"@en ] ;
+   isocat:termType isocat:initialism ;
+   isocat:initialismFor :human_immunodeficiency_virus .
+   
+:human_immunodeficiency_virus 
+   lemon:canonicalForm [ lemon:writtenRep "Human immunodeficiency virus"@en ] ;
+   isocat:termType isocat:fullForm ;
+   isocat:fullFormFor :hiv .
+   
+isocat:initialismFor rdfs:subPropertyOf lemon:lexicalVariant .
+isocat:fullFormFor rdfs:subPropertyOf lemon:lexicalVariant .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="473" HEIGHT="325" ALIGN="BOTTOM" BORDER="0"
+ SRC="./variation-ex4.png"
+ ALT="Image variation-ex4">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">25</SPAN>
+</DIV>
+
+<P>
+It is also possible to state lexical entries to be syntactic variants of another, if one is somehow derived from another. For example, the words “lexicon”, “lexical” and “lexicalize” are derived from a single root. This is done by means of the <TT>lexicalVariant</TT> relation.  E.g.,
+
+<P>
+<PRE>
+:lexicon :adjectivalVariant :lexical ;
+   :verbalVariant :lexicalize .
+   
+:adjectivalVariant rdfs:subPropertyOf lemon:lexicalVariant .
+:verbalVariant rdfs:subPropertyOf lemon:lexicalVariant .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">26</SPAN>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

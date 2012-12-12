@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Subphrases as variation</TITLE>
+<META NAME="description" CONTENT="Subphrases as variation">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html333"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html329"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html323"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html331"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html334"
+  HREF="node17.html">Form variants</A>
+<B> Up:</B> <A NAME="tex2html330"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html324"
+  HREF="node15.html">Lexical variants</A>
+ &nbsp; <B>  <A NAME="tex2html332"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00042300000000000000">
+Subphrases as variation</A>
+</H3>
+
+<P>
+One particular modelling that should be performed as subphrase variation is indicating subphrases. For example we may indicate that “New York” is a subphrase of “New York City” by introducing a property <TT>subphrase</TT> as a subproperty of lexical variant. We may also use this modelling to indicate some syntactic properties such as the head of a phrase.
+
+<P>
+<PRE>
+:new_york_city lemon:canonicalForm [ lemon:writtenRep "New York City"@en ] ;
+   :subphrase :new_york ;
+   :head :city .
+
+:new_york lemon:canonicalForm [ lemon:writtenRep "New York"@en ] .
+   
+:city lemon:canonicalForm [ lemon:writtenRep "City"@en ] .
+   
+:subphrase rdfs:subPropertyOf lemon:lexicalVariant .
+:head rdfs:subPropertyOf lemon:lexicalVariant .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">27</SPAN>
+</DIV>
+
+<P>
+Note that this modelling is not intended to be used for deducing the syntactic structure of a multiple word expression, as such it is not easy to deduce which words compose the sub-phrase. Modelling that can provide this information is described in section 4. 
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

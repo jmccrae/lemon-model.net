@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Agglutination</TITLE>
+<META NAME="description" CONTENT="Agglutination">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html593"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html589"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html583"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html591"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html594"
+  HREF="node38.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html590"
+  HREF="node35.html">Morphology Module</A>
+<B> Previous:</B> <A NAME="tex2html584"
+  HREF="node36.html">Inflection</A>
+ &nbsp; <B>  <A NAME="tex2html592"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00045200000000000000">
+Agglutination</A>
+</H3>
+
+<P>
+Many languages uses agglutination where the form of a word is dependent on neighboring words and we would like to be able to represent this as well. We use agglutination as a word that covers many distinct phenomena such as assimilation, liasion, sindha and vowel harmony. For example, in Maltese the definite article “il-” is a proclitic that assimilates with the first phoneme of the following word if it is a <SPAN  CLASS="textit">coronal constonant</SPAN> or vowel. For example
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">il- + missier</TD>
+<TD ALIGN="LEFT">il-missier</TD>
+<TD ALIGN="LEFT">the father</TD>
+</TR>
+<TR><TD ALIGN="LEFT">il- + omm</TD>
+<TD ALIGN="LEFT">l-omm</TD>
+<TD ALIGN="LEFT">the mother</TD>
+</TR>
+<TR><TD ALIGN="LEFT">il- + tifel</TD>
+<TD ALIGN="LEFT">it-tifel</TD>
+<TD ALIGN="LEFT">the boy</TD>
+</TR>
+</TABLE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">72</SPAN>
+</DIV>
+
+<P>
+The rules for doing this are similar to inflection rules but include the symbol “+” to indicate the word with which the agglutination occurs. So we describe maltese agglutination as follows
+
+<P>
+<PRE>
+:maltese_il_assimilation a lemon:MorphPattern ;
+  lemon:transform [
+     lemon:rule "~l+([ċdnrstxżz])/~$2-$2" ;
+     lemon:rule "~l+([aeiou])/l-$2"
+   ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">73</SPAN>
+</DIV>
+
+<P>
+Note that this pattern only applies to one word, it is written in a way that could be used elsewhere if the pattern occurs differently. Similarly <TT>$2</TT> is used as the matcher (as <TT>$1</TT> corresponds to <TT>&#732;</TT>).
+
+<P>
+Hungarian (as well as all Uralic and many Altaic langauges) exhibit an interesting agglutinative property known as vowel harmony, in which the vowels in a suffix must agree with the vowels in the preceding word. Hungarian groups the vowels into three categories back vowels (a, o, u), front vowels (ö, ü) and intermediate vowels (e, i). Prepositions and cases in Hungarian are prefices which must agree in terms of their vowel for example
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">lakás + hoz</TD>
+<TD ALIGN="LEFT">lakáshoz</TD>
+<TD ALIGN="LEFT">to the house</TD>
+</TR>
+<TR><TD ALIGN="LEFT">szem + hoz</TD>
+<TD ALIGN="LEFT">szemhez</TD>
+<TD ALIGN="LEFT">to the eye</TD>
+</TR>
+<TR><TD ALIGN="LEFT">kör + hoz</TD>
+<TD ALIGN="LEFT">körhöz</TD>
+<TD ALIGN="LEFT">to the circle</TD>
+</TR>
+</TABLE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">74</SPAN>
+</DIV>
+
+<P>
+This can be modeled using different stem forms as in example 67,so we would model this as follows<A NAME="tex2html17"
+  HREF="footnode.html#foot2142"><SUP><SPAN CLASS="arabic">15</SPAN></SUP></A>
+<P>
+<PRE>
+:hungarian_vowel_harmony a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:onStem [ 
+      dcr:vowelHarmony dcr:back
+    ]
+    lemon:rule "^([^öőüűeéií]*[aáoóuú].*)+~/$1+~" ;
+  ] , [
+    lemon:onStem [ 
+      dcr:vowelHarmony dcr:intermediate
+    ]
+    lemon:rule "^([^aáoóuúeéií]*[öőüű].*)+~/$1+~" ;
+  ] , [
+    lemon:onStem [ 
+      dcr:vowelHarmony dcr:front
+    ]
+    lemon:rule "^([^aáoóuúöőüű]*[eéií].*)+~/$1+~" ;
+  ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">75</SPAN>
+</DIV>
+
+<P>
+Here the regular expression matches the hole of the agglutination, indicated by the <TT>&#710;</TT> indicating the start of string.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html593"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html589"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html583"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html591"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html594"
+  HREF="node38.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html590"
+  HREF="node35.html">Morphology Module</A>
+<B> Previous:</B> <A NAME="tex2html584"
+  HREF="node36.html">Inflection</A>
+ &nbsp; <B>  <A NAME="tex2html592"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Global Information</TITLE>
+<META NAME="description" CONTENT="Global Information">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html656"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html652"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html648"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html654"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html657"
+  HREF="node43.html">The semantics of the</A>
+<B> Up:</B> <A NAME="tex2html653"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+<B> Previous:</B> <A NAME="tex2html649"
+  HREF="node41.html">Annotation schemes</A>
+ &nbsp; <B>  <A NAME="tex2html655"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00051200000000000000">
+Global Information</A>
+</H3>
+
+<P>
+LMF provides several classes for describing global information about the lexicon and constraints. <I>lemon</I>, however, does not need to do this as it can use the OWL language to specify decidable constraints on the lexicon. OWL will not be fully described here however there are many excellent resources available. A good place to start may be the W3C documents available at <TT><A NAME="tex2html18"
+  HREF="http://www.w3.org/standards/techs/owl#w3c_all">http://www.w3.org/standards/techs/owl#w3c_all</A></TT>. Here we shall show an example of how OWL can be used to specify that French nouns are only masculine or feminine.
+
+<P>
+<PRE>
+:FrenchLexicon a owl:Class ;
+  owl:equivalentTo [ owl:intersectionOf (
+    lemon:Lexicon
+    [ a owl:Restriction ;
+       owl:onProperty lemon:language ;
+       owl:hasValue “fr” ]
+  ) ] ;
+  rdfs:subClassOf [ a owl:Restriction ;
+    owl:onProperty lemon:entry ;
+    owl:allValuesForm :FrenchWord ] .
+
+:Noun a owl:Class ;
+  owl:equivalentTo [ a owl:Restriction ;
+       owl:onProperty isocat:partOfSpeech ;
+       owl:hasValue isocat:noun ] .
+
+:FrenchWord a owl:Class .
+
+:FrenchNoun a owl:Class ;
+  owl:equivalentTo [ owl:intersectionOf (
+    :FrenchWord :Noun ) ] ;
+  rdfs:subClassOf [ a owl:Restriction ;
+    owl:onProperty isocat:grammaticalGender ;
+    owl:allValuesFrom [ owl:oneOf (
+      isocat:masculine isocat:feminine ) ] ] .
+</PRE>
+
+<P>
+The OWL restrictions are as follows in DL syntax: 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+FrenchLexicon ≡ Lexicon ⊓ ∋language.”fr”
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="303" HEIGHT="27" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{displaymath}
+FrenchLexicon ≡ Lexicon ⊓ ∋language.”fr”
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+FrenchLexicon ⊑ ∀entry.FrenchWord
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="264" HEIGHT="27" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}
+FrenchLexicon ⊑ ∀entry.FrenchWord
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+Noun ≡ ∋partOfSpeech.noun
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="207" HEIGHT="27" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+Noun ≡ ∋partOfSpeech.noun
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+FrenchNoun ≡ FrenchWord ⊓ Noun
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="253" HEIGHT="24" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{displaymath}
+FrenchNoun ≡ FrenchWord ⊓ Noun
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+FrenchNoun ⊑ ∀grammaticalGender.\{masculine,feminine\}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="423" HEIGHT="28" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{displaymath}
+FrenchNoun ⊑ ∀grammaticalGender.\{masculine,feminine\}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+We first state that <TT>FrenchLexicon</TT>s are those lexica that have the value “fr” for the <TT>language</TT> property, and that all entries of <TT>FrenchLexicon</TT>s are <TT>FrenchWord</TT>s. We then define the class <TT>Noun</TT> as all things that have the value <TT>noun</TT> for the <TT>partOfSpeech</TT> property and then that <TT>FrenchNoun</TT>s are <TT>FrenchWord</TT>s that are also <TT>Noun</TT>s. Finally the key restriction is that every <TT>FrenchNoun</TT> has its <TT>grammaticalGender</TT> from the set <TT>{masculine, feminine}</TT>. (Note we do not assert here that the gender cannot be both masculine and feminine, as some words may be both, such as “après-midi”, however it is of course possible to do so).
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Property</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Description</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>topic</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>The topic of a lexicon or lexical entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>definition</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>The definition of a lexical entry relative to a sense.</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html656"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html652"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html648"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html654"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html657"
+  HREF="node43.html">The semantics of the</A>
+<B> Up:</B> <A NAME="tex2html653"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+<B> Previous:</B> <A NAME="tex2html649"
+  HREF="node41.html">Annotation schemes</A>
+ &nbsp; <B>  <A NAME="tex2html655"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Lexicosemantic relationships</TITLE>
+<META NAME="description" CONTENT="Lexicosemantic relationships">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html309"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html305"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html299"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html307"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html310"
+  HREF="node15.html">Lexical variants</A>
+<B> Up:</B> <A NAME="tex2html306"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html300"
+  HREF="node13.html">Variation Module</A>
+ &nbsp; <B>  <A NAME="tex2html308"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00042100000000000000">
+Lexicosemantic relationships</A>
+</H3>
+
+<P>
+It is possible to relate the sense objects using the predicate <TT>lemon:senseRelation</TT>. This has the following sub-properties defined in <I>lemon</I>:
+
+<P>
+
+<UL>
+<LI><TT>equivalent</TT>
+</LI>
+<LI><TT>incompatible</TT>
+</LI>
+<LI><TT>broader</TT>
+</LI>
+<LI><TT>narrower</TT><A NAME="tex2html7"
+  HREF="footnode.html#foot1000"><SUP><SPAN CLASS="arabic">6</SPAN></SUP></A>
+</LI>
+</UL>
+
+<P>
+These can be used to state the similarity of the terms “animal” and “creature” as follows
+
+<P>
+<PRE>
+:animal lemon:canonicalForm [ lemon:writtenRep "animal"@en ] ;
+   lemon:sense :animal_sense .
+
+:animal_sense lemon:reference ontology:animal ;
+   lemon:equivalent :creature_sense .
+   
+:creature lemon:canonicalForm [ lemon:writtenRep "creature"@en ] ;
+   lemon:sense :creature_sense .
+   
+:creature_sense lemon:reference ontology:animal ;
+   lemon:equivalent :animal_sense .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="126" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex3.png"
+ ALT="Image core-ex3">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">23</SPAN>
+</DIV>
+
+<P>
+For a further example of the usefulness of these similarities consider the case of the French words “rivière” and “fleuve”, these refer to rivers that flow into other rivers and the sea respectively. As such this distinction can be modeled by the following sub-graph.
+
+<P>
+<PRE>
+:fleuve lemon:sense :fleuve_sense .
+:riviere lemon:sense :riviere_sense .
+:river lemon:sense :river_sense .
+
+:fleuve_sense lemon:incompatible :riviere_sense .
+
+:riviere_sense lemon:incompatible :fleuve_sense .
+
+:river_sense lemon:narrower :riviere_sense ,
+                            :fleuve_sense .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="591" HEIGHT="170" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex6.png"
+ ALT="Image core-ex6">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">24</SPAN>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Morphology Module</TITLE>
+<META NAME="description" CONTENT="Morphology Module">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html566"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html562"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html558"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html567"
+  HREF="node36.html">Inflection</A>
+<B> Up:</B> <A NAME="tex2html563"
+  HREF="node7.html">Modules</A>
+<B> Previous:</B> <A NAME="tex2html559"
+  HREF="node34.html">Summary of vocabulary introduced</A>
+ &nbsp; <B>  <A NAME="tex2html565"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00045000000000000000"></A><A NAME="liam"></A>
+<BR>
+Morphology Module
+</H2>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="314" ALIGN="BOTTOM" BORDER="0"
+ SRC="./liam.png"
+ ALT="Image liam">
+
+<P>
+The usual lemon method for representing different forms of the same lexical entry is to indicate all non-canonical forms by the use of the <TT>otherForm</TT> property. While this may be reasonably practical for English as there are only four, three and two forms for verbs, adjectives and nouns respectively, there can be many forms for items of more synthetic languages. For example, a regular verb in Italian, such as “amare”, has 43 distinct forms, and encoding all of these as seperate forms for every word would greatly increase the size of lexicon. This problem is even more acute for languages exhibiting <SPAN  CLASS="textit">polysynthesis</SPAN>, where multiple inflections may be combined. For example in Japanese the following (among other) inflections of the regular verb exist (here “taberu”, to eat) .
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">Positive</TD>
+<TD ALIGN="LEFT">Negative</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Present</TD>
+<TD ALIGN="LEFT">taberu</TD>
+<TD ALIGN="LEFT">tabenai</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Past</TD>
+<TD ALIGN="LEFT">tabeta</TD>
+<TD ALIGN="LEFT">tabenakatta</TD>
+</TR>
+</TABLE>
+
+<P>
+The same verb also can be inflected to give a passive form, “taberareru”, and a causative form, “tabesaseru”<A NAME="tex2html13"
+  HREF="footnode.html#foot2033"><SUP><SPAN CLASS="arabic">11</SPAN></SUP></A>. These forms are in fact verbs, that have the same inflections as the regular verb. To further complicate things, both the passive and causative may be combined to give a passive-causative form “tabesaserareru”. As such the following form of the verb exists, which may be decomposed as follows (the meaning is “(he) was not made to eat”).
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">tabe</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">sase</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">rare</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">naka</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">tta</TD>
+</TR>
+<TR><TD ALIGN="CENTER">tabe</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">saseru</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">rareru</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">nai</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">ta</TD>
+</TR>
+<TR><TH ALIGN="CENTER"><SPAN  CLASS="textit">stem</SPAN></TH>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><SPAN  CLASS="textit">causative</SPAN></TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><SPAN  CLASS="textit">passive</SPAN></TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><SPAN  CLASS="textit">negative</SPAN></TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><SPAN  CLASS="textit">past</SPAN></TD>
+</TR>
+</TABLE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">63</SPAN>
+</DIV>
+
+<P>
+This leads to a very large number of inflections and as such it is difficult to state how many word forms exist for a Japanese verb, although in practice it is unlikely that verbs composed of more than 5 morphemes occur. Therefore, a minimal encoding is needed that allows regular and semi-regular verbs to be represented economically.
+
+<P>
+In difference to the majority of the vocabulary in lemon, this morphology is not specific to a given lexicon, in fact the same morphological rules can be used for any lexicon within the same language. As such, it should not be necessary for most lexica to represent the morphology of their given language, and for most major language bespoke systems will often in practice be more useful than the modules described here. However, there are use cases where this is useful, for example for resource-poor languages it may be preferable to have a common representation of morphology. Furthermore, bespoke systems are often opaque about the methods they use for generating inflectional morphology and this can make it difficult with words that have unusual forms (a simple example in English is that nouns ending in “y” normally have a plural in “ies”, e.g., “cherries”, but in some odd cases has a plural in “ys”, e.g., “the two Germanys”).
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html568"
+  HREF="node36.html">Inflection</A>
+<LI><A NAME="tex2html569"
+  HREF="node37.html">Agglutination</A>
+<LI><A NAME="tex2html570"
+  HREF="node38.html">Summary of vocabulary introduced in this section</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html566"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html562"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html558"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html567"
+  HREF="node36.html">Inflection</A>
+<B> Up:</B> <A NAME="tex2html563"
+  HREF="node7.html">Modules</A>
+<B> Previous:</B> <A NAME="tex2html559"
+  HREF="node34.html">Summary of vocabulary introduced</A>
+ &nbsp; <B>  <A NAME="tex2html565"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

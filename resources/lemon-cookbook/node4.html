@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Main elements</TITLE>
+<META NAME="description" CONTENT="Main elements">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html152"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html148"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html142"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html153"
+  HREF="node5.html">Canonical forms and preferred</A>
+<B> Up:</B> <A NAME="tex2html149"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html143"
+  HREF="node3.html">The lemon core</A>
+ &nbsp; <B>  <A NAME="tex2html151"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Main elements</A>
+</H2>
+
+<P>
+The <I>lemon</I> core module is intended to have a similar expressive power to that of SKOS&nbsp;(<A
+ HREF="node60.html#skos-reference">Miles and Bechhofer, 2009</A>), while providing distinctions that allow for more powerful linguistic modeling. For example the simplest version of a <I>lemon</I> entry is as follows:<A NAME="tex2html1"
+  HREF="footnode.html#foot62"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A>
+<P>
+<PRE>
+@base &lt;http://www.example.org/lexicon&gt;
+@prefix ontology: &lt;http://www.example.org/ontology#&gt;
+@prefix lemon: &lt;http://www.monnetproject.eu/lemon#&gt;
+
+:myLexicon a lemon:Lexicon ; 
+   lemon:language "en" ;
+   lemon:entry :animal .
+   
+:animal a lemon:LexicalEntry ;
+   lemon:form [ lemon:writtenRep "animal"@en ] ;
+   lemon:sense [ lemon:reference ontology:animal ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">1</SPAN>
+</DIV>
+
+<P>
+Please note, for the course of this book we will use Turtle notation<A NAME="tex2html2"
+  HREF="footnode.html#foot223"><SUP><SPAN CLASS="arabic">2</SPAN></SUP></A> as it is the quickest and most legible way to write <I>lemon</I> (and RDF in general). Furthermore we will mostly omit the type declarations (e.g., <TT>myLexicon</TT> is a <TT>lemon:Lexicon</TT>), as they are generally not necessary and can in all cases be inferred from the RDF Schema document. Also we shall assume in all cases that the prefixes <TT>lemon</TT>, <TT>ontology</TT> and the base prefix are as in the first example. For the sake of completion we will present the above example in RDF/XML.
+
+<P>
+<PRE>
+&lt;?xml version="1.0"?&gt;
+
+&lt;rdf:RDF xmlns="http://www.example.org/lexicon#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:lemon="http://www.monnetproject.eu/lemon#"&gt;
+     
+  &lt;lemon:Lexicon rdf:about="myLexicon" lemon:language="en"&gt;
+    &lt;lemon:entry&gt;
+      &lt;lemon:LexicalEntry rdf:about="animal"&gt;
+        &lt;lemon:form rdf:parseType="Resource"&gt;
+            &lt;lemon:writtenRep xml:lang="en"&gt;animal&lt;/lemon:writtenRep&gt;
+        &lt;/lemon:form&gt;
+        &lt;lemon:sense rdf:parseType="Resource"&gt;
+        	&lt;lemon:reference rdf:resource="http://www.example.org/ontology#animal"/&gt;
+        &lt;/lemon:sense&gt;
+      &lt;/lemon:LexicalEntry&gt;
+    &lt;/lemon:entry&gt;
+  &lt;/lemon:Lexicon&gt;
+&lt;/rdf:RDF&gt;
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="128" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex1.png"
+ ALT="Image core-ex1">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">2</SPAN>
+</DIV>
+
+<P>
+This example defines the following entities
+
+<P>
+
+<OL>
+<LI><SPAN  CLASS="textbf">Lexicon</SPAN>: This is the lexicon containing all elements in the lexicon. This approximately corresponds to a SKOS scheme. Each lexicon is marked with a language in the form of an ISO 639 tag.
+</LI>
+<LI><SPAN  CLASS="textbf">Lexical Entry</SPAN>: This represents the given lexical entry. 
+</LI>
+<LI><SPAN  CLASS="textbf">Lexical Sense</SPAN>: Represents the relationship between the lexical entry and the ontology entity.
+</LI>
+<LI><SPAN  CLASS="textbf">Reference</SPAN>: The reference to the resource that can be described by this lexical entry. In the examples above the reference is in a separate ontology, with its own name space.
+</LI>
+<LI><SPAN  CLASS="textbf">Form</SPAN>: A surface realisation of a given lexical entry, typically a written representation.
+</LI>
+</OL>
+
+<P>
+A second example showing two lexical entries referring to the same ontology entity is as follows:
+
+<P>
+<PRE>
+:myLexicon lemon:entry :animal , :creature ;
+  lemon:language "en" .
+
+:animal lemon:form [ lemon:writtenRep "animal"@en ] ;
+   lemon:sense [ lemon:reference ontology:animal ] .
+
+:creature lemon:form [ lemon:writtenRep "creature"@en ] ;
+   lemon:sense [ lemon:reference ontology:animal ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">3</SPAN>
+</DIV>
+
+<P>
+This indicates that “animal” and “creature” can refer to the same ontology concept and as such they can be considered to be “synonymous” in a sense. The semantics of the <I>lemon</I> model are further discussed in section <A HREF="node43.html#sense-section"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html152"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html148"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html142"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html153"
+  HREF="node5.html">Canonical forms and preferred</A>
+<B> Up:</B> <A NAME="tex2html149"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html143"
+  HREF="node3.html">The lemon core</A>
+ &nbsp; <B>  <A NAME="tex2html151"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Correspondence</TITLE>
+<META NAME="description" CONTENT="Correspondence">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html546"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html542"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html536"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html544"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html547"
+  HREF="node34.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html543"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html537"
+  HREF="node32.html">Mapping adjectives</A>
+ &nbsp; <B>  <A NAME="tex2html545"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044700000000000000"></A><A NAME="correspondence"></A>
+<BR>
+Correspondence
+</H3>
+
+<P>
+The key understanding of a sense is as a correspondence betwen an ontology entity and a lexical entry and as such the set of senses in the lexicon constitute a many-to-many mapping between lexical entries and ontology entities. This means that each sense must apply to exactly one lexical entry and one ontology element. Thus, for any ontology-based disambiguation task the challenge can be simply specified as selecting the correct sense for the task. For this reason <I>lemon</I> provides a number of features that should prove useful for this task, which are detailed in section <A HREF="#context"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+There are several reasons for defining the correspondence as an element of the lexicon. Firstly, to allow further description of pragmatic usage between the two terms: for example, “cats and dogs” would be considered a natural usage whereas “Felis Catus and dogs” would be considered odd as the pragmatic register of the two terms is different. Although <I>lemon</I> also includes features to assign words to a pragmatic context, it does require the definition of a pragmatic taxonomy, which must be done for any particular application of the model.
+
+<P>
+The second case is where some terms are closely lexically bound, i.e., they generally occur together. An example from French is “rivière et fleuve”, which are often used together to express the same concept in English as “river”. It is natural that we should wish to connect these two terms by indicating they have disjoint senses that together constitute the idea of “river”. As the meaning of “rivière” in French is defined by Larousse as
+
+<P>
+<BLOCKQUOTE>
+Cours d'eau de faible ou moyenne importance qui se jette dans un autre cours d'eau (Watercourse of small size or little importance, which flows into another watercourse)
+
+</BLOCKQUOTE>
+
+<P>
+This can be considered in a semantic sense to be nearly equivalent to the French term “affluent”, defined as
+
+<P>
+<BLOCKQUOTE>
+Un cours d'eau qui se jette dans un autre. (A watercourse which flows into another)
+
+</BLOCKQUOTE>
+
+<P>
+However, a system generating “fleuve et affluent” as the equivalent concept to that of “river” would generally not be considered to be correct, due to lexical collocations. In fact for reference resolution it may be better to assert “affluent” as a broader term for “rivière”, as every usage of “rivière” is necessarily an “affluent”.
+
+<P>
+The final case is where terms are used in a metaphoric or metonymic manner. For example,
+
+<P>
+<BLOCKQUOTE>
+The White House said today, ...
+
+</BLOCKQUOTE>
+
+<P>
+Here “the White House” does not refer to the literal building but the spokesperson and other members of the organization in that building. As such the correspondence would give an ontology entity with the properties of being a human or organization; although reasoning using this information, may generate odd statements such as
+
+<P>
+<BLOCKQUOTE>
+*The White House is a member of the species Homo Sapiens
+
+</BLOCKQUOTE>
+
+<P>
+Thus we need to define the lexical semantics as clearly separate from those of the ontological element. This could be done for example by asserting something as a metonymic raising of another sense e.g.,
+
+<P>
+<PRE>
+:white_house
+  lemon:canonicalForm [ lemon:writtenRep "The White House"@en ] ;
+  lemon:sense :white_house_sense .
+:white_house_spokesperson
+  lemon:canonicalForm [ lemon:writtenRep
+     "White House Spokesperson"@ en ] ;
+  lemon:sense :white_house_spokesperson_sense .
+
+:white_house_sense :metonymicRaisingOf :white_house_spokesperson_sense.
+
+:metonymicRaisingOf rdfs:subPropertyOf lemon:senseRelation.
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html546"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html542"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html536"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html544"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html547"
+  HREF="node34.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html543"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html537"
+  HREF="node32.html">Mapping adjectives</A>
+ &nbsp; <B>  <A NAME="tex2html545"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

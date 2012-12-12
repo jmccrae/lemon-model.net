@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Dependency relations</TITLE>
+<META NAME="description" CONTENT="Dependency relations">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html420"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html416"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html418"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+  HREF="node24.html">Noun phrase chunks</A>
+<B> Up:</B> <A NAME="tex2html417"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html411"
+  HREF="node22.html">Phrase structures</A>
+ &nbsp; <B>  <A NAME="tex2html419"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00043300000000000000">
+Dependency relations</A>
+</H3>
+
+<P>
+Dependency grammars focus on the links between different words and so lemon is a very suitable representation. In fact all a dependency grammar needs to do is create sub-properties of <TT>lemon:edge</TT> in its grammar description ontology. For example we could create a dependency parse of “big red bus” as follows:
+
+<P>
+<PRE>
+:big_red_bus 
+   lemon:decomposition ( :big_component
+                      :red_component
+                      :bus_component ) ;
+   lemon:phraseRoot [
+     :main [ lemon:leaf :bus_component ;
+         :attr [ lemon:leaf :red_component ]
+         :attr [ lemon:leaf :big_component ]
+         ] ] .
+
+:main rdfs:subPropertyOf lemon:edge .
+:attr rdfs:subPropertyOf lemon:edge .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="301" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mwe-ex2.png"
+ ALT="Image mwe-ex2">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">39</SPAN>
+</DIV>
+
+<P>
+It is of course possible to include both the dependency and the phrase structure parse simultaneously.
+
+<P>
+These parses can also be useful for identifying elements in frames. For example phrasal verbs in English, such as “switch off” can have multiple frames, namely “X switches Y off” and “X switches off Y”. To perform this we need to be able to state a decomposition of the phrase, which could be done as follows.
+
+<P>
+<PRE>
+:switch_off lemon:decomposition ( :switch_component 
+                                  :off_component ) .
+   lemon:phraseRoot [ lemon:leaf :switch_component ;
+      :particle [ lemon:leaf :off_component ] ] .
+      
+:particle rdfs:subPropertyOf lemon:edge .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">40</SPAN>
+</DIV>
+
+<P>
+We will present an alternative approach to this in the next section that uses the full parse tree (example 43). 
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html420"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html416"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html418"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+  HREF="node24.html">Noun phrase chunks</A>
+<B> Up:</B> <A NAME="tex2html417"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html411"
+  HREF="node22.html">Phrase structures</A>
+ &nbsp; <B>  <A NAME="tex2html419"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

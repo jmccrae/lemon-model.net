@@ -1,0 +1,28 @@
+
+        <div class="pageBottom">
+            <br/>
+            <br/>
+            <br/>
+            
+            <div width="1000px" style="border-top: #ddd 3px ridge;">&nbsp;</div>
+
+            <a href="http://www.cit-ec.de"><img src="img/logo-citec.png" height="60" /></a>&nbsp;
+            <a href="http://www.deri.ie"><img src="img/deri-logo.jpeg" height="60" /></a>&nbsp;
+            <a href="http://www.dfki.de"><img src="img/dfki-logo.jpeg" /></a>&nbsp;
+            <a href="http://www.oeg-upm.net"><img src="img/upm-T.gif" height="80" /></a>
+            <a href="http://www.monnet-project.eu"><img src="img/Monnet_Logo.jpg" height=60 /></a>&nbsp;</p>
+
+        </div>
+
+        <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+        mathiasbynens.be/notes/async-analytics-snippet -->
+        <script>
+            var _gaq = [['_setAccount', 'UA-33743292-1'], ['_trackPageview']];
+            ( function(d, t) {
+                    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g, s)
+                }(document, 'script'));
+        </script>
+    </body>
+</html>

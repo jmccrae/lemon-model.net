@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mapping to more complex representations</TITLE>
+<META NAME="description" CONTENT="Mapping to more complex representations">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html522"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html518"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html512"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html520"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html523"
+  HREF="node32.html">Mapping adjectives</A>
+<B> Up:</B> <A NAME="tex2html519"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html513"
+  HREF="node30.html">Conditions</A>
+ &nbsp; <B>  <A NAME="tex2html521"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044500000000000000"></A><A NAME="semArgRef"></A>
+<BR>
+Mapping to more complex representations
+</H3>
+
+<P>
+As OWL only supports unary (class), and binary (property) predicates, it is not possible to simply map more complex syntactic structures to OWL predicates. This requires mapping these complex predicates to structures in the ontology composed over several predicates. For example, consider we had the following simple ontology to describe a giving event, and a lexical entry for "give" in the lexicon as below.
+
+<P>
+<PRE>
+ontology:giver a owl:ObjectProperty ;
+   rdfs:domain ontology:GivingEvent ;
+   rdfs:range ontology:Giver .
+
+ontology:givenObject a owl:ObjectProperty ;
+   rdfs:domain ontology:GivingEvent ;
+   rdfs:range ontology:Given .
+   
+ontology:givenTo a owl:ObjectProperty ;
+   rdfs:domain ontology:GivingEvent ;
+   rdfs:range ontology:Recipient .
+   
+ontology:Giver a owl:Class .
+ontology:GivingEvent a owl:Class .
+ontology:Given a owl:Class .
+ontology:Recipient a owl:Class .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">55</SPAN>
+</DIV>
+
+<P>
+<PRE>
+:give a lemon:Word ;
+      lemon:synBehavior [ lemon:synArg :give_subj ;
+                          lemon:synArg :give_dir_obj ;
+                          lemon:synArg :give_ind_obj ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">56</SPAN>
+</DIV>
+
+<P>
+<I>lemon</I> solves such mapping by creating a <SPAN  CLASS="textit">compound sense</SPAN>, which is composed of <SPAN  CLASS="textit">atomic senses</SPAN> which we have described above. As such the lexical entry has a single compound sense, which is composed of atomic senses that map to the ontology reference. The composition of these senses is given by the <TT>subsense</TT> property. We will now demonstrate how this is used to represent the ``giving'' ontology represented above.
+
+<P>
+<PRE>
+:give 
+   lemon:sense [
+      lemon:subsense [ 
+                 lemon:reference ontology:giver ;
+                 lemon:objOfProp :give_subj ;
+                 lemon:subjOfProp :event ] ,
+               [ lemon:reference ontology:givenObject ;
+                 lemon:objOfProp :give_dir_obj ;
+                 lemon:subjOfProp :event ] ,
+               [ lemon:reference ontology:givenTo ;
+                 lemon:objOfProp :give_ind_obj ;
+                 lemon:subjOfProp :event ]
+             ].
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="448" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mapping-ex2.png"
+ ALT="Image mapping-ex2">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">57</SPAN>
+</DIV>
+
+<P>
+Here the lexical entry “give” has a single sense composed of three senses, one for each property in the ontology. Each of these sub-senses has an argument mapped to the syntactic frame and one to a new argument element <TT>:event</TT>, which is not bound to any syntactic frame, but instead indicates that the subject of all properties should be the same individual.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html522"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html518"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html512"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html520"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html523"
+  HREF="node32.html">Mapping adjectives</A>
+<B> Up:</B> <A NAME="tex2html519"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html513"
+  HREF="node30.html">Conditions</A>
+ &nbsp; <B>  <A NAME="tex2html521"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

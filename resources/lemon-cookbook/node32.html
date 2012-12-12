@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mapping adjectives</TITLE>
+<META NAME="description" CONTENT="Mapping adjectives">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html534"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html530"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html524"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html532"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html535"
+  HREF="node33.html">Correspondence</A>
+<B> Up:</B> <A NAME="tex2html531"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html525"
+  HREF="node31.html">Mapping to more complex</A>
+ &nbsp; <B>  <A NAME="tex2html533"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044600000000000000">
+Mapping adjectives</A>
+</H3>
+
+<P>
+Adjectives present particular challenges in mapping and while the <I>lemon</I> vocabulary presented so far is suitable for most mappings, we will present design patterns explaining how mapping with adjectives should be performed. For the most part adjectives are involved in unary syntactic frames (that is a frame with a single argument), except for the case where they have a prepositional complement, e.g., “X is similar to Y” or are used postpositively, e.g., “X ist Y ähnlich” in German. We shall leave these binary cases as an example to the user as they function like other examples presentend above. As such we shall only handle the case where adjectives are unary. Given that we have assumed adjectives are unary then it is clear that on the ontology side they correspond to classes. For example assume <TT>Red</TT> is a class in our ontology then we can map the lexical entry “red” as follows
+
+<P>
+<PRE>
+:red lemon:canonicalForm [ lemon:writtenRep "red"@en ] ;
+  lemon:sense [ lemon:reference ontology:Red ;
+                lemon:isA :attr ] ;
+  lemon:synBehavior [ lemon:synArg :attr ] .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="130" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mapping-ex4.png"
+ ALT="Image mapping-ex4">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">58</SPAN>
+</DIV>
+
+<P>
+In fact the inclusion of adjectives as classes in the ontology is rare in general, but <I>lemon</I> cannot semantically map lexical entries to semantics that is not extant in the ontology. As such it is often necessary to the ontology vocabulary, i.e., OWL, to include these semantics to map to a lexicon. For example consider the example of an ontology with a property <TT>color</TT> with values {<TT>green</TT>, <TT>red</TT>, <TT>blue</TT>}. As the color words are individuals it is not possible to map the syntactic predicates of “red”, “green” and “blue“ to them without first making them into classes. This is simply done as follows
+
+<P>
+<PRE>
+ontology:Green a owl:Class ;
+  owl:equivalentTo [ a owl:Restriction ;
+    owl:onProperty ontology:color ;
+    owl:hasValue ontology:green
+  ] .
+</PRE>
+DL Syntax: 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+Green ≡ ∋color.green
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="149" HEIGHT="27" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{displaymath}
+Green ≡ ∋color.green
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">59</SPAN>
+</DIV>
+
+<P>
+Then these classes are mappable like the previous example. An even more complex example exists if you wish to map an adjective to a datatype property, for example “big” to a property <TT>size</TT>. As of OWL2 there exists vocabulary to define classes in terms of data type properties, so we may define a class of big cities, <TT>BigCity</TT>, as all cities of size greater than 500,000.  
+
+<P>
+<PRE>
+ontology:BigCity a owl:Class
+  owl:equivalentTo [ owl:intersectionOf (
+    ontology:City
+    [ a owl:Restriction ;
+      owl:onProperty ontology:size ;
+      owl:someValueFrom [ a rdfs:Datatype ;
+                          owl:onDatatype xsd:integer ;
+                          owl:withRestrictions ( [ xsd:minExclusive 500000 ] )
+                        ]
+             ] ) 
+    ] .
+</PRE>
+DLSyntax:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+BigCity ≡ City ⊓ ∃size.integer[> 500000]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="281" HEIGHT="28" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{displaymath}
+BigCity ≡ City ⊓ ∃size.integer[&gt; 500000]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">60</SPAN>
+</DIV>
+
+<P>
+Another aspect of adjectives is that they are frequently used comparatively or superlatively, that is with “more” and “most.” Again this behavior can only be analyzed if the appropriate semantics exist within the ontology. For example, consider we have “big” and we wish to define “bigger”, this clearly gives a binary frame “X is bigger than Y” and hence must be matched to a property in the ontology as follows, the frame should then be marked in someway as a comparative frame, for example in LexInfo 2 this is done by the <TT>AdjectiveComparativeFrame</TT>. So we could map as follows.
+
+<P>
+<PRE>
+:big lemon:canonicalForm [ lemon:writtenRep "big"@en ] ;
+     lemon:otherForm [ lemon:writtenRep "bigger"@en ;
+                       isocat:degree isocat:comparative ] ;
+     lemon:synBehavior [ a lexinfo:AdjectiveComparativeFrame ;
+                         lexinfo:copulativeSubj :subj ;
+                         lexinfo:comparativeComplement :comp ]
+     lemon:sense [ lemon:reference ontology:biggerThan ;
+                   lemon:subjOfProp :subj ;
+                   lemon:objOfProp :comp ] .
+                   
+lexinfo:AdjectiveComparativeFrame rdfs:subClassOf lemon:Frame .
+lexinfo:copulativeSubj rdfs:subPropertyOf lemon:synArg .
+lexinfo:comparativeComplement rdfs:subPropertyOf lemon:synArg .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="197" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mapping-ex5.png"
+ ALT="Image mapping-ex5">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">61</SPAN>
+</DIV>
+
+<P>
+This comparative property is not currently representable in OWL, however it is possible to express it in SWRL, for example we could define the <TT>biggerThan</TT> property in the following way
+
+<P>
+<PRE>
+:y rdf:type swrl:Variable .
+:x rdf:type swrl:Variable .
+:s1 rdf:type swrl:Variable .
+:s2 rdf:type swrl:Variable .
+[ rdf:type swrl:Imp ;
+  swrl:body ( [ rdf:type swrl:ClassAtom ;
+                swrl:classPredicate :City ;
+                swrl:argument1 :x
+              ] 
+              [ rdf:type swrl:ClassAtom ;
+                swrl:classPredicate :City ;
+                swrl:argument1 :y
+              ] 
+              [ rdf:type swrl:DatavaluedPropertyAtom ;
+                swrl:argument2 :s1 ;
+                swrl:propertyPredicate :size ;
+                swrl:argument1 :x
+              ]
+              [ rdf:type swrl:DatavaluedPropertyAtom ;
+                swrl:argument2 :s2 ;
+                swrl:propertyPredicate :size ;
+                swrl:argument1 :y
+              ]
+              [ rdf:type swrl:BuiltinAtom ;
+                swrl:builtin swrlb:greaterThan ;
+                swrl:arguments ( :s1
+                                 :s2 )
+              ]
+            ) ;
+  swrl:head ( [ rdf:type swrl:IndividualPropertyAtom ;
+                         swrl:propertyPredicate :biggerThan ;
+                         swrl:argument1 :x ;
+                         swrl:argument2 :y
+              ]
+            ) ] .
+</PRE>
+<SPAN  CLASS="textbf">SWRL Rule:</SPAN>
+
+<P>
+City(?x) , City(?y) , size(?x, ?s1) , size(?y, ?s2) , greaterThan(?s1, ?s2) → biggerThan(?x, ?y)
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">62</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html534"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html530"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html524"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html532"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html535"
+  HREF="node33.html">Correspondence</A>
+<B> Up:</B> <A NAME="tex2html531"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html525"
+  HREF="node31.html">Mapping to more complex</A>
+ &nbsp; <B>  <A NAME="tex2html533"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

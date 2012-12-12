@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Conditions</TITLE>
+<META NAME="description" CONTENT="Conditions">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html510"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html506"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html500"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html508"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html511"
+  HREF="node31.html">Mapping to more complex</A>
+<B> Up:</B> <A NAME="tex2html507"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html501"
+  HREF="node29.html">Predicate mapping</A>
+ &nbsp; <B>  <A NAME="tex2html509"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044400000000000000">
+Conditions</A>
+</H3>
+
+<P>
+Conditions are another mechanism applied to senses to restrict the mapping between the syntactic and semantic layers. Conditions are something that can be generally tested to check whether a given lexical entry is appropriate to an ontology reference or vica versa. One of the main usage of conditions is to describe the necessary constructs that are beyond the true “sense” of the lexical entry, but are essential to understanding the mapping. For example the German verb “essen” is generally used for humans, whereas “fressen” is generally used when the subject is an animal. This can be modeled by saying the two verbs are restricted with the <TT>propertyDomain</TT> and <TT>propertyRange</TT>. This is a condition that applies only if  the object/subject of the triple in question is in the appropriate class. In fact, as <I>lemon</I> is based on RDF(S) and OWL and thus makes an <SPAN  CLASS="textit">open world assumption</SPAN>, such conditions are only false if it is provable that the object/subject is not in the appropriate class. 
+
+<P>
+<PRE>
+:essen lemon:sense [ lemon:reference ontology:eat ;
+   lemon:propertyDomain ontology:Human ] .
+:fressen lemon:sense [ lemon:reference ontology:eat ;
+   lemon:propertyDomain ontology:NonHuman ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">52</SPAN>
+</DIV>
+
+<P>
+<I>lemon</I> only contains these two properties however we may also extends the <TT>condition</TT> property to new conditions as is required. For example, we take the Spanish “párajo”, which means “bird” but is used only for small birds that can fly. So we may introduce a property <TT>notUsedFor</TT> to indicate particular subclasses that the term may not be used for, e.g., here we indicate that it is not used for <SPAN  CLASS="textit">ratites</SPAN> (order <SPAN  CLASS="textit">struthioniformes</SPAN>), the taxon containing ostriches, emus, rheas and kiwis:
+
+<P>
+<PRE>
+:parajo lemon:canonicalForm [
+    lemon:writtenRep "bird"@es ];
+  lemon:sense [
+    lemon:reference ontology:Bird ;
+    :notUsedFor ontology:Ratite
+  ] .
+  
+:notUsedFor rdfs:subPropertyOf lemon:condition .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">53</SPAN>
+</DIV>
+
+<P>
+We can even include full logical conditions that can be used to test if a sense should be used by specifying a rule in some logic that can be evaluated. We present such an example below; it should be read as “does there exist a <TT>?y</TT> such that for some  individual <TT>?x</TT>, <TT>flowsInto(?x,?y)</TT> and <TT>River(?y)</TT> hold)/
+
+<P>
+<PRE>
+:riviere lemon:sense [ lemon:reference ontology:River ; 
+   lemon:condition [ lemon:value "exists ?y : flowsInto(?x,?y), River(?y)" ] ] .
+:fleuve lemon:sense [ lemon:reference ontology:River ;
+   lemon:condition [ lemon:value "exists ?y : flowsInto(?x,?y), Sea(?y)" ] ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">54</SPAN>
+</DIV>
+
+<P>
+Readers should note we use a new property <TT>value</TT> here with a blank node. This is because we require that the range of <TT>condition</TT> are individuals in order to guarantee the model is OWL DL compatible. We discuss <TT>value</TT> more in section <A HREF="node11.html#topics"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+There is some overlap between conditions and contexts, however as a rule of thumb, the use of a lexical entry for an ontology entity that violates the context would be considered “inappropriate” by a reader, where as if the condition is violated it would be considered “incorrect.”
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html510"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html506"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html500"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html508"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html511"
+  HREF="node31.html">Mapping to more complex</A>
+<B> Up:</B> <A NAME="tex2html507"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html501"
+  HREF="node29.html">Predicate mapping</A>
+ &nbsp; <B>  <A NAME="tex2html509"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

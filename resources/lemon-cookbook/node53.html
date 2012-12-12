@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SKOS</TITLE>
+<META NAME="description" CONTENT="SKOS">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node54.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node54.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html798"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html794"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html788"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html796"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html799"
+  HREF="node54.html">TBX</A>
+<B> Up:</B> <A NAME="tex2html795"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Previous:</B> <A NAME="tex2html789"
+  HREF="node52.html">What lemon omits from</A>
+ &nbsp; <B>  <A NAME="tex2html797"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00062000000000000000">
+SKOS</A>
+</H2>
+
+<P>
+<I>lemon</I> is designed to subsume most of the features of SKOS&nbsp;(<A
+ HREF="node60.html#skos-reference">Miles and Bechhofer, 2009</A>), in particular the ability to state preferred labels and represent soft semantic relations. <I>lemon</I> uses the sub-properties of <TT>lexicalForm</TT> and <TT>isReferenceOf</TT> to more precisely capture the same semantics as SKOS's prefLabel, altLabel and hiddenLabel. The conversion is as follows:
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">Canonical Form</TD>
+<TD ALIGN="LEFT">Other Form</TD>
+<TD ALIGN="LEFT">Abstract Form</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Preferred Reference of</TD>
+<TD ALIGN="LEFT">prefLabel</TD>
+<TD ALIGN="LEFT">altLabel</TD>
+<TD ALIGN="LEFT">hiddenLabel</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Alternative Reference of</TD>
+<TD ALIGN="LEFT">altLabel</TD>
+<TD ALIGN="LEFT">altLabel</TD>
+<TD ALIGN="LEFT">hiddenLabel</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Hidden Reference of</TD>
+<TD ALIGN="LEFT">hiddenLabel</TD>
+<TD ALIGN="LEFT">hiddenLabel</TD>
+<TD ALIGN="LEFT">hiddenLabel</TD>
+</TR>
+</TABLE>
+
+<P>
+As such it should be easy to convert a <I>lemon</I> model into a SKOS model, but converting the other way is harder as it involves deducing if the reason for an alternative or hidden label is pragmatic or morphosyntactic.
+
+<P>
+<I>lemon</I> also allows for SKOS’s semantic properties broader, narrower and related to be mapped in a one-to-one manner to <I>lemon</I>’s broader, narrower and senseRelation. Although Like the <I>lemon</I> properties are - like their SKOS counterparts - not transitive, <I>lemon</I>'s concept of senses being related (i.e. <TT>senseRelation</TT>) is a super property of broader and narrower. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html798"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html794"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html788"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html796"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html799"
+  HREF="node54.html">TBX</A>
+<B> Up:</B> <A NAME="tex2html795"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Previous:</B> <A NAME="tex2html789"
+  HREF="node52.html">What lemon omits from</A>
+ &nbsp; <B>  <A NAME="tex2html797"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

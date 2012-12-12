@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>TBX</TITLE>
+<META NAME="description" CONTENT="TBX">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html808"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html804"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html800"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html806"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html809"
+  HREF="node55.html">Conclusion</A>
+<B> Up:</B> <A NAME="tex2html805"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Previous:</B> <A NAME="tex2html801"
+  HREF="node53.html">SKOS</A>
+ &nbsp; <B>  <A NAME="tex2html807"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00063000000000000000">
+TBX</A>
+</H2>
+
+<P>
+TBX (Term Base eXchange, ISO 30042) is a standard that is used for exchanging terminology databases and in particular translation memories. Therefore, a certain degree of interoperability with <I>lemon</I> would be useful. As with LMF, TBX contains much header information and this can mostly be either discarded or mapped onto the descriptions given in 4.7.2. The body of a TBX document consists primarily of a set of termEntrys each of which is a concept, these roughly correspond to sense/reference pairs. The conversion is trivial if there is a known ontology referenced by the term base (ideally indicated by a ref tag), however if this is not the case either the id attribute of termEntry can be used as a URI or some invented URI should be used. Doing this effectively raises the concepts expressed in the TBX document into a pseudo-ontology, so they can be used with <I>lemon</I>. In TBX each termEntry is first split into languages and then into terms, as such each langSet should be mapped to a lexicon in <I>lemon</I>. Finally, the terms should be mapped to lexical entries with a given form. As TBX does not have a simple method for indicating the standard form, either the forms should be guessed from properties such as lemma, or all just marked with the general form.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html808"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html804"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html800"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html806"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html809"
+  HREF="node55.html">Conclusion</A>
+<B> Up:</B> <A NAME="tex2html805"
+  HREF="node45.html">Relation to existing systems</A>
+<B> Previous:</B> <A NAME="tex2html801"
+  HREF="node53.html">SKOS</A>
+ &nbsp; <B>  <A NAME="tex2html807"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,25 @@
+                        <div class="pageMid">
+  <h1>Lemon source</h1>
+  Lemon Source is a Wiki-like interface to lemon allowing you to create your own models and make them available on the web.<br/> 
+  
+  To use lemon source <a href="http://monnetproject.deri.ie/lemonsource">click here</a>
+  
+  <h3>Lemon Generator</h3>
+  Lemon Source incorporates the lemon generator that extends OWL and RDFS ontologies by automatically applying the following analysis
+
+  <ul>
+    <li>Tokenization</li>
+    <li>Lemmatization</li>
+    <li>Part-of-speech detection</li>
+    <li>Phrase analysis (parsing)</li>
+    <li>Syntactic Categorization</li>
+  </ul>
+
+  Lemon Source integrates this tool, however if you may directly generate lexica <a href="http://monnet01.sindice.net:8080/generate">here</a>.
+
+</div>
+
+
+
+
+

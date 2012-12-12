@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Phrase structures</TITLE>
+<META NAME="description" CONTENT="Phrase structures">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node23.html">
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html408"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html404"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html398"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html406"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html409"
+  HREF="node23.html">Dependency relations</A>
+<B> Up:</B> <A NAME="tex2html405"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html399"
+  HREF="node21.html">Decomposition of terms</A>
+ &nbsp; <B>  <A NAME="tex2html407"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00043200000000000000">
+Phrase structures</A>
+</H3>
+
+<P>
+The multi-word expression extensions of lemon are intended to model phrase structures of multi-word expressions. These are done through the use of the properties <TT>phraseRoot</TT>, <TT>edge</TT> and <TT>leaf</TT>, which allows arbitrary graphs to be created and related. For example, the decomposition of “human immunodeficiency virus” into “[human [immunodeficiency [virus]]]”, can be represented as follows.
+
+<P>
+<PRE>
+:human_immunodeficiency_virus
+  lemon:decomposition ( :human_component 
+                        :immunodeficiency_component 
+                        :virus_component ) ;
+  lemon:phraseRoot [
+      lemon:edge [ lemon:leaf :human_component ] ;
+      lemon:edge [
+        lemon:edge [ lemon:leaf :immunodeficiency_component ]
+        lemon:edge [
+          lemon:edge [ lemon:leaf :virus_component ]
+        ]
+      ]
+    ] .
+    
+:human_component lemon:element :human .
+:immondeficiency_component lemon:element :immunodeficiency .
+:virus_component lemon:element :virus .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">36</SPAN>
+</DIV>
+
+<P>
+It is important to note here that the phrase structure tree is not itself ordered, but the decomposition is, hence the order is obtained this way. It is further possible to name the arcs and nodes, by means of the property <TT>constituent</TT>. For example, we could extend the above example by denoting the (sub)phrases as follows:
+
+<P>
+<PRE>
+:human_immunodeficiency_virus
+  lemon:decomposition ( :human_component 
+                        :immunodeficiency_component 
+                        :virus_component ) ;
+    lemon:phraseRoot [ lemon:constituent :NP ;
+      lemon:edge [ lemon:constituent :NN ;
+                   lemon:leaf :human_component ]  ;
+      lemon:edge [ lemon:constituent :NP ;
+        lemon:edge [ lemon:constituent :NN ;
+                     lemon:leaf :immunodeficiency_component ] ;
+        lemon:edge [ lemon:constituent :NP ;
+          lemon:edge [ lemon:constituent :NN ;
+                       lemon:leaf :virus_component ]
+          ]
+        ]
+      ] .
+    
+:human_component lemon:element :human .
+:immondeficiency_component lemon:element :immunodeficiency .
+:virus_component lemon:element :virus .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="276" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mwe-ex1.png"
+ ALT="Image mwe-ex1">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">37</SPAN>
+</DIV>
+
+<P>
+Note that in the example all the constituents are marked as resources in the model. This means that there must exist some description already of the valid phrase constituents that exist for a certain grammar. Hence, for each grammar, there must be a <SPAN  CLASS="textit">grammar description ontology</SPAN>.
+
+<P>
+It is of course possible for multiple lexical entries to share the same phrase structure and this provides a more principled modelling of the decomposition than in section <A HREF="node3.html#core">1</A>. This is as follows:
+
+<P>
+<PRE>
+:new_york_city
+  lemon:decomposition ( :comp1 
+                        :comp2
+                        :comp3 ) ;
+  lemon:phraseRoot [
+    lemon:edge :new_york_node ;
+    lemon:edge [ lemon:constituent :NN ;
+                 lemon:leaf :comp3 ]
+  ] .
+  
+:new_york
+  lemon:decomposition ( :comp1
+                        :comp2 ) ;
+  lemon:phraseRoot :new_york_node .
+
+:new_york_node 
+  lemon:edge [ lemon:constituent :NN ;
+               lemon:leaf :comp1 ] ;
+  lemon:edge [ lemon:constituent :NP ;
+    lemon:edge [ lemon:constituent :NN ;
+                 lemon:leaf :comp2 ] ] . 
+                 
+:comp1 lemon:element :new .
+:comp2 lemon:element :york .
+:comp3 lemon:element :city .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="429" ALIGN="BOTTOM" BORDER="0"
+ SRC="./mwe-ex3.png"
+ ALT="Image mwe-ex3">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">38</SPAN>
+</DIV>
+
+<P>
+Here <TT>:new_york_node</TT> is reused from the ``New York City'' tree as the root of the ``New York'' tree.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html408"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html404"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html398"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html406"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html409"
+  HREF="node23.html">Dependency relations</A>
+<B> Up:</B> <A NAME="tex2html405"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html399"
+  HREF="node21.html">Decomposition of terms</A>
+ &nbsp; <B>  <A NAME="tex2html407"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

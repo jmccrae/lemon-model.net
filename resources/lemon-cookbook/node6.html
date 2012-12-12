@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Summary of vocabulary introduced in this section</TITLE>
+<META NAME="description" CONTENT="Summary of vocabulary introduced in this section">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html174"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html170"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html166"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html172"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html175"
+  HREF="node7.html">Modules</A>
+<B> Up:</B> <A NAME="tex2html171"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html167"
+  HREF="node5.html">Canonical forms and preferred</A>
+ &nbsp; <B>  <A NAME="tex2html173"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000">
+Summary of vocabulary introduced in this section</A>
+</H2>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT"><I>lemon</I> element</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Description</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>entry</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>States that a lexical entry is in a given lexicon</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>form</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>States a realization of a lexical entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>canonicalForm</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Gives the dictionary form of a lexical entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>otherForm</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Gives an alternative form of a lexical entry (Inflectional variant)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>abstractForm</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Gives a non-display form of a lexical entry (Non-realizable variant)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>language</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>The language of a lexicon, specified as an ISO 639 code.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>sense</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Specifies the lexical entry a sense refers to</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>reference</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Specifies a connection from a sense to a resource</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>isReferenceOf</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Specifies the sense referred to by an ontology reference. Inverse of <TT>reference</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>prefSem</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates the preferred entry and sense for an ontology reference.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>altSem</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates an non-preferred but valid entry and sense for an ontology reference.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>hiddenSem</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates a generally incorrect entry and sense for an ontology reference.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>isSenseOf</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates the lexical entry for a given sense. Inverse of <TT>sense</TT>.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>representation</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Specifies a specific representation of a form</TD>
+</TR>
+<TR><TD ALIGN="LEFT">↳<TT>writtenRep</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Specifies a specific written representation of a form</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>Word</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates the lexical entry is a word</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>Phrase</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates the lexical entry is composed of multiple words</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>Part</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=227>Indicates the lexical entry is a part of a word (e.g., an affix)</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html174"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html170"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html166"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html172"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html175"
+  HREF="node7.html">Modules</A>
+<B> Up:</B> <A NAME="tex2html171"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html167"
+  HREF="node5.html">Canonical forms and preferred</A>
+ &nbsp; <B>  <A NAME="tex2html173"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Translation as variation</TITLE>
+<META NAME="description" CONTENT="Translation as variation">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html357"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html353"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html347"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html355"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html358"
+  HREF="node19.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html354"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html348"
+  HREF="node17.html">Form variants</A>
+ &nbsp; <B>  <A NAME="tex2html356"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00042500000000000000">
+Translation as variation</A>
+</H3>
+
+<P>
+Translated variants are for the most part naturally included within the <I>lemon</I> model by the use of references, as translated variants should share the same reference. Hence the ontology should act as an intermediate layer linking lexical entries of different languages. However, in some cases the reference may not be available, or it may be of interest to mark lexical entries as translations if they do not share the same reference. In such cases, sub-properties of <TT>senseRelation</TT> can be used. It should be clear that this translation link is between senses of words as the term should be disambiguated, even if there is not a clear reference for the translation. For example, we will consider the case of “cat” translated into German, and French as “Katze” and “chat” respectively.
+<PRE>
+:lexicon_en lemon:entry :cat ;
+  lemon:language “en” .
+:lexicon_de lemon:entry :katze ;
+  lemon:language “de”.
+:lexicon_fr lemon:entry :chat ;
+  lemon:language “fr”.
+
+:cat lemon:canonicalForm [ lemon:writtenRep “cat”@en ] ;
+  lemon:sense :cat_sense .
+
+:chat lemon:canonicalForm [ lemon:writtenRep “chat”@fr ] ;
+  lemon:sense [ isocat:translationOf :cat_sense ] .
+
+:katze lemon:canonicalForm [ lemon:writtenRep “katze”@de ] ;
+  lemon:sense [ isocat:translationOf :cat_sense ] .
+
+isocat:translationOf rdfs:subPropertyOf lemon:senseRelation .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="463" ALIGN="BOTTOM" BORDER="0"
+ SRC="./variation-ex2.png"
+ ALT="Image variation-ex2">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">29</SPAN>
+</DIV>
+
+<P>
+As can be seen the translation arc does not in itself state the language pairs in the translation, however the language can be extracted from either the lexica containing the term or from the xml:lang special property. 
+
+<P>
+Modeling translation as variation may be particularly useful if you wish to indicate that a word is a translation of another word. For example, consider the French words “rivière” and “fleuve” which are both translations of the English word “river”. However following the definitions of these words (these are given in section <A HREF="node33.html#correspondence"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>) it may be sensible to map the French words to the anonymous subclasses 
+WaterCourse⊓∃flowsInto.WaterCourse and WaterCourse⊓∃flowsInto.Sea respectively, hence we get the following modeling:
+
+<P>
+<PRE>
+:river lemon:canonicalForm [ lemon:writtenRep “river”@en ] ;
+  lemon:sense :river_sense .
+:river_sense lemon:reference ontology:WaterCourse . 
+
+:riviere lemon:canonicalForm [ lemon:writtenRep “rivière”@fr ] ;
+  lemon:sense [ lemon:reference [ a owl:Class
+      owl:equivalentTo [ owl:intersectionOf (
+        ontology:WaterCourse ;
+        owl:Restriction [
+           owl:onProperty ontology:flowsInto ;
+           owl:allValuesForm ontology:WaterCourse
+        ]
+     )
+  isocat:translationOf :river_sense 
+]]] .
+
+:fleuve lemon:canonicalForm [ lemon:writtenRep “fleuve”@fr ] ;
+  lemon:sense [ lemon:reference [ a owl:Class
+      owl:equivalentTo [ owl:intersectionOf (
+        ontology:WaterCourse ;
+        owl:Restriction [
+           owl:onProperty ontology:flowsInto ;
+           owl:allValuesForm ontology:Sea
+        ]
+     ) 
+  isocat:translationOf :river_sense 
+]]] .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="387" ALIGN="BOTTOM" BORDER="0"
+ SRC="./variation-ex3.png"
+ ALT="Image variation-ex3">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">30</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html357"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html353"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html347"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html355"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html358"
+  HREF="node19.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html354"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html348"
+  HREF="node17.html">Form variants</A>
+ &nbsp; <B>  <A NAME="tex2html356"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

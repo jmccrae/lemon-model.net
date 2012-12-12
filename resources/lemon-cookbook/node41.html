@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Annotation schemes</TITLE>
+<META NAME="description" CONTENT="Annotation schemes">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html646"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html642"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html636"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html644"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html647"
+  HREF="node42.html">Global Information</A>
+<B> Up:</B> <A NAME="tex2html643"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+<B> Previous:</B> <A NAME="tex2html637"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+ &nbsp; <B>  <A NAME="tex2html645"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00051100000000000000">
+Annotation schemes</A>
+</H3>
+
+<P>
+One of the most important issues in terminology management is the ability to express the ownership and creation date of a lexicon and its entries. <I>lemon</I> has no mechanism of its own for performing this task instead, like many other RDF models it uses the Dublin Core vocabulary for this. The Dublin Core vocabulary allows the following to be stated:
+
+<P>
+
+<UL>
+<LI>Creator: The creator of the given resource
+</LI>
+<LI>Description: A description of the resource. <TT>lemon:definition</TT> should be used for defining senses of lexical entries, <TT>dublincore:description</TT> for describing other parts of the model e.g., the lexicon object.
+</LI>
+<LI>Publisher: The publisher of the data
+</LI>
+<LI>Contributor: Any contributors to the given lexicon
+</LI>
+<LI>Date: The date a given resource was created
+</LI>
+<LI>Format: Generally should be specified as MIME. Use with care, as the format of the ontology may change.
+</LI>
+<LI>Identifier: An identifier of the lexicon or entry (useful if converting from another format)
+</LI>
+<LI>Source: The source of a given resource
+</LI>
+<LI>Coverage: The time and location covered by the resource (if relevant)
+</LI>
+<LI>Rights: Any copyright information
+</LI>
+</UL>
+
+<P>
+In addition, there are several annotations available in the OWL and RDF schemas that are useful for lexicon management
+
+<P>
+
+<UL>
+<LI><TT>owl:backwardCompatibleWith</TT>: The lexicon is compatible with some previous lexicon
+</LI>
+<LI><TT>rdfs:comment</TT>: A comment about a resource
+</LI>
+<LI><TT>owl:deprecated</TT>: Indicates the resource should not be used any more
+</LI>
+<LI><TT>owl:incompatibleWith</TT>: The lexicon is incompatible with some previous lexicon
+</LI>
+<LI><TT>rdfs:isDefinedBy</TT>: The resource is fully defined else where
+</LI>
+<LI><TT>owl:priorVersion</TT>: Indicates an earlier version of the lexicon
+</LI>
+<LI><TT>rdfs:seeAlso</TT>: Refer to another web resource
+</LI>
+<LI><TT>owl:versionInfo</TT>: The version number of the lexicon
+</LI>
+</UL>
+
+<P>
+This information can of course simply be added as triples
+
+<P>
+<PRE>
+@prefix dublincore: &lt;http://purl.org/dc/elements/1.1/&gt;
+@prefix rdfs: &lt;http://www.w3.org/2001/02/rdf-schema#&gt;
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+
+:myLexicon a lemon:Lexicon ;
+   dublincore:creator "John McCrae" ;
+   dublincore:date "2010-07-24"^^xsd:date ;
+   rdfs:comment "An example lexicon from the lemon cookbook"@en ;
+   lemon:language "en" ;
+   lemon:entry :cat .
+   
+:cat a lemon:Word ;
+   dublincore:creator "John McCrae" ;
+   dublincore:date "2010-07-25"^^xsd:date ;
+   rdfs:seeAlso "http://en.wikipedia.org/wiki/Cat" ;
+   lemon:canonicalForm [ lemon:writtenRep "cat"@en ] .
+   .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">76</SPAN>
+</DIV>
+
+<P>
+The use of these annotations is another reason why the ranges of many properties are resources instead of literals as expected. For example we could now easily state the source of a definition as follows.
+
+<P>
+<PRE>
+:cat lemon:sense [ lemon:reference ontology:cat ; 
+   lemon:definition [ 
+      lemon:value "The cat is a small domesticated carnivorous animal"@en ;
+      dublincore:source "http://en.wikipedia.org/wiki/Cat" ]
+    ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">77</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html646"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html642"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html636"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html644"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html647"
+  HREF="node42.html">Global Information</A>
+<B> Up:</B> <A NAME="tex2html643"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+<B> Previous:</B> <A NAME="tex2html637"
+  HREF="node40.html">Annotations and Global Restrictions</A>
+ &nbsp; <B>  <A NAME="tex2html645"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

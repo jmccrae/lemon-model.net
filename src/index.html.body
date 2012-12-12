@@ -1,0 +1,53 @@
+                                        <div class="pageMid">
+                            <h1>What is lemon?</h1>
+            Lemon is a proposed model for modeling lexicon and machine-readable dictionaries and linked to the Semantic Web and the Linked Data cloud. It was designed to meet the 
+            following challenges
+
+            <ul>
+                <li>
+                    RDF-native form to enable leverage of existing Semantic Web technologies (<a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL</a>,
+                    <a href="http://www.w3.org/TR/owl2-overview/">OWL</a>, <a href="http://www.w3.org/2005/rules/wiki/RIF_Working_Group">RIF</a> etc.).
+                </li>
+                <li>
+                    Linguistically sound structure based on <a href="http://www.lexicalmarkupframework.org/">LMF</a> to enable conversion to existing offline formats.
+                </li> 
+                <li>
+                    Separation of the lexicon and ontology layers, to ensure compatability with existing OWL models.
+                </li>
+                <li>
+                    Linking to data categories, in order to allow for arbitrarily complex linguistic description. In particular the <a href="http://lexinfo.net/">LexInfo</a> vocabulary is aligned to lemon and <a href="http://www.isocat.org">ISOcat</a>.
+                </li>
+                <li>
+                    A small model using the principle of least power - the less expressive the language,
+                    the more reusable the data.
+                </li>
+            </ul>
+
+            Lemon was developed by the <a href="http://www.monnet-project.eu/">Monnet project</a> as a collaboration between:
+
+            <a href="http://www.cit-ec.uni-bielefeld.de/">CITEC</a> at <a href="http://www.uni-bielefeld.de/">Bielefeld University</a>, <a href="http://www.deri.ie/">DERI</a> at the <a href="http://www.nuigalway.ie/">National University of Ireland, Galway</a>, <a href="http://www.upm.es/">Universidad Polit&#xe9;cnica de Madrid</a> and the <a href="http://www.dfki.de/">Deutsche Forschungszentrum f&#xfc;r K&#xfc;nstliche Intelligenz</a>
+
+            <h1>How can I use lemon?</h1>
+            
+            The lemon model is a standard RDF model and can be used with any existing tools for processing RDF. To see how to get started with the model see 
+            <a href="5mins.html">our guide</a>, or for more detailed issues you may consult the <a href="cookbook.html">Lemon Cookbook</a>.
+            
+            <p>
+            <a href="api.html">Lemon API</a> is a Java-based interface for using lemon that is compatible with all major platforms. In addition, there is a
+            Wiki-like site for manipulating and publishing lemon data, called <a href="source.html">Lemon Source</a>. This includes a service for generating lexica from ontologies.
+            
+            <h1>Can I contribute to the project?</h1>
+            
+            Lemon is still under development and we welcome contributions. If you wish to get involved please join the 
+            <a href="http://w3.org/community/ontolex">W3C OntoLex Community Group</a>
+
+        </div>
+
+        <div class="pageBottom">
+            <br/>
+            <br/>
+            <br/>
+
+
+
+

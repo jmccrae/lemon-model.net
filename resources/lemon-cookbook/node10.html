@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Describing phonetics</TITLE>
+<META NAME="description" CONTENT="Describing phonetics">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html257"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html253"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html247"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html255"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html258"
+  HREF="node11.html">Topics and contexts</A>
+<B> Up:</B> <A NAME="tex2html254"
+  HREF="node8.html">Linguistic Description Module</A>
+<B> Previous:</B> <A NAME="tex2html248"
+  HREF="node9.html">Linguistic properties</A>
+ &nbsp; <B>  <A NAME="tex2html256"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00041200000000000000">
+Describing phonetics</A>
+</H3>
+
+<P>
+For representing transliterations and pronounciations, extra subproperties of <TT>representation</TT> (the super-property of <TT>writtenRep</TT>) can be introduced. For example we model the Japanese word “日本語”, which can be transliterated to either “にほんご” in the phonetic Japanese script Hiragana or “nihongo” in the Latin alphabet
+
+<P>
+<PRE>
+:nihongo lemon:canonicalForm [
+</PRE>
+<BR>
+<TT>   lemon:writtenRep "日本語"@ja-Jpan ;</TT>
+
+<P>
+<TT>   isocat:transliteration "にほんご"@ja-Hira ;</TT>
+<BR>
+<PRE>
+   isocat:transliteration "nihongo"@ja-Latn ] .
+	
+isocat:transliteration rdfs:subPropertyOf lemon:representation .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">15</SPAN>
+</DIV>
+
+<P>
+This sub-property relation also then allows us to develop specific versions of transliteration, for example “神保町” is transliterated as “jimbōchō” in the <SPAN  CLASS="textit">Hepburn</SPAN> romanization scheme (the most widely used method for transliterating Japanese) and “zinbôtyô” in the <SPAN  CLASS="textit">Kunrei-shiki</SPAN> (ISO 3602) romanization scheme. This could be represented as follows.
+
+<P>
+<PRE>
+:jimbocho lemon:canonicalForm [
+</PRE>
+<BR>
+<TT>     lemon:writtenRep "神保町"@ja-Jpan ,</TT>
+<BR>
+<PRE>
+     :hepburnTransliteration "jimbōchō"@ja-Latn ;
+     :kunreiTransliteration "zinbôtyô"@ja-Latn ] .
+     
+:hepburnTransliteration rdfs:subPropertyOf isocat:transliteration .
+:kunreiTransliteration rdfs:subPropertyOf isocat:transliteration .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">16</SPAN>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

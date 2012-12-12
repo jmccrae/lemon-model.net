@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Decomposition of terms</TITLE>
+<META NAME="description" CONTENT="Decomposition of terms">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html396"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html392"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html386"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html394"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html397"
+  HREF="node22.html">Phrase structures</A>
+<B> Up:</B> <A NAME="tex2html393"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html387"
+  HREF="node20.html">Phrase Structure Module</A>
+ &nbsp; <B>  <A NAME="tex2html395"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00043100000000000000">
+Decomposition of terms</A>
+</H3>
+
+<P>
+The base method for representing multi-word lexical entries is by decomposing them into their component words, this is done through the usage of RDF lists of component objects. This works as follows.
+
+<P>
+<PRE>
+:siamese_cat lemon:decomposition ( 
+   [ lemon:element :siamese ]
+   [ lemon:element :cat ] ) .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">31</SPAN>
+</DIV>
+
+<P>
+Note that the above example uses the RDF list mechanism, which, while relatively compact in Turtle syntax, can get quite large in N-Triples form, e.g.,
+
+<P>
+<PRE>
+:siamese_cat lemon:decomposition :siamese_cat_LoC .
+:siamese_cat_LoC rdf:first :siamese_cat_C1 .
+:siamese_cat_LoC rdf:rest :cat_LoC .
+:siamese_cat_C1 lemon:element :siamese .
+:cat_LoC rdf:first :siamese_cat_C2 .
+:cat_LoC rdf:rest rdf:nil .
+:siamese_cat_C2 lemon:element :cat .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="473" HEIGHT="371" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex4.png"
+ ALT="Image core-ex4">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">32</SPAN>
+</DIV>
+
+<P>
+Compound words may also be broken up by the use of components for example, the German word “Schweineschnitzel” is composed of “Schwein” and “Schnitzel”.<A NAME="tex2html9"
+  HREF="footnode.html#foot1177"><SUP><SPAN CLASS="arabic">8</SPAN></SUP></A>
+<P>
+<PRE>
+:schweineschnitzel lemon:decomposition (
+   [ lemon:element :schwein ]
+   [ lemon:element :schnitzel ] ) .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">33</SPAN>
+</DIV>
+
+<P>
+<I>lemon</I> indicates the difference between compound words and phrases by the use of the classes <TT>Word</TT> and <TT>Phrase</TT>. As such it is possible to indicate that the composition is a separation of a multi-word expression into words, by adding type statements for the elements.
+
+<P>
+<A NAME="nyc1"></A><PRE>
+:siamese_cat a lemon:Phrase ;
+   lemon:decomposition (
+      [ lemon:element :siamese ]
+      [ lemon:element :cat ] ) .
+      
+:siamese a lemon:Word .
+:cat a lemon:Word .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">34</SPAN>
+</DIV>
+
+<P>
+A third subclass of lexical entry, <TT>Part</TT>, is provided for “part of words”, e.g., affices, which cannot be realised by themselves but may be stored in the lexicon. For example:
+
+<P>
+<PRE>
+:preordain lemon:decomposition (
+   [ lemon:element :pre ]
+   [ lemon:element :ordain ] ) .
+   
+:pre a lemon:Part .
+:ordain a lemon:Word .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">35</SPAN>
+</DIV>
+
+<P>
+We must note here the <TT>decomposition</TT> property is not intended for modelling phrase structure, <I>lemon</I> contains a separate mechanism for modelling this described in sections 2 and 4. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html396"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html392"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html386"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html394"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html397"
+  HREF="node22.html">Phrase structures</A>
+<B> Up:</B> <A NAME="tex2html393"
+  HREF="node20.html">Phrase Structure Module</A>
+<B> Previous:</B> <A NAME="tex2html387"
+  HREF="node20.html">Phrase Structure Module</A>
+ &nbsp; <B>  <A NAME="tex2html395"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

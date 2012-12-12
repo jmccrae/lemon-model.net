@@ -1,0 +1,11 @@
+eu.monnetproject.lemon
+eu.monnetproject.lemon.conversions.lmf
+eu.monnetproject.lemon.conversions.skosxl
+eu.monnetproject.lemon.impl
+eu.monnetproject.lemon.impl.io
+eu.monnetproject.lemon.impl.io.turtle
+eu.monnetproject.lemon.impl.io.xml
+eu.monnetproject.lemon.liam
+eu.monnetproject.lemon.liam.impl
+eu.monnetproject.lemon.model
+net.lexinfo

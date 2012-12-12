@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The semantics of the lemon model</TITLE>
+<META NAME="description" CONTENT="The semantics of the lemon model">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node39.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html666"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html662"
+  HREF="node39.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html658"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html664"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html667"
+  HREF="node44.html">Formal model of lemon</A>
+<B> Up:</B> <A NAME="tex2html663"
+  HREF="node39.html">Advanced Issues</A>
+<B> Previous:</B> <A NAME="tex2html659"
+  HREF="node42.html">Global Information</A>
+ &nbsp; <B>  <A NAME="tex2html665"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00052000000000000000"></A><A NAME="sense-section"></A>
+<BR>
+The semantics of the <I>lemon</I> model
+</H2>
+
+<P>
+One of the most important aspects of a <I>lemon</I> model is the connection between the semantics contained within the lexicon, and the semantics in the ontology. Before we can hope to handle this difficult task we divide the tasks that are intended to be performed into three main groups
+
+<P>
+
+<UL>
+<LI><SPAN  CLASS="textbf">Lexical</SPAN>: These are tasks that belong purely to the lexical layer of <I>lemon</I> and can be processed without strong semantic knowledge
+
+<UL>
+<LI><SPAN  CLASS="textit">Tokenization</SPAN>: Identifying words and components
+</LI>
+<LI><SPAN  CLASS="textit">Chunking</SPAN>: Identifying multi-word elements
+</LI>
+<LI><SPAN  CLASS="textit">POS-Tagging</SPAN>: Identifying labels for each token/chunk.
+</LI>
+<LI><SPAN  CLASS="textit">Lemmatization</SPAN>: Decomposing terms into inflectional components.
+</LI>
+<LI><SPAN  CLASS="textit">Parsing</SPAN>: Building a parse tree over a sentence.
+</LI>
+<LI><SPAN  CLASS="textit">Coreference</SPAN>: Deducing which elements in a sentence share a reference. (N.B., this task can often be considered to include weak semantic knowledge as well).
+</LI>
+<LI><SPAN  CLASS="textit">Inflection</SPAN>: Inverse of lemmatization
+</LI>
+<LI><SPAN  CLASS="textit">Grammar Generation</SPAN>: Inverse of parsing.
+</LI>
+</UL>
+</LI>
+<LI><SPAN  CLASS="textbf">Correspondence</SPAN>: Involves tasks that primarily focus on the task of connecting lexical realizations to conceptual objects.
+
+<UL>
+<LI><SPAN  CLASS="textit">Annotation/Word Sense Disambiguation</SPAN>: Converting the lexical representation to a semantic (ontological) relation
+</LI>
+<LI><SPAN  CLASS="textit">Selection</SPAN>: Inverse of grounding
+</LI>
+</UL>
+</LI>
+<LI><SPAN  CLASS="textbf">Reasoning</SPAN>: Making higher level deductions based on an ontological representation without lexical information.
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html668"
+  HREF="node44.html">Formal model of <I>lemon</I> senses</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html666"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html662"
+  HREF="node39.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html658"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html664"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html667"
+  HREF="node44.html">Formal model of lemon</A>
+<B> Up:</B> <A NAME="tex2html663"
+  HREF="node39.html">Advanced Issues</A>
+<B> Previous:</B> <A NAME="tex2html659"
+  HREF="node42.html">Global Information</A>
+ &nbsp; <B>  <A NAME="tex2html665"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

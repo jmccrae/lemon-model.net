@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Canonical forms and preferred lexicalizations</TITLE>
+<META NAME="description" CONTENT="Canonical forms and preferred lexicalizations">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html164"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html160"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html154"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html162"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html165"
+  HREF="node6.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html161"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html155"
+  HREF="node4.html">Main elements</A>
+ &nbsp; <B>  <A NAME="tex2html163"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+Canonical forms and preferred lexicalizations</A>
+</H2>
+
+<P>
+<I>lemon</I> allows syntactic variants to be differentiated from preferred forms by sub-properties of <TT>form</TT>.
+
+<P>
+<PRE>
+:animal lemon:canonicalForm [ lemon:writtenRep "animal"@en ] ;
+   lemon:otherForm [ lemon:writtenRep "animals"@en ] .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="394" HEIGHT="126" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex2.png"
+ ALT="Image core-ex2">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">4</SPAN>
+</DIV>
+
+<P>
+This allows <I>lemon</I> to differentiate between different forms of a word and different words. For example consider we have two labels for an ontology entity, “animal” and “creature”. This is modeled in <I>lemon</I> as follows:
+
+<P>
+<PRE>
+:animal lemon:canonicalForm [ lemon:writtenRep "animal"@en ] ;
+   lemon:otherForm [ lemon:writtenRep "animals"@en ] ;
+   lemon:sense [ lemon:reference ontology:animal ] .
+   
+:creature lemon:canonicalForm [ lemon:writtenRep "creature"@en ] ;
+   lemon:otherForm [ lemon:writtenRep "creatures"@en ] ;
+   lemon:sense [ lemon:reference ontology:animal ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">5</SPAN>
+</DIV>
+
+<P>
+It is also possible to state the lexicon-ontology relationship in the reverse direction because <TT>reference</TT> and <TT>sense</TT> have inverse properties <TT>isReferenceOf</TT> and <TT>isSenseOf</TT>. This allows example 5 to be stated as follows
+
+<P>
+<PRE>
+ontology:animal 
+   lemon:isReferenceOf [
+      lemon:isSenseOf [
+         lemon:canonicalForm [ lemon:writtenRep "animal"@en ] ;
+         lemon:otherForm [ lemon:writtenRep "animals"@en ]
+      ] 
+   ] ;
+   lemon:isReferenceOf [
+      lemon:isSenseOf [
+         lemon:canonicalForm [ lemon:writtenRep "creature"@en ] ;
+         lemon:otherForm [ lemon:writtenRep "creatures"@en ]
+      ]
+   ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">6</SPAN>
+</DIV>
+
+<P>
+It is also possible to state the lexicon without any senses or references and then introduce an ontology mapping layer by creating links such as
+
+<P>
+<PRE>
+:animal_sense lemon:isSenseOf :animal ;
+   lemon:reference ontology:animal .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">7</SPAN>
+</DIV>
+
+<P>
+In <I>lemon</I> we assume that each lexical entry is not semantically disambiguated, and that the reference provides the semantics of the term. We introduce sense to represent those occurrences when the lexical entry is used with the given meaning. As such it is assumed that “feline” and “cat” would not share a sense, even though they can be considered as synonyms.  Similarly “he is a cool cat” and “cats are mammals” are assumed to have the same lexical entry as they exhibit the same morphological/syntactic behaviors. This is summarized in the following diagram
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="237" HEIGHT="227" ALIGN="BOTTOM" BORDER="0"
+ SRC="./venn2-crop.png"
+ ALT="Image venn2-crop">
+
+</DIV>
+
+<P>
+One of the most important aspects of <I>lemon</I> is that <SPAN  CLASS="textit">senses should be unique to a given lexical entry/ontology reference pair</SPAN>, this means that “creature” and “animal”, should not refer to the same sense entity, but can be related using the <TT>equivalent</TT> property. If two lexical entries do share a sense, then it is assumed that they are lexically equivalent, which may be appropriate for example for an initialism or acronym and its full form. Similarly it should be understood that if a sense has two references then these references are equivalent (for example by OWL's <TT>equivalentClass</TT>) property. For more details of this see sections <A HREF="#mapping"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>, <A HREF="node43.html#sense-section"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> and <A HREF="node46.html#lmf">4.1</A>.
+
+<P>
+In <I>lemon</I> for each lexically different element, a different lexical entry and sense is used. This means that both lexical entries are considered possible representations of the ontology entity. 
+
+<P>
+Also like SKOS, we allow the inclusion of partial terms, which we refer to as “abstract”, this is useful for representing stems, affices and other morphological units. These are implemented by three sub-properties of <TT>form</TT> can also be used to describe linguistically relevant differences.
+
+<P>
+
+<UL>
+<LI><TT>canonicalForm</TT>: The standard (“dictionary”) citation form the entry.
+</LI>
+<LI><TT>otherForm</TT>: A morphological variant of the words.
+</LI>
+<LI><TT>abstractForm</TT>: A stem or other non-realizable morpheme, or other non-realizable forms.
+</LI>
+</UL>
+
+<P>
+As <I>lemon</I> defines a form as being invariant across different orthographies, different spellings of a word are represented by deriving a sub-property of <TT>representation</TT>. Here it is important to include the <TT>xml:lang</TT> tag to indicate the particular usage of a given term. For example the representation of “color” in US English spelling and “colour” in British English spelling.
+
+<P>
+<PRE>
+:color lemon:canonicalForm [
+    lemon:writtenRep "color"@en-us ;
+    lemon:writtenRep "colour"@en-gb ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">8</SPAN>
+</DIV>
+
+<P>
+It is also important to note that SKOS's <TT>prefLabel</TT>, <TT>altLabel</TT> and <TT>hiddenLabel</TT> do not distinguish between syntactic preference (like <TT>canonicalForm</TT> etc) and pragmatic preference, that is whether the term is preferred for terminological reasons. To cover this pragmatic preference <I>lemon</I> has three sub-properties of <TT>isReferenceOf</TT>, that cover this, namely, <TT>prefRef</TT>, <TT>altRef</TT>, <TT>hiddenRef</TT>. <TT>prefRef</TT> represents the preferred term of an ontology reference (there should be only one such entry), <TT>hiddenRef</TT> represents a term that is not used for various reason (for example it is antiquated) and <TT>altRef</TT> represents any other term. For example the following shows “tuberculosis”, with an alternative “TB” and an antiquated term “phthisis”.
+
+<P>
+<PRE>
+ontology:tuberculosis
+   lemon:prefRef [
+      lemon:isSenseOf [ :tuberculosis ]
+   ] ;
+   lemon:altRef [
+      lemon:isSenseOf [ :tb ]
+   ] ;
+   lemon:hiddenRef [
+      lemon:isSenseOf [ :phthisis ]
+   ] .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="./core-ex7.png"
+ ALT="Image core-ex7">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">9</SPAN>
+</DIV>
+
+<P>
+Between the sub-properties of <TT>form</TT> and <TT>isReferenceOf</TT> we can more precisely capture the same semantics as SKOS's <TT>prefLabel</TT>, <TT>altLabel</TT> and <TT>hiddenLabel</TT>. The conversion is as follows:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">Canonical Form</TD>
+<TD ALIGN="LEFT">Other Form</TD>
+<TD ALIGN="LEFT">Abstract Form</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Preferred Reference of</TD>
+<TD ALIGN="LEFT"><TT>prefLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>altLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>hiddenLabel</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Alternative Reference of</TD>
+<TD ALIGN="LEFT"><TT>altLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>altLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>hiddenLabel</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Hidden Reference of</TD>
+<TD ALIGN="LEFT"><TT>hiddenLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>hiddenLabel</TT></TD>
+<TD ALIGN="LEFT"><TT>hiddenLabel</TT></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html164"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html160"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html154"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html162"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html165"
+  HREF="node6.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html161"
+  HREF="node3.html">The lemon core</A>
+<B> Previous:</B> <A NAME="tex2html155"
+  HREF="node4.html">Main elements</A>
+ &nbsp; <B>  <A NAME="tex2html163"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

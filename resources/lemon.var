@@ -1,0 +1,10 @@
+URI: lemon
+
+Content-Type: application/rdf+xml
+URI: lemon.rdf
+
+Content-Type: text/turtle
+URI: lemon.ttl
+
+Content-Type: text/html
+URI: lemon.html

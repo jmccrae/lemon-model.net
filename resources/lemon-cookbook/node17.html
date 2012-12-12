@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Form variants</TITLE>
+<META NAME="description" CONTENT="Form variants">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html345"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html341"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html335"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html343"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html346"
+  HREF="node18.html">Translation as variation</A>
+<B> Up:</B> <A NAME="tex2html342"
+  HREF="node13.html">Variation Module</A>
+<B> Previous:</B> <A NAME="tex2html336"
+  HREF="node16.html">Subphrases as variation</A>
+ &nbsp; <B>  <A NAME="tex2html344"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00042400000000000000">
+Form variants</A>
+</H3>
+
+<P>
+As we have already seen <TT>senseRelation</TT> to relate different senses of a lexical entry, and <TT>lexicalVariant</TT> to relate different lexical entries, we will also introduce a third property <TT>formVariant</TT>, which relates different forms of the same lexical entries. This property can often be ignored, as the preferred way to represent form variants is by attaching an appropriate set of linguistic properties. However an alternative way to represent the entry “animal” with a plural “animals” is using a <TT>formVariant</TT> link.
+
+<P>
+<PRE>
+:animal lemon:canonicalForm :animal_sing_form ;
+   lemon:otherForm :animal_plural_form .
+   
+:animal_sing_form lemon:writtenRep "animal"@en ;
+   :pluralFormOf :animal_plural_form .
+
+:animal_plural_form lemon:writtenRep "animals"@en .
+
+:pluralFormOf rdfs:subPropertyOf lemon:formVariant .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">28</SPAN>
+</DIV>
+
+<P>
+We leave it to the implementation of software using the <I>lemon</I> model to choose which method to use, however we observe that the property/value modelling is generally more compact than form relations.
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

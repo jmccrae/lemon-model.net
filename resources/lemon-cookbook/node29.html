@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Predicate mapping</TITLE>
+<META NAME="description" CONTENT="Predicate mapping">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node30.html">
+<LINK REL="previous" HREF="node28.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html498"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html494"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html488"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html496"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html499"
+  HREF="node30.html">Conditions</A>
+<B> Up:</B> <A NAME="tex2html495"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html489"
+  HREF="node28.html">Phrase structure and frames</A>
+ &nbsp; <B>  <A NAME="tex2html497"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044300000000000000">
+Predicate mapping</A>
+</H3>
+
+<P>
+The mapping part of this module is primarily focussed on linking the entities in the ontology with the linguistic descriptions. This consists of primarily two tasks: describing how the arguments of an ontology predicate map to those of a syntactic frame and adding extra conditions for the applicability of a given mapping. 
+
+<P>
+We shall tackle the first part of this, which requires reifying the arguments of a property. Although RDF supports the reification of statements, this is not a reification over all triples using a given property, rather over a single property. We instead introduce the idea of a semantic argument, which can be related to the model via three properties, namely <TT>subjOfProp</TT>, <TT>objOfProp</TT> and <TT>isA</TT>. The former two are used if a lexical sense has a reference to a property in the ontology, for example
+
+<P>
+<PRE>
+:capital lemon:sense [ lemon:reference ontology:capital ;
+                       lemon:subjOfProp :capital_sem_subj ;
+                       lemon:objOfProp :capital_sem_obj ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">49</SPAN>
+</DIV>
+
+<P>
+Similarly <I>lemon</I> views classes as unary predicates like in other formalisms such as SWRL, the argument is then specified with the property <TT>isA</TT>
+
+<P>
+<PRE>
+:cat lemon:sense [ lemon:reference ontology:Cat ;
+                   lemon:isA :isa_cat ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">50</SPAN>
+</DIV>
+
+<P>
+In fact, <I>lemon</I> does not use separate elements for the syntactic and semantic arguments. This allows for much more economical encoding of arguments than in LMF, without any loss in expressivity (see section <A HREF="node46.html#lmf">4.1</A>).
+
+<P>
+<PRE>
+:capital lemon:sense [ lemon:reference ontology:capital ;
+                       lemon:subjOfProp :subject ;
+                       lemon:objOfProp :object ] ;
+   lemon:synBehavior [ lemon:synArg :subject ;
+                       lemon:synArg :object ] .
+
+:capital_obj lemon:marker :of .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="364" ALIGN="BOTTOM" BORDER="0"
+ SRC="./correspondence-ex1.png"
+ ALT="Image correspondence-ex1">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">51</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html498"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html494"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html488"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html496"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html499"
+  HREF="node30.html">Conditions</A>
+<B> Up:</B> <A NAME="tex2html495"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html489"
+  HREF="node28.html">Phrase structure and frames</A>
+ &nbsp; <B>  <A NAME="tex2html497"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

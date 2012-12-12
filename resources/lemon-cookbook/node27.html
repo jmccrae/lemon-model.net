@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Frames</TITLE>
+<META NAME="description" CONTENT="Frames">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html474"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html470"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html464"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html475"
+  HREF="node28.html">Phrase structure and frames</A>
+<B> Up:</B> <A NAME="tex2html471"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html465"
+  HREF="node26.html">Syntax and Mapping Module</A>
+ &nbsp; <B>  <A NAME="tex2html473"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044100000000000000">
+Frames</A>
+</H3>
+
+<P>
+<I>lemon</I>'s approach to syntax builds on the notion of a  “frame”, which represents a stereotypical occurrence of a lexical entry, with a set of arguments. The frame is indicated with the property <TT>synBehavior</TT>, and each of the argument with the property <TT>synArg</TT>. For example, modeling a simple transitive frame in English (X eats Y) is as follows:
+
+<P>
+<PRE>
+:eat lemon:synBehavior [ lemon:synArg :arg1 ;
+                         lemon:synArg :arg2 ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">42</SPAN>
+</DIV>
+
+<P>
+It is of course possible to relate these instances of by a subcategorization ontology such as LexInfo<A NAME="tex2html10"
+  HREF="footnode.html#foot1633"><SUP><SPAN CLASS="arabic">9</SPAN></SUP></A>. For example, it is possible to create subproperties of <TT>synArg</TT> to represent the syntactic functions of these arguments. Hence, the above example could be represented as follows.
+
+<P>
+<PRE>
+:eat lemon:synBehavior [ a lexinfo:TransitiveFrame ; 
+                         lexinfo:subject :eat_subject ;
+                         lexinfo:object :eat_object] .
+
+lexinfo:TransitiveFrame rdfs:subClassOf lemon:Frame .
+lexinfo:subject rdfs:subPropertyOf lemon:synArg .
+lexinfo:object rdfs:subPropertyOf lemon:synArg .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">43</SPAN>
+</DIV>
+
+<P>
+In many cases frames require a marker for the syntactic argument, this is generally an adposition, particle or case inflection. These can be modeled as follows.
+
+<P>
+English: “X is the capital of Y”
+
+<P>
+<PRE>
+:capital_of lemon:synBehavior [ lemon:synArg :subject ;
+                                lemon:synArg :pobject ] .
+                                         
+:noun_pp_pobject lemon:marker :of .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="394" HEIGHT="139" ALIGN="BOTTOM" BORDER="0"
+ SRC="./syntax-ex4.png"
+ ALT="Image syntax-ex4">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">44</SPAN>
+</DIV>
+
+<P>
+German: “X bedarf Y [genitive case]”<A NAME="tex2html12"
+  HREF="footnode.html#foot1634"><SUP><SPAN CLASS="arabic">10</SPAN></SUP></A>
+<P>
+<PRE>
+:beduerfen lemon:synBehavior [ lemon:synArg :subject ;
+                               lemon:synArg :object ] .
+                                        
+:genitiv_verb_object lemon:marker isocat:genitiveCase .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="394" HEIGHT="137" ALIGN="BOTTOM" BORDER="0"
+ SRC="./syntax-ex5.png"
+ ALT="Image syntax-ex5">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">45</SPAN>
+</DIV>
+
+<P>
+Japanese: “XはYが好きだ” (double subject construction) (“X ha Y ga suki da” = “X likes Y" lit. “X (<SPAN  CLASS="textit">primary subject</SPAN>) Y (<SPAN  CLASS="textit">secondary subject</SPAN>) is pleasing”) 
+
+<P>
+<PRE>
+:suki lemon:synBehavior [ lemon:synArg :ha_subject ;
+                                lemon:synArg :ga_subject ] .
+                                   
+:ha_subject lemon:marker :ha .
+:ga_subject lemon:marker :ga .
+</PRE>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+  WIDTH="591" HEIGHT="116" ALIGN="BOTTOM" BORDER="0"
+ SRC="./syntax-ex6.png"
+ ALT="Image syntax-ex6">
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">46</SPAN>
+</DIV>
+
+<P>
+<I>lemon</I> also allows for modeling using optional arguments in the frame, this is often the case with, for example, prepositionally marked arguments in English. For example the verb “move” can have prepositional arguments such “from”,“to”,“by”,“for”,“past”,“away”,“along” etc. These are modeled as extra arguments to the frame but are not necessary for the frame to give a valid syntactic realization. This is performed as follows.
+
+<P>
+<PRE>
+:move_frame lemon:synArg :move_frame_subject ,
+                         :move_frame_to_obj ,
+                         :move_frame_from_obj ,
+                         :move_frame_by_obj .
+:move_frame_to_obj  lemon:marker :to ;
+   lemon:optional "true"^^xsd:boolean .
+:move_frame_from_obj  lemon:marker :from ;
+   lemon:optional "true"^^xsd:boolean .
+:move_frame_by_obj  lemon:marker :by ;
+   lemon:optional "true"^^xsd:boolean .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">47</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html474"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html470"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html464"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html475"
+  HREF="node28.html">Phrase structure and frames</A>
+<B> Up:</B> <A NAME="tex2html471"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html465"
+  HREF="node26.html">Syntax and Mapping Module</A>
+ &nbsp; <B>  <A NAME="tex2html473"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

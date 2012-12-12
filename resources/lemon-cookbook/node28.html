@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Phrase structure and frames</TITLE>
+<META NAME="description" CONTENT="Phrase structure and frames">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html486"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html482"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html476"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html484"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html487"
+  HREF="node29.html">Predicate mapping</A>
+<B> Up:</B> <A NAME="tex2html483"
+  HREF="node26.html">Syntax and Mapping Module</A>
+<B> Previous:</B> <A NAME="tex2html477"
+  HREF="node27.html">Frames</A>
+ &nbsp; <B>  <A NAME="tex2html485"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00044200000000000000">
+Phrase structure and frames</A>
+</H3>
+
+<P>
+<I>lemon</I> frames may also be combined with the multi-word expressions extension to give valid parse trees for a particular frame, creating something similar to the substitution trees used in Tree-Adjoining Grammars. Here the trees are attached to the frame instead of to the lexical entry, and use the property <TT>tree</TT>, in addition we need to indicate the order of the components in the phrase structure, which is done by adding a <TT>decomposition</TT> to the frame. Note that this <TT>decomposition</TT> unlike decompositions of lexical entries may (and in fact must) include the arguments of the frame. For example “X switches Y off” may generate a parse structure as follows:
+
+<P>
+<PRE>
+:switch_off 
+   lemon:synBehavior 
+     [ lemon:synArg :switch_off_subject ,
+       lemon:synArg :switch_off_object 
+       lemon:tree [
+         lemon:edge [ lemon:leaf :switch_off_subject ] ;
+         lemon:edge [
+           lemon:edge [ lemon:leaf :switch_comp ] ;
+           lemon:edge [
+             lemon:edge [ lemon:leaf :switch_off_object ] ;
+             lemon:edge [
+               lemon:edge [ lemon:leaf :off_component ]
+             ]
+           ]
+         ]
+       ] ;
+       lemon:decomposition (
+         [ lemon:element :switch_off_subject ]
+         [ lemon:element :switch_comp ]
+         [ lemon:element :switch_off_object ]
+         [ lemon:element :off_comp ]
+       )
+     ] .
+</PRE>
+
+<P>
+<IMG
+  WIDTH="591" HEIGHT="389" ALIGN="BOTTOM" BORDER="0"
+ SRC="./syntax-ex3.png"
+ ALT="Image syntax-ex3">
+
+<P>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">48</SPAN>
+</DIV>
+
+<P>
+<BR><HR>
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

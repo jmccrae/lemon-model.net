@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Inflection</TITLE>
+<META NAME="description" CONTENT="Inflection">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node35.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html581"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html577"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html571"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html579"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html582"
+  HREF="node37.html">Agglutination</A>
+<B> Up:</B> <A NAME="tex2html578"
+  HREF="node35.html">Morphology Module</A>
+<B> Previous:</B> <A NAME="tex2html572"
+  HREF="node35.html">Morphology Module</A>
+ &nbsp; <B>  <A NAME="tex2html580"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00045100000000000000">
+Inflection</A>
+</H3>
+
+<P>
+The morphology of a word is given by a <SPAN  CLASS="textit">pattern</SPAN>, which is composed of a set of <SPAN  CLASS="textit">transforms</SPAN>, that is in turn composed of <SPAN  CLASS="textit">rules</SPAN> and produces a form described as a <SPAN  CLASS="textit">prototype</SPAN>. To give a simple example we will look at how we represent that English nouns form their plural in "s"
+
+<P>
+<PRE>
+:english_noun a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:rule "~s" ;
+    lemon:generates [
+      isocat:number isocat:plural
+    ]
+  ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">64</SPAN>
+</DIV>
+
+<P>
+This gives a pattern, with a single rule defined as <TT>"&#732;s"</TT> that generates a prototype with the property number with value plural. The rules are specified in a simple manner where the tilde symbol represents the canonical form and then the “s” is simply appended. A lexical entry may be indicated to have a given morphological pattern by the <TT>pattern</TT> property as follows.
+
+<P>
+<PRE>
+:cat lemon:pattern :english_noun
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">65</SPAN>
+</DIV>
+
+<P>
+The rule above is clearly not sufficient: for example for the word “cherry” it would generate the erroneous plural “cherrys.” Another rule can be added to handle this case, for example
+
+<P>
+<PRE>
+:english_noun a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:rule "~s" ;
+    lemon:rule "~y/~ies" ;
+    lemon:generates [
+      isocat:number isocat:plural
+    ] 
+  ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">66</SPAN>
+</DIV>
+
+<P>
+In this example the slash indicates the difference between the <SPAN  CLASS="textit">matcher</SPAN> and the <SPAN  CLASS="textit">replacer</SPAN> as such for the rule to applies the canonical form must first match the matcher and then the matched text is replaced with the replacer. The first rule has no matcher and so is assumed to match all canonical forms that aren't matched by a more specific rule.<A NAME="tex2html14"
+  HREF="footnode.html#foot2065"><SUP><SPAN CLASS="arabic">12</SPAN></SUP></A> This rule is still not correct as it generates for “play” the form “plaies”. As such we should further modify the rule to check for a preceding vowel this is done as follows
+
+<P>
+<PRE>
+:english_noun a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:rule "~s" ;
+    lemon:rule "~(&lt;?![aeiou])y/~ies" ;
+    lemon:generates [
+      isocat:number isocat:plural
+    ]
+  ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">67</SPAN>
+</DIV>
+
+<P>
+In fact, as this example may have hinted the underlying representation of the rules used by this module are in fact Perl-like regular expressions<A NAME="tex2html15"
+  HREF="footnode.html#foot2139"><SUP><SPAN CLASS="arabic">13</SPAN></SUP></A>. In fact as such an alternative rule that performs the same task <TT>"&#732;([&#710;aeiou])y/&#732;$1ies"</TT>; note that here the penultimate constonant must be reintroduced as it gets removed by being matched, and this is done with <TT>"$1"</TT>. We think it is clearer to state rules using the look-ahead and look-behind assertions (namely <TT>(?=X)</TT>, <TT>(?!X)</TT>, <TT>(&lt;?=X)</TT>, and <TT>(&lt;?!X)</TT>), as they do not cause vowels to be lost. Another reason for prefering these zero-width assertions is that in implementation the tildes must be translated to <TT>(.*)</TT> and <TT>$1</TT> respectively, and it makes it easier to do this if there are no groups on the left hand side.
+
+<P>
+The use of the tilde is useful is as it makes it easier to represent both prefices and suffices, for example consider the case of the German perfect participle, this is formed for regular weak verbs by prefixing “ge” and changing the inflectional suffix to “t”. We can model this as follows
+
+<P>
+<PRE>
+:german_weak_verb a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:rule "~e?n/ge~t" ;
+    lemon:generates [
+      isocat:tense isocat:past ;
+      isocat:aspect isocat:perfective ;
+      isocat:verbFormMood isocat:participle
+     ]
+   ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">68</SPAN>
+</DIV>
+
+<P>
+Of course it is natural it is possible for a pattern to have multiple transforms and even for a transform to have multiple generations. For example, we shall show an example for Italian generating the present singular first and third person forms and then using the third person singular to get the singular imperative
+
+<P>
+<PRE>
+:italian_are_verb a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:rule "~are/~o" ;
+    lemon:generates [
+      isocat:tense isocat:present ;
+      isocat:person isocat:firstPerson ;
+      isocat:number isocat:singular
+    ] 
+  ] , [
+    lemon:rule "~are/~a" ;
+    lemon:generates [
+       isocat:tense isocat:present ;
+       isocat:person isocat:firstPerson ;
+       isocat:number isocat:singular
+     ] , [
+       isocat:verbFormMoode isocat:imperative ;
+       isocat:number isocat:singular
+     ]
+  ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">69</SPAN>
+</DIV>
+
+<P>
+Sometimes the canonical form alone is not sufficient to generate all forms of the word, for this reason other forms must be used as the base for generating some forms, and these forms should be given in the lexicon. An example is German mixed verbs, for example “denken”, to think, that has an irregular past “dachte”. This form is the first (and third) person singular preterite, and the second person singular is created by adding “st” to this form. For these cases the <TT>onStem</TT> property is provided, for example:
+
+<P>
+<PRE>
+:german_mixed_verb a lemon:MorphPattern ;
+  lemon:transform [
+    lemon:onStem [
+      isocat:tense isocat:past ;
+      isocat:verbFormMood isocat:indicative ;
+      isocat:person isocat:firstPerson ;
+      isocat:number isocat:singular
+    ] ;
+    lemon:rule "~st" ;
+    lemon:generates [
+      isocat:tense isocat:past ;
+      isocat:verbFormMood isocat:indicative ;
+      isocat:person isocat:secondPerson ;
+      isocat:number isocat:singular
+    ]
+  ] .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="169" ALIGN="BOTTOM" BORDER="0"
+ SRC="./liam-ex1.png"
+ ALT="Image liam-ex1">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">70</SPAN>
+</DIV>
+
+<P>
+For polysynthesis as in example 60,we introduce a property that indicates how multiple inflections can be composed called <TT>nextScope</TT>. So the inflections that compose the example are as follows<A NAME="tex2html16"
+  HREF="footnode.html#foot2096"><SUP><SPAN CLASS="arabic">14</SPAN></SUP></A>
+<P>
+<PRE>
+:japanese_vowel_stem_verb a lemon:MorphPattern ;
+  lemon:transform :causative_transform ,
+                 :passive_transform ,
+                 :negative_transform ,
+                 :past_transform_on_negative .
+                 
+:causative_transform lemon:rule "~ru/~saseru" ;
+  lemon:nextScope :passive_transform, :negative_transform ;
+  lemon:generates [
+    isocat:voice isocat:causativeVoice
+  ] .
+  
+:passive_transform lemon:rule "~ru/~rareru" ;
+  lemon:nextScope :negative_tranform ;
+  lemon:generates [
+    isocat:voice isocat:passiveVoice
+  ] .
+  
+:negative_transform lemon:rule "~ru/~nai" ;
+  lemon:nextScope :past_transform_on_negative ;
+  lemon:generates [
+    isocat:negative isocat:yes
+  ] .
+  
+:past_transform_on_negative lemon:onStem [
+     isocat:negative isocat:yes ;
+     isocat:tense isocat:present 
+   ] ;
+   lemon:rule "~i/~katta" ;
+   lemon:generates [
+     isocat:negative isocat:yes ;
+     isocat:tense isocat:past
+   ] .
+</PRE>
+<IMG
+  WIDTH="591" HEIGHT="427" ALIGN="BOTTOM" BORDER="0"
+ SRC="./liam-ex2.png"
+ ALT="Image liam-ex2">
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">71</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html581"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html577"
+  HREF="node35.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html571"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html579"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html582"
+  HREF="node37.html">Agglutination</A>
+<B> Up:</B> <A NAME="tex2html578"
+  HREF="node35.html">Morphology Module</A>
+<B> Previous:</B> <A NAME="tex2html572"
+  HREF="node35.html">Morphology Module</A>
+ &nbsp; <B>  <A NAME="tex2html580"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>

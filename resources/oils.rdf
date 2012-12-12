@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY oils "http://lemon-model.net/oils#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://lemon-model.net/oils#"
+     xml:base="http://lemon-model.net/oils"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oils="http://lemon-model.net/oils#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://lemon-model.net/oils"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lemon-model.net/oils#eventSlot -->
+
+    <owl:ObjectProperty rdf:about="&oils;eventSlot">
+        <rdfs:comment xml:lang="de">Ereignisslot</rdfs:comment>
+        <rdfs:comment xml:lang="en">Event slot</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;Relationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lemon-model.net/oils#slot -->
+
+    <owl:ObjectProperty rdf:about="&oils;slot">
+        <rdfs:comment xml:lang="de">Slot</rdfs:comment>
+        <rdfs:comment xml:lang="en">Slot</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lemon-model.net/oils#begin -->
+
+    <owl:DatatypeProperty rdf:about="&oils;begin">
+        <rdfs:comment xml:lang="de">Beginn</rdfs:comment>
+        <rdfs:comment xml:lang="en">Beginning </rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;TelicEvent"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lemon-model.net/oils#duration -->
+
+    <owl:DatatypeProperty rdf:about="&oils;duration">
+        <rdfs:comment xml:lang="de">Dauer</rdfs:comment>
+        <rdfs:comment xml:lang="en">Duration</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;AtelicEvent"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lemon-model.net/oils#end -->
+
+    <owl:DatatypeProperty rdf:about="&oils;end">
+        <rdfs:comment xml:lang="de">Ende</rdfs:comment>
+        <rdfs:comment xml:lang="en">End</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;TelicEvent"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lemon-model.net/oils#time -->
+
+    <owl:DatatypeProperty rdf:about="&oils;time">
+        <rdfs:comment xml:lang="de">Zeitpunkt</rdfs:comment>
+        <rdfs:comment xml:lang="en">Time</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;AtelicEvent"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lemon-model.net/oils#Accomplishment -->
+
+    <owl:Class rdf:about="&oils;Accomplishment">
+        <rdfs:label xml:lang="de">Perdurativ</rdfs:label>
+        <rdfs:label xml:lang="en">Accomplishment</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;begin"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;end"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;TelicEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Achievement -->
+
+    <owl:Class rdf:about="&oils;Achievement">
+        <rdfs:label xml:lang="de">Resultativ</rdfs:label>
+        <rdfs:label xml:lang="en">Achievement</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&oils;begin"/>
+                                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;end"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;TelicEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Activity -->
+
+    <owl:Class rdf:about="&oils;Activity">
+        <rdfs:label xml:lang="de">Delimitativ</rdfs:label>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;duration"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;time"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;AtelicEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#AtelicEvent -->
+
+    <owl:Class rdf:about="&oils;AtelicEvent">
+        <rdfs:label xml:lang="de">Atelische Ereignis</rdfs:label>
+        <rdfs:label xml:lang="en">Atelic Event</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&oils;Activity"/>
+                    <rdf:Description rdf:about="&oils;Semelfactive"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#ContravariantScalar -->
+
+    <owl:Class rdf:about="&oils;ContravariantScalar">
+        <rdfs:label xml:lang="de">Kontravariante Skalar</rdfs:label>
+        <rdfs:label xml:lang="en">Contravariant scalar</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&oils;Scalar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#CovariantScalar -->
+
+    <owl:Class rdf:about="&oils;CovariantScalar">
+        <rdfs:label xml:lang="de">Kovariante Scalar</rdfs:label>
+        <rdfs:label xml:lang="en">Covariant Scalar</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&oils;Scalar"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Event -->
+
+    <owl:Class rdf:about="&oils;Event">
+        <rdfs:label xml:lang="de">Ereignis</rdfs:label>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&oils;eventSlot"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Relationship -->
+
+    <owl:Class rdf:about="&oils;Relationship">
+        <rdfs:label xml:lang="de">Verbindung</rdfs:label>
+        <rdfs:label xml:lang="en">Relationship</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&oils;slot"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Scalar -->
+
+    <owl:Class rdf:about="&oils;Scalar">
+        <rdfs:label xml:lang="de">Skalar</rdfs:label>
+        <rdfs:label xml:lang="en">Scalar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#Semelfactive -->
+
+    <owl:Class rdf:about="&oils;Semelfactive">
+        <rdfs:label xml:lang="de">Semelfaktiv</rdfs:label>
+        <rdfs:label xml:lang="en">Semelfactive</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&oils;duration"/>
+                                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&oils;time"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;AtelicEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lemon-model.net/oils#TelicEvent -->
+
+    <owl:Class rdf:about="&oils;TelicEvent">
+        <rdfs:label xml:lang="de">Telische Ereignis</rdfs:label>
+        <rdfs:label xml:lang="en">Telic Event</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&oils;Accomplishment"/>
+                    <rdf:Description rdf:about="&oils;Achievement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&oils;Event"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

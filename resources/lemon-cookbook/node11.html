@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Topics and contexts</TITLE>
+<META NAME="description" CONTENT="Topics and contexts">
+<META NAME="keywords" CONTENT="lemon-cookbook.html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="lemon-cookbook.html.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html269"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html265"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html259"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html267"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html270"
+  HREF="node12.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html266"
+  HREF="node8.html">Linguistic Description Module</A>
+<B> Previous:</B> <A NAME="tex2html260"
+  HREF="node10.html">Describing phonetics</A>
+ &nbsp; <B>  <A NAME="tex2html268"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00041300000000000000"></A><A NAME="topics"></A>
+<BR>
+Topics and contexts
+</H3>
+
+<P>
+As the size of a <I>lemon</I> lexicon grows it is necessary to manage and organize it according to some principles. One of the first steps to this is the lexicon object, which allows vocabulary to be grouped by creating multiple lexicon objects. This is similar to the role of schemes in SKOS, which allow different topics to be grouped. As such <I>lemon</I> provides <TT>topic</TT> to indicate the topic that is shared between all lexical entries. For example the following shows two lexicons one for animals and one for veterinary anatomy
+
+<P>
+<PRE>
+:animal_lexicon lemon:topic :animals ;
+                lemon:entry :cat , :mongoose , :seahorse .
+   
+:anatomy_lexicon lemon:topic :veterinary_anatomy ;
+                 lemon:entry :lung , :fin , :swim_bladder .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">17</SPAN>
+</DIV>
+
+<P>
+Note that the object of <TT>topic</TT> is again a URI value, which presupposes a set of defined topics (i.e., a topic ontology). It is often the case that this does not exist or for some reason it is better to represent topics with literal strings. In such cases, <I>lemon</I>'s <TT>value</TT> property can be used. Hence the above example can be rewritten as:
+
+<P>
+<PRE>
+:animal_lexicon lemon:topic [ lemon:value "animals" ] ;
+                lemon:entry :cat , :mongoose , :seahorse .
+   
+:anatomy_lexicon lemon:topic [ lemon:value "veterinary anatomy" ] ;
+                 lemon:entry :lung , :fin , :swim_bladder .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">18</SPAN>
+</DIV>
+
+<P>
+It is not recommended that this pattern is used if topics are reused across multiple lexicon objects, as it is more difficult to group lexicons on the same topic and using a string may cause spelling issues.
+
+<P>
+The <I>lemon</I> <TT>topic</TT> can also be applied to lexical entries to give a term level description of the topic of an entry. Of course, as with all RDF systems, many topics can be attached to a single entry. For example
+
+<P>
+<PRE>
+:cat lemon:topic :domestic_animals , :cosmopolitan_species , :felidae_family .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">19</SPAN>
+</DIV>
+
+<P>
+It is important not to confuse the <TT>topic</TT> of a lexical entry with the <TT>context</TT> of its senses.
+
+<P>
+Another important feature <I>lemon</I> has for terminological management is the ability to add definitions with the <TT>definition</TT> property. For this the <TT>value</TT> property must always be used to state the value of the definition. For example
+
+<P>
+<PRE>
+:cat lemon:sense [ 
+  lemon:reference ontology:cat ; 
+  lemon:definition [ 
+    lemon:value "The cat is a small domesticated carnivorous animal"@en 
+  ] 
+] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">20</SPAN>
+</DIV>
+
+<P>
+These definitions are generally intended to be used primarily in terminology management rather than for NLP systems. 
+
+<P>
+In addition a particular meaning of a term may be described with a context, which refers to pragmatic/discourse restrictions on the mapping that may be implied by either the linguistic context. An example of a pragmatic context is given here by the usage of the term “cat” in general discourse and “Felis Catus” in scientific discourse.
+
+<P>
+<PRE>
+:felis_catus lemon:sense [ lemon:context isocat:technicalRegister ;
+                           lemon:reference ontology:Cat ] .
+                           
+:cat lemon:sense [ lemon:context isocat:neutralRegister ;
+                   lemon:reference ontology:Cat ] .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">21</SPAN>
+</DIV>
+
+<P>
+In addition contexts are useful for indicating temporal or geographic usage, and this can be done by introducing subproperties to indicate these values. For example we may indicate that the term “blog” has been used since 1998 as follows:
+
+<P>
+<PRE>
+:blog lemon:canonicalForm [
+    lemon:writtenRep "blog"@en ]
+  lemon:sense [
+    lemon:reference foaf:weblog ;
+    :usedSince [ lemon:value "1998"^^xsd:gYear ] ].
+    
+:usedSince rdfs:subPropertyOf lemon:context .
+</PRE>
+<DIV ALIGN="CENTER">
+Example <SPAN CLASS="arabic">22</SPAN>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html269"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html265"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html259"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html267"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html270"
+  HREF="node12.html">Summary of vocabulary introduced</A>
+<B> Up:</B> <A NAME="tex2html266"
+  HREF="node8.html">Linguistic Description Module</A>
+<B> Previous:</B> <A NAME="tex2html260"
+  HREF="node10.html">Describing phonetics</A>
+ &nbsp; <B>  <A NAME="tex2html268"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+John McCrae
+2012-07-31
+</ADDRESS>
+</BODY>
+</HTML>
