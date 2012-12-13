@@ -1,4 +1,3 @@
-                        <div class="pageMid">
   <h1>Lemon source</h1>
   Lemon Source is a Wiki-like interface to lemon allowing you to create your own models and make them available on the web.<br/> 
   
@@ -16,8 +15,6 @@
   </ul>
 
   Lemon Source integrates this tool, however if you may directly generate lexica <a href="http://monnet01.sindice.net:8080/generate">here</a>.
-
-</div>
 
 
 

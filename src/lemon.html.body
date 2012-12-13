@@ -1,5 +1,3 @@
-<div class="pageMid">
-
    <h1>Object Properties</h1>
     <div resource="http://www.lemon-model.net/lemon#abstractForm" id="abstractForm">
 	<h3>abstractForm</h3>
@@ -1600,6 +1598,5 @@
         <p style="padding-left:3em;"><span property="http://www.w3.org/2000/01/rdf-schema#label" xml:lang="nl"><img src="img/flags/nl.gif"/> Woord</span>
         <p style="padding-left:3em;">Subclass of: <a property="http://www.w3.org/2000/01/rdf-schema#subClassOf" href="http://www.lemon-model.net/lemon#LexicalEntry"/>Lexical Entry</a>
         <p style="padding-left:3em;"><span property="http://www.w3.org/2000/01/rdf-schema#comment" xml:lang="en">A word is a single unit of writing or speech. In languages written in Latin, Cyrillic, Greek, Arabic scripts etc. these are assumed to be separated by white-space characters. For Chinese, Japanese, Korean this should correspond to some agreed segmentation scheme.</span>
-    </div>
     </div>
 

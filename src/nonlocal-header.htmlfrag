@@ -23,14 +23,14 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
         <link href="http://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
 
         <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
         <!-- All JavaScript at the bottom, except this Modernizr build.
         Modernizr enables HTML5 elements & feature detects for optimal performance.
         Create your own custom Modernizr build: www.modernizr.com/download/ -->
-        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
         <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -44,19 +44,19 @@
         <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script>
-            window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')
+            window.jQuery || document.write('<script src="/js/vendor/jquery-1.7.2.min.js"><\/script>')
         </script>
 
         <!-- scripts concatenated and minified via build script -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/main.js"></script>
         <!-- end scripts -->
 
         <div class="pageTop">
         	<table width="100%">
         	  <tr>
         	    <td>
-            <a href="http://www.lemon-model.net/" style="border:none;"><img src="img/logo.png" alt="Lexicon Model for Ontologies" class="lemon_logo"/></a>
+            <a href="http://www.lemon-model.net/" style="border:none;"><img src="/img/logo.png" alt="Lexicon Model for Ontologies" class="lemon_logo"/></a>
             <div class="underLogo">
                 <span class="LeMOn_initial">Le</span>xicon <span class="LeMOn_initial">M</span>odel for <span class="LeMOn_initial">On</span>tologies
                 <br/>
@@ -74,28 +74,28 @@
         <div class="menuTop">
             <ul class="nav">
                 <li class="nav1">
-                    <a href="index.html">Home</a>
+                    <a href="/index.html">Home</a>
                 </li>
                 <li>
                 	<div>Learn</div>            
                 	<ul>
-                	  <li><a href="5mins.html">Getting Started</a></li>
-                	  <li><a href="cookbook.html">Cookbook</a></li>
+                	  <li><a href="/5mins.html">Getting Started</a></li>
+                	  <li><a href="/cookbook.html">Cookbook</a></li>
                 	</ul>
                 </li>
                 <li>
                 	<div>Downloads</div>
                 	<ul id="download_dd">
-                		<li><a href="download.html">Model files</a></li>
-                		<li><a href="api.html">API</a></li>
+                		<li><a href="/download.html">Model files</a></li>
+                		<li><a href="/api.html">API</a></li>
                 	</ul>
                 </li>
                 <li>
                 	<div>Resources</div>
                 	<ul id="resource_dd">
-                	  <li><a href="source.html">Source Editor</a></li>
-                	  <li><a href="lexica/uby">ubyLemon</a></li>
-                	  <li><a href="lexica/de-gaap">DE-GAAP</a></li>
+                	  <li><a href="/source.html">Source Editor</a></li>
+                	  <li><a href="/lexica/uby">ubyLemon</a></li>
+                	  <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
                 	</ul>
                 </li>
             </ul>

@@ -1,0 +1,8 @@
+Options -MultiViews
+RewriteEngine on
+
+RewriteRule ^(.*).html$ index.php?uri=$1&type=html [L]
+RewriteRule ^(.*).ttl$ index.php?uri=$1&type=ttl [L]
+RewriteRule ^(.*).nt$ index.php?uri=$1&type=nt [L]
+RewriteRule ^([A-Za-z0-9_]+)$ index.php?uri=$1 [L]
+

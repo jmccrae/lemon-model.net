@@ -6,11 +6,11 @@
             
             <div width="1000px" style="border-top: #ddd 3px ridge;">&nbsp;</div>
 
-            <a href="http://www.cit-ec.de"><img src="img/logo-citec.png" height="60" /></a>&nbsp;
-            <a href="http://www.deri.ie"><img src="img/deri-logo.jpeg" height="60" /></a>&nbsp;
-            <a href="http://www.dfki.de"><img src="img/dfki-logo.jpeg" /></a>&nbsp;
-            <a href="http://www.oeg-upm.net"><img src="img/upm-T.gif" height="80" /></a>
-            <a href="http://www.monnet-project.eu"><img src="img/Monnet_Logo.jpg" height=60 /></a>&nbsp;</p>
+            <a href="http://www.cit-ec.de"><img src="/img/logo-citec.png" height="60" /></a>&nbsp;
+            <a href="http://www.deri.ie"><img src="/img/deri-logo.jpeg" height="60" /></a>&nbsp;
+            <a href="http://www.dfki.de"><img src="/img/dfki-logo.jpeg" /></a>&nbsp;
+            <a href="http://www.oeg-upm.net"><img src="/img/upm-T.gif" height="80" /></a>
+            <a href="http://www.monnet-project.eu"><img src="/img/Monnet_Logo.jpg" height=60 /></a>&nbsp;</p>
 
         </div>
 

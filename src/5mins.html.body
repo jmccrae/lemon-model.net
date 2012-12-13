@@ -1,6 +1,3 @@
-
-        <div class="pageMid">
-
             <P>
                 Lemon is an RDF model for representing lexical information relative to ontologies. We assume that you are familiar with RDF and Turtle, if not
                 consider reading the tutorial <a href="http://www.rdfabout.com/quickintro.xpd">here</a>. Note, that we will use Turtle for this tutorial, however
@@ -144,5 +141,4 @@
 </PRE>
 
             <P>
-        </div>
 
