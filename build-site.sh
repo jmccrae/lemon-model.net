@@ -12,6 +12,14 @@ do
   cat >>$target < footer.htmlfrag
 done
 
+for fileBody in *.md
+do 
+  target=../htdocs/${fileBody%.body}.html
+  cat >$target < header.htmlfrag
+  pandoc -f markdown -t html $fileBody >>$target
+  cat >>$target < footer.htmlfrag
+done
+
 cd ..
 
 cp -r resources/* htdocs/

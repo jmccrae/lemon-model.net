@@ -424,13 +424,8 @@ td {
     vertical-align: top;
 }
 
-.rdf > tr:nth-child(odd)    { background-color:#ddd; }
 
-.rdf > tr:nth-child(even)    { background-color:#fff; }
-
-.sparql > tr:nth-child(odd)    { background-color:#ddd; }
-
-.sparql > tr:nth-child(even)    { background-color:#fff; }
+tr:nth-child(even)    { background-color:#ddd; }
 
 
 /* =============================================================================

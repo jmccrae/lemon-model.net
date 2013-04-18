@@ -727,5 +727,22 @@ tr:nth-child(even)    { background-color:#ddd; }
     }
 }
 
+.box {
+    margin: 5px;
+    border: 4px solid #ffe273;
+    background-color: #ffe273;
+	padding: 4px;
+	width:470px;
+	float:left;
+}
+
+.box > .boxContent {
+	background-color:white;
+	border:5px solid white;
+}
+
+.box > h1 {
+   margin:2px;
+}
 
 p.license { font-size:70%; }

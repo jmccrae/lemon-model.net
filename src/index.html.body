@@ -1,4 +1,8 @@
+	<br/>
+	<div style="float:left;width=1000px">
+           <div class="box">
                             <h1>What is lemon?</h1>
+		<div class="boxContent">
             Lemon is a proposed model for modeling lexicon and machine-readable dictionaries and linked to the Semantic Web and the Linked Data cloud. It was designed to meet the 
             following challenges
 
@@ -25,18 +29,48 @@
             Lemon was developed by the <a href="http://www.monnet-project.eu/">Monnet project</a> as a collaboration between:
 
             <a href="http://www.cit-ec.uni-bielefeld.de/">CITEC</a> at <a href="http://www.uni-bielefeld.de/">Bielefeld University</a>, <a href="http://www.deri.ie/">DERI</a> at the <a href="http://www.nuigalway.ie/">National University of Ireland, Galway</a>, <a href="http://www.upm.es/">Universidad Polit&#xe9;cnica de Madrid</a> and the <a href="http://www.dfki.de/">Deutsche Forschungszentrum f&#xfc;r K&#xfc;nstliche Intelligenz</a>
+</div>
+	</div>
+         
+           <div class="box">
+              <h1> The lemon model</h1>
+		<div class="boxContent">
+		<img src="img/lemon-core.png" width="450px"/>
+		</div>
+	   </div>
+	
+	</div>
+	<div style="float:left;width=1000px">
 
-            <h1>How can I use lemon?</h1>
-            
-            The lemon model is a standard RDF model and can be used with any existing tools for processing RDF. To see how to get started with the model see 
-            <a href="5mins.html">our guide</a>, or for more detailed issues you may consult the <a href="cookbook.html">Lemon Cookbook</a>.
+	<div class="box">
+	   <h1>Who uses lemon?</h1>
+	   <div class="boxContent">      
+             <ul>
+               <li><a href="http://dbnary.forge.imag.fr/">Dbnary</a></li>
+               <li><a href="http://wiktionary.dbpedia.org/">DBpedia Wiktionary</a></li>
+               <li><a href="http://gilmere.upf.edu/corpus_data/ParoleSimpleOntology/">Parole/Simple</a></li>
+               <li><a href="http://www.lemon-model.net/lexica/uby">ubyLemon</a></li>
+             </ul>
+			
+	   </div>
+	</div>
+
+	<div class="box">
+	   <h1>How can I use lemon?</h1>
+	   <div class="boxContent">            
+            <p>To see how to <a href="5mins.html">get started</a> with the model see <a href="5mins.html">our guide</a></p>
+	    <p>For <a href="cookbook.html">full documentation</a> you may consult the <a href="cookbook.html">Lemon Cookbook</a></p>
             
             <p>
             <a href="api.html">Lemon API</a> is a Java-based interface for using lemon that is compatible with all major platforms. In addition, there is a
-            Wiki-like site for manipulating and publishing lemon data, called <a href="source.html">Lemon Source</a>. This includes a service for generating lexica from ontologies.
+            Wiki-like site for manipulating and publishing lemon data, called <a href="source.html">Lemon Source</a>. This includes a service for generating lexica from ontologies.</p>
             
-            <h1>Can I contribute to the project?</h1>
             
-            Lemon is still under development and we welcome contributions. If you wish to get involved please join the 
-            <a href="http://w3.org/community/ontolex">W3C OntoLex Community Group</a>
+            <p>Lemon is still under development and we welcome contributions. If you wish to get involved please join the 
+            <a href="http://w3.org/community/ontolex">W3C OntoLex Community Group</a></p>
+	   </div>
+	</div>
 
+	
+
+	</div>
