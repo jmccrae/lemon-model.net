@@ -6,7 +6,7 @@ cd src/
 
 for fileBody in *.body
 do
-  target=../htdocs/${fileBody%.body}
+  target=../htdocs/$fileBody
   cat >$target < header.htmlfrag
   cat >>$target $fileBody
   cat >>$target < footer.htmlfrag
@@ -14,7 +14,7 @@ done
 
 for fileBody in *.md
 do 
-  target=../htdocs/${fileBody%.body}.html
+  target=../htdocs/${fileBody%.md}.html
   cat >$target < header.htmlfrag
   pandoc -f markdown -t html $fileBody >>$target
   cat >>$target < footer.htmlfrag
