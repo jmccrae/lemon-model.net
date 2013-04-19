@@ -83,7 +83,7 @@ lemon2gf covers the the most common <a href="http://www.lexinfo.net/ontology/2.0
 
 ## Example 
 
-* Ontology (ATIS flight travel domain, developed in the <a href="https://sites.google.com/site/portdial2/">PortDial</a> project): <a href="travelDomain.owl">travelDomain.owl</a>, <a href="travelDomain_ABox.ttl">travelDomain_ABox.ttl</a>
-* Lexicon: <a href="travelDomain_en.ttl">travelDomain\_en.ttl</a>, <a href="travelDomain_ABox_en.ttl">travelDomain\_ABox\_en.ttl</a>
-*  Generated GF grammars: <a href="TravelDomain.gf">TravelDomain.gf</a>, <a href="TravelDomainEng.gf">TravelDomainEng.gf</a>
+* Ontology (ATIS flight travel domain, developed in the <a href="https://sites.google.com/site/portdial2/">PortDial</a> project): <a href="lemon2gf/travelDomain.owl">travelDomain.owl</a>, <a href="lemon2gf/travelDomain_ABox.ttl">travelDomain_ABox.ttl</a>
+* Lexicon: <a href="lemon2gf/travelDomain_en.ttl">travelDomain\_en.ttl</a>, <a href="lemon2gf/travelDomain_ABox_en.ttl">travelDomain\_ABox\_en.ttl</a>
+* Generated GF grammars: <a href="lemon2gf/TravelDomain.gf">TravelDomain.gf</a>, <a href="lemon2gf/TravelDomainEng.gf">TravelDomainEng.gf</a>
 
