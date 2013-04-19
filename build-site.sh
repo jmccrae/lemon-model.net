@@ -4,7 +4,7 @@ mkdir -p htdocs/
 
 cd src/
 
-for fileBody in *.body
+for fileBody in *.html
 do
   target=../htdocs/$fileBody
   cat >$target < header.htmlfrag

@@ -2,11 +2,13 @@
 
 <a href="https://github.com/cunger/lemon2gf">lemon2gf</a> is a Python script that transforms an ontology and one or more attached lemon lexica into a <a href="http://www.grammaticalframework.org">Grammatical Framework</a> (GF) grammar.
 
+lemon2gf can be downloaded from [GitHub](https://github.com/cunger/lemon2gf)
+
 ## Architecture
 
 lemon2gf consists of two steps: mapping the ontology to an abstract syntax, and mapping a corresponding lexicon to a concrete syntax.
 
-![lemon2gf architecture](architecture.png)
+![lemon2gf architecture](img/architecture.png)
 
 
 ### Core grammar
