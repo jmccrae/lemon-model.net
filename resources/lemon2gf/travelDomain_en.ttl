@@ -1,0 +1,448 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix lemon: <http://www.monnet-project.eu/lemon#>.
+@prefix lexinfo: <http://lexinfo.net/ontology/2.0/lexinfo#>.
+
+@prefix base: <http://sc.cit-ec.uni-bielefeld.de/lexica/travelDomain_en#>.
+
+:lexicon a lemon:Lexicon ;
+    lemon:language "en" ;
+    lemon:entry :airline,
+                :airport,
+                :airportservice,
+                :groundtransportation,
+                :arrival,
+                :car,
+                :cartype,
+                :typeofcar,
+                :kindofcar,
+                :plane,
+                :airplane,
+                :aircraft,
+                :city,
+                :state,
+                :country,
+                :flight,
+                :leg,
+                :arrival,
+                :departure,
+                :hotel,
+                :meal,
+                :stay,
+                :rental,
+                :trip,
+                :stopover,
+                :operate,
+                :leg_of,
+                :arrive_in,
+                :arrive_at,
+                :depart_from,
+                :leave,
+                :stay_in,
+                :a_stay_in,
+                :stop_in,
+                :to_stop_in,
+                :flight_from_to,
+                :fly_from_to,
+                :go_from_to,
+                :travel_from_to,
+                :from,
+                :to,
+                :at,
+                :in, 
+                :serve .
+
+
+:airline a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "airline"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#AirLine> ] .
+
+:airport a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "airport"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Airport> ] .
+
+:airportservice a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "airport service"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#AirportService> ] .
+
+:groundtransportation a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "ground transportation"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#AirportService> ] .
+
+:arrival a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "arrival"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Arrival> ] .
+
+:car a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "car"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Car> ] .
+
+:cartype a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "car type"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#CarType> ] .
+
+:typeofcar a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "type of car"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#CarType> ] .
+
+:kindofcar a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "kind of car"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#CarType> ] .
+
+:plane a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "plane"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Plane> ] .
+
+:airplane a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "airplane"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Plane> ] .
+
+:aircraft a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "aircraft"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Plane> ] .
+
+:city a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "city"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#City> ] .
+
+:state a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "state"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#State> ] .
+
+:country a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "country"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Country> ] .
+
+:flight a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "flight"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Flight> ] .
+
+:leg a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "leg"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg> ] .
+
+:firstleg a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "first leg"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg1> ] .
+
+:secondleg a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "second leg"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg2> ] .
+
+:thirdleg a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "third leg"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg3> ] .
+
+:arrival a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "arrival"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Arrival> ] .
+
+:departure a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "departure"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Departure> ] .
+
+:hotel a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "hotel"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Hotel> ] .
+
+:meal a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "meal"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Meal> ] .
+
+:stay a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "stay"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay> ] .
+
+:firststay a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "first stay"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay1> ] .
+
+:secondstay a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "second stay"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay2> ] .
+
+:rental a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "rental"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental> ] .
+
+:firstrental a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "first rental"@en ] ;
+  lemon:synBehavior [ lemon:tree [ lemon:edge [ lemon:leaf :first ] ;
+                                   lemon:edge [ lemon:leaf :rental ] ] ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental1> ] .
+
+:secondrental a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "second rental"@en ] ;
+  lemon:synBehavior [ lemon:tree [ lemon:edge [ lemon:leaf :second ] ;
+                                   lemon:edge [ lemon:leaf :rental ] ] ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental2> ] .
+
+:stopover a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun  ;
+  lemon:canonicalForm [ lemon:writtenRep "stopover"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#StopOver> ] .
+
+:trip a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "trip"@en ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Trip> ] .
+
+:trip_to a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun  ;
+  lemon:canonicalForm [ lemon:writtenRep "trip"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:NounPPFrame ; 
+                      lexinfo:copulativeArg :arg_trip ;
+                      lexinfo:prepositionalObject :arg_destination ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Trip> ; 
+                                 lemon:isA :arg_trip ] ,
+                               [ lemon:reference :flight_flightArrival_city ;
+                                 lemon:subjOfProp :arg_trip;
+                                 lemon:objOfProp  :arg_destination ]
+              ] .
+
+:leg_of a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun ;
+  lemon:canonicalForm [ lemon:writtenRep "leg"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:NounPPFrame ;
+                      lexinfo:copulativeArg :arg_legof ;
+                      lexinfo:prepositionalObject :arg_legflight ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg> ;
+                lemon:subjOfProp :arg_legflight;
+                lemon:objOfProp  :arg_legof ] .
+
+
+:flight_from_to a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun  ;
+  lemon:canonicalForm [ lemon:writtenRep "flight"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:NounPPFrame ; 
+                      lexinfo:copulativeArg :arg_flight ;
+                      lexinfo:prepositionalObject :arg_source ;
+                      lexinfo:prepositionalObject :arg_destination ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Flight> ; 
+                                 lemon:isA :arg_flight ] , 
+                               [ lemon:reference :flightdeparture_city ;
+                                 lemon:subjOfProp :arg_flight;
+                                 lemon:objOfProp  :arg_source ] , 
+                               [ lemon:reference :flightArrival_city ;
+                                 lemon:subjOfProp :arg_flight;
+                                 lemon:objOfProp  :arg_destination ] ] .
+
+:operate a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "operate"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:TransitiveFrame ; 
+                      lexinfo:subject :arg_operator ;
+                      lexinfo:directObject :arg_operated ] ;
+  lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airline>; 
+                lemon:subjOfProp :arg_operated;
+                lemon:objOfProp  :arg_operator ] .
+
+:arrive_in a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "arrive"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_city ] ;
+  lemon:sense [ lemon:reference :flightArrival_city ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_city ] . 
+
+:arrive_at a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "arrive"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_airport ] ;
+  lemon:sense [ lemon:reference :flightArrival_airport ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_airport ] . 
+
+:depart_from a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "depart"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_source ] ;
+  lemon:sense [ lemon:reference :flightdeparture_city ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_source ] , 
+              [ lemon:reference :flightdeparture_airport ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_source ] . 
+
+
+:leave a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "leave"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:TransitiveFrame ;
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:directObject :arg_left ] ;
+  lemon:sense [ lemon:reference :flightdeparture_city ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_left ] . 
+
+:stop_in a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "stop"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_city ] ;
+  lemon:sense [ lemon:reference :leg_stopover_city ;
+                lemon:subjOfProp :arg_flight ;
+                lemon:objOfProp  :arg_city ] . 
+
+:a_stop_in a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:noun  ;
+  lemon:canonicalForm [ lemon:writtenRep "stop"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:NounPPFrame ; 
+                      lexinfo:copulativeArg :arg_stopover ;
+                      lexinfo:prepositionalObject :arg_city ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#StopOver> ;
+                                 lemon:isA :arg_stopover ],
+                               [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ;
+                                 lemon:subjOfProp :arg_stopover ;
+                                 lemon:objOfProp  :arg_city ] ] .
+
+
+:fly_from_to a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "fly"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_source ;
+                      lexinfo:prepositionalObject :arg_destination ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference :flightdeparture_city ;
+                                 lemon:subjOfProp :arg_flight ;
+                                 lemon:objOfProp  :arg_source ] ,
+                               [ lemon:reference :flightArrival_city ;
+                                 lemon:subjOfProp :arg_flight ;
+                                 lemon:objOfProp  :arg_destination ] ] . 
+
+:go_from_to a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "go"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_flight ;
+                      lexinfo:prepositionalObject :arg_source ;
+                      lexinfo:prepositionalObject :arg_destination ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference :flightdeparture_city ;
+                                 lemon:subjOfProp :arg_flight ;
+                                 lemon:objOfProp  :arg_source ] ,
+                               [ lemon:reference :flightArrival_city ;
+                                 lemon:subjOfProp :arg_flight ;
+                                 lemon:objOfProp  :arg_destination ] ] . 
+
+:travel_from_to a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "travel"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:IntransitivePPFrame ; 
+                      lexinfo:subject :arg_trip ;
+                      lexinfo:prepositionalObject :arg_source ;
+                      lexinfo:prepositionalObject :arg_destination ] ;
+  lemon:sense [ lemon:subsense [ lemon:reference :flight_flightdeparture_city ;
+                                 lemon:subjOfProp :arg_trip ;
+                                 lemon:objOfProp  :arg_source ] ,
+                               [ lemon:reference :flight_flightArrival_city ;
+                                 lemon:subjOfProp :arg_trip ;
+                                 lemon:objOfProp  :arg_destination ] ] . 
+
+:serve a lemon:LexicalEntry ;
+  lexinfo:partOfSpeech lexinfo:verb ;
+  lemon:canonicalForm [ lemon:writtenRep "serve"@en ] ;
+  lemon:synBehavior [ rdf:type lexinfo:TransitiveFrame ; 
+                      lexinfo:subject :arg_servingairline ;
+                      lexinfo:directObject :arg_served ] ;
+  lemon:sense [ lemon:reference :airline_1_arrival_city ;
+                lemon:subjOfProp :arg_servingairline;
+                lemon:objOfProp  :arg_served ], 
+              [ lemon:reference :airline_1_arrival_airport ;
+                lemon:subjOfProp :arg_servingairline;
+                lemon:objOfProp  :arg_served ] .
+
+
+## Markers 
+
+:arg_destination lemon:marker [ lemon:canonicalForm [ lemon:writtenRep "to"@en ] ] ;   
+                 lemon:optional "true"^^xsd:boolean .
+:arg_source      lemon:marker [ lemon:canonicalForm [ lemon:writtenRep "from"@en ] ] ; 
+                 lemon:optional "true"^^xsd:boolean .
+:arg_city        lemon:marker [ lemon:canonicalForm [ lemon:writtenRep "in"@en ] ] .
+:arg_airport     lemon:marker [ lemon:canonicalForm [ lemon:writtenRep "at"@en ] ] .
+:arg_legflight   lemon:marker [ lemon:canonicalForm [ lemon:writtenRep "of"@en ] ] .
+
+
+## Property chains ##
+
+:flight_flightArrival_city owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flight>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightArrival>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:flight_flightdeparture_city owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flight>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightdeparture>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:flightdeparture_city owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightdeparture>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:flightArrival_city owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightArrival>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:flightArrival_airport owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightArrival>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airport> ) .
+
+:flightdeparture_airport owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightdeparture>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airport> ) .
+
+:leg_stopover_city owl:propertyChain ( 
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stopover>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:airline_1_arrival_city owl:propertyChain (
+                      :airline_1
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#arrival>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city> ) .
+
+:airline_1_arrival_airport owl:propertyChain (
+                      :airline_1
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#arrival>
+                      <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airport> ) .
+
+:airline_1 owl:inverseOf <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airline> .

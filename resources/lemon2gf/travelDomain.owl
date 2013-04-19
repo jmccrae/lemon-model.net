@@ -1,0 +1,1457 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Travel-Domain "https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#" >
+]>
+
+
+<rdf:RDF xmlns="https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#"
+     xml:base="https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Travel-Domain="https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl">
+        <owl:versionInfo>1.2</owl:versionInfo>
+        <rdfs:comment>Travel Domain Ontology</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airline -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;airline">
+        <rdfs:label xml:lang="de">Fluggesellschaft</rdfs:label>
+        <rdfs:label xml:lang="el">αερομεταφορέας</rdfs:label>
+        <rdfs:label xml:lang="en">airline</rdfs:label>
+        <rdfs:label xml:lang="es">compañía aérea</rdfs:label>
+		<rdfs:label xml:lang="it">compagnia aerea</rdfs:label>
+        <rdfs:comment>Airline company operating a flight (or flight leg)</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;AirLine"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airport -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;airport">
+        <rdfs:label xml:lang="de">Flughafen</rdfs:label>
+        <rdfs:label xml:lang="el">αεροδρόμιο</rdfs:label>
+        <rdfs:label xml:lang="en">airport</rdfs:label>
+        <rdfs:label xml:lang="es">aeropuerto</rdfs:label>
+		<rdfs:label xml:lang="it">aeroporto</rdfs:label>
+        <rdfs:comment>Airport of an a arrival, departure, stopover etc</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Airport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airportService -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;airportService">
+        <rdfs:label xml:lang="de">Flughafenservice</rdfs:label>
+        <rdfs:label xml:lang="el">υπηρεσία αεροδρομίου</rdfs:label>
+        <rdfs:label xml:lang="en">airport service</rdfs:label>
+        <rdfs:label xml:lang="es">servicio de transporte en areopuertos</rdfs:label>
+		<rdfs:label xml:lang="it">servizi aeroportuali</rdfs:label>
+        <rdfs:comment>Ground transport services at a specific airport</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Airport"/>
+        <rdfs:range rdf:resource="&Travel-Domain;AirportService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#arrival -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;arrival">
+        <rdfs:label xml:lang="de">Ankunft</rdfs:label>
+        <rdfs:label xml:lang="el">άφιξη</rdfs:label>
+        <rdfs:label xml:lang="en">arrival</rdfs:label>
+        <rdfs:label xml:lang="es">llegada</rdfs:label>
+		<rdfs:label xml:lang="it">arrivo</rdfs:label>
+        <rdfs:comment>Arrival at a destination</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Arrival"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#car -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;car">
+        <rdfs:label xml:lang="de">Auto</rdfs:label>
+        <rdfs:label xml:lang="el">αυτοκίνητο</rdfs:label>
+        <rdfs:label xml:lang="en">car</rdfs:label>
+        <rdfs:label xml:lang="es">coche</rdfs:label>
+		<rdfs:label xml:lang="it">auto</rdfs:label>
+        <rdfs:comment>Car of a specific rental</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Car"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Rental"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#carType -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;carType">
+        <rdfs:label xml:lang="de">Fahrzeugtyp</rdfs:label>
+        <rdfs:label xml:lang="el">τύπος αυτοκινήτου</rdfs:label>
+        <rdfs:label xml:lang="en">car type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de vehículo</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di veicolo</rdfs:label>
+        <rdfs:comment>Type of a specific car</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Car"/>
+        <rdfs:range rdf:resource="&Travel-Domain;CarType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#city -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;city">
+        <rdfs:label xml:lang="de">Stadt</rdfs:label>
+        <rdfs:label xml:lang="el">πόλη</rdfs:label>
+        <rdfs:label xml:lang="en">city</rdfs:label>
+        <rdfs:label xml:lang="es">ciudad</rdfs:label>
+		<rdfs:label xml:lang="it">città</rdfs:label>
+        <rdfs:comment>City</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#cityCountry -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;cityCountry">
+        <rdfs:label xml:lang="de">Land</rdfs:label>
+        <rdfs:label xml:lang="el">χώρα πόλης</rdfs:label>
+        <rdfs:label xml:lang="en">country of city</rdfs:label>
+        <rdfs:label xml:lang="es">país</rdfs:label>
+		<rdfs:label xml:lang="it">città dello stato</rdfs:label>
+        <rdfs:comment>Country that a city is located in</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;City"/>
+        <rdfs:range rdf:resource="&Travel-Domain;Country"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#country -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;country">
+        <rdfs:label xml:lang="de">Land</rdfs:label>
+        <rdfs:label xml:lang="el">χώρα</rdfs:label>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+        <rdfs:label xml:lang="es">país</rdfs:label>
+		<rdfs:label xml:lang="it">paese</rdfs:label>
+        <rdfs:comment>Country</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#departure -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;departure">
+        <rdfs:label xml:lang="de">Abreise</rdfs:label>
+        <rdfs:label xml:lang="el">αναχώρηση</rdfs:label>
+        <rdfs:label xml:lang="en">departure</rdfs:label>
+        <rdfs:label xml:lang="es">salida</rdfs:label>
+		<rdfs:label xml:lang="it">partenza</rdfs:label>
+        <rdfs:comment>Departure</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Departure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flight -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;flight">
+        <rdfs:label xml:lang="de">Flug</rdfs:label>
+        <rdfs:label xml:lang="el">πτήση</rdfs:label>
+        <rdfs:label xml:lang="en">flight</rdfs:label>
+        <rdfs:label xml:lang="es">vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">volo</rdfs:label>
+        <rdfs:comment>Flight of a trip</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Trip"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightArrival -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;flightArrival">
+        <rdfs:label xml:lang="de">Ankunft</rdfs:label>
+        <rdfs:label xml:lang="el">άφιξη πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">flight arrival</rdfs:label>
+        <rdfs:label xml:lang="es">llegada del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">arrivo del volo</rdfs:label>
+        <rdfs:comment>Arrival of a flight</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Arrival"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;arrival"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightdeparture -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;flightdeparture">
+        <rdfs:label xml:lang="de">Abflug</rdfs:label>
+        <rdfs:label xml:lang="el">αναχώρηση πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">flight departure</rdfs:label>
+        <rdfs:label xml:lang="es">salida de vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">partenza del volo</rdfs:label>
+        <rdfs:comment>Departure of a flight</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Departure"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;departure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hotel -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;hotel">
+        <rdfs:label xml:lang="de">Hotel</rdfs:label>
+        <rdfs:label xml:lang="el">ξενοδοχείο</rdfs:label>
+        <rdfs:label xml:lang="en">hotel</rdfs:label>
+        <rdfs:label xml:lang="es">hotel</rdfs:label>
+		<rdfs:label xml:lang="it">hotel</rdfs:label>
+        <rdfs:comment>Hotel of a stay</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Hotel"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hotelArrival -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;hotelArrival">
+        <rdfs:label xml:lang="de">Ankunft im Hotel</rdfs:label>
+        <rdfs:label xml:lang="el">άφιξη σε ξενοδοχείο</rdfs:label>
+        <rdfs:label xml:lang="en">hotel arrival</rdfs:label>
+        <rdfs:label xml:lang="es">llegada al hotel</rdfs:label>
+		<rdfs:label xml:lang="it">arrivo in hotel</rdfs:label>
+        <rdfs:comment>Arrival at a hotel</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Arrival"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;arrival"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hoteldeparture -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;hoteldeparture">
+        <rdfs:label xml:lang="de">Abreise vom Hotel</rdfs:label>
+        <rdfs:label xml:lang="el">αναχώρηση από ξενοδοχείο</rdfs:label>
+        <rdfs:label xml:lang="en">hotel departure</rdfs:label>
+        <rdfs:label xml:lang="es">salida del hotel</rdfs:label>
+		<rdfs:label xml:lang="it">partenza dall'hotel</rdfs:label>
+        <rdfs:comment>Departure from a hotel</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Departure"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;departure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;leg">
+        <rdfs:label xml:lang="de">Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="el">σκέλος πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">leg</rdfs:label>
+        <rdfs:label xml:lang="es">etapa de vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">tappa del volo</rdfs:label>
+        <rdfs:comment>Leg of a specific flight</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:range rdf:resource="&Travel-Domain;Leg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg1 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;leg1">
+        <rdfs:label xml:lang="de">erste Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="en">first leg</rdfs:label>
+        <rdfs:label xml:lang="es">primera etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">prima tappa del volo</rdfs:label>
+        <rdfs:comment>First flight leg</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;leg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg2 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;leg2">
+        <rdfs:label xml:lang="de">zweite Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="en">second leg</rdfs:label>
+        <rdfs:label xml:lang="es">segunda etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">seconda tappa del volo</rdfs:label>
+        <rdfs:comment>Second flight leg</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;leg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#leg3 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;leg3">
+        <rdfs:label xml:lang="de">dritte Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="en">third leg</rdfs:label>
+        <rdfs:label xml:lang="es">tercera etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">terza tappa del volo</rdfs:label>
+        <rdfs:comment>Third flight leg</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;leg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#location -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;location">
+        <rdfs:label xml:lang="de">Ort</rdfs:label>
+        <rdfs:label xml:lang="el">τοποθεσία</rdfs:label>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <rdfs:label xml:lang="es">lugar</rdfs:label>
+		<rdfs:label xml:lang="it">luogo</rdfs:label>
+        <rdfs:comment>Location </rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#manufacturer -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;manufacturer">
+        <rdfs:label xml:lang="de">Hersteller</rdfs:label>
+        <rdfs:label xml:lang="el">κατασκευαστής</rdfs:label>
+        <rdfs:label xml:lang="en">manufacturer</rdfs:label>
+        <rdfs:label xml:lang="es">fabricante</rdfs:label>
+		<rdfs:label xml:lang="it">fabbricante</rdfs:label>
+        <rdfs:comment>Manufacturer of an aiplane</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Manufacturer"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Plane"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#meal -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;meal">
+        <rdfs:label xml:lang="de">Mahlzeit</rdfs:label>
+        <rdfs:label xml:lang="el">γεύμα</rdfs:label>
+        <rdfs:label xml:lang="en">meal</rdfs:label>
+        <rdfs:label xml:lang="es">comida</rdfs:label>
+		<rdfs:label xml:lang="it">pasto</rdfs:label>
+        <rdfs:comment>Meal type offered at a flight</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:range rdf:resource="&Travel-Domain;Meal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#planeType -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;planeType">
+        <rdfs:label xml:lang="de">Flugzeugtyp</rdfs:label>
+        <rdfs:label xml:lang="el">τύπος αεροσκάφους</rdfs:label>
+        <rdfs:label xml:lang="en">plane type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de avión</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di aereo</rdfs:label>
+        <rdfs:comment>Type of airplane</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Leg"/>
+        <rdfs:range rdf:resource="&Travel-Domain;Plane"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#rental -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;rental">
+        <rdfs:label xml:lang="de">Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="el">ενοικίαση</rdfs:label>
+        <rdfs:label xml:lang="en">rental</rdfs:label>
+        <rdfs:label xml:lang="es">alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">noleggio auto</rdfs:label>
+        <rdfs:comment>Car rental of a trip</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Rental"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Trip"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#rental1 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;rental1">
+        <rdfs:label xml:lang="de">erster Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="en">first rental</rdfs:label>
+        <rdfs:label xml:lang="es">primer alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">primo noleggio auto</rdfs:label>
+        <rdfs:comment>First car rental of a trip</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;rental"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#rental2 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;rental2">
+        <rdfs:label xml:lang="de">zweiter Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="en">second rental</rdfs:label>
+        <rdfs:label xml:lang="es">segundo alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">secondo noleggio auto</rdfs:label>
+        <rdfs:comment>Second car rental of a trip</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;rental"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#rentalCompany -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;rentalCompany">
+        <rdfs:label xml:lang="de">Mietwagenunternehmen</rdfs:label>
+        <rdfs:label xml:lang="el">εταιρεία ενοικίασης</rdfs:label>
+        <rdfs:label xml:lang="en">rental company</rdfs:label>
+        <rdfs:label xml:lang="es">empresa de alquiler de coches</rdfs:label>
+		<rdfs:label xml:lang="it">impresa di noleggio auto</rdfs:label>
+        <rdfs:comment>Car rental company for a specific rental</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Company"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Rental"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#rentalLocation -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;rentalLocation">
+        <rdfs:label xml:lang="de">Standort</rdfs:label>
+        <rdfs:label xml:lang="el">τοποθεσία ενοικίασης</rdfs:label>
+        <rdfs:label xml:lang="en">rental location</rdfs:label>
+        <rdfs:label xml:lang="es">lugar de alquiler</rdfs:label>
+		<rdfs:label xml:lang="it">luogo di noleggio</rdfs:label>
+        <rdfs:comment>Location of a rental</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Rental"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#state -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;state">
+        <rdfs:label xml:lang="de">Bundesland</rdfs:label>
+        <rdfs:label xml:lang="el">πολιτεία</rdfs:label>
+        <rdfs:label xml:lang="en">state</rdfs:label>
+        <rdfs:label xml:lang="es">estado federal</rdfs:label>
+		<rdfs:label xml:lang="it">stato</rdfs:label>
+        <rdfs:comment>State that a city is located in</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;City"/>
+        <rdfs:range rdf:resource="&Travel-Domain;State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stateCountry -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stateCountry">
+        <rdfs:label xml:lang="de">Bundesland</rdfs:label>
+        <rdfs:label xml:lang="el">χώρα πολιτείας</rdfs:label>
+        <rdfs:label xml:lang="en">country of state</rdfs:label>
+        <rdfs:label xml:lang="es">estado federal</rdfs:label>
+		<rdfs:label xml:lang="it">stato</rdfs:label>
+        <rdfs:comment>State in a country</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Country"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;State"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stay -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stay">
+        <rdfs:label xml:lang="de">Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="el">διαμονή</rdfs:label>
+        <rdfs:label xml:lang="en">stay</rdfs:label>
+        <rdfs:label xml:lang="es">estancia</rdfs:label>
+		<rdfs:label xml:lang="it">soggiorno</rdfs:label>
+        <rdfs:comment>A stay of a trip</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Trip"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stay1 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stay1">
+        <rdfs:label xml:lang="de">erster Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="en">first stay</rdfs:label>
+        <rdfs:label xml:lang="es">primera estancia</rdfs:label>
+		<rdfs:label xml:lang="it">primo soggiorno</rdfs:label>
+        <rdfs:comment>First hotel stay of a trip</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;stay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stay2 -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stay2">
+        <rdfs:label xml:lang="de">zweiter Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="en">second stay</rdfs:label>
+        <rdfs:label xml:lang="es">segunda estancia</rdfs:label>
+		<rdfs:label xml:lang="it">secondo soggiorno</rdfs:label>
+        <rdfs:comment>Second hotel stay of a trip</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;stay"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stayLocation -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stayLocation">
+        <rdfs:label xml:lang="de">Aufenthaltsort</rdfs:label>
+        <rdfs:label xml:lang="el">τοποθεσία διαμονής</rdfs:label>
+        <rdfs:label xml:lang="en">location of stay</rdfs:label>
+        <rdfs:label xml:lang="es">lugar de estancia</rdfs:label>
+		<rdfs:label xml:lang="it">luogo di soggiorno</rdfs:label>
+        <rdfs:comment>Location of a stay</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stopover -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;stopover">
+        <rdfs:label xml:lang="de">Zwischenstopp</rdfs:label>
+        <rdfs:label xml:lang="el">στάση</rdfs:label>
+        <rdfs:label xml:lang="en">stopover</rdfs:label>
+        <rdfs:label xml:lang="es">escala</rdfs:label>
+		<rdfs:label xml:lang="it">scalo</rdfs:label>
+        <rdfs:comment>Stopover of a flight</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:range rdf:resource="&Travel-Domain;StopOver"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#userInfo -->
+
+    <owl:ObjectProperty rdf:about="&Travel-Domain;userInfo">
+        <rdfs:label xml:lang="de">Nutzerinformation</rdfs:label>
+        <rdfs:label xml:lang="el">πληροφορίες χρήστη</rdfs:label>
+        <rdfs:label xml:lang="en">user information</rdfs:label>
+        <rdfs:label xml:lang="es">información sobre el cliente</rdfs:label>
+		<rdfs:label xml:lang="it">informazione per l'utente</rdfs:label>
+        <rdfs:comment>Information about the person that does a booking</rdfs:comment>
+        <rdfs:range rdf:resource="&Travel-Domain;UserInfo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;address">
+        <rdfs:label xml:lang="de">Adresse</rdfs:label>
+        <rdfs:label xml:lang="el">διεύθυνση</rdfs:label>
+        <rdfs:label xml:lang="en">address</rdfs:label>
+        <rdfs:label xml:lang="es">dirección</rdfs:label>
+		<rdfs:label xml:lang="it">indirizzo</rdfs:label>
+        <rdfs:comment>Address</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airlineName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;airlineName">
+        <rdfs:label xml:lang="de">Fluggesellschaftsname</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα αερομεταφορέα</rdfs:label>
+        <rdfs:label xml:lang="en">airline name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre de la aerolínea</rdfs:label>
+		<rdfs:label xml:lang="it">nome della compagnia aerea</rdfs:label>
+        <rdfs:comment>Airline name</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;AirLine"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#airportName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;airportName">
+        <rdfs:label xml:lang="de">Flughafenname</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα αεροδρομίου</rdfs:label>
+        <rdfs:label xml:lang="en">airport name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre del aeropuerto</rdfs:label>
+		<rdfs:label xml:lang="it">nome dell'aeroporto</rdfs:label>
+        <rdfs:comment>Name of an aiport</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Airport"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#cityName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;cityName">
+        <rdfs:label xml:lang="de">Städtename</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα πόλης</rdfs:label>
+        <rdfs:label xml:lang="en">city name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre de la ciudad</rdfs:label>
+		<rdfs:label xml:lang="it">nome della città</rdfs:label>
+        <rdfs:comment>Name of a city</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;City"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#class -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;class">
+        <rdfs:label xml:lang="de">Klasse</rdfs:label>
+        <rdfs:label xml:lang="el">θέση </rdfs:label>
+        <rdfs:label xml:lang="en">class</rdfs:label>
+        <rdfs:label xml:lang="es">categoría</rdfs:label>
+		<rdfs:label xml:lang="it">classe</rdfs:label>
+        <rdfs:comment>Flight class</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#companyName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;companyName">
+        <rdfs:label xml:lang="de">Unternehmensname</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα εταιρείας</rdfs:label>
+        <rdfs:label xml:lang="en">company name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre de compañía</rdfs:label>
+		<rdfs:label xml:lang="it">nome della compagnia</rdfs:label>
+        <rdfs:comment>Name of a rental company</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Company"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#countryName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;countryName">
+        <rdfs:label xml:lang="de">Landesname</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα χώρας</rdfs:label>
+        <rdfs:label xml:lang="en">country name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre del país</rdfs:label>
+		<rdfs:label xml:lang="it">nome del paese</rdfs:label>
+        <rdfs:comment>Name of a country</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Country"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#datecall -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;datecall">
+        <rdfs:label xml:lang="de">Anrufdatum</rdfs:label>
+        <rdfs:label xml:lang="el">ημερομηνία κλήσεως</rdfs:label>
+        <rdfs:label xml:lang="en">date call</rdfs:label>
+        <rdfs:label xml:lang="es">hora de llamada telefónica</rdfs:label>
+		<rdfs:label xml:lang="it">data della chiamata</rdfs:label>
+        <rdfs:comment>Date of booking  call </rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;UserInfo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#fareType -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;fareType">
+        <rdfs:label xml:lang="de">Art der Flugkosten</rdfs:label>
+        <rdfs:label xml:lang="el">τύπος ναύλου</rdfs:label>
+        <rdfs:label xml:lang="en">fare type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de tarifa</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di tariffa</rdfs:label>
+        <rdfs:comment>Fare type of a flight</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#fax -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;fax">
+        <rdfs:label xml:lang="de">Faxnummer</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός φαξ</rdfs:label>
+        <rdfs:label xml:lang="en">fax number</rdfs:label>
+        <rdfs:label xml:lang="es">número de fax</rdfs:label>
+		<rdfs:label xml:lang="it">numero di fax</rdfs:label>
+        <rdfs:comment>Fax number</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#flightnumber -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;flightnumber">
+        <rdfs:label xml:lang="de">Flugnummer</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός πτήσεως</rdfs:label>
+        <rdfs:label xml:lang="en">flight number</rdfs:label>
+        <rdfs:label xml:lang="es">número de vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">numero del volo</rdfs:label>
+        <rdfs:comment>Flight number</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Leg"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#guestsnumber -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;guestsnumber">
+        <rdfs:label xml:lang="de">Anzahl der Gäste</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός επισκεπτών</rdfs:label>
+        <rdfs:label xml:lang="en">number of guests</rdfs:label>
+        <rdfs:label xml:lang="es">número de huéspedes</rdfs:label>
+		<rdfs:label xml:lang="it">numero di ospiti</rdfs:label>
+        <rdfs:comment>Number of persons staying at the hotel</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;hasDuration">
+        <rdfs:label xml:lang="de">Dauer</rdfs:label>
+        <rdfs:label xml:lang="el">διάρκεια</rdfs:label>
+        <rdfs:label xml:lang="en">has duration</rdfs:label>
+        <rdfs:label xml:lang="es">duración</rdfs:label>
+		<rdfs:label xml:lang="it">durata</rdfs:label>
+        <rdfs:comment>Duration</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hasTime -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;hasTime">
+        <rdfs:label xml:lang="de">Zeit</rdfs:label>
+        <rdfs:label xml:lang="el">ημερομηνία και ώρα</rdfs:label>
+        <rdfs:label xml:lang="en">has time</rdfs:label>
+        <rdfs:label xml:lang="es">hora</rdfs:label>
+		<rdfs:label xml:lang="it">orario</rdfs:label>
+        <rdfs:comment>Time</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#hotelName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;hotelName">
+        <rdfs:label xml:lang="de">Hotelname</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα ξενοδοχείου</rdfs:label>
+        <rdfs:label xml:lang="en">hotel name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre del hotel</rdfs:label>
+		<rdfs:label xml:lang="it">nome dell'hotel</rdfs:label>
+        <rdfs:comment>Name of a hotel</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Hotel"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;id">
+        <rdfs:label xml:lang="de">Ausweisnummer</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός ταυτότητας</rdfs:label>
+        <rdfs:label xml:lang="en">ID</rdfs:label>
+        <rdfs:label xml:lang="es">número de identificación</rdfs:label>
+		<rdfs:label xml:lang="it">numero della carta d'identità</rdfs:label>
+        <rdfs:comment>ID of a person</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;UserInfo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#manufacturerName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;manufacturerName">
+        <rdfs:label xml:lang="de">Herstellername</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα κατασκευαστή</rdfs:label>
+        <rdfs:label xml:lang="en">manufacturer name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre del fabricante</rdfs:label>
+		<rdfs:label xml:lang="it">nome del fabbricante</rdfs:label>
+        <rdfs:comment>Name of an aircraft manufacturer</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;Manufacturer"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#mealType -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;mealType">
+        <rdfs:label xml:lang="de">Art der Mahlzeit</rdfs:label>
+        <rdfs:label xml:lang="el">τύπος γεύματος</rdfs:label>
+        <rdfs:label xml:lang="en">meal type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de comida</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di pasto</rdfs:label>
+        <rdfs:comment>Type of meal</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Meal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;name">
+        <rdfs:label xml:lang="de">Name</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα</rdfs:label>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre</rdfs:label>
+		<rdfs:label xml:lang="it">nome</rdfs:label>
+        <rdfs:comment>Name</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#passnumber -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;passnumber">
+        <rdfs:label xml:lang="de">Anzahl der Passagiere</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός επιβάτη</rdfs:label>
+        <rdfs:label xml:lang="en">number of passengers</rdfs:label>
+        <rdfs:label xml:lang="es">número de pasajeros</rdfs:label>
+		<rdfs:label xml:lang="it">numero dei passeggeri</rdfs:label>
+        <rdfs:comment>Number of passengers</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#price -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;price">
+        <rdfs:label xml:lang="de">Preis</rdfs:label>
+        <rdfs:label xml:lang="el">τιμή</rdfs:label>
+        <rdfs:label xml:lang="en">price</rdfs:label>
+        <rdfs:label xml:lang="es">precio</rdfs:label>
+		<rdfs:label xml:lang="it">prezzo</rdfs:label>
+        <rdfs:comment>Price</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#priceCurrency -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;priceCurrency">
+        <rdfs:label xml:lang="de">Währung</rdfs:label>
+        <rdfs:label xml:lang="el">νόμισμα</rdfs:label>
+        <rdfs:label xml:lang="en">currency</rdfs:label>
+        <rdfs:label xml:lang="es">moneda</rdfs:label>
+		<rdfs:label xml:lang="it">valuta</rdfs:label>
+        <rdfs:comment>Currency of a price</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#pricedaily -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;pricedaily">
+        <rdfs:label xml:lang="de">Tagespreis</rdfs:label>
+        <rdfs:label xml:lang="el">ημερήσια τιμή</rdfs:label>
+        <rdfs:label xml:lang="en">daily price</rdfs:label>
+        <rdfs:label xml:lang="es">oferta del día</rdfs:label>
+		<rdfs:label xml:lang="it">offerta del giorno</rdfs:label>
+        <rdfs:comment>Daily price (e.g. for a car rental)</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#roomnumber -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;roomnumber">
+        <rdfs:label xml:lang="de">Zimmernummer</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός δωματίου</rdfs:label>
+        <rdfs:label xml:lang="en">room number</rdfs:label>
+        <rdfs:label xml:lang="es">número de habitación</rdfs:label>
+		<rdfs:label xml:lang="it">numero della camera</rdfs:label>
+        <rdfs:comment>Room number of a hotel stay</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Stay"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#seatPreference -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;seatPreference">
+        <rdfs:label xml:lang="de">Sitzplatzpräferenz</rdfs:label>
+        <rdfs:label xml:lang="el">προτιμώμενη θέση</rdfs:label>
+        <rdfs:label xml:lang="en">seat pgreference</rdfs:label>
+        <rdfs:label xml:lang="es">preferencia de asiento en un vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">preferenza per un posto</rdfs:label>
+        <rdfs:comment>Seat preference for a flight</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;Flight"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#serviceType -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;serviceType">
+        <rdfs:label xml:lang="de">Art des Service</rdfs:label>
+        <rdfs:label xml:lang="el">τύπος υπηρεσίας</rdfs:label>
+        <rdfs:label xml:lang="en">service type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de servicio</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di servizio</rdfs:label>
+        <rdfs:comment>Description of ground service at an airport </rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;AirportService"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#stateName -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;stateName">
+        <rdfs:label xml:lang="de">Name des Bundeslandes</rdfs:label>
+        <rdfs:label xml:lang="el">όνομα πολιτείας</rdfs:label>
+        <rdfs:label xml:lang="en">state name</rdfs:label>
+        <rdfs:label xml:lang="es">nombre del estado federal</rdfs:label>
+		<rdfs:label xml:lang="it">nome dello stato</rdfs:label>
+        <rdfs:comment>Name of a state</rdfs:comment>
+        <rdfs:domain rdf:resource="&Travel-Domain;State"/>
+        <rdfs:subPropertyOf rdf:resource="&Travel-Domain;name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#tel -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;tel">
+        <rdfs:label xml:lang="de">Telefonnummer</rdfs:label>
+        <rdfs:label xml:lang="el">αριθμός τηλεφώνου</rdfs:label>
+        <rdfs:label xml:lang="en">telephone number</rdfs:label>
+        <rdfs:label xml:lang="es">número de teléfono</rdfs:label>
+		<rdfs:label xml:lang="it">numero di telefono</rdfs:label>
+        <rdfs:comment>Telephone number</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#timecall -->
+
+    <owl:DatatypeProperty rdf:about="&Travel-Domain;timecall">
+        <rdfs:label xml:lang="de">Anrufzeit</rdfs:label>
+        <rdfs:label xml:lang="el">χρόνος κλήσεως</rdfs:label>
+        <rdfs:label xml:lang="en">time of call</rdfs:label>
+        <rdfs:label xml:lang="es">hora de llamada telefónica</rdfs:label>
+		<rdfs:label xml:lang="it">ora della chiamata</rdfs:label>
+        <rdfs:comment>Time of call for a booking</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&Travel-Domain;UserInfo"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#AirLine -->
+
+    <owl:Class rdf:about="&Travel-Domain;AirLine">
+        <rdfs:label xml:lang="de">Fluggesellschaft</rdfs:label>
+        <rdfs:label xml:lang="el">Αερομεταφορέας</rdfs:label>
+        <rdfs:label xml:lang="en">Airline</rdfs:label>
+        <rdfs:label xml:lang="es">línea aérea</rdfs:label>
+		<rdfs:label xml:lang="it">Compagnia Aerea</rdfs:label>
+        <rdfs:comment>Airline company such as Air France</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Airport -->
+
+    <owl:Class rdf:about="&Travel-Domain;Airport">
+        <rdfs:label xml:lang="de">Flughafen</rdfs:label>
+        <rdfs:label xml:lang="el">Αεροδρόμιο</rdfs:label>
+        <rdfs:label xml:lang="en">airport</rdfs:label>
+        <rdfs:label xml:lang="es">aeropuerto</rdfs:label>
+		<rdfs:label xml:lang="it">aeroporto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:comment>Airport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#AirportService -->
+
+    <owl:Class rdf:about="&Travel-Domain;AirportService">
+        <rdfs:label xml:lang="de">Flughafenservice</rdfs:label>
+        <rdfs:label xml:lang="el">Υπηρεσία Αεροδρομίου</rdfs:label>
+        <rdfs:label xml:lang="en">airport service</rdfs:label>
+        <rdfs:label xml:lang="es">servicio de transporte de aeropuerto</rdfs:label>
+		<rdfs:label xml:lang="it">servizi aeroportuali</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Ground transport services e.g. taxi, bus, train offered at an airport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Arrival -->
+
+    <owl:Class rdf:about="&Travel-Domain;Arrival">
+        <rdfs:label xml:lang="de">Ankunft</rdfs:label>
+        <rdfs:label xml:lang="el">Άφιξη</rdfs:label>
+        <rdfs:label xml:lang="en">arrival</rdfs:label>
+        <rdfs:label xml:lang="es">llegada</rdfs:label>
+		<rdfs:label xml:lang="it">arrivo</rdfs:label>
+        <rdfs:comment>Arrival at a destination, such as hotel or airport</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Car -->
+
+    <owl:Class rdf:about="&Travel-Domain;Car">
+        <rdfs:label xml:lang="de">Auto</rdfs:label>
+        <rdfs:label xml:lang="el">Αυτοκίνητο</rdfs:label>
+        <rdfs:label xml:lang="en">car</rdfs:label>
+        <rdfs:label xml:lang="es">coche</rdfs:label>
+		<rdfs:label xml:lang="it">auto</rdfs:label>
+        <rdfs:comment>Car rented</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#CarType -->
+
+    <owl:Class rdf:about="&Travel-Domain;CarType">
+        <rdfs:label xml:lang="de">Fahrzeugtyp</rdfs:label>
+        <rdfs:label xml:lang="el">Τύπος Αυτοκινήτου</rdfs:label>
+        <rdfs:label xml:lang="en">car type</rdfs:label>
+        <rdfs:label xml:lang="es">tipo de vehículo</rdfs:label>
+		<rdfs:label xml:lang="it">tipo di auto</rdfs:label>
+        <rdfs:comment>Type of car</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#City -->
+
+    <owl:Class rdf:about="&Travel-Domain;City">
+        <rdfs:label xml:lang="de">Stadt</rdfs:label>
+        <rdfs:label xml:lang="el">Πόλη</rdfs:label>
+        <rdfs:label xml:lang="en">city</rdfs:label>
+        <rdfs:label xml:lang="es">ciudad</rdfs:label>
+		<rdfs:label xml:lang="it">città</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:comment>City</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Company -->
+
+    <owl:Class rdf:about="&Travel-Domain;Company">
+        <rdfs:label xml:lang="de">Unternehmen</rdfs:label>
+        <rdfs:label xml:lang="el">Εταιρεία</rdfs:label>
+        <rdfs:label xml:lang="en">company</rdfs:label>
+        <rdfs:label xml:lang="es">empresa de alquiler de coches</rdfs:label>
+		<rdfs:label xml:lang="it">impresa di noleggio auto</rdfs:label>
+        <rdfs:comment>Car rental company</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Country -->
+
+    <owl:Class rdf:about="&Travel-Domain;Country">
+        <rdfs:label xml:lang="de">Land</rdfs:label>
+        <rdfs:label xml:lang="el">Χώρα</rdfs:label>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:comment>Country</rdfs:comment>
+        <rdfs:comment xml:lang="es">país</rdfs:comment>
+		<rdfs:comment xml:lang="it">paese</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Departure -->
+
+    <owl:Class rdf:about="&Travel-Domain;Departure">
+        <rdfs:label xml:lang="de">Abreise</rdfs:label>
+        <rdfs:label xml:lang="el">Αναχώρηση</rdfs:label>
+        <rdfs:label xml:lang="en">departure</rdfs:label>
+        <rdfs:label xml:lang="es">partida</rdfs:label>
+		<rdfs:label xml:lang="it">partenza</rdfs:label>
+        <rdfs:comment>Departure from a destination</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Flight -->
+
+    <owl:Class rdf:about="&Travel-Domain;Flight">
+        <rdfs:label xml:lang="de">Flug</rdfs:label>
+        <rdfs:label xml:lang="el">Πτήση</rdfs:label>
+        <rdfs:label xml:lang="en">flight</rdfs:label>
+        <rdfs:label xml:lang="es">vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">volo</rdfs:label>
+        <rdfs:comment>Flight composed of flight legs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Hotel -->
+
+    <owl:Class rdf:about="&Travel-Domain;Hotel">
+        <rdfs:label xml:lang="de">Hotel</rdfs:label>
+        <rdfs:label xml:lang="el">Ξενοδοχείο</rdfs:label>
+        <rdfs:label xml:lang="en">hotel</rdfs:label>
+        <rdfs:label xml:lang="es">hotel</rdfs:label>
+		<rdfs:label xml:lang="it">hotel</rdfs:label>
+        <rdfs:comment>Hotel</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg -->
+
+    <owl:Class rdf:about="&Travel-Domain;Leg">
+        <rdfs:label xml:lang="de">Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="el">Σκέλος πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">leg</rdfs:label>
+        <rdfs:label xml:lang="es">etapa de vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">tappa del volo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Flight"/>
+        <rdfs:comment>Leg of a flight</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg1 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Leg1">
+        <rdfs:label xml:lang="de">erste Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="el">Πρώτο σκέλος πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">first leg</rdfs:label>
+        <rdfs:label xml:lang="es">primera etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">prima tappa del volo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Leg"/>
+        <rdfs:comment>First leg of a flight</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg2 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Leg2">
+        <rdfs:label xml:lang="de">zweite Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="el">Δεύτερο σκέλος πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">second leg</rdfs:label>
+        <rdfs:label xml:lang="es">segunda etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">seconnda tappa del volo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Leg"/>
+        <rdfs:comment>Second leg of a flight</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Leg3 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Leg3">
+        <rdfs:label xml:lang="de">dritte Teilstrecke</rdfs:label>
+        <rdfs:label xml:lang="el">Τρίτο σκέλος πτήσης</rdfs:label>
+        <rdfs:label xml:lang="en">third leg</rdfs:label>
+        <rdfs:label xml:lang="es">tercera etapa del vuelo</rdfs:label>
+		<rdfs:label xml:lang="it">terza tappa del volo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Leg"/>
+        <rdfs:comment>Third leg of a flight</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Location -->
+
+    <owl:Class rdf:about="&Travel-Domain;Location">
+        <rdfs:label xml:lang="de">Ort</rdfs:label>
+        <rdfs:label xml:lang="el">Τοποθεσία</rdfs:label>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <rdfs:label xml:lang="es">lugar</rdfs:label>
+		<rdfs:label xml:lang="it">luogo</rdfs:label>
+        <rdfs:comment>A geographical entity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Manufacturer -->
+
+    <owl:Class rdf:about="&Travel-Domain;Manufacturer">
+        <rdfs:label xml:lang="de">Hersteller</rdfs:label>
+        <rdfs:label xml:lang="el">Κατασκευαστής</rdfs:label>
+        <rdfs:label xml:lang="en">manufacturer</rdfs:label>
+        <rdfs:label xml:lang="es">fabricante</rdfs:label>
+		<rdfs:label xml:lang="it">fabbricante</rdfs:label>
+        <rdfs:comment>Aircraft manufacturer company</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Meal -->
+
+    <owl:Class rdf:about="&Travel-Domain;Meal">
+        <rdfs:label xml:lang="de">Mahlzeit</rdfs:label>
+        <rdfs:label xml:lang="el">Γεύμα</rdfs:label>
+        <rdfs:label xml:lang="en">meal</rdfs:label>
+        <rdfs:label xml:lang="es">comida</rdfs:label>
+		<rdfs:label xml:lang="it">pasto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Type of meal</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Plane -->
+
+    <owl:Class rdf:about="&Travel-Domain;Plane">
+        <rdfs:label xml:lang="de">Flugzeug</rdfs:label>
+        <rdfs:label xml:lang="el">Αεροσκάφος</rdfs:label>
+        <rdfs:label xml:lang="en">airplane</rdfs:label>
+        <rdfs:label xml:lang="es">avión</rdfs:label>
+		<rdfs:label xml:lang="it">aereo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Airplane</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental -->
+
+    <owl:Class rdf:about="&Travel-Domain;Rental">
+        <rdfs:label xml:lang="de">Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="el">Ενοικίαση</rdfs:label>
+        <rdfs:label xml:lang="en">rental</rdfs:label>
+        <rdfs:label xml:lang="es">alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">noleggio auto</rdfs:label>
+        <rdfs:comment>Car rental</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental1 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Rental1">
+        <rdfs:label xml:lang="de">erster Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="el">πρώτη ενοικίαση</rdfs:label>
+        <rdfs:label xml:lang="en">first rental</rdfs:label>
+        <rdfs:label xml:lang="es">primer alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">primo noleggio auto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Rental"/>
+        <rdfs:comment>First car rental of a trip</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Rental2 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Rental2">
+        <rdfs:label xml:lang="de">zweiter Mietwagen</rdfs:label>
+        <rdfs:label xml:lang="el">δεύτερη ενοικίαση</rdfs:label>
+        <rdfs:label xml:lang="en">second rental</rdfs:label>
+        <rdfs:label xml:lang="es">segundo alquiler de coche</rdfs:label>
+		<rdfs:label xml:lang="it">secondo noleggio auto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Rental"/>
+        <rdfs:comment>Second car rental of a trip</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#State -->
+
+    <owl:Class rdf:about="&Travel-Domain;State">
+        <rdfs:label xml:lang="de">Bundesland</rdfs:label>
+        <rdfs:label xml:lang="el">Πολιτεία</rdfs:label>
+        <rdfs:label xml:lang="en">state</rdfs:label>
+        <rdfs:label xml:lang="es">estado federal</rdfs:label>
+		<rdfs:label xml:lang="it">stato</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Location"/>
+        <rdfs:comment>State or other form of administrative region of a country</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay -->
+
+    <owl:Class rdf:about="&Travel-Domain;Stay">
+        <rdfs:label xml:lang="de">Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="el">Διαμονή</rdfs:label>
+        <rdfs:label xml:lang="en">stay</rdfs:label>
+        <rdfs:label xml:lang="es">estancia</rdfs:label>
+		<rdfs:label xml:lang="it">soggiorno</rdfs:label>
+        <rdfs:comment>Hotel stay</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay1 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Stay1">
+        <rdfs:label xml:lang="de">erster Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="el">πρώτη διαμονή</rdfs:label>
+        <rdfs:label xml:lang="en">first stay</rdfs:label>
+        <rdfs:label xml:lang="es">primera estancia</rdfs:label>
+		<rdfs:label xml:lang="it">primo soggiorno</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:comment>First hotel stay of a trip</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Stay2 -->
+
+    <owl:Class rdf:about="&Travel-Domain;Stay2">
+        <rdfs:label xml:lang="de">zweiter Aufenthalt</rdfs:label>
+        <rdfs:label xml:lang="el">δεύτερη διαμονή</rdfs:label>
+        <rdfs:label xml:lang="en">second stay</rdfs:label>
+        <rdfs:label xml:lang="es">segunda estancia</rdfs:label>
+		<rdfs:label xml:lang="it">secondo soggiorno</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Travel-Domain;Stay"/>
+        <rdfs:comment>Second hotel stay of a trip</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#StopOver -->
+
+    <owl:Class rdf:about="&Travel-Domain;StopOver">
+        <rdfs:label xml:lang="de">Zwischenstopp</rdfs:label>
+        <rdfs:label xml:lang="el">Ενδιάμεση Στάση </rdfs:label>
+        <rdfs:label xml:lang="en">stopover</rdfs:label>
+        <rdfs:label xml:lang="es">escala</rdfs:label>
+		<rdfs:label xml:lang="it">scalo</rdfs:label>
+        <rdfs:comment>Stopover of a flight</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Trip -->
+
+    <owl:Class rdf:about="&Travel-Domain;Trip">
+        <rdfs:label xml:lang="de">Reise</rdfs:label>
+        <rdfs:label xml:lang="el">Ταξίδι</rdfs:label>
+        <rdfs:label xml:lang="en">trip</rdfs:label>
+        <rdfs:label xml:lang="es">viaje</rdfs:label>
+		<rdfs:label xml:lang="it">viaggio</rdfs:label>
+        <rdfs:comment>Entire trip composed of flights, hotel stays and car rentals</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#UserInfo -->
+
+    <owl:Class rdf:about="&Travel-Domain;UserInfo">
+        <rdfs:label xml:lang="de">Nutzerinformation</rdfs:label>
+        <rdfs:label xml:lang="el">Πληροφορίες Χρήστη</rdfs:label>
+        <rdfs:label xml:lang="en">user information</rdfs:label>
+        <rdfs:label xml:lang="es">información sobre el cliente</rdfs:label>
+		<rdfs:label xml:lang="it">informazione per l'utente</rdfs:label>
+        <rdfs:comment>Information about the person that books flights, hotels etc</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

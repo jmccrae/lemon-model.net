@@ -1,0 +1,387 @@
+# Automatically generated: 2013-01-25 18:11:48.166740
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix lemon: <http://www.monnet-project.eu/lemon#>.
+@prefix lexinfo: <http://lexinfo.net/ontology/2.0/lexinfo#>.
+
+@prefix base: <file:////home/christina/workspace/lemon2gf/test/out/aux/abox_en#>.
+
+
+:lexicon a lemon:Lexicon ;
+    lemon:language "en" ;
+ 
+    lemon:entry :New_Jersey ;  
+    lemon:entry :Canadian_Airlines_International ;  
+    lemon:entry :American_Airlines ;  
+    lemon:entry :Nation_Air ;  
+    lemon:entry :Delta_Airlines ;  
+    lemon:entry :Northwest_Airlines ;  
+    lemon:entry :Continental_Airlines ;  
+    lemon:entry :Midwest_Express ;  
+    lemon:entry :United_Airlines ;  
+    lemon:entry :Long_Beach ;  
+    lemon:entry :Columbus ;  
+    lemon:entry :Toronto ;  
+    lemon:entry :New_York ;  
+    lemon:entry :Seattle ;  
+    lemon:entry :Chicago ;  
+    lemon:entry :Phoenix ;  
+    lemon:entry :Dallas ;  
+    lemon:entry :Montreal ;  
+    lemon:entry :San_Jose ;  
+    lemon:entry :Kansas_City ;  
+    lemon:entry :Las_Vegas ;  
+    lemon:entry :Milwaukee ;  
+    lemon:entry :Takoma ;  
+    lemon:entry :Philadelphia ;  
+    lemon:entry :Miami ;  
+    lemon:entry :Tampa ;  
+    lemon:entry :Los_Angeles ;  
+    lemon:entry :Memphis ;  
+    lemon:entry :Newark ;  
+    lemon:entry :Orlando ;  
+    lemon:entry :Pittsburgh ;  
+    lemon:entry :Detroit ;  
+    lemon:entry :Baltimore ;  
+    lemon:entry :Washington_D_C ;  
+    lemon:entry :Saint_Louis ;  
+    lemon:entry :Atlanta ;  
+    lemon:entry :Oakland ;  
+    lemon:entry :Cincinnati ;  
+    lemon:entry :Salt_Lake_City ;  
+    lemon:entry :San_Diego ;  
+    lemon:entry :Denver ;  
+    lemon:entry :Houston ;  
+    lemon:entry :Indianapolis ;  
+    lemon:entry :Minneapolis ;  
+    lemon:entry :Burbank ;  
+    lemon:entry :Saint_Paul ;  
+    lemon:entry :Boston ;  
+    lemon:entry :Charlotte ;  
+    lemon:entry :Saint_Petersburg ;  
+    lemon:entry :Cleveland ;  
+    lemon:entry :Nashville ;  
+    lemon:entry :San_Francisco ;  
+    lemon:entry :Bielefeld ; 
+    lemon:entry :Apeldoorn ; 
+    lemon:entry :Galway ; 
+    lemon:entry :LoveField ;  
+    lemon:entry :Toronto_International_Airport ;  
+    lemon:entry :J_F_K ;  
+    lemon:entry :La_Guardia ;  
+    lemon:entry :Boston_Airport ;  
+    lemon:entry :General_Mitchell_International ;  
+    lemon:entry :Orlando_Airport .
+
+
+:New_Jersey a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "new jersey"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#New_Jersey> ] .
+
+:Canadian_Airlines_International a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "canadian airlines international"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Canadian_Airlines_International> ] .
+
+:American_Airlines a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "american airlines"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#American_Airlines> ] .
+
+:Nation_Air a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "nation air"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Nation_Air> ] .
+
+:Delta_Airlines a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "delta airlines"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Delta_Airlines> ] .
+
+:Northwest_Airlines a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "northwest airlines"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Northwest_Airlines> ] .
+
+:Continental_Airlines a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "continental airlines"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Continental_Airlines> ] .
+
+:Midwest_Express a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "midwest express"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Midwest_Express> ] .
+
+:United_Airlines a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "united airlines"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#United_Airlines> ] .
+
+:Long_Beach a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "long beach"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Long_Beach> ] .
+
+:Columbus a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "columbus"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Columbus> ] .
+
+:Toronto a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "toronto"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Toronto> ] .
+
+:New_York a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "new york"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#New_York> ] .
+
+:Seattle a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "seattle"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Seattle> ] .
+
+:Chicago a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "chicago"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Chicago> ] .
+
+:Phoenix a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "phoenix"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Phoenix> ] .
+
+:Dallas a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "dallas"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Dallas> ] .
+
+:Montreal a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "montreal"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Montreal> ] .
+
+:San_Jose a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "san jose"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#San_Jose> ] .
+
+:Kansas_City a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "kansas city"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Kansas_City> ] .
+
+:Las_Vegas a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "las vegas"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Las_Vegas> ] .
+
+:Milwaukee a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "milwaukee"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Milwaukee> ] .
+
+:Takoma a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "takoma"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Takoma> ] .
+
+:Philadelphia a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "philadelphia"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Philadelphia> ] .
+
+:Miami a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "miami"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Miami> ] .
+
+:Tampa a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "tampa"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Tampa> ] .
+
+:Los_Angeles a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "los angeles"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Los_Angeles> ] .
+
+:Memphis a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "memphis"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Memphis> ] .
+
+:Newark a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "newark"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Newark> ] .
+
+:Orlando a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "orlando"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Orlando> ] .
+
+:Pittsburgh a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "pittsburgh"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Pittsburgh> ] .
+
+:Detroit a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "detroit"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Detroit> ] .
+
+:Baltimore a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "baltimore"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Baltimore> ] .
+
+:Washington_D_C a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "washington d c"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Washington_D_C> ] .
+
+:Saint_Louis a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "saint louis"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Saint_Louis> ] .
+
+:Atlanta a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "atlanta"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Atlanta> ] .
+
+:Oakland a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "oakland"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Oakland> ] .
+
+:Cincinnati a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "cincinnati"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Cincinnati> ] .
+
+:Salt_Lake_City a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "salt lake city"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Salt_Lake_City> ] .
+
+:San_Diego a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "san diego"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#San_Diego> ] .
+
+:Denver a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "denver"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Denver> ] .
+
+:Houston a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "houston"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Houston> ] .
+
+:Indianapolis a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "indianapolis"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Indianapolis> ] .
+
+:Minneapolis a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "minneapolis"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Minneapolis> ] .
+
+:Burbank a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "burbank"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Burbank> ] .
+
+:Saint_Paul a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "saint paul"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Saint_Paul> ] .
+
+:Boston a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "boston"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Boston> ] .
+
+:Charlotte a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "charlotte"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Charlotte> ] .
+
+:Saint_Petersburg a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "saint petersburg"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Saint_Petersburg> ] .
+
+:Cleveland a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "cleveland"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Cleveland> ] .
+
+:Nashville a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "nashville"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Nashville> ] .
+
+:San_Francisco a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "san francisco"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#San_Francisco> ] .
+
+:Bielefeld a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "bielefeld"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Bielefeld> ] .
+
+:Apeldoorn a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "apeldoorn"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Apeldoorn> ] .
+
+:Galway a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "galway"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Galway> ] .
+
+:LoveField a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "love field"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#LoveField> ] .
+
+:Toronto_International_Airport a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "toronto international airport"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Toronto_International_Airport> ] .
+
+:J_F_K a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "j f k"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#J_F_K> ] .
+
+:La_Guardia a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "la guardia"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#La_Guardia> ] .
+
+:Boston_Airport a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "boston airport"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Boston_Airport> ] .
+
+:General_Mitchell_International a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "general mitchell airport"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#General_Mitchell_International> ] .
+
+:Orlando_Airport a lemon:LexicalEntry ;
+   lexinfo:partOfSpeech lexinfo:properNoun ;
+   lemon:canonicalForm [ lemon:writtenRep "orlando airport"@en ] ;
+   lemon:sense [ lemon:reference <https://sites.google.com/site/portdial2/downloads-area/Travel-Domain.owl#Orlando_Airport> ] .
+
