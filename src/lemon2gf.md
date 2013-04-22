@@ -2,7 +2,7 @@
 
 <a href="https://github.com/cunger/lemon2gf">lemon2gf</a> is a Python script that transforms an ontology and one or more attached lemon lexica into a <a href="http://www.grammaticalframework.org">Grammatical Framework</a> (GF) grammar.
 
-lemon2gf can be downloaded from [GitHub](https://github.com/cunger/lemon2gf)
+lemon2gf can be downloaded from [GitHub](https://github.com/cunger/lemon2gf).
 
 ## Architecture
 
@@ -52,7 +52,7 @@ Additionally, for each class a list of all superclasses are collected and mapped
 
 ### Mapping a lexicon to a concrete syntax
 
-First, all senses are collected. In case a sense dooes not refer to an ontology URI, for example either refers to a URI defined in the lexicon itself, or is composed of several subsenses, then the abstract syntax is extended with according GF functions or constants. Currently, lemon2gf covers the basic OWL constructs such as `owl:unionOf`, `owl:intersectionOf`, `owl:complementOf`, `owl:propertyChainAxiom` and `owl:inverseOf`.
+First, all senses are collected. In case a sense does not refer to an ontology URI, for example either refers to a URI defined in the lexicon itself, or is composed of several subsenses, then the abstract syntax is extended with according GF functions or constants. Currently, lemon2gf covers the basic OWL constructs such as `owl:unionOf`, `owl:intersectionOf`, `owl:complementOf`, `owl:propertyChainAxiom` and `owl:inverseOf`.
 
 Subsequently, for each sense all lexical entries denoting this sense are retrieved from the lexicon, together with all relevant morphosyntactic information. On the basis of its syntactic frame or, if no frame is specified, its part of speech, templates for GF linearization judgements are instantiated. 
 For example, the following two lexical entries...
@@ -72,13 +72,13 @@ For example, the following two lexical entries...
 
 ...are converted into the following linearization judgements:
 
-    lin Mountain = variants { mountain_N; peak_N };
+    lin Mountain = variants { mkCN mountain_N; mkCN peak_N };
 
     oper
         mountain_N = mkN "mountain";
         peak_N = mkN "peak" "peaks";
 
-lemon2gf covers the the most common <a href="http://www.lexinfo.net/ontology/2.0/lexinfo.owl">LexInfo</a> parts of speech and frames, and can be easily extended.
+lemon2gf covers the most common <a href="http://www.lexinfo.net/ontology/2.0/lexinfo.owl">LexInfo</a> parts of speech and frames, and can be easily extended.
 
 
 ## Example 
