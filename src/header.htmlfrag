@@ -93,9 +93,10 @@
                 <li>
                 	<div>Resources</div>
                 	<ul id="resource_dd">
-                	  <li><a href="source.html">Source Editor</a></li>
-                	  <li><a href="lexica/uby">ubyLemon</a></li>
-                	  <li><a href="lexica/de-gaap">DE-GAAP</a></li>
+                	  <li><a href="/source.html">Source Editor</a></li>
+                	  <li><a href="/lemon2gf.html">lemon2gf</a></li>
+                	  <li><a href="/lexica/uby">ubyLemon</a></li>
+                	  <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
                 	</ul>
                 </li>
             </ul>

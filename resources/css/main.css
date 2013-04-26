@@ -373,8 +373,6 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
-    *width: 13px;
-    *height: 13px;
 }
 
 input[type="search"] {
@@ -422,6 +420,7 @@ table {
 
 td {
     vertical-align: top;
+    padding-right: 50px;
 }
 
 
@@ -508,7 +507,6 @@ tr:nth-child(even)    { background-color:#ddd; }
 }
 
 .nav > li > ul > li {
-	float:left;
 	list-style-type: none;
 	line-height: 3em;
 	width: 150px;
@@ -746,3 +744,7 @@ tr:nth-child(even)    { background-color:#ddd; }
 }
 
 p.license { font-size:70%; }
+
+.rdf > tbody > tr > td {
+  min-width:200px;
+}
