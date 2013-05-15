@@ -4,6 +4,27 @@
 
   <xsl:strip-space elements="*" />
   <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
+ 
+<xsl:template name="display-uri">
+    <xsl:param name="text"/>
+    <xsl:choose>
+      <xsl:when test="contains($text,'ubyPos.owl#')">
+        <xsl:value-of select="'category:'"/>
+        <xsl:value-of select="substring-after($text,'ubyPos.owl#')"/>
+      </xsl:when>
+      <xsl:when test="contains($text,'lexinfo#')">
+        <xsl:value-of select="'lexinfo:'"/>
+        <xsl:value-of select="substring-after($text,'lexinfo#')"/>
+      </xsl:when>
+      <xsl:when test="contains($text,'category#')">
+        <xsl:value-of select="'category:'"/>
+        <xsl:value-of select="substring-after($text,'category#')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text"/>
+      </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
 
   <!-- RDF back links to HTML -->
 <xsl:variable name="apos">'</xsl:variable>
@@ -38,16 +59,18 @@
                  <xsl:attribute name="property">
                   <xsl:value-of select="concat(namespace-uri(),local-name())"/>
                  </xsl:attribute>
-                  <xsl:value-of select="$target"/>
+		 <xsl:call-template name="display-uri">
+			 <xsl:with-param name="text" select="$target"/>
+		</xsl:call-template>
                 </a>
                 <xsl:if test="not(starts-with($target,'http'))">
                   &#160;&#160;&#160;
                   <a class="load_entry"><xsl:attribute name="href">
-                    <xsl:value-of select="concat('javascript:ajax_load_entry(',$apos,$target,$apos,')')"/>
+                    <xsl:value-of select="concat('javascript:ajax_load_entry_bl(',$apos,$target,$apos,')')"/>
                   </xsl:attribute>More...</a>
                   <div style="display:none;">
                     <xsl:attribute name="id">
-                      <xsl:value-of select="concat('la_',$target)"/>
+                      <xsl:value-of select="concat('labl_',$target)"/>
                     </xsl:attribute>
                   </div>
                 </xsl:if>

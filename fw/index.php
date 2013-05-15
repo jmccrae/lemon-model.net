@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$settings=parse_ini_file("settings.ini")
+$settings=parse_ini_file("settings.ini");
 
 $res=$settings["name"];
 
@@ -42,8 +42,9 @@ function getBestSupportedMimeType($mimeTypes = null) {
     return null;
 }
 
-function convert($nt, $outformat, $prefix) {
-   $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\" " . $settings["rappersettings"];
+function convert($nt, $outformat, $prefix, $settings) {
+   $rs=preg_replace('/"/','\\"',$settings["rappersettings"]);
+   $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\"' " . $rs;
    $cmd = "rapper -q -i turtle -o $outformat -I $prefix $namespaces -";
    $descriptorspec = array(
      0 => array("pipe", "r"),
@@ -139,11 +140,11 @@ mysql_close($con);
 
 
 if($type == "rdf") {
-  $rdfxml = convert($row['nt'] . $row['back_nt'] .file_get_contents("license-$res.nt"), "rdfxml-abbrev",($prefix.($_GET['uri']))); 
+  $rdfxml = convert($row['nt'] . $row['back_nt'] .file_get_contents("license-$res.nt"), "rdfxml-abbrev",($prefix.($_GET['uri'])), $settings); 
   header('Content-type: application/rdf+xml');
   echo $rdfxml;
 } else if($type == "ttl") {
-  $turtle = convert($row['nt'] . $row['back_nt'] .file_get_contents("license-$res.nt"), "turtle",$prefix); 
+  $turtle = convert($row['nt'] . $row['back_nt'] .file_get_contents("license-$res.nt"), "turtle",$prefix, $settings); 
   header('Content-type: text/turtle');
   echo $turtle;
 } else if($type == "nt") {
@@ -157,14 +158,14 @@ if($type == "rdf") {
   $xslDoc = new DOMDocument();
   $xslDoc->load("rdf2html.xsl");
   $xslt->importStylesheet($xslDoc);
-  $rdfxml = convert($row['nt'], "rdfxml-abbrev",$prefix);
+  $rdfxml = convert($row['nt'], "rdfxml-abbrev",$prefix, $settings);
   echo $xslt->transformToXml(new SimpleXMLElement($rdfxml));
   if(!preg_match("/^\s*$/",$row['back_nt'])) {
     $xslt = new XSLTProcessor();
     $xslBlDoc = new DOMDocument();
     $xslBlDoc->load("rdfbl2html.xsl");
     $xslt->importStylesheet($xslBlDoc);
-    $rdfxml = convert($row['back_nt'], "rdfxml-abbrev",$prefix);
+    $rdfxml = convert($row['back_nt'], "rdfxml-abbrev",$prefix, $settings);
     echo $xslt->transformToXml(new SimpleXMLElement($rdfxml));
   }
   ?>

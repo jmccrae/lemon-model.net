@@ -11,7 +11,7 @@ Next create a `settings.ini` file as follows
 
      [resource]
      name=wn
-     rappersettings="-f xmlns:lemonwn=\"http://lemon-model.net/lexica/pwn/\""
+     rappersettings="--feature xmlns:lemonwn=\"http://lemon-model.net/lexica/wn/\""
      prefix=http://lemon-model.net/lexica/
      lexicon=WordNet
 
@@ -32,24 +32,28 @@ And the main Lexicon object(s) are at
 
 And the `rappersettings` are any extra parameters (normally name prefixes) that should be passed to rapper.
 
-# license-$res.{nt,htmlfrag}
+# license-$name.{nt,htmlfrag}
 
 Next create two files `license-wn.htmlfrag` and `license-wn.nt` (replacing `wn` with the name of the resource) that describe the license in HTML (without `<html>` or `<body>`) and N-Triples, e.g.,
 
 license-wn.htmlfrag
-    <p>
-      License Blurb
-    </p>
+     <p>
+       License Blurb
+     </p>
 
 license-wn.nt
-    <> <http://purl.org/dc/terms/source> <http://wordnet.princeton.edu/wordnet/> .
-    <> <http://purl.org/dc/terms/license> <http://wordnet.princeton.edu/wordnet/license/> .
+     <> <http://purl.org/dc/terms/source> <http://wordnet.princeton.edu/wordnet/> .
+     <> <http://purl.org/dc/terms/license> <http://wordnet.princeton.edu/wordnet/license/> .
 
 # Data conversion
 
 Next create a directory called `data` and copy the resource file to either `data/wn.nt` or `data/wn.rdf`
 
 Run `convert.sh`
+
+# Load Database
+
+     zcat data/wn.sql.gz | mysql -uuser -ppassword database
 
 # category.rdf (optional)
 
@@ -62,7 +66,7 @@ Create the content in HTML of the welcome page at `welcome.htmlfrag`
 # Install
 
 Run
-    install.sh
+     ./install.sh /path/to/site
 
 
 

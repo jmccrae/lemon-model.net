@@ -53,7 +53,9 @@ cfg.section.resource
 
 res=$name
 prefix="$prefix$res/"
-
+namespaces=('--feature' 'xmlns:lemon="http://www.monnet-project.eu/lemon#"' '--feature' 'xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"' '--feature' 'xmlns:owl="http://www.w3.org/2002/07/owl#"' '--feature' 'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"' '--feature' 'xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#"')
+IFS=" " read -a rs <<< $rappersettings
+   
 if [ ! -e data/$res.nt ]
 then
   echo "RDF/XML => NT"
@@ -64,19 +66,26 @@ then
   fi
 fi
 
-lexiconFile="$prefix/$lexicon"
+if [ ! -e data/$res.rdf ]
+then
+  echo "NT => RDF/XML"
+  rapper -i turtle -o rdfxml-abbrev -I "$prefix" ${namespaces[@]} ${rs[@]} data/$res.nt > data/$res.rdf || die "Rapper failed"
+fi
+
+lexiconURI="$prefix$lexicon"
+lexiconFile=$lexicon
 
 if [ ! -e data/$lexiconFile.nt ]
 then
   echo "Extracting Lexicon"	
-  grep "$lexiconFile" data/$res.nt > data/$lexiconFile.nt
+  grep "$lexiconURI" data/$res.nt > data/$lexiconFile.nt
 fi
 
 
 if [ ! -e data/$res-prep.nt ]
 then
  echo "NT => Tricolumns"
- cat data/$res.nt | $scala prep-import.scala $res | grep -v "$lexiconFile" > data/$res-prep.nt
+ cat data/$res.nt | $scala prep-import.scala $res | grep -v "$lexiconURI" > data/$res-prep.nt
 fi
 
 if [ ! -e data/$res-sort.nt ]
@@ -93,54 +102,53 @@ fi
 
 if [ ! -e $lexiconFile.html ]
 then
-	echo "Converting Lexicon"
-        namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\" " . $settings["rappersettings"];
-        rappercmd1="rapper -i ntriples -o rdfxml-abbrev -I $prefix $namespaces $rappersettings data/$lexiconFile.nt > data/$lexiconFile.rdf"
-        `rappercmd1`
-        rappercmd2="rapper -i ntriples -o turtle -I $prefix $namespaces $rappersettings data/$lexiconFile.nt > data/$lexiconFile.ttl"
-        `rappercmd2`
-	split -d -l 10000 data/$lexiconFile.nt data/$lexiconFile-split.
-	splitFiles=`ls data/$lexiconFile-split.*`
-	for splitFile in $splitFiles
-	do
-          rappercmd3="rapper -q -i ntriples -o rdfxml-abbrev -I $prefix $namespaces $rappersettings $splitFile | xsltproc ../site/rdf2html.xsl - > $splitFile.htmlfrag"
-          `rappercmd3`
-	  rm $splitFile
-	done
-	i=0
-	iform=`printf "%02d" $i`
-	splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-	ref="$lexiconFile.$iform.html"
-	while [ -e $splitFile ] 
-	do
-		oldSplitFile=$splitFile
-		oldRef=$ref
-		echo $splitFile;
-		i=$[$i+1]
-		iform=`printf "%02d" $i`
-		splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-		ref="$lexiconFile.$iform.html"
-		if [ -e $splitFile ]
-		then
-			echo "<a href=\"$oldRef\">Previous</a>" | cat >> $splitFile
-			echo "<a href=\"$ref\">Next</a>" | cat >> $oldSplitFile
-		fi
-	done 
-	i=0
-	iform=`printf "%02d" $i`
-	splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-	cp header.htmlfrag $lexiconFile.html
-	cat < $splitFile >> $lexiconFile.html
-	rm $splitFile
-	cat footer.htmlfrag >> $lexiconFile.html
-	i=1
-	iform=`printf "%02d" $i`
-	splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-	while [ -e $splitFile ] 
-	do
-		cp header.htmlfrag $lexiconFile.$iform.html
-		cat < $splitFile >> $lexiconFile.$iform.html
-		rm $splitFile
-		cat footer.htmlfrag >> site/$lexiconFile.$iform.html
-	done
+  echo "Converting Lexicon"
+  rapper -i ntriples -o rdfxml-abbrev -I $prefix ${namespaces[@]} ${rs[@]} data/$lexiconFile.nt > data/$lexiconFile.rdf
+  rapper -i ntriples -o turtle -I $prefix ${namespaces[@]} ${rs[@]} data/$lexiconFile.nt > data/$lexiconFile.ttl
+  split -d -l 10000 data/$lexiconFile.nt data/$lexiconFile-split.
+  splitFiles=`ls data/$lexiconFile-split.*`
+  for splitFile in $splitFiles
+  do
+    rapper -q -i ntriples -o rdfxml-abbrev -I $prefix ${namespaces[@]} ${rs[@]} $splitFile | xsltproc rdf2html.xsl - > $splitFile.htmlfrag
+    rm $splitFile
+  done
+  i=0
+  iform=`printf "%02d" $i`
+  splitFile="data/$lexiconFile-split.$iform.htmlfrag"
+  ref="$lexiconFile.$iform.html"
+  while [ -e $splitFile ] 
+  do
+    oldSplitFile=$splitFile
+    oldRef=$ref
+    echo $splitFile;
+    i=$[$i+1]
+    iform=`printf "%02d" $i`
+    splitFile="data/$lexiconFile-split.$iform.htmlfrag"
+    ref="$lexiconFile.$iform.html"
+    if [ -e $splitFile ]
+    then
+      echo "<a href=\"$oldRef\">Previous</a>" | cat >> $splitFile
+      echo "<a href=\"$ref\">Next</a>" | cat >> $oldSplitFile
+    fi
+  done 
+  i=0
+  iform=`printf "%02d" $i`
+  splitFile="data/$lexiconFile-split.$iform.htmlfrag"
+  cp header.htmlfrag data/$lexiconFile.html
+  cat < $splitFile >> data/$lexiconFile.html
+  rm $splitFile
+  cat footer.htmlfrag >> data/$lexiconFile.html
+  i=1
+  iform=`printf "%02d" $i`
+  splitFile="data/$lexiconFile-split.$iform.htmlfrag"
+  while [ -e $splitFile ] 
+  do
+    cp header.htmlfrag data/$lexiconFile.$iform.html
+    cat < $splitFile >> data/$lexiconFile.$iform.html
+    rm $splitFile
+    cat footer.htmlfrag >> data/$lexiconFile.$iform.html
+    i=$[$i+1]
+    iform=`printf "%02d" $i`
+    splitFile="data/$lexiconFile-split.$iform.htmlfrag"
+  done
 fi	

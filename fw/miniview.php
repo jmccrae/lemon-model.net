@@ -3,12 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$settings=parse_ini_file("settings.ini")
+$settings=parse_ini_file("settings.ini");
 
 $res=$settings["name"];
 
-function convert($nt, $outformat, $prefix) {
-    $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\" " . $settings["rappersettings"];
+function convert($nt, $outformat, $prefix, $settings) {
+    $rs=preg_replace('/"/','\\"',$settings["rappersettings"]);
+    $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\" " . $rs;
    $cmd = "rapper -q -i turtle -o $outformat -I $prefix $namespaces -";
    $descriptorspec = array(
      0 => array("pipe", "r"),
@@ -80,7 +81,7 @@ mysql_close($con);
   $xslDoc = new DOMDocument();
   $xslDoc->load("rdf2minihtml.xsl");
   $xslt->importStylesheet($xslDoc);
-  $rdfxml = convert($row['nt'], "rdfxml-abbrev",$prefix);
+  $rdfxml = convert($row['nt'], "rdfxml-abbrev",$prefix, $settings);
   echo $xslt->transformToXml(new SimpleXMLElement($rdfxml));
   
   

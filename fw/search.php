@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$settings=parse_ini_file("settings.ini")
+$settings=parse_ini_file("settings.ini");
 
 $res=$settings["name"];
 

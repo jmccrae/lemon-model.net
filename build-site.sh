@@ -30,3 +30,14 @@ cp src/nonlocal-footer.htmlfrag htdocs/footer.htmlfrag
 
 cp htaccess htdocs/.htaccess
 
+# Build lexica/pwn
+mkdir -p tmp/pwn
+cp -r src/lexica/pwn/* tmp/pwn
+if [ ! -e tmp/pwn/data/pwn.rdf ]
+then
+  bunzip2 tmp/pwn/data/pwn.rdf.bz2
+fi
+cd tmp/pwn
+./convert.sh
+./install.sh
+cd ../../

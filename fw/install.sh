@@ -65,12 +65,11 @@ fi
 if [ -e data/$res.nt ]
 then
   mkdir -p $path/$res
-  cp *.php *.htmlfrag *.xsl $path/$res
+  cp *.php *.htmlfrag *.xsl data/*.html settings.ini $path/$res
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
-  cp ../site/$res/* $path/$res                                       
-  tar czvf $res.tar.gz data/$res/$res.nt
-  mv $res.tar.gz $path
+  tar czvf $res.tar.gz data/$res.nt
+  mv $res.tar.gz $path/$res
   cat < header.htmlfrag > $path/$res/license.html
   cat < license-$res.htmlfrag >> $path/$res/license.html
   cat < footer.htmlfrag >> $path/$res/license.html
@@ -100,4 +99,7 @@ then
 else
   echo "Warning: No welcome.htmlfrag file"
 fi
+
+echo "Loading MySQL, this may take some time"
+zcat data/$name.sql.gz | mysql -u$user -p$password -$database
 

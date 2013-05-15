@@ -11,4 +11,9 @@ All resources are stored under resources
 
 Pages are under `src`, in either HTML or Markdown
 
-Pandoc is required to build the site
+The following commands are required to build the site
+
+* `pandoc`
+* `rapper`
+* `scala`
+* `xsltproc`

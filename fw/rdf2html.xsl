@@ -11,9 +11,17 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <xsl:template name="display-uri">
     <xsl:param name="text"/>
     <xsl:choose>
-      <xsl:when test="contains($text,'http://purl.org/olia/ubyPos.owl#')">
-        <xsl:value-of select="'uby:'"/>
-        <xsl:value-of select="substring-after($text,'http://purl.org/olia/ubyPos.owl#')"/>
+      <xsl:when test="contains($text,'ubyPos.owl#')">
+        <xsl:value-of select="'category:'"/>
+        <xsl:value-of select="substring-after($text,'ubyPos.owl#')"/>
+      </xsl:when>
+      <xsl:when test="contains($text,'lexinfo#')">
+        <xsl:value-of select="'lexinfo:'"/>
+        <xsl:value-of select="substring-after($text,'lexinfo#')"/>
+      </xsl:when>
+      <xsl:when test="contains($text,'category#')">
+        <xsl:value-of select="'category:'"/>
+        <xsl:value-of select="substring-after($text,'category#')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text"/>
@@ -125,7 +133,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                   </xsl:attribute>More...</a>
                   <div style="display:none;">
                     <xsl:attribute name="id">
-                      <xsl:value-of select="concat('la_',@rdf:resource)"/>
+                      <xsl:value-of select="concat('la_',translate(@rdf:resource,':$','__'))"/>
                     </xsl:attribute>
                   </div>
                 </xsl:if>
@@ -225,7 +233,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                   </xsl:attribute>More...</a>
                   <div style="display:none;">
                     <xsl:attribute name="id">
-                      <xsl:value-of select="concat('la_',@rdf:resource)"/>
+                      <xsl:value-of select="concat('la_',translate(@rdf:resource,'$:','__'))"/>
                     </xsl:attribute>
                   </div>
                 </xsl:if>

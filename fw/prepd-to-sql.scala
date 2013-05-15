@@ -30,7 +30,10 @@ def unescapeUnicode(x : String) : String = {
   }
 }
 
-val lexiconID = Option(props.getProperty("lexicon")) getOrElse { throw new IllegalArgumentException("set lexicon in settings.ini") }
+val prefix = Option(props.getProperty("prefix")) getOrElse { throw new IllegalArgumentException("set prefix in settings.ini") }
+val name = Option(props.getProperty("name")) getOrElse { throw new IllegalArgumentException("set name in settings.ini") }
+val lexiconID2 = Option(props.getProperty("lexicon")) getOrElse { throw new IllegalArgumentException("set lexicon in settings.ini") }
+val lexiconID = prefix + name + "/" + lexiconID2
 
 val in = Source.fromInputStream(System.in)
 
@@ -40,7 +43,7 @@ var labelSB = new StringBuilder()
 var ntSB = new StringBuilder()
 var bntSB = new StringBuilder()
 
-println("create table  if not exists "+TABLE + "( uri varchar(256) primary key, label text, nt longtext, back_nt longtext);")
+println("create table  if not exists "+TABLE + "( uri varchar(256) character set binary primary key, label text, nt longtext, back_nt longtext);")
 println("truncate table "+TABLE+";");
 
 
