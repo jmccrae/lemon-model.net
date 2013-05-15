@@ -37,7 +37,25 @@ if [ ! -e tmp/pwn/data/pwn.rdf ]
 then
   bunzip2 tmp/pwn/data/pwn.rdf.bz2
 fi
+cp -r fw/* tmp/pwn
 cd tmp/pwn
 ./convert.sh
-./install.sh
+./install.sh ../../htdocs/lexica/
 cd ../../
+
+# Build de-gaap
+mkdir -p tmp/de-gaap
+cp -r src/lexica/de-gaap/* tmp/de-gaap
+bunzip2 tmp/de-gaap/de/de.nt.gz
+bunzip2 tmp/de-gaap/en/en.nt.gz
+cp -r fw/* tmp/de-gaap/de/
+cp -r fw/* tmp/de-gaap/en/
+cd tmp/de-gaap/de/
+./convert.sh
+./install.sh ../../../htdocs/lexica/de-gaap/
+cd ../en
+./convert.sh
+./install.sh ../../../htdocs/lexica/de-gaap/
+cd ../../
+
+echo "It is highly recommended to rm -fr tmp now"
