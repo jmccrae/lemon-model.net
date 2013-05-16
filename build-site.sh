@@ -34,6 +34,7 @@ cp src/nonlocal-footer.htmlfrag htdocs/footer.htmlfrag
 cp htaccess htdocs/.htaccess
 
 # Build lexica/pwn
+echo "Make Princeton WordNet"
 mkdir -p tmp/pwn
 cp -r src/lexica/pwn/* tmp/pwn
 if [ ! -e tmp/pwn/data/pwn.rdf ]
@@ -47,15 +48,16 @@ cd tmp/pwn
 cd ../../
 
 # Build de-gaap
+echo "Make DE-GAAP"
 mkdir -p tmp/de-gaap
 cp -r src/lexica/de-gaap/* tmp/de-gaap
-if [ ! -e tmp/de-gaap/de/de.nt ]
+if [ ! -e tmp/de-gaap/de/data/de.nt ]
 then
-    bunzip2 tmp/de-gaap/de/de.nt.gz
+    bunzip2 tmp/de-gaap/de/data/de.nt.b2
 fi
-if [ ! -e tmp/de-gaap/en/en.nt ]
+if [ ! -e tmp/de-gaap/en/data/en.nt ]
 then
-    bunzip2 tmp/de-gaap/en/en.nt.gz
+    bunzip2 tmp/de-gaap/en/data/en.nt.bz2
 fi
 cp -r fw/* tmp/de-gaap/de/
 cp -r fw/* tmp/de-gaap/en/
@@ -72,13 +74,14 @@ cp src/lexica/de-gaap/*.rdf htdocs/lexica/de-gaap/
 cp src/lexica/de-gaap/rdf2html.xsl htdocs/lexica/de-gaap/
 
 # Build Uby
+echo "Make Uby"
 for res in fn ow_deu ow_eng vn WktDE WktEN wn
 do
     mkdir -p tmp/uby/$res
     cp -r src/lexica/uby/$res/* tmp/uby/$res/
-    if [ ! -e tmp/uby/$res/$res.nt ]
+    if [ ! -e tmp/uby/$res/data/$res.nt ]
     then
-        bunzip2 tmp/uby/$res/$res.nt.bz2
+        bunzip2 tmp/uby/$res/data/$res.nt.bz2
     fi
     cp -r fw/* tmp/uby/$res/
     cd tmp/uby/$res

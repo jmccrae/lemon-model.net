@@ -4,6 +4,7 @@ import java.util.Properties
 
 val props = new Properties()
 props.load(new FileReader("settings.ini"))
+val storeBnodes = Option(props.getProperty("bnodes")) getOrElse false
 
 val in = new Scanner(System.in) 
 
@@ -64,9 +65,11 @@ while(in.hasNextLine()) {
       ""
     }
     if(isBNode(elems(0)) && !bnodeMap.contains(elems(0))) {
-      bnodes.put(elems(0),
-        BNodeEntry(form,line) :: 
-        bnodes.getOrElse(elems(0),Nil))
+      if(storeBnodes) {
+        bnodes.put(elems(0),
+          BNodeEntry(form,line) :: 
+          bnodes.getOrElse(elems(0),Nil))
+      }
     } else {
       val head : String = if(isBNode(elems(0)) && bnodeMap.contains(elems(0))) {
         bnodeMap.getOrElse(elems(0), throw new RuntimeException())

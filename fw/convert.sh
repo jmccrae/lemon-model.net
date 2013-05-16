@@ -8,10 +8,10 @@ die () {
 MACHINE_TYPE=`uname -m`
 if [ ${MACHINE_TYPE} == "x86_64" ]
 then
-  JAVA_OPTS=-Xmx2g
+  JAVA_OPTS=-Xmx4g
 elif [ ${MACHINE_TYPE} == "ia64" ]
 then
-  JAVA_OPTS=-Xmx2g
+  JAVA_OPTS=-Xmx4g
 else
   echo "Not a 64-bit machine, you may run out of memory on some conversions"
 fi

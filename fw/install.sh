@@ -101,5 +101,6 @@ else
 fi
 
 echo "Loading MySQL, this may take some time"
-zcat data/$name.sql.gz | mysql -u$user -p$password -$database
+cfg.section.database
+zcat data/$name.sql.gz | mysql -u$user -p$password $database
 
