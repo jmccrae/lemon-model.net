@@ -1,0 +1,3098 @@
+<rdf:RDF 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:lemon="http://www.monnet-project.eu/lemon#" xmlns:oils="http://lemon-model.net/oils#" xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <lemon:Lexicon 
+  lemon:language="en" rdf:about="http://lemon-model.net/lexica/dbpedia/places">
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#place__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#place__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">place</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#place__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Place"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#place__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#place__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#place__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#location__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#location__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">location</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#location__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Place"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#location__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#location__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#location__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#continent__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#continent__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">continent</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#continent__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Continent"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#continent__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#continent__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#continent__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#country__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#country__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">country</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#country__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Country"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#country__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#country__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#country__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#nation__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#nation__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">nation</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#nation__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Country"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#nation__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#nation__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#nation__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#city__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#city__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">city</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#city__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/City"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#city__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#city__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#city__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#town__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#town__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">town</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#town__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Town"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#town__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#town__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#town__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#village__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#village__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">village</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#village__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Village"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#village__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#village__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#village__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">body of water</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#body__commonNoun/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#body__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">body</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#of__preposition/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#of__preposition">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">of</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#preposition">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#water__commonNoun/element_2">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#water__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">water</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/BodyOfWater"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#body+of+water__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#stream__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#stream__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">stream</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#stream__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Stream"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#stream__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#stream__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#stream__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#river__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#river__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">river</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#river__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/River"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#river__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#river__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#river__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#lake__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#lake__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">lake</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#lake__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Lake"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#lake__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#lake__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#lake__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#island__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#island__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">island</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#island__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Island"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#island__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#island__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#island__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#atoll__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#atoll__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">atoll</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#atoll__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Atoll"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#atoll__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#atoll__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#atoll__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">mountain</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Mountain"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#mountain__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">mountain range</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">mountain</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#range__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#range__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">range</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/MountainRange"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#mountain+range__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">mountain chain</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun/element_01">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">mountain</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#chain__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#chain__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">chain</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/MountainRange"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#mountain+chain__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#ridge__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ridge__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">ridge</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ridge__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/MountainRange"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#ridge__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ridge__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#ridge__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">mountain pass</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun/element_02">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">mountain</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#pass__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#pass__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">pass</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/MountainPass"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#mountain+pass__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#cave__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cave__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">cave</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cave__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Cave"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#cave__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cave__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#cave__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#cavern__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cavern__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">cavern</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cavern__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Cave"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#cavern__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cavern__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#cavern__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#grotto__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#grotto__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">grotto</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#grotto__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Cave"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#grotto__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#grotto__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#grotto__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#canal__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#canal__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">canal</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#canal__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Canal"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#canal__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#canal__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#canal__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#valley__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#valley__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">valley</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#valley__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Valley"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#valley__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#valley__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#valley__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">world heritage site</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#world__commonNoun/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#world__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">world</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#heritage__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#heritage__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">heritage</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#site__commonNoun/element_2">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#site__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">site</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/WorldHeritageSite">
+              </owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#world+heritage+site__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#park__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#park__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">park</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#park__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/Park"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#park__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#park__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#park__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">ski region</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski__commonNoun/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">ski</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">region</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/SkiArea"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#ski+region__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">wine region</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine__commonNoun/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">wine</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun/element_11">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">region</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun/sense">
+            <lemon:reference>
+              <owl:Class rdf:about="http://dbpedia.org/ontology/WineRegion"></owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPredicativeFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#wine+region__noun/subject">
+</lexinfo:subject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">located</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/country"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePPFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject">
+</lexinfo:copulativeSubject>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">located</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/sense1">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/range"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject1">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive1">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/frame1">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePPFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject1">
+</lexinfo:copulativeSubject>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive1">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">located</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/sense2">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/city"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject2">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive2">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/frame2">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePPFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject2">
+</lexinfo:copulativeSubject>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive2">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">located</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/sense3">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/location"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject3">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive3">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/frame3">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePPFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#located__adjective/subject3">
+</lexinfo:copulativeSubject>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#located__adjective/attributive3">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">part</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/range"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#part__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPossessiveFrame">
+</rdf:type>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#part__noun/subject">
+</lexinfo:copulativeArg>
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#part__noun/adpositionalObject">
+</lexinfo:possessiveAdjunct>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">cross</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#cross__verb/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#TransitiveFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#cross__verb/subject">
+</lexinfo:subject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#cross__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">traverse</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#TransitiveFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/subject">
+</lexinfo:subject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#traverse__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">bridge</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#TransitiveFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/subject">
+</lexinfo:subject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#bridge__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">span</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#span__verb/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#TransitiveFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#span__verb/subject">
+</lexinfo:subject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#span__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">crossing</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPossessiveFrame">
+</rdf:type>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/subject">
+</lexinfo:copulativeArg>
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#crossing__noun/adpositionalObject">
+</lexinfo:possessiveAdjunct>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">bridge</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/crosses"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/subject">
+</lexinfo:copulativeArg>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#bridge__noun/adpositionalObject">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#over">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">source</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/source"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#source__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#source__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#source__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">originate</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/source"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#originate__verb/subject">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#originate__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">border</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/border"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#border__verb/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#TransitiveFrame">
+</rdf:type>
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#border__verb/subject">
+</lexinfo:subject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#border__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">residence</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/residence"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#residence__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#residence__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#residence__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">reside</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/residence"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/object">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#reside__verb/subject">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+            <lexinfo:directObject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#reside__verb/object">
+</lexinfo:directObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">highest mountain</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest__adjective/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">highest</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#mountain__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">mountain</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/highestMountain">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/frame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPossessiveFrame">
+</rdf:type>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/subject">
+</lexinfo:copulativeArg>
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#highest+mountain__noun/adpositionalObject">
+</lexinfo:possessiveAdjunct>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">elevation</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/elevation"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#elevation__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">altitude</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/elevation"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#altitude__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">height</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/elevation"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#height__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#height__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#height__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">high</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/sense">
+            <lemon:reference>
+              <owl:Class>
+                <oils:boundTo rdf:resource="http://dbpedia.org/ontology/elevation">
+                </oils:boundTo>
+                <rdfs:subClassOf rdf:resource="http://lemon-model.net/oils#CovariantScalar">
+                </rdfs:subClassOf>
+              </owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/sense1">
+            <lemon:reference rdf:resource="http://dbpedia.org/ontology/elevation">
+            </lemon:reference>
+            <lemon:subjOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/scaleSubj">
+</lemon:subjOfProp>
+            <lemon:objOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/scaleSubj">
+</lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/predFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePredicativeFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/subject">
+</lexinfo:copulativeSubject>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/attrFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveAttributiveFrame">
+</rdf:type>
+            <lexinfo:attributiveArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/subject">
+</lexinfo:attributiveArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#high__adjective/attrFrame1">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveScaleFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/scaleSubj">
+</lexinfo:copulativeSubject>
+            <lexinfo:adverbialComplement 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#high__adjective/scaleObj">
+</lexinfo:adverbialComplement>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">tall</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/sense">
+            <lemon:reference>
+              <owl:Class>
+                <oils:boundTo rdf:resource="http://dbpedia.org/ontology/elevation">
+                </oils:boundTo>
+                <rdfs:subClassOf rdf:resource="http://lemon-model.net/oils#CovariantScalar">
+                </rdfs:subClassOf>
+              </owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/sense1">
+            <lemon:reference rdf:resource="http://dbpedia.org/ontology/elevation">
+            </lemon:reference>
+            <lemon:subjOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/scaleSubj">
+</lemon:subjOfProp>
+            <lemon:objOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/scaleSubj">
+</lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/predFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePredicativeFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/subject">
+</lexinfo:copulativeSubject>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/attrFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveAttributiveFrame">
+</rdf:type>
+            <lexinfo:attributiveArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/subject">
+</lexinfo:attributiveArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/attrFrame1">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveScaleFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/scaleSubj">
+</lexinfo:copulativeSubject>
+            <lexinfo:adverbialComplement 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#tall__adjective/scaleObj">
+</lexinfo:adverbialComplement>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">population</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/populationTotal">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#population__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#population__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">total population</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total__adjective/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">total</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#population__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">population</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/populationTotal">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#total+population__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">area</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/areaTotal"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#area__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#area__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">total area</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total__adjective/element_01">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">total</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#area__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">area</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/areaTotal"></rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#total+area__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/canonicalForm">
+            <lemon:writtenRep xml:lang="en">big</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/sense">
+            <lemon:reference>
+              <owl:Class>
+                <oils:boundTo rdf:resource="http://dbpedia.org/ontology/areaTotal">
+                </oils:boundTo>
+                <rdfs:subClassOf rdf:resource="http://lemon-model.net/oils#CovariantScalar">
+                </rdfs:subClassOf>
+              </owl:Class>
+            </lemon:reference>
+            <lemon:isA>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/subject">
+</lemon:Argument>
+            </lemon:isA>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/sense1">
+            <lemon:reference rdf:resource="http://dbpedia.org/ontology/areaTotal">
+            </lemon:reference>
+            <lemon:subjOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/scaleSubj">
+</lemon:subjOfProp>
+            <lemon:objOfProp 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/scaleSubj">
+</lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/predFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectivePredicativeFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/subject">
+</lexinfo:copulativeSubject>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/attrFrame">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveAttributiveFrame">
+</rdf:type>
+            <lexinfo:attributiveArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/subject">
+</lexinfo:attributiveArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#big__adjective/attrFrame1">
+            <rdf:type 
+            rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#AdjectiveScaleFrame">
+</rdf:type>
+            <lexinfo:copulativeSubject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/scaleSubj">
+</lexinfo:copulativeSubject>
+            <lexinfo:adverbialComplement 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#big__adjective/scaleObj">
+</lexinfo:adverbialComplement>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">highest region</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest__adjective/element_01">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">highest</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun/element_12">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#region__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">region</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/highestRegion">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#highest+region__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/canonicalForm">
+            <lemon:writtenRep xml:lang="en">open</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <lexinfo:partOfSpeech 
+        rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#verb">
+</lexinfo:partOfSpeech>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/sense">
+            <lemon:subsense>
+              <lemon:LexicalSense 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/sense1">
+                <lemon:reference>
+                  <rdf:Property rdf:about="#canal"></rdf:Property>
+                </lemon:reference>
+                <lemon:objOfProp>
+                  <lemon:Argument 
+                  rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/subject">
+</lemon:Argument>
+                </lemon:objOfProp>
+</lemon:LexicalSense>
+            </lemon:subsense>
+            <lemon:subsense>
+              <lemon:LexicalSense 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/sense2">
+                <lemon:reference>
+                  <rdf:Property rdf:about="#dataOpened"></rdf:Property>
+                </lemon:reference>
+                <lemon:objOfProp>
+                  <lemon:Argument 
+                  rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/object">
+</lemon:Argument>
+                </lemon:objOfProp>
+</lemon:LexicalSense>
+            </lemon:subsense>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/sense3">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/dataUse">
+                <owl:propertyChainAxiom rdf:parseType="Collection">
+                  <rdf:Description>
+                    <owl:inverseOf rdf:resource="#canal"></owl:inverseOf>
+                  </rdf:Description>
+                  <rdf:Description rdf:about="#dataOpened"></rdf:Description>
+                </owl:propertyChainAxiom>
+              </rdf:Property>
+            </lemon:reference>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:subject 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#open__verb/subject">
+</lexinfo:subject>
+            <lexinfo:prepositionalObject>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#open__verb/object">
+                <lemon:marker rdf:resource="http://lemon-model.net/lexica/dbpedia/places#in">
+                </lemon:marker>
+</lemon:Argument>
+            </lexinfo:prepositionalObject>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">postal code</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal__adjective/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">postal</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#code__commonNoun/element_1">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#code__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">code</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/postalCode">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#postal+code__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+    <lemon:entry>
+      <lemon:LexicalEntry 
+      rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun">
+        <lemon:canonicalForm>
+          <lemon:LexicalForm 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/canonicalForm">
+            <lemon:writtenRep xml:lang="en">post code</lemon:writtenRep>
+</lemon:LexicalForm>
+        </lemon:canonicalForm>
+        <rdf:type rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#NounPhrase">
+        </rdf:type>
+        <lemon:decomposition rdf:parseType="Collection">
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#post__adjective/element_0">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#post__adjective">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">post</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#adjective">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+          <lemon:Component 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#code__commonNoun/element_11">
+            <lemon:element>
+              <lemon:LexicalEntry 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#code__commonNoun">
+                <lemon:canonicalForm>
+                  <lemon:Form>
+                    <lemon:writtenRep xml:lang="en">code</lemon:writtenRep>
+                  </lemon:Form>
+                </lemon:canonicalForm>
+                <lexinfo:partOfSpeech 
+                rdf:resource="http://lexinfo.net/ontology/2.0/lexinfo#commonNoun">
+</lexinfo:partOfSpeech>
+</lemon:LexicalEntry>
+            </lemon:element>
+</lemon:Component>
+        </lemon:decomposition>
+        <lemon:sense>
+          <lemon:LexicalSense 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/sense">
+            <lemon:reference>
+              <rdf:Property rdf:about="http://dbpedia.org/ontology/postalCode">
+              </rdf:Property>
+            </lemon:reference>
+            <lemon:subjOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/subject">
+</lemon:Argument>
+            </lemon:subjOfProp>
+            <lemon:objOfProp>
+              <lemon:Argument 
+              rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/adpositionalObject">
+</lemon:Argument>
+            </lemon:objOfProp>
+</lemon:LexicalSense>
+        </lemon:sense>
+        <lemon:synBehavior>
+          <lemon:Frame 
+          rdf:about="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/frame">
+            <!--Unrecognised frame-->
+            <lexinfo:possessiveAdjunct 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/subject">
+</lexinfo:possessiveAdjunct>
+            <lexinfo:copulativeArg 
+            rdf:resource="http://lemon-model.net/lexica/dbpedia/places#post+code__noun/adpositionalObject">
+</lexinfo:copulativeArg>
+</lemon:Frame>
+        </lemon:synBehavior>
+</lemon:LexicalEntry>
+    </lemon:entry>
+</lemon:Lexicon>
+</rdf:RDF>
+
