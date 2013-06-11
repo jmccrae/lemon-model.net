@@ -4,7 +4,8 @@ import java.util.Properties
 
 val props = new Properties()
 props.load(new FileReader("settings.ini"))
-val storeBnodes = Option(props.getProperty("bnodes")) getOrElse false
+val storeBnodes = props.getProperty("bnodes") != null
+System.err.println("BNode store:" + storeBnodes)
 
 val in = new Scanner(System.in) 
 
@@ -90,7 +91,9 @@ while(in.hasNextLine()) {
           }
           bnodes remove obj
         }
-        bnodeMap put (obj,head)
+	if(storeBnodes) {
+          bnodeMap put (obj,head)
+	}
       }
     }
   }
