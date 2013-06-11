@@ -141,13 +141,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                 </xsl:choose>
               </xsl:when>
               <xsl:when test="node()[last()]/self::text()">
-                 <xsl:if test="@xml:lang">
-                 <img>
-                   <xsl:attribute name="src">
-                     <xsl:value-of select="concat('/img/flags/',@xml:lang,'.gif')"/>
-                   </xsl:attribute>
-                 </img>
-                 </xsl:if>
+                 <xsl:call-template name="lang">
+                     <xsl:with-param name="lang_id" select="@xml:lang"/>
+                 </xsl:call-template> 
                  &#x201c;<span>
                  <xsl:attribute name="property">
                   <xsl:value-of select="concat(namespace-uri(),local-name())"/>
@@ -240,14 +236,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                 </xsl:otherwise>
                 </xsl:choose>
               </xsl:when>
-              <xsl:when test="node()[last()]/self::text()">
-                 <xsl:if test="@xml:lang">
-                 <img>
-                   <xsl:attribute name="src">
-                     <xsl:value-of select="concat('/img/flags/',@xml:lang,'.gif')"/>
-                   </xsl:attribute>
-                 </img>
-                 </xsl:if>
+              <xsl:when test="node()[last()]/self::text()">  
+                  <xsl:call-template name="lang">
+                     <xsl:with-param name="lang_id" select="@xml:lang"/>
+                 </xsl:call-template> 
                  &#x201c;<span>
                  <xsl:attribute name="property">
                   <xsl:value-of select="concat(namespace-uri(),local-name())"/>
@@ -268,6 +260,99 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
        </tr>
     </xsl:for-each>
   </table>
+</xsl:template>
+
+
+<xsl:template name="lang">
+    <xsl:param name="lang_id"/>
+    <xsl:variable name="lang-id" select="translate($lang_id,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
+    <xsl:choose>
+        <xsl:when test="$lang-id='en' or $lang-id='eng'">
+            <img src="/img/flags/en.gif" alt="eng"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='en-us' or $lang-id='eng-us'">
+            <img src="/img/flags/us.gif" alt="eng-US"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='en-gb' or $lang-id='eng-gb'">
+            <img src="/img/flags/gb.gif" alt="eng-GB"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='en-gb' or $lang-id='eng-gb'">
+            <img src="/img/flags/gb.gif" alt="eng-GB"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='zh' or $lang-id='chi' or $lang-id='zho'">
+            <img src="/img/flags/cn.gif" alt="zho"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='zh-tw' or $lang-id='zho-tw'">
+            <img src="/img/flags/tw.gif" alt="zho-TW"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='zh-cn' or $lang-id='zho-cn'">
+            <img src="/img/flags/cn.gif" alt="zho-CN"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='es' or $lang-id='spa'">
+            <img src="/img/flags/es.gif" alt="spa"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='ar' or $lang-id='ara'">
+            <img src="/img/flags/sa.gif" alt="ara"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='pt' or $lang-id='por'">
+            <img src="/img/flags/pt.gif" alt="por"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='bn' or $lang-id='ben'">
+            <img src="/img/flags/bd.gif" alt="ben"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='ru' or $lang-id='rus'">
+            <img src="/img/flags/ru.gif" alt="rus"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='ja' or $lang-id='jap'">
+            <img src="/img/flags/jp.gif" alt="jap"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='de' or $lang-id='deu' or $lang-id='ger'">
+            <img src="/img/flags/de.gif" alt="deu"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='ko' or $lang-id='kor'">
+            <img src="/img/flags/kr.gif" alt="kor"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='fr' or $lang-id='fra'">
+            <img src="/img/flags/fr.gif" alt="fra"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='it' or $lang-id='ita'">
+            <img src="/img/flags/it.gif" alt="ita"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='pl' or $lang-id='pol'">
+            <img src="/img/flags/pl.gif" alt="pol"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='uk' or $lang-id='ukr'">
+            <img src="/img/flags/ua.gif" alt="ukr"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='ro' or $lang-id='rum' or $lang-id='ron'">
+            <img src="/img/flags/ro.gif" alt="ron"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='nl' or $lang-id='dut' or $lang-id='nld'">
+            <img src="/img/flags/nl.gif" alt="nld"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='hu' or $lang-id='hun'">
+            <img src="/img/flags/hu.gif" alt="hun"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='cs' or $lang-id='cze' or $lang-id='ces'">
+            <img src="/img/flags/cz.gif" alt="ces"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='da' or $lang-id='dan'">
+            <img src="/img/flags/dk.gif" alt="dan"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='sv' or $lang-id='swe'">
+            <img src="/img/flags/se.gif" alt="swe"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='no' or $lang-id='nor'">
+            <img src="/img/flags/no.gif" alt="nor"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='fi' or $lang-id='fin'">
+            <img src="/img/flags/fi.gif" alt="fin"/>
+        </xsl:when>
+        <xsl:when test="$lang-id='el' or $lang-id='ell' or $lang-id='gre'">
+            <img src="/img/flags/gr.gif" alt="ell"/>
+        </xsl:when>
+        <xsl:otherwise><b><xsl:value-of select="$lang-id"/></b></xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>

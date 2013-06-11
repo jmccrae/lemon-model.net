@@ -1,6 +1,8 @@
 #!/bin/python
 import sys
 import getopt
+import StringIO
+import re
 from rdflib import *
 from rdflib.namespace import RDF, RDFS, OWL
 from xml.sax.saxutils import escape
@@ -8,11 +10,53 @@ from xml.sax.saxutils import escape
 suspicious = 0
 minor = 0
 major = 0
+warnOfMessage = StringIO.StringIO()
+endOfMessage = StringIO.StringIO()
 
 outputFormat = "txt"
 
 lemon = Namespace("http://www.monnet-project.eu/lemon#")
-lexinfo = Namespace("http://lexinfo.net/ontology/2.0/lexinfo#")
+lexinfo = Namespace("http://www.lexinfo.net/ontology/2.0/lexinfo#")
+lexinfoAlt = Namespace("http://lexinfo.net/ontology/2.0/lexinfo#")
+oils = Namespace("http://lemon-model.net/oils#")
+
+lexinfoProps = dict([
+    (lexinfo.adjunct,lemon.synArg),
+    (lexinfo.possessiveAdjunct,lemon.synArg),
+    (lexinfo.predicativeAdjunct,lemon.synArg),
+    (lexinfo.comparativeAdjunct,lemon.synArg),
+    (lexinfo.superlativeAdjunct,lemon.synArg),
+    (lexinfo.prepositionalAdjunct,lemon.synArg),
+    (lexinfo.attributiveArg,lemon.synArg),
+    (lexinfo.clausalArg,lemon.synArg),
+    (lexinfo.declarativeClause,lemon.synArg),
+    (lexinfo.gerundClause,lemon.synArg),
+    (lexinfo.infinitiveClause,lemon.synArg),
+    (lexinfo.interrogativeInfinitiveClause,lemon.synArg),
+    (lexinfo.possessiveInfinitiveClause,lemon.synArg),
+    (lexinfo.prepositionalGerundClause,lemon.synArg),
+    (lexinfo.prepositionalInterrogativeCaluse,lemon.synArg),
+    (lexinfo.sententialClause,lemon.synArg),
+    (lexinfo.subjunctiveClause,lemon.synArg),
+    (lexinfo.complement,lemon.synArg),
+    (lexinfo.adverbialComplement,lemon.synArg),
+    (lexinfo.objectComplement,lemon.synArg),
+    (lexinfo.predicativeAdjective,lemon.synArg),
+    (lexinfo.predicativeAdverb,lemon.synArg),
+    (lexinfo.predicativeNominative,lemon.synArg),
+    (lexinfo.copulativeArg,lemon.synArg),
+    (lexinfo.copulativeSubject,lemon.synArg),
+    (lexinfo.object,lemon.synArg),
+    (lexinfo.adpositionalObject,lemon.synArg),
+    (lexinfo.prepositionalObject,lemon.synArg),
+    (lexinfo.postpositionalObject,lemon.synArg),
+    (lexinfo.directObject,lemon.synArg),
+    (lexinfo.genitiveObject,lemon.synArg),
+    (lexinfo.indirectObject,lemon.synArg),
+    (lexinfo.postPositiveArg,lemon.synArg),
+    (lexinfo.subject,lemon.synArg),
+    (lexinfo.copulativeSubject,lemon.synArg)
+])
 
 lemonPropDomains = dict([
         (lemon.entry, lemon.Lexicon),
@@ -209,6 +253,8 @@ def computeTypes(g,elem):
     for pred, obj in g.predicate_objects(elem):
         if pred in lemonPropDomains.keys():
             ct.add(lemonPropDomains[pred])
+        elif pred in lexinfoProps.keys():
+            ct.add(lemonPropDomains[lexinfoProps[pred]])
         elif pred in lemonDataProperties and not isinstance(obj,Literal):
             err("DP_INVALID_OBJ","URI as object of " + pred)
         elif pred not in lemonDataProperties and isinstance(obj,Literal):
@@ -216,18 +262,13 @@ def computeTypes(g,elem):
     for subj, pred in g.subject_predicates(elem):
         if pred in lemonPropRanges:
             ct.add(lemonPropRanges[pred])
-    if lemon.Word in ct and lemon.LexicalEntry in ct:
-        ct.remove(lemon.Word)
-    if lemon.Phrase in ct and lemon.LexicalEntry in ct:
-        ct.remove(lemon.Phrase)
-    if lemon.Part in ct and lemon.LexicalEntry in ct:
-        ct.remove(lemon.Part)
-    
+        elif pred in lexinfoProps.keys():
+            ct.add(lemonPropRanges[lexinfoProps[pred]])
     return ct
 
 
 def validateLemonElement(g,types,elem):
-    def inlemon(uri): return uri.startswith(lemon)
+    def inlemon(uri): return uri.startswith(lemon) and uri != lemon.Word and uri != lemon.Phrase and uri != lemon.Part
 
     if elem in types.keys():
         computedTypes = set(types[elem]) | computeTypes(g,elem)
@@ -266,7 +307,7 @@ def validateLexicalEntry(g,types,elem):
         err("ENTRY_MANY_LANG","Lexical Entry " + elem + " has multiple languages")
     nlabels = leniter(g.objects(elem,RDFS.label))
     if nlabels == 0:
-        note("ENTRY_RDFS_LABEL","Lexical Entry " + elem + " does not have a RDFS label")
+        note("ENTRY_NO_RDFS_LABEL","Lexical Entry " + elem + " does not have a RDFS label")
 
 def validateLexicalSense(g,types,elem):
     nreferences = leniter(g.objects(elem,lemon.reference))
@@ -322,41 +363,43 @@ def validateBoolLiteral(lit):
     if lit.lower() != "true" and lit.lower() != "false" and lit != "1" and lit != "0":
         err("BOOL_BAD_VALUE","Invalid boolean value: " + lit)
 
-languageRegex = "(...?)(-[A-Za-z]{4})?(-[A-Za-z]{2}|-[0-9]{3})?((-[A-Za-z0-9]{5,8}|-[0-9][A-Za-z0-9]{3})*)((-[A-WY-Za-wy-z0-9]-\\w{2,8})*)(-[Xx]-\\w{1,8})?"
+languageRegex = "^(...?)(-[A-Za-z]{4})?(-[A-Za-z]{2}|-[0-9]{3})?((-[A-Za-z0-9]{5,8}|-[0-9][A-Za-z0-9]{3})*)((-[A-WY-Za-wy-z0-9]-\\w{2,8})*)(-[Xx]-\\w{1,8})?$"
 
 def validateLanguage(l):
     if not re.match(languageRegex,l):
-        err("BAD_LANG","Invalid language code: " + lit)
+        err("BAD_LANG","Invalid language code: " + l)
 
 def validateRule(rule):
     if rule.count("~") != 1 or rule.count("/") > 1:
         err("BAD_RULE","Invalid rule: " + rule)
 
-def validateText(text):
+def validateText(lit):
     if lit.language is None:
-        err("NO_LANG","Language tag missing from literal " + text)
+        err("NO_LANG","Language tag missing from literal " + lit)
     else:
         validateLanguage(lit.language)
 
 
 def note(code,msg):
     global suspicious
+    global endOfMessage
     if outputFormat == "txt":
-        print("[NOTE ] " + msg)
+        print >>endOfMessage, "[NOTE ] " + msg 
     elif outputFormat == "xml":
-        print("<note code=\""+code+"\">" + escape(msg) + "</note>")
+        print >>endOfMessage, "<note code=\""+code+"\">" + escape(msg) + "</note>" 
     elif outputFormat == "html":
-        print("<div class=\"lemon-validator-note\">" + escape(msg) + " <a href=\"errors.html#" + code.lower() + "\">["+code+"]</a></div>")
+        print >>endOfMessage, "<div class=\"lemon-validator-note\">" + escape(msg) + " <a href=\"errors.html#" + code.lower() + "\">["+code+"]</a></div>" 
     suspicious = suspicious + 1
 
 def warn(code,msg):
     global minor
+    global warnOfMessage
     if outputFormat == "txt":
-        print("[WARN ] " + msg)
+        print >>warnOfMessage, "[WARN ] " + msg
     elif outputFormat == "xml":
-        print("<warn code=\""+code+"\">" + escape(msg) + "</warn>")
+        print >>warnOfMessage, "<warn code=\""+code+"\">" + escape(msg) + "</warn>"
     elif outputFormat == "html":
-        print("<div class=\"lemon-validator-warn\">" + escape(msg) + " <a href=\"errors.html#" + code.lower() + "\">["+code+"]</a></div>")
+        print >>warnOfMessage, "<div class=\"lemon-validator-warn\">" + escape(msg) + " <a href=\"errors.html#" + code.lower() + "\">["+code+"]</a></div>"
     minor = minor + 1
 
 def err(code,msg):
@@ -371,6 +414,8 @@ def err(code,msg):
 
 def main(argv):
     global outputFormat
+    global endOfMessage
+    global warnOfMessage
     optlist, args = getopt.getopt(argv[1:],"f:o:")
     optdict = dict(optlist)
     if len(args) != 1:
@@ -420,17 +465,8 @@ def main(argv):
 
     checked = {}
 
-
     for subj, pred, obj in g:
-        if pred.startswith(lemon):
-            if subj not in checked:
-                validateLemonElement(g,types,subj)
-                checked[subj] = True
-        elif pred.startswith(RDF.uri) or pred.startswith(RDFS.uri) or pred.startswith(OWL) or pred.startswith(lexinfo):
-            True
-        elif pred in types.keys() and OWL.AnnotationProperty in types[pred]:
-            True
-        elif pred in lemonDataProperties and isinstance(obj,Literal):
+        if pred in lemonDataProperties and isinstance(obj,Literal):
             if pred == lemon.optional:
                 validateBoolLiteral(obj)
             elif pred == lemon.language:
@@ -443,9 +479,20 @@ def main(argv):
                 validateRule(obj)
             else:
                 validateText(obj)
+        if pred.startswith(lemon):
+            if subj not in checked:
+                validateLemonElement(g,types,subj)
+                checked[subj] = True
+        elif pred.startswith(RDF.uri) or pred.startswith(RDFS.uri) or pred.startswith(OWL) or pred.startswith(lexinfo) or pred.startswith(lexinfoAlt) or pred.startswith(oils):
+            True
+        elif pred in types.keys() and OWL.AnnotationProperty in types[pred]:
+            True
         else:
             note("UNRECOGNIZED","Unrecognized triple: " + str(subj) + " " + str(pred) + " " + str(obj))
         
+    print(warnOfMessage.getvalue())
+    print(endOfMessage.getvalue())
+
     if outputFormat == "txt":
         print("There were " + str(suspicious) + " advisories, " + str(minor) + " warnings and " + str(major) + " errors")
     elif outputFormat == "xml":

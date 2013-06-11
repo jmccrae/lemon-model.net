@@ -51,6 +51,7 @@ cd ../../
 echo "Make DE-GAAP"
 mkdir -p tmp/de-gaap
 cp -r src/lexica/de-gaap/* tmp/de-gaap
+pwd
 if [ ! -e tmp/de-gaap/de/data/de.nt ]
 then
     bunzip2 tmp/de-gaap/de/data/de.nt.bz2
