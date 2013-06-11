@@ -189,7 +189,7 @@ Blank nodes are used as identifiers in the model, it is highly recommended that 
 
 ## LANG_ON_RULE
 
-A langauge tag was added to a rule, this should not be necessary
+A language tag was added to a rule, this should not be necessary
 
 ### Example
 

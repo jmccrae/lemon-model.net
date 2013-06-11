@@ -32,9 +32,12 @@ if(array_key_exists('document',$_POST)) {
 ?>
 <h1>Lemon Validator</h1>
 <h3>You submitted</h3>
+<button value="Show/Hide" onclick="javascript:$('#code').toggle();">Show/Hide</button>
+<div id="code" style="display:none;">
 <pre>
 <?php echo htmlspecialchars($_POST['document']); ?>
 </pre>
+</div>
 <h3>Result</h3>
 <?php
         echo $content;
