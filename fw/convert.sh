@@ -106,6 +106,7 @@ then
   rapper -i ntriples -o rdfxml-abbrev -I $prefix ${namespaces[@]} ${rs[@]} data/$lexiconFile.nt > data/$lexiconFile.rdf
   rapper -i ntriples -o turtle -I $prefix ${namespaces[@]} ${rs[@]} data/$lexiconFile.nt > data/$lexiconFile.ttl
   split -d -l 10000 data/$lexiconFile.nt data/$lexiconFile-split.
+  rm -f data/*.htmlfrag
   splitFiles=`ls data/$lexiconFile-split.*`
   for splitFile in $splitFiles
   do

@@ -50,6 +50,12 @@ println("truncate table "+TABLE+";");
 
 def escape(s : String) = s.replaceAll("\\\\u","\\\\\\\\u")
 
+def shortenURI(s : String) = if(s.length > 255) {
+  s.substring(0,205) + s.substring(s.length-50,s.length)
+  } else {
+  s
+  }
+
 for(line <- in.getLines) {
   val elems = unescapeUnicode(line).split(" \\|\\|\\| ")
   if(elems.length != 4) {
@@ -58,7 +64,7 @@ for(line <- in.getLines) {
     if(elems(0) != lastURI && elems(0) != "") {
       if(!(lastURI contains lexiconID) && lastURI != "") {
         print("insert into " + TABLE + " values('")
-        print(lastURI + "','")
+        print(shortenURI(lastURI) + "','")
         print(labelSB.toString())
         print("','")
         print(escape(ntSB.toString()))
@@ -85,7 +91,7 @@ for(line <- in.getLines) {
 
 
 println("insert into " + TABLE + " values('"+
-  lastURI + "','" +
+  shortenURI(lastURI) + "','" +
   labelSB.toString() + "','" +
   escape(ntSB.toString()) + "','" +
   escape(bntSB.toString()) + "');")

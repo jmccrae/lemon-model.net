@@ -54,11 +54,13 @@ cp -r src/lexica/de-gaap/* tmp/de-gaap
 pwd
 if [ ! -e tmp/de-gaap/de/data/de.nt ]
 then
-    bunzip2 tmp/de-gaap/de/data/de.nt.b2
+    bunzip2 tmp/de-gaap/de/data/de.nt.bz2
+    rapper -i rdfxml -o ntriples src/lexica/de-gaap/lexicon.de.rdf >> tmp/de-gaap/de/data/de.nt
 fi
 if [ ! -e tmp/de-gaap/en/data/en.nt ]
 then
-    bunzip2 tmp/de-gaap/en/data/en.nt.bz2
+   bunzip2 tmp/de-gaap/en/data/en.nt.bz2
+   rapper -i rdfxml -o ntriples src/lexica/de-gaap/lexicon.en.rdf >> tmp/de-gaap/en/data/en.nt
 fi
 cp -r fw/* tmp/de-gaap/de/
 cp -r fw/* tmp/de-gaap/en/
