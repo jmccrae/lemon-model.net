@@ -1,0 +1,21 @@
+<h1>Princeton WordNet</h1>
+
+<p>This resource is the lemonUby export of Princeton WordNet</p>
+
+<p>This resource was originally developed by <a href="http://wordnet.princeton.edu">Princeton</a></p>
+
+<p>Search:
+
+<form action="../search.php" method="get">
+  <input type="text" name="search"/><br/>
+  <option type="hidden" name="res" value="wn"/>
+  <input type="submit" value="Search"/>
+</form>
+</p>
+
+<p><a href="WN_Lexicon_0">Lexicon</a></p>
+
+<p><a href="wn.tar.gz">Download</a></p>
+
+<p><a href="license.html">License</a></p>
+
