@@ -37,7 +37,7 @@ if(isset($_GET['offset']) && is_numeric($_GET['offset'])) {
 }
 
 echo "<h2>".$displayNames[$res]."</h2>";
-$result = mysql_query("select uri, label from $res where label like '%".$search."%' order by length(label) asc limit 20 offset ". $offset);
+$result = mysql_query("select uri, label from $res where match (label) against ('%".$search."%') order by length(label) asc limit 20 offset ". $offset);
 
 echo "<table>";
 while($row = mysql_fetch_array($result)) {
