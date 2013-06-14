@@ -1,0 +1,21 @@
+<h1>Wiktionary English</h1>
+
+<p>This resource is the lemonUby export of Wiktionary English</p>
+
+<p>This resource is derived from <a href="http://en.wiktionary.org/">Wiktionary</a></p>
+
+<p>Search:
+
+<form action="../search.php" method="get">
+  <input type="text" name="search"/><br/>
+  <option type="hidden" name="res" value="WktEN"/>
+  <input type="submit" value="Search"/>
+</form>
+</p>
+
+<p><a href="WktEN_Lexicon_1">Lexicon</a></p>
+
+<p><a href="WktEN.tar.gz">Download</a></p>
+
+<p><a href="license.html">License</a></p>
+

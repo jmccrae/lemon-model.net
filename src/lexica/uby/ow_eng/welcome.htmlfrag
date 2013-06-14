@@ -1,0 +1,21 @@
+<h1>OmegaWiki English</h1>
+
+<p>This resource is the lemonUby export of OmegaWiki English</p>
+
+<p>This resource was derived from <a href="http://www.omegawiki.org/">OmegaWiki</a></p>
+
+<p>Search:
+
+<form action="../search.php" method="get">
+  <input type="text" name="search"/><br/>
+  <option type="hidden" name="res" value="ow_eng"/>
+  <input type="submit" value="Search"/>
+</form>
+</p>
+
+<p><a href="OW_Lexicon_eng">Lexicon</a></p>
+
+<p><a href="ow_eng.tar.gz">Download</a></p>
+
+<p><a href="license.html">License</a></p>
+
