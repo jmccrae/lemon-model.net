@@ -5,7 +5,7 @@ Source code for lemon-model.net
 
 Build the site using
 
-    bash build-site.sh
+    bash build-site.sh all
 
 All resources are stored under resources
 
