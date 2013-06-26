@@ -11,9 +11,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <xsl:template name="display-uri">
     <xsl:param name="text"/>
     <xsl:choose>
-      <xsl:when test="contains($text,'http://purl.org/olia/ubyPos.owl#')">
+      <xsl:when test="contains($text,'http://purl.org/olia/ubyCat.owl#')">
         <xsl:value-of select="'uby:'"/>
-        <xsl:value-of select="substring-after($text,'http://purl.org/olia/ubyPos.owl#')"/>
+        <xsl:value-of select="substring-after($text,'http://purl.org/olia/ubyCat.owl#')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text"/>

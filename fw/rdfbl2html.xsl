@@ -8,9 +8,9 @@
 <xsl:template name="display-uri">
     <xsl:param name="text"/>
     <xsl:choose>
-      <xsl:when test="contains($text,'ubyPos.owl#')">
+      <xsl:when test="contains($text,'ubyCat.owl#')">
         <xsl:value-of select="'category:'"/>
-        <xsl:value-of select="substring-after($text,'ubyPos.owl#')"/>
+        <xsl:value-of select="substring-after($text,'ubyCat.owl#')"/>
       </xsl:when>
       <xsl:when test="contains($text,'lexinfo#')">
         <xsl:value-of select="'lexinfo:'"/>
