@@ -95,7 +95,7 @@ then
   cat < header.htmlfrag > welcome.html 
   cat < welcome.htmlfrag >> welcome.html 
   cat < footer.htmlfrag >> welcome.html 
-  mv welcome.html $path/index.html
+  mv welcome.html $path/$res/index.html
 else
   echo "Warning: No welcome.htmlfrag file"
 fi
