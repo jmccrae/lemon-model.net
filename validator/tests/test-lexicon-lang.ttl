@@ -1,0 +1,6 @@
+@prefix lemon: <http://www.monnet-project.eu/lemon#> .
+
+@prefix : <file:/test#> .
+
+:test a lemon:Lexicon ;
+  lemon:language "english" .

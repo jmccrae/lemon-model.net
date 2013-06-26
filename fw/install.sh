@@ -68,8 +68,8 @@ then
   cp *.php *.htmlfrag *.xsl data/*.html settings.ini $path/$res
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
-  tar czvf $res.tar.gz data/$res.nt
-  mv $res.tar.gz $path/$res
+  gzip -c data/$res.nt > data/$res.nt.gz
+  mv $res.nt.gz $path/$res
   cat < header.htmlfrag > $path/$res/license.html
   cat < license-$res.htmlfrag >> $path/$res/license.html
   cat < footer.htmlfrag >> $path/$res/license.html
@@ -100,7 +100,10 @@ else
   echo "Warning: No welcome.htmlfrag file"
 fi
 
-echo "Loading MySQL, this may take some time"
-cfg.section.database
-zcat data/$name.sql.gz | mysql -u$user -p$password $database
+if [ -z $HTML_ONLY ]
+then
+    echo "Loading MySQL, this may take some time"
+    cfg.section.database
+    zcat data/$name.sql.gz | mysql -u$user -p$password $database
+fi
 

@@ -1,0 +1,15 @@
+@prefix lemon: <http://www.monnet-project.eu/lemon#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <#> .
+
+:testLexicon a lemon:Lexicon ;
+  lemon:language "eng" ;
+  lemon:entry :test .
+
+:test a lemon:LexicalEntry ;
+  lemon:sense [
+    lemon:synArg [
+      lemon:optional "true"^^xsd:boolean
+    ]
+  ] .
+

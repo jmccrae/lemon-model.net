@@ -56,48 +56,51 @@ prefix="$prefix$res/"
 namespaces=('--feature' 'xmlns:lemon="http://www.monnet-project.eu/lemon#"' '--feature' 'xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"' '--feature' 'xmlns:owl="http://www.w3.org/2002/07/owl#"' '--feature' 'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"' '--feature' 'xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#"')
 IFS=" " read -a rs <<< $rappersettings
    
-if [ ! -e data/$res.nt ]
+if [ -z HTML_ONLY ]
 then
-  echo "RDF/XML => NT"
-  rapper -i rdfxml -o ntriples -I "$prefix" data/$res.rdf > data/$res.nt || die "Rapper failed"
-  if [ -e data/$res.sa.nt ]
-  then
-   	cat <data/$res.sa.nt >> data/$res.nt
-  fi
-fi
+    if [ ! -e data/$res.nt ]
+    then
+      echo "RDF/XML => NT"
+      rapper -i rdfxml -o ntriples -I "$prefix" data/$res.rdf > data/$res.nt || die "Rapper failed"
+      if [ -e data/$res.sa.nt ]
+      then
+            cat <data/$res.sa.nt >> data/$res.nt
+      fi
+    fi
 
-if [ ! -e data/$res.rdf ]
-then
-  echo "NT => RDF/XML"
-  rapper -i turtle -o rdfxml-abbrev -I "$prefix" ${namespaces[@]} ${rs[@]} data/$res.nt > data/$res.rdf || die "Rapper failed"
-fi
+    if [ ! -e data/$res.rdf ]
+    then
+      echo "NT => RDF/XML"
+      rapper -i turtle -o rdfxml-abbrev -I "$prefix" ${namespaces[@]} ${rs[@]} data/$res.nt > data/$res.rdf || die "Rapper failed"
+    fi
 
-lexiconURI="$prefix$lexicon"
-lexiconFile=$lexicon
+    lexiconURI="$prefix$lexicon"
+    lexiconFile=$lexicon
 
-if [ ! -e data/$lexiconFile.nt ]
-then
-  echo "Extracting Lexicon"	
-  grep "$lexiconURI" data/$res.nt > data/$lexiconFile.nt
-fi
+    if [ ! -e data/$lexiconFile.nt ]
+    then
+      echo "Extracting Lexicon"	
+      grep "$lexiconURI" data/$res.nt > data/$lexiconFile.nt
+    fi
 
 
-if [ ! -e data/$res-prep.nt ]
-then
- echo "NT => Tricolumns"
- cat data/$res.nt | $scala prep-import.scala $res | grep -v "$lexiconURI" > data/$res-prep.nt
-fi
+    if [ ! -e data/$res-prep.nt ]
+    then
+     echo "NT => Tricolumns"
+     cat data/$res.nt | $scala prep-import.scala $res | grep -v "$lexiconURI" > data/$res-prep.nt
+    fi
 
-if [ ! -e data/$res-sort.nt ]
-then
-  echo "Tricolumn sort"
-  LC_ALL=C sort data/$res-prep.nt > data/$res-sort.nt
-fi
+    if [ ! -e data/$res-sort.nt ]
+    then
+      echo "Tricolumn sort"
+      LC_ALL=C sort data/$res-prep.nt > data/$res-sort.nt
+    fi
 
-if [ ! -e data/$res.sql.gz ]
-then
-  echo "Tricolumn => SQL"
-  cat data/$res-sort.nt | $scala prepd-to-sql.scala -Dres=$res | gzip > data/$res.sql.gz
+    if [ ! -e data/$res.sql.gz ]
+    then
+      echo "Tricolumn => SQL"
+      cat data/$res-sort.nt | $scala prepd-to-sql.scala -Dres=$res | gzip > data/$res.sql.gz
+    fi
 fi
 
 if [ ! -e $lexiconFile.html ]

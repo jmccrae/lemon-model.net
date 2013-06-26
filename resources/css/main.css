@@ -465,6 +465,7 @@ tr:nth-child(even)    { background-color:#ddd; }
 	width: 1000px;
 	text-align: right; 
 	margin: 0 auto;
+        clear: both;
 	
 }
 
@@ -491,7 +492,15 @@ tr:nth-child(even)    { background-color:#ddd; }
 	margin: 0 auto;
 	display: block;
 }
-
+.nav2 {
+	height:2em;
+	padding-left: 0px;
+	width: 1000px;
+	text-align: left; 
+	margin: 0 auto;
+	display: block;
+	background-color: #ffca00;
+}
 .nav1 {
 	border-left: 3px solid #fff;	
 }
@@ -500,20 +509,20 @@ tr:nth-child(even)    { background-color:#ddd; }
 	float:left;
 	list-style-type: none;
 	line-height: 3em;
-	width: 150px;
+	width: 180px;
 	text-align: center;
 	border-right: 3px solid #fff;
-	font-weight: 600;
+	font-weight: 400;
 }
 
-.nav > li > ul > li {
+.nav2 > li {
 	list-style-type: none;
-	line-height: 3em;
-	width: 150px;
+	line-height: 2em;
 	text-align: center;
 	border-right: 0px solid #fff;
+        padding-left: 15px;
+        margin-left:10px;
 	font-weight: 600;
-	background-color: #ffca00;
 }
 
 
@@ -536,25 +545,22 @@ tr:nth-child(even)    { background-color:#ddd; }
 	text-decoration: underline;
 }
 
-.nav > li > ul {
-	margin:0px;
-	padding:0px;
-	position: absolute;
-	display: none;
+.nav2 > li {
+    float:left;
 }
 
 .nav > li:hover > ul {
 	display: block;	
 }
 
-.nav > li > ul > li > a {
+.nav2 > li > a {
 	color:#000;
 	text-decoration: none;
 	border:none;
 }
 
 
-.nav > li > ul > li > a:hover {
+.nav2 > li > a:hover {
 	text-decoration: underline;
 }
 
@@ -774,4 +780,20 @@ p.license { font-size:70%; }
     margin: 2px;
     border-radius: 5px;
     -moz-border-radius: 5px;
+}
+
+.learn {
+    display:none;
+}
+
+.download {
+    display:none;
+}
+
+.resources {
+    display:none;
+}
+
+.css {
+    display:none;
 }

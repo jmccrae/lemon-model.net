@@ -4,7 +4,16 @@ buildsite() {
   case $1 in
   pages)
     mkdir -p htdocs/
+    mkdir -p htdocs/learn
+    mkdir -p htdocs/download
     mkdir -p htdocs/lexica/uby/
+    mkdir -p htdocs/lexica/uby/fn
+    mkdir -p htdocs/lexica/uby/ow_eng
+    mkdir -p htdocs/lexica/uby/ow_deu
+    mkdir -p htdocs/lexica/uby/vn
+    mkdir -p htdocs/lexica/uby/WktEN
+    mkdir -p htdocs/lexica/uby/WktDE
+    mkdir -p htdocs/lexica/uby/wn
     mkdir -p htdocs/lexica/de-gaap/
     mkdir -p htdocs/lexica/pwn/
 
@@ -24,6 +33,11 @@ buildsite() {
       cat >$target < header.htmlfrag
       pandoc -f markdown -t html $fileBody >>$target
       cat >>$target < footer.htmlfrag
+    done
+
+    for file in `find . -name local.css`
+    do
+        cp $file ../htdocs/$file
     done
 
     cd ..

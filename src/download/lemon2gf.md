@@ -8,7 +8,7 @@ lemon2gf can be downloaded from [GitHub](https://github.com/cunger/lemon2gf).
 
 lemon2gf consists of two steps: mapping the ontology to an abstract syntax, and mapping a corresponding lexicon to a concrete syntax.
 
-![lemon2gf architecture](img/architecture.png)
+![lemon2gf architecture](/img/architecture.png)
 
 
 ### Core grammar
