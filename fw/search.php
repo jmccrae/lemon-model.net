@@ -6,7 +6,7 @@ $settings=parse_ini_file("settings.ini");
 
 $res=$settings["name"];
 
-$con = mysql_connect("localhost",$settings["username"],$settings["password"]);
+$con = mysql_connect("localhost",$settings["user"],$settings["password"]);
 
 if(!$con) {
   die('Could not connect: ' . mysql_error());
@@ -46,7 +46,11 @@ while($row = mysql_fetch_array($result)) {
 }
 echo "</table>";
 $result_count=mysql_num_rows($result);
-echo "Results: " . $offset . "-" . ($offset + $result_count) . " ";
+if($result_count != 0 || $offset != 0) {
+    echo "Results: " . ($offset+1) . "-" . ($offset + $result_count) . " ";
+} else {
+    echo "No Results";
+}
 if($result_count >= 20) {
   echo "<a href='search.php?search=$search&res=$res&offset=".($offset + 20)."'a>Next</a>";
 }
