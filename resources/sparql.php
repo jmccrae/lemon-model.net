@@ -55,8 +55,8 @@ select * where {
       curl_close($ch);
       echo "</div>";
   } else if(isset($_GET['text_search'])) {
-    $allsettings = array("/lexica/pwn/settings.ini","/lexica/uby/fn/settings.ini","/lexica/uby/ow_deu/settings.ini","/lexica/uby/ow_eng/settings.ini",
-        "/lexica/uby/vn/settings.ini","/lexica/uby/WktDE/settings.ini","/lexica/uby/WktEN/settings.ini","/lexica/uby/wn/settings.ini");
+    $allsettings = array("lexica/pwn/settings.ini","lexica/uby/fn/settings.ini","lexica/uby/ow_deu/settings.ini","lexica/uby/ow_eng/settings.ini",
+        "lexica/uby/vn/settings.ini","lexica/uby/WktDE/settings.ini","lexica/uby/WktEN/settings.ini","lexica/uby/wn/settings.ini");
     $displayNames = array(
         "pwn" => "Princeton WordNet 3.0",
         "fn" => "FrameNet",
@@ -64,20 +64,20 @@ select * where {
         "ow_eng" => "OmegaWiki (English)",
         "vn" => "VerbNet",
         "WktDE" => "Wiktionary.de",
-        "WKtEN" => "Wiktionary.en",
+        "WktEN" => "Wiktionary.en",
         "wn" => "WordNet"
     );
+    include 'header.htmlfrag';
 
     for($i = 0; $i < count($allsettings); ++$i) {
         $settings=parse_ini_file($allsettings[$i]);
-
         $res=$settings["name"];
 
         if(isset($_GET['res']) && $_GET['res'] != $res) {
             continue;
         }
 
-        $con = mysql_connect("localhost",$settings["username"],$settings["password"]);
+        $con = mysql_connect("localhost",$settings["user"],$settings["password"]);
 
         if(!$con) {
             die('Could not connect: ' . mysql_error());
@@ -101,7 +101,7 @@ select * where {
         }
 
         echo "<h2>".$displayNames[$res]."</h2>";
-        $result = mysql_query("select uri, label from $res where match (label) against ('%".$search."%') order by length(label) asc limit 20 offset ". $offset);
+        $result = mysql_query("select uri, label from $res where match (label) against ('".$search."') order by length(label) asc limit 20 offset ". $offset);
 
         echo "<table>";
         while($row = mysql_fetch_array($result)) {
@@ -110,7 +110,11 @@ select * where {
         }
         echo "</table>";
         $result_count=mysql_num_rows($result);
-        echo "Results: " . $offset . "-" . ($offset + $result_count) . " ";
+	if($result_count != 0 || $offset != 0) {
+           echo "Results: " . ($offset+1) . "-" . ($offset + $result_count) . " ";
+	} else {
+	   echo "No Results";
+	}
         if($result_count >= 20) {
             echo "<a href='search.php?search=$search&res=$res&offset=".($offset + 20)."'a>Next</a>";
         }
