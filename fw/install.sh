@@ -69,7 +69,7 @@ then
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
   gzip -c data/$res.nt > data/$res.nt.gz
-  mv $res.nt.gz $path/$res
+  mv data/$res.nt.gz $path/$res
   cat < header.htmlfrag > $path/$res/license.html
   cat < license-$res.htmlfrag >> $path/$res/license.html
   cat < footer.htmlfrag >> $path/$res/license.html

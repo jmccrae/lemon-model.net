@@ -9,6 +9,7 @@
     <!--<![endif]-->
     <head>
         <meta charset="utf-8">
+	<meta http-equiv="content-language" content="en">
 
         <!-- Use the .htaccess and remove these lines to avoid edge case issues.
         More info: h5bp.com/i/378 -->
