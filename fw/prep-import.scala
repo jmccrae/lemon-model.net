@@ -7,7 +7,6 @@ props.load(new FileReader("settings.ini"))
 val storeBnodes = props.getProperty("bnodes") != null
 System.err.println("BNode store:" + storeBnodes)
 
-val in = new Scanner(System.in) 
 
 def literal(s : String) : Option[String] = if(s matches "\".*\"(|@[\\w\\d-]+|\\^\\^.*)") {
   Some(s.substring(s.indexOf("\"")+1,s.lastIndexOf("\"")))
@@ -41,11 +40,35 @@ def cleanURI(s : String) = {
 
 case class BNodeEntry(val label : String, val nt : String)
 
-// BNodeID -> URI
 val bnodeMap = new scala.collection.mutable.HashMap[String,String]()
-// BNode -> Saved Triples
-val bnodes = new scala.collection.mutable.HashMap[String,List[BNodeEntry]]()
 
+if(storeBnodes) {
+    val bnodeMapTmp = new scala.collection.mutable.HashMap[String,String]()
+    val in = new Scanner(new File(args(0)))
+    while(in.hasNextLine()) {
+        val line = in.nextLine()
+        val elems = line split "\\s+"
+        if(elems.size == 4) {
+            if(isBNode(elems(0)) && isBNode(elems(2))) {
+                bnodeMapTmp.put(elems(2),elems(0))
+            } else if(isBNode(elems(0)) && elems(2).startsWith("<")) {
+                bnodeMapTmp.put(elems(0),cleanURI(elems(2)))
+            } else if(isBNode(elems(2))) {
+                bnodeMapTmp.put(elems(2),cleanURI(elems(0)))
+            }
+        }
+    }
+
+    for(bnode <- bnodeMapTmp.keys) {
+        var s = bnodeMapTmp(bnode)
+        while(isBNode(s)) {
+            s = bnodeMapTmp(s)
+        }
+        bnodeMap.put(bnode,s)
+    }
+}
+
+val in = new Scanner(new File(args(0))) 
 var linesRead = 1;
 
 while(in.hasNextLine()) {
@@ -65,36 +88,16 @@ while(in.hasNextLine()) {
     } else {
       ""
     }
-    if(isBNode(elems(0)) && !bnodeMap.contains(elems(0))) {
-      if(storeBnodes) {
-        bnodes.put(elems(0),
-          BNodeEntry(form,line) :: 
-          bnodes.getOrElse(elems(0),Nil))
-      }
+    val head : String = if(isBNode(elems(0)) && bnodeMap.contains(elems(0))) {
+      bnodeMap.getOrElse(elems(0), throw new RuntimeException())
     } else {
-      val head : String = if(isBNode(elems(0)) && bnodeMap.contains(elems(0))) {
-        bnodeMap.getOrElse(elems(0), throw new RuntimeException())
-      } else {
-        cleanURI(elems(0))
-      }
-      
-      println(head + " ||| " + form + " ||| " + line + " |||  ")
-      if((obj startsWith ("<" + prefix +"/" + args(0))) && !(obj contains "#")) {
-        // Back link
-        println(cleanURI(obj) + " |||  |||  ||| " + line)
-      }
-      
-      if(isBNode(obj)) {
-        if(bnodes.contains(obj)) {
-          for(BNodeEntry(label,nt) <- bnodes.getOrElse(obj,Nil)) {
-            println(head + " ||| " + label + " ||| " + nt + " |||  ")
-          }
-          bnodes remove obj
-        }
-	if(storeBnodes) {
-          bnodeMap put (obj,head)
-	}
-      }
+      cleanURI(elems(0))
+    }
+    
+    println(head + " ||| " + form + " ||| " + line + " |||  ")
+    if((obj startsWith ("<" + prefix +"/" + args(0))) && !(obj contains "#")) {
+      // Back link
+      println(cleanURI(obj) + " |||  |||  ||| " + line)
     }
   }
 }

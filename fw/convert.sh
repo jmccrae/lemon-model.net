@@ -87,7 +87,7 @@ then
     if [ ! -e data/$res-prep.nt ]
     then
      echo "NT => Tricolumns"
-     cat data/$res.nt | $scala prep-import.scala $res | grep -v "$lexiconURI" > data/$res-prep.nt
+     $scala prep-import.scala data/$res.nt | grep -v "$lexiconURI" > data/$res-prep.nt
     fi
 
     if [ ! -e data/$res-sort.nt ]
