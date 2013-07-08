@@ -24,7 +24,14 @@ mysql_select_db($settings["database"],$con);
 include 'header.htmlfrag';
 
 $displayNames = array(
-  "pwn" => "Princeton WordNet 3.0"
+  "pwn" => "Princeton WordNet 3.0",
+  "dbpedia_en" => "DBpedia English",
+  "fn" => "FrameNet",
+  "ow_eng" => "OmegaWiki English",
+  "ow_deu" => "OmegaWiki German",
+  "WktEN" => "Wiktionary English",
+  "WktDE" => "Wiktionary German",
+  "wn" => "WordNet"
 );
 
 
