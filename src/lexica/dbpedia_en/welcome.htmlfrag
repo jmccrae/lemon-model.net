@@ -1,0 +1,17 @@
+<h1>DBpedia English Lexicon</h1>
+
+<p>Search:
+
+<form action="search.php" method="get">
+  <input type="text" name="search"/><br/>
+  <input type="hidden" name="res" value="wn"/>
+  <input type="submit" value="Search"/>
+</form>
+</p>
+
+<p><a href="Lexicon">Lexicon</a></p>
+
+<p><a href="dbpedia_en.nt.gz">Download</a></p>
+
+<p><a href="license.html">License</a></p>
+
