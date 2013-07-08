@@ -67,6 +67,21 @@ buildsite() {
     cd ../../
     ;;
 
+  dbpedia_en)
+    echo "Make DBpedia English"
+    mkdir -p tmp/dbpedia_en
+    cp -r src/lexica/dbpedia_en/* tmp/dbpedia_en
+    if [ ! -e tmp/dbpedia_en/data/dbpedia_wn.nt ]
+    then
+      bunzip2 tmp/dbpedia_en/data/dbpedia_en.nt.bz2
+    fi
+    cp -r fw/* tmp/dbpedia_en
+    cd tmp/dbpedia_en
+    ./convert.sh
+    ./install.sh ../../htdocs/lexica/
+    cd ../../
+    ;;
+
   degaap)
     # Build de-gaap
     echo "Make DE-GAAP"
@@ -128,6 +143,7 @@ case $1 in
   all)
      buildsite "pages"
      buildsite "pwn"
+     buildsite "dbpedia_en"
      buildsite "degaap"
      buildsite "uby"
      ;;
