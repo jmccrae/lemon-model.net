@@ -56,7 +56,7 @@ prefix="$prefix$res/"
 namespaces=('--feature' 'xmlns:lemon="http://www.monnet-project.eu/lemon#"' '--feature' 'xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"' '--feature' 'xmlns:owl="http://www.w3.org/2002/07/owl#"' '--feature' 'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"' '--feature' 'xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#"')
 IFS=" " read -a rs <<< $rappersettings
    
-if [ -z HTML_ONLY ]
+if [ -z $HTML_ONLY ]
 then
     if [ ! -e data/$res.nt ]
     then
@@ -101,6 +101,8 @@ then
       echo "Tricolumn => SQL"
       cat data/$res-sort.nt | $scala prepd-to-sql.scala -Dres=$res | gzip > data/$res.sql.gz
     fi
+else
+    echo "Skipping data for $name"
 fi
 
 if [ ! -e $lexiconFile.html ]
