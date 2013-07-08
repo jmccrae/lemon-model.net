@@ -54,7 +54,20 @@ mysql_select_db($settings["database"],$con);
 
 $prefix = $settings["prefix"].$res."/";
 
-$result = mysql_query("select * from $res where uri='" . mysql_real_escape_string($prefix . ($_GET['uri']))."'");
+$uri = $_GET['uri'];
+
+if(!preg_match('/[A-Za-z0-9_+\-%]+/',$uri)) {
+   header('HTTP/1.0 404 Not Found');
+   echo "<h1>404 Not Found</h1>";
+   echo "Bad characters".$_GET['uri']."\n";
+   echo "The page that you have requested could not be found.";
+   mysql_close($con);
+   exit();
+}
+
+$uri = str_replace(" ","+",$uri);
+
+$result = mysql_query("select * from $res where uri='$prefix$uri'");
 
 if(!$result) {
    header('HTTP/1.0 404 Not Found');
