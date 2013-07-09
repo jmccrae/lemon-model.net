@@ -7,8 +7,8 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <xsl:strip-space elements="*" />
   <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
 
-<!-- Modify this template for URIs specified in full with @rdf:resource -->  
-<xsl:template name="display-uri">
+  <!-- Modify this template for URIs specified in full with @rdf:resource -->  
+  <xsl:template name="display-uri">
     <xsl:param name="text"/>
     <xsl:choose>
       <xsl:when test="contains($text,'ubyCat.owl#')">
@@ -22,6 +22,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <xsl:when test="contains($text,'category#')">
         <xsl:value-of select="'category:'"/>
         <xsl:value-of select="substring-after($text,'category#')"/>
+      </xsl:when>
+      <xsl:when test="contains($text,'monnet-project.eu/lemon#')">
+        lemon:<xsl:value-of select="substring-after($text,'lemon#')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text"/>
@@ -109,6 +112,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                     <xsl:attribute name="rel">
                       <xsl:value-of select="concat(namespace-uri(),local-name())"/>
                     </xsl:attribute>
+		    <i><xsl:value-of select="substring-after(@rdf:resource,'#')"/></i>
                     <xsl:for-each select="//*[@rdf:about=$rdfResource]">
                       <xsl:call-template name="forprop2"/>
                     </xsl:for-each>
@@ -149,6 +153,13 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                   <xsl:value-of select="concat(namespace-uri(),local-name())"/>
                  </xsl:attribute><xsl:value-of select="node()"/></span>&#x201d;
               </xsl:when>
+	      <xsl:when test="rdf:Description/rdf:first">
+	        <ol>
+		  <xsl:for-each select="rdf:Description">
+  		    <xsl:call-template name="list"/>
+		  </xsl:for-each>
+		</ol>
+	      </xsl:when>
               <xsl:otherwise>
                 <span typeof="http://www.w3.org/2002/07/owl#Thing">
                  <xsl:attribute name="property">
@@ -205,6 +216,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                     <xsl:attribute name="rel">
                       <xsl:value-of select="concat(namespace-uri(),local-name())"/>
                     </xsl:attribute>
+		    <i><xsl:value-of select="substring-after(@rdf:resource,'#')"/></i>
                     <xsl:for-each select="//*[@rdf:about=$rdfResource]">
                       <xsl:call-template name="forprop2"/>
                     </xsl:for-each>
@@ -245,6 +257,13 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                   <xsl:value-of select="concat(namespace-uri(),local-name())"/>
                  </xsl:attribute><xsl:value-of select="node()"/></span>&#x201d;
               </xsl:when>
+	      <xsl:when test="rdf:Description/rdf:first">
+	        <ol>
+		  <xsl:for-each select="rdf:Description">
+  		    <xsl:call-template name="list"/>
+		  </xsl:for-each>
+		</ol>
+	      </xsl:when>
               <xsl:otherwise>
                 <span typeof="http://www.w3.org/2002/07/owl#Thing">
                 <xsl:attribute name="property">
@@ -262,6 +281,38 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   </table>
 </xsl:template>
 
+<xsl:template name="list">
+  <li>
+    <xsl:choose>
+      <xsl:when test="rdf:first/@rdf:resource">
+        <a>
+	  <xsl:attribute name="href">
+	    <xsl:value-of select="rdf:first/@rdf:resource"/>
+	  </xsl:attribute>
+          <xsl:attribute name="property">
+            <xsl:value-of select="rdf:first/@rdf:resource"/>
+          </xsl:attribute>
+          <xsl:call-template name="display-uri">
+            <xsl:with-param name="text" select="rdf:first/@rdf:resource"/>
+          </xsl:call-template>
+        </a>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="forprop2" select="rdf:first"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </li>
+  <xsl:choose>
+    <xsl:when test="rdf:rest/@rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'">
+    
+    </xsl:when>
+    <xsl:when test="rdf:rest/rdf:Description">
+      <xsl:for-each select="rdf:rest/rdf:Description">
+        <xsl:call-template name="list"/>
+      </xsl:for-each>
+    </xsl:when>
+  </xsl:choose>
+</xsl:template>
 
 <xsl:template name="lang">
     <xsl:param name="lang_id"/>

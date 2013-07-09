@@ -14,6 +14,13 @@ if(!$con) {
 
 if(isset($_GET['search'])) {
   $search = mysql_real_escape_string($_GET['search']);
+  $ss = preg_split("/ /",$search);
+  for($i = 0; $i < sizeof($ss); $i++) {
+    while(strlen($ss[$i]) < 4) {
+      $ss[$i] = $ss[$i] . "_";
+    }
+  }
+  $search = implode(" ",$ss);
 } else {
   echo "No search params";
   exit();
@@ -49,7 +56,7 @@ $result = mysql_query("select uri, label from $res where match (label) against (
 echo "<table>";
 while($row = mysql_fetch_array($result)) {
   echo "<tr><td><a href='" . $row['uri'] . "'>" . $row['uri'] . "</a></td><td>";
-  echo $row['label'] . "</td></tr>";
+  echo str_replace("_","",$row['label']) . "</td></tr>";
 }
 echo "</table>";
 $result_count=mysql_num_rows($result);
