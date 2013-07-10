@@ -144,7 +144,6 @@ case $1 in
      buildsite "pages"
      buildsite "pwn"
      buildsite "dbpedia_en"
-     buildsite "degaap"
      buildsite "uby"
      ;;
   *)

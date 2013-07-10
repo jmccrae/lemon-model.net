@@ -122,7 +122,7 @@ while(in.hasNextLine()) {
     }
     
     println(head + " ||| " + fixForm(form) + " ||| " + line + " |||  ")
-    if((obj startsWith ("<" + prefix +"/" + props.getProperty("name"))) && !(obj contains "#")) {
+    if((obj startsWith ("<" + prefix + props.getProperty("name"))) && !(obj contains "#") && !(obj endsWith "WN_SemanticPredicate_29>")) {
       // Back link
       println(cleanURI(obj) + " |||  |||  ||| " + line)
     }
