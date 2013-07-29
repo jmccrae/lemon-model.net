@@ -13,6 +13,7 @@ Pages are under `src`, in either HTML or Markdown
 
 The following commands are required to build the site
 
+* `mysql'
 * `pandoc`
 * `rapper`
 * `scala`

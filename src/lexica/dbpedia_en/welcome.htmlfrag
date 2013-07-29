@@ -1,6 +1,17 @@
-<h1>DBpedia English Lexicon</h1>
+<h1>English Lexicon for DBpedia</h1>
 
-<p>Search:
+<p>
+Currently, the English lexicon for DBpedia 3.8 comprises 1,217 lexicalizations, covering 353 classes as well as the 300 most frequent properties.
+
+<ul>
+<li>Class lexicalizations: 443 (1.3 entries per class)</li>
+<li>Property lexicalizations: 774 (2.4 entries per property)</li>
+</ul>
+</p>
+
+<p><a href="Lexicon">Browse the lexicon</a></p>
+
+<p>Search for entries:
 
 <form action="search.php" method="get">
   <input type="text" name="search"/><br/>
@@ -9,9 +20,12 @@
 </form>
 </p>
 
-<p><a href="Lexicon">Lexicon</a></p>
+<p>
+<b>Download:</b>
+<a href="dbpedia_en.nt.gz">dbpedia_en.nt.gz</a> (320 kB, <a href="license.html">License</a>)</p>
 
-<p><a href="dbpedia_en.nt.gz">Download</a></p>
-
-<p><a href="license.html">License</a></p>
-
+<h2>Contributing</h2>
+<p>
+The lexicon is developed on GitHub: <a href="https://github.com/cunger/lemon.dbpedia">lemon.dbpedia</a> 
+</p>
+<p>If you want to contribute to improving the lexicon, extending it, or porting it to other languages, or if you are using the lexicon and want to give feedback, we'd love to hear from you!</p>
