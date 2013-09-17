@@ -1,1 +1,11 @@
 Options +Multiviews
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteBase /
+
+  # Check if .php file already exists -- if so, rewrite extension from .html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{THE_REQUEST} (.*)\.html
+  RewriteRule ^(.*)\.html $1.php [R=301,L]  
+</IfModule>
