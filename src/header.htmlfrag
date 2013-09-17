@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
@@ -9,6 +10,7 @@
     <!--<![endif]-->
     <head>
         <meta charset="utf-8">
+	<meta http-equiv="content-language" content="en">
 
         <!-- Use the .htaccess and remove these lines to avoid edge case issues.
         More info: h5bp.com/i/378 -->
@@ -24,6 +26,7 @@
 
         <link href="http://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="local.css">
 
         <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -63,10 +66,15 @@
             </div>
                </td>
                <td style="horizontal-align:right;">
-                 <br/>
-                 <form action="sparql.php" method="get">
-                   <label>Search resources (SPARQL)</label><br/>
-                   <input type="text" name="search"/>
+                   <?php if($_SESSION["username"]) {?>
+                   <div class="login_mini"><?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a></div>
+                   <?php } else {?>
+                   <div class="login_mini"><a href="/login.php">Log In</a></div>
+
+                   <?php } ?>
+                 <form action="/sparql.php" method="get">
+                   <label>Search resources</label><br/>
+                   <input type="text" name="text_search"/>
                  </form>
                </td>
             </table>
@@ -77,28 +85,41 @@
                     <a href="/index.html">Home</a>
                 </li>
                 <li>
-                	<div>Learn</div>            
-                	<ul>
-                	  <li><a href="/5mins.html">Getting Started</a></li>
-                	  <li><a href="/cookbook.html">Cookbook</a></li>
-                	</ul>
-                </li>
+                	<a href="/learn/learn.html">Learn</a>            
+                                </li>
                 <li>
-                	<div>Downloads</div>
-                	<ul id="download_dd">
-                		<li><a href="/download.html">Model files</a></li>
-                		<li><a href="/api.html">API</a></li>
-                	</ul>
-                </li>
+                <a href="/download/download.html">Tools and Downloads</a>
+               </li>
                 <li>
-                	<div>Resources</div>
-                	<ul id="resource_dd">
-                	  <li><a href="/source.html">Source Editor</a></li>
-                	  <li><a href="/lexica/uby">ubyLemon</a></li>
-                	  <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
-                	</ul>
-                </li>
+                	<a href="/lexica/lexica.html">Lexica</a>
+               </li>
             </ul>
-           
+        </div>
+        <div>
+            <ul class="nav2 learn">                    
+                <li><a href="/learn/5mins.html">Getting Started</a></li>
+                <li><a href="/learn/cookbook.html">Cookbook</a></li>
+            </ul>
+            <ul class="nav2 download">
+                <li><a href="/download/download.html">Model files</a></li>
+                <li><a href="/download/api.html">API</a></li>
+                <li><a href="/download/source.html">Source Editor</a></li>
+                <li><a href="/download/lemon2gf.html">lemon2gf</a></li>
+             </ul>
+            <ul class="nav2 resources">
+                <li><a href="/lexica/uby">lemonUby</a></li>
+                <li><a href="/lexica/pwn">Princeton WordNet</a></li>
+                <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
+            </ul>
+            <ul class="nav2 uby">                
+                <li><a href="/lexica/uby">lemonUby:</a></li>
+                <li><a href="/lexica/uby/fn">FrameNet</a></li>
+                <li><a href="/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
+                <li><a href="/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
+                <li><a href="/lexica/uby/vn">VerbNet</a></li>
+                <li><a href="/lexica/uby/WktDE">wiktionary.de</a></li>
+                <li><a href="/lexica/uby/WktEN">wiktionary.en</a></li>
+                <li><a href="/lexica/uby/wn">WordNet</a></li>
+            </ul>
         </div>
         <div class="pageMid">

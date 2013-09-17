@@ -797,3 +797,11 @@ p.license { font-size:70%; }
 .uby {
     display:none;
 }
+
+.login_mini {
+    text-align: right;
+}
+
+.login_mini > a {
+    border:none;
+}

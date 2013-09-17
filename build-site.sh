@@ -21,7 +21,7 @@ buildsite() {
 
     for fileBody in `find . -name \*.html`
     do
-      target=../htdocs/$fileBody
+      target=../htdocs/${fileBody%.html}.php
       cat >$target < header.htmlfrag
       cat >>$target $fileBody
       cat >>$target < footer.htmlfrag
@@ -29,7 +29,7 @@ buildsite() {
 
     for fileBody in `find . -name \*.md`
     do 
-      target=../htdocs/${fileBody%.md}.html
+      target=../htdocs/${fileBody%.md}.php
       cat >$target < header.htmlfrag
       pandoc -f markdown -t html $fileBody >>$target
       cat >>$target < footer.htmlfrag
@@ -47,6 +47,8 @@ buildsite() {
     cp src/header.htmlfrag htdocs/header.htmlfrag
 
     cp src/footer.htmlfrag htdocs/footer.htmlfrag
+
+    cp src/*.php htdocs/
 
     cp htaccess htdocs/.htaccess
 	;;
