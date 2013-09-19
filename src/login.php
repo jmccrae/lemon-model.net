@@ -52,6 +52,13 @@ mysql_close($con);
         <tr>
             <td>
             </td>
+            <td><a href="/newuser.php">Create an account</a><br/>
+                <a href="/lost_password.php">Request a new password</a>
+</td>
+        </tr>
+        <tr style="background-color:#fff;">
+            <td>
+            </td>
             <td style="text-align:right;margin:5px;">
               <input type="submit" value="Log In"/>
           </td>

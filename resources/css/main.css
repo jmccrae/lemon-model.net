@@ -805,3 +805,7 @@ p.license { font-size:70%; }
 .login_mini > a {
     border:none;
 }
+
+.login_error {
+    color:tomato;
+}
