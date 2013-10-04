@@ -14,7 +14,7 @@ $settings=parse_ini_file("settings.ini");
 if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["password_repeat"])) {
     if($_POST["password"] != $_POST["password_repeat"]) {
         echo "<div class='login_error'>Passwords do not match!</div>";
-    } else if(!preg_match("/^[A-Za-z0-9@]+$/",$_POST["username"])) {
+    } else if(!preg_match("/^[A-Za-z0-9@\\.\\-_]+$/",$_POST["username"])) {
         echo "<div class='login_error'>Please use only ASCII alphanumeric characters in the user name</div>";
     } else if($_POST["username"] == "" || $_POST["password"] == "" || $_POST["password_repeat"] == "" ) {
         echo "<div class='login_error'>Required fields were not filled</div>";
@@ -45,57 +45,19 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["passw
 }
 ?>
 <form method="post">
-    <table>                
-        <tr>
-            <td>
                 <label for="username">Username*</label>
-            </td>
-            <td>
-                <input type="text" name="username"/>
-            </td>
-        </tr>
-        <tr style="background-color:#fff;">
-            <td>
+                <input type="text" name="username"/><br/>
                 <label for="password">Password*</label>
-            </td>
-            <td>
-                <input type="password" name="password"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
+                <input type="password" name="password"/><br/>
                 <label for="password_repeat">Repeat password*</label>
-            </td>
-            <td>
-                <input type="password" name="password_repeat"/>
-            </td>
-        </tr>
-        <tr style="background-color:#fff;">
-            <td>
+                <input type="password" name="password_repeat"/><br/>
                 <label for="real_name">Real name</label>
-            </td>
-            <td>
-                <input type="text" name="real_name"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
+                <input type="text" name="real_name"/><br/>
                 <label for="email">Email</label>
-            </td>
-            <td>
-                <input type="text" name="email"/>
-            </td>
-        </tr>
-        <tr style="background-color:#fff;">
-            <td>
-            </td>
-            <td style="text-align:right;margin:5px;">
+                <input type="text" name="email"/><br/>
               <input type="submit" value="Create Account"/>
-          </td>
-      </tr>
-  </table>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;*Required field</div>
 </form>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;*Required field</div>
 <?php
 include "footer.htmlfrag";
 ?>

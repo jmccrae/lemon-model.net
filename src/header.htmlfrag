@@ -73,7 +73,7 @@
 
                    <?php } ?>
                  <form action="/sparql.php" method="get">
-                   <label>Search resources</label><br/>
+                   <label>Search resources</label>
                    <input type="text" name="text_search"/>
                  </form>
                </td>

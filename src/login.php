@@ -32,38 +32,15 @@ mysql_close($con);
 }
 ?>
 <form method="post">
-    <table>
-        <tr>
-            <td>
                 <label for="username">Username</label>
-            </td>
-            <td>
                 <input type="text" name="username"/>
-            </td>
-        </tr>
-        <tr style="background-color:#fff;">
-            <td>
+<br/>
                 <label for="password">Password</label>
-            </td>
-            <td>
                 <input type="password" name="password"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-            <td><a href="/newuser.php">Create an account</a><br/>
-                <a href="/lost_password.php">Request a new password</a>
-</td>
-        </tr>
-        <tr style="background-color:#fff;">
-            <td>
-            </td>
-            <td style="text-align:right;margin:5px;">
+<br/>
+            <a href="/newuser.php">Create an account</a><br/>
+                <a href="/lost_password.php">Request a new password</a><br/>
               <input type="submit" value="Log In"/>
-          </td>
-      </tr>
-  </table>
 </form>
 <?php
 include "footer.htmlfrag";
