@@ -1,119 +1,93 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-    <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
 	<meta http-equiv="content-language" content="en">
+        <title>Lemon - Lexicon Model for Ontologies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/css/main.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="local.css" media="screen">
 
-        <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-        More info: h5bp.com/i/378 -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-        <title>lemon - The Lexicon Model for Ontologies</title>
-        <meta name="description" content="">
-
-        <!-- Mobile viewport optimized: h5bp.com/viewport -->
-        <meta name="viewport" content="width=device-width">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-        <link href="http://fonts.googleapis.com/css?family=Signika:400,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="local.css">
-
-        <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-        <!-- All JavaScript at the bottom, except this Modernizr build.
-        Modernizr enables HTML5 elements & feature detects for optimal performance.
-        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-        <script src="/js/vendor/modernizr-2.6.1.min.js"></script>
+        <style>
+            body {
+<?php if($_SERVER["REQUEST_URI"] == "/index.php") { ?>
+                padding-top: 60px;
+<?php } else { ?>
+                padding-top: 100px; /* to make the container go all the way to the bottom of the topbar */
+<?php } ?>
+            }
+        </style>
     </head>
     <body>
-        <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-        chromium.org/developers/how-tos/chrome-frame-getting-started -->
-        <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-        <!-- Add your site or application content here -->
-
-        <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-        <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script>
-            window.jQuery || document.write('<script src="/js/vendor/jquery-1.7.2.min.js"><\/script>')
-        </script>
-
-        <!-- scripts concatenated and minified via build script -->
-        <script src="/js/plugins.js"></script>
-        <script src="/js/main.js"></script>
-        <!-- end scripts -->
-
-        <div class="pageTop">
-        	<table width="100%">
-        	  <tr>
-        	    <td>
-            <a href="http://www.lemon-model.net/" style="border:none;"><img src="/img/logo.png" alt="Lexicon Model for Ontologies" class="lemon_logo"/></a>
-            <div class="underLogo">
-                <span class="LeMOn_initial">Le</span>xicon <span class="LeMOn_initial">M</span>odel for <span class="LeMOn_initial">On</span>tologies
-                <br/>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#"><img src="/img/logo_small.png" height="50px"/></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="inactive home"><a href="/index.php">Home</a></li>
+                            <li class="inactive learn"><a href="/learn/learn.html">Learn</a></li>
+                            <li class="inactive download"><a href="/download/download.html">Download</a></li>
+                            <li class="inactive resources uby"><a href="/lexica/lexica.html">Lexica</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                    <div class="user-tools" style="text-align:right;">
+                      <div style="display:inline-block;width:18px;height:15px;background-image:url('/img/glyphicons-halflings.png');background-position:-167px 2px;"></div>
+                      <?php if($_SESSION["username"]) {?>
+                      <a href="/login.php">
+                           <?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a>
+                      <?php } else {?>
+                       <a href="/login.php">Log In</a>
+                      <?php }?>
+                      <br/>
+                      <form action="/sparql.php" method="get" style="display:inline;">Search resources <input type="text" name="text_search"></form>
+                    </div>
+                </div>
             </div>
-               </td>
-               <td style="horizontal-align:right;">
-                 <br/>
-                 <form action="/sparql.php" method="get">
-                   <label>Search resources</label>
-                   <input type="text" name="text_search"/>
-                 </form>
-               </td>
-            </table>
-        </div>
-        <div class="menuTop">
-            <ul class="nav">
-                <li class="nav1">
-                    <a href="/index.html">Home</a>
-                </li>
-                <li>
-                	<a href="/learn/learn.html">Learn</a>            
-                                </li>
-                <li>
-                <a href="/download/download.html">Tools and Downloads</a>
-               </li>
-                <li>
-                	<a href="/lexica/lexica.html">Lexica</a>
-               </li>
-            </ul>
-        </div>
-        <div>
-            <ul class="nav2 learn">                    
-                <li><a href="/learn/5mins.html">Getting Started</a></li>
-                <li><a href="/learn/cookbook.html">Cookbook</a></li>
-            </ul>
-            <ul class="nav2 download">
-                <li><a href="/download/download.html">Model files</a></li>
-                <li><a href="/download/api.html">API</a></li>
-                <li><a href="/download/source.html">Source Editor</a></li>
-                <li><a href="/download/lemon2gf.html">lemon2gf</a></li>
-             </ul>
-            <ul class="nav2 resources">
-                <li><a href="/lexica/uby">lemonUby</a></li>
-                <li><a href="/lexica/pwn">Princeton WordNet</a></li>
-                <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
-            </ul>
-            <ul class="nav2 uby">                
-                <li><a href="/lexica/uby">lemonUby:</a></li>
-                <li><a href="/lexica/uby/fn">FrameNet</a></li>
-                <li><a href="/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
-                <li><a href="/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
-                <li><a href="/lexica/uby/vn">VerbNet</a></li>
-                <li><a href="/lexica/uby/WktDE">wiktionary.de</a></li>
-                <li><a href="/lexica/uby/WktEN">wiktionary.en</a></li>
-                <li><a href="/lexica/uby/wn">WordNet</a></li>
-            </ul>
-        </div>
-        <div class="pageMid">
+            <div class="subnav">
+                <div class="container learn">
+                    <ul class="nav learn">                    
+                        <li><a href="/learn/5mins.html">Getting Started</a></li>
+                        <li><a href="/learn/cookbook.html">Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="container download">
+                    <ul class="nav download">
+                        <li><a href="/download/download.html">Model files</a></li>
+                        <li><a href="/download/api.html">API</a></li>
+                        <li><a href="/download/source.html">Source Editor</a></li>
+                        <li><a href="/download/lemon2gf.html">lemon2gf</a></li>
+                    </ul>
+                </div>
+                <div class="container resources">
+                    <ul class="nav resources">
+                        <li><a href="/lexica/uby">lemonUby</a></li>
+                        <li><a href="/lexica/pwn">Princeton WordNet</a></li>
+                        <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
+                    </ul>
+                </div>
+                <div class="container uby">
+                    <ul class="nav uby">                
+                        <li><a href="/lexica/uby">lemonUby:</a></li>
+                        <li><a href="/lexica/uby/fn">FrameNet</a></li>
+                        <li><a href="/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
+                        <li><a href="/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
+                        <li><a href="/lexica/uby/vn">VerbNet</a></li>
+                        <li><a href="/lexica/uby/WktDE">wiktionary.de</a></li>
+                        <li><a href="/lexica/uby/WktEN">wiktionary.en</a></li>
+                        <li><a href="/lexica/uby/wn">WordNet</a></li>
+                    </ul>
+                </div>
+
+            </div>
+    </div>
+    <div class="container">
+
