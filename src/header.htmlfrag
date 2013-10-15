@@ -104,6 +104,7 @@
                 <li><a href="/lexica/uby">lemonUby</a></li>
                 <li><a href="/lexica/pwn">Princeton WordNet</a></li>
                 <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
+		<li><a href="/lexica/dbpedia_en">DBpedia English</a></li>
             </ul>
             <ul class="nav2 uby">                
                 <li><a href="/lexica/uby">lemonUby:</a></li>
