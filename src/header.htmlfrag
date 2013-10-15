@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
@@ -65,9 +66,14 @@
             </div>
                </td>
                <td style="horizontal-align:right;">
-                 <br/>
+                   <?php if($_SESSION["username"]) {?>
+                   <div class="login_mini"><?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a></div>
+                   <?php } else {?>
+                   <div class="login_mini"><a href="/login.php">Log In</a></div>
+
+                   <?php } ?>
                  <form action="/sparql.php" method="get">
-                   <label>Search resources</label><br/>
+                   <label>Search resources</label>
                    <input type="text" name="text_search"/>
                  </form>
                </td>

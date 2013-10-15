@@ -65,24 +65,24 @@ fi
 if [ -e data/$res.nt ]
 then
   mkdir -p $path/$res
-  cp *.php *.htmlfrag *.xsl data/*.html settings.ini $path/$res
+  cp *.php *.htmlfrag *.xsl data/*.php settings.ini $path/$res
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
   gzip -c data/$res.nt > data/$res.nt.gz
   mv data/$res.nt.gz $path/$res
-  cat < header.htmlfrag > $path/$res/license.html
-  cat < license-$res.htmlfrag >> $path/$res/license.html
-  cat < footer.htmlfrag >> $path/$res/license.html
+  cat < header.htmlfrag > $path/$res/license.php
+  cat < license-$res.htmlfrag >> $path/$res/license.php
+  cat < footer.htmlfrag >> $path/$res/license.php
 else
-  die "No data found in data/$res.nt"
+  echo "Warning: No data found in data/$res.nt"
 fi
 
 if [ -e category.rdf ]
 then
   xsltproc rdf2html.xsl category.rdf > category.htmlfrag
-  cp header.htmlfrag category.html
-  cat < category.html >> category.html
-  cat < footer.htmlfrag >> category.html
+  cp header.htmlfrag category.php
+  cat < category.html >> category.php
+  cat < footer.htmlfrag >> category.php
   rm category.htmlfrag  
   rapper -i rdfxml -o turtle > category.ttl
   cp category.* $path
@@ -92,10 +92,10 @@ fi
 
 if [ -e welcome.htmlfrag ]
 then
-  cat < header.htmlfrag > welcome.html 
-  cat < welcome.htmlfrag >> welcome.html 
-  cat < footer.htmlfrag >> welcome.html 
-  mv welcome.html $path/$res/index.html
+  cat < header.htmlfrag > welcome.php 
+  cat < welcome.htmlfrag >> welcome.php 
+  cat < footer.htmlfrag >> welcome.php 
+  mv welcome.php $path/$res/index.php
 else
   echo "Warning: No welcome.htmlfrag file"
 fi

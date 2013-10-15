@@ -106,7 +106,7 @@ else
     echo "Skipping data for $name"
 fi
 
-if [ ! -e $lexiconFile.html ]
+if [ ! -e $lexiconFile.php ] && [ -e data/$lexiconFile.nt ]
 then
   echo "Converting Lexicon"
   rapper -i ntriples -o rdfxml-abbrev -I $prefix ${namespaces[@]} ${rs[@]} data/$lexiconFile.nt > data/$lexiconFile.rdf
@@ -122,7 +122,7 @@ then
   i=0
   iform=`printf "%02d" $i`
   splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-  ref="$lexiconFile.$iform.html"
+  ref="$lexiconFile.$iform.php"
   while [ -e $splitFile ] 
   do
     oldSplitFile=$splitFile
@@ -131,7 +131,7 @@ then
     i=$[$i+1]
     iform=`printf "%02d" $i`
     splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-    ref="$lexiconFile.$iform.html"
+    ref="$lexiconFile.$iform.php"
     if [ -e $splitFile ]
     then
       echo "<a href=\"$oldRef\">Previous</a>" | cat >> $splitFile
@@ -141,19 +141,19 @@ then
   i=0
   iform=`printf "%02d" $i`
   splitFile="data/$lexiconFile-split.$iform.htmlfrag"
-  cp header.htmlfrag data/$lexiconFile.html
-  cat < $splitFile >> data/$lexiconFile.html
+  cp header.htmlfrag data/$lexiconFile.php
+  cat < $splitFile >> data/$lexiconFile.php
   rm $splitFile
-  cat footer.htmlfrag >> data/$lexiconFile.html
+  cat footer.htmlfrag >> data/$lexiconFile.php
   i=1
   iform=`printf "%02d" $i`
   splitFile="data/$lexiconFile-split.$iform.htmlfrag"
   while [ -e $splitFile ] 
   do
-    cp header.htmlfrag data/$lexiconFile.$iform.html
-    cat < $splitFile >> data/$lexiconFile.$iform.html
+    cp header.htmlfrag data/$lexiconFile.$iform.php
+    cat < $splitFile >> data/$lexiconFile.$iform.php
     rm $splitFile
-    cat footer.htmlfrag >> data/$lexiconFile.$iform.html
+    cat footer.htmlfrag >> data/$lexiconFile.$iform.php
     i=$[$i+1]
     iform=`printf "%02d" $i`
     splitFile="data/$lexiconFile-split.$iform.htmlfrag"

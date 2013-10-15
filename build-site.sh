@@ -21,7 +21,7 @@ buildsite() {
 
     for fileBody in `find . -name \*.html`
     do
-      target=../htdocs/$fileBody
+      target=../htdocs/${fileBody%.html}.php
       cat >$target < header.htmlfrag
       cat >>$target $fileBody
       cat >>$target < footer.htmlfrag
@@ -29,7 +29,7 @@ buildsite() {
 
     for fileBody in `find . -name \*.md`
     do 
-      target=../htdocs/${fileBody%.md}.html
+      target=../htdocs/${fileBody%.md}.php
       cat >$target < header.htmlfrag
       pandoc -f markdown -t html $fileBody >>$target
       cat >>$target < footer.htmlfrag
@@ -44,9 +44,11 @@ buildsite() {
 
     cp -r resources/* htdocs/
 
-    cp src/nonlocal-header.htmlfrag htdocs/header.htmlfrag
+    cp src/header.htmlfrag htdocs/header.htmlfrag
 
-    cp src/nonlocal-footer.htmlfrag htdocs/footer.htmlfrag
+    cp src/footer.htmlfrag htdocs/footer.htmlfrag
+
+    cp src/*.php htdocs/
 
     cp htaccess htdocs/.htaccess
 	;;
@@ -85,32 +87,7 @@ buildsite() {
   degaap)
     # Build de-gaap
     echo "Make DE-GAAP"
-    mkdir -p tmp/de-gaap
-    cp -r src/lexica/de-gaap/* tmp/de-gaap
-    pwd
-    if [ ! -e tmp/de-gaap/de/data/de.nt ]
-    then
-        bunzip2 tmp/de-gaap/de/data/de.nt.bz2
-        rapper -i rdfxml -o ntriples src/lexica/de-gaap/lexicon.de.rdf >> tmp/de-gaap/de/data/de.nt
-    fi
-    if [ ! -e tmp/de-gaap/en/data/en.nt ]
-    then
-       bunzip2 tmp/de-gaap/en/data/en.nt.bz2
-       rapper -i rdfxml -o ntriples src/lexica/de-gaap/lexicon.en.rdf >> tmp/de-gaap/en/data/en.nt
-    fi
-    cp -r fw/* tmp/de-gaap/de/
-    cp -r fw/* tmp/de-gaap/en/
-    cd tmp/de-gaap/de/
-    ./convert.sh
-    ./install.sh ../../../htdocs/lexica/de-gaap/
-    cd ../en
-    ./convert.sh
-    ./install.sh ../../../htdocs/lexica/de-gaap/
-    cd ../../../
-    cp src/lexica/de-gaap/htaccess htdocs/lexica/de-gaap/.htaccess
-    cp src/lexica/de-gaap/index.php htdocs/lexica/de-gaap/
-    cp src/lexica/de-gaap/*.rdf htdocs/lexica/de-gaap/
-    cp src/lexica/de-gaap/rdf2html.xsl htdocs/lexica/de-gaap/
+    cp -r src/lexica/de-gaap htdocs/lexica/
     ;;
 
   uby)
@@ -132,9 +109,6 @@ buildsite() {
     done
 
     echo "It is highly recommended to rm -fr tmp now"
-    ;;
-  test)
-    echo "It works!"
     ;;
   esac
 }
