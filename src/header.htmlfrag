@@ -91,3 +91,59 @@
     </div>
     <div class="container">
 
+<<<<<<< HEAD
+=======
+                   <?php } ?>
+                 <form action="/sparql.php" method="get">
+                   <label>Search resources</label>
+                   <input type="text" name="text_search"/>
+                 </form>
+               </td>
+            </table>
+        </div>
+        <div class="menuTop">
+            <ul class="nav">
+                <li class="nav1">
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                	<a href="/learn/learn.html">Learn</a>            
+                                </li>
+                <li>
+                <a href="/download/download.html">Tools and Downloads</a>
+               </li>
+                <li>
+                	<a href="/lexica/lexica.html">Lexica</a>
+               </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav2 learn">                    
+                <li><a href="/learn/5mins.html">Getting Started</a></li>
+                <li><a href="/learn/cookbook.html">Cookbook</a></li>
+            </ul>
+            <ul class="nav2 download">
+                <li><a href="/download/download.html">Model files</a></li>
+                <li><a href="/download/api.html">API</a></li>
+                <li><a href="/download/source.html">Source Editor</a></li>
+                <li><a href="/download/lemon2gf.html">lemon2gf</a></li>
+             </ul>
+            <ul class="nav2 resources">
+                <li><a href="/lexica/uby">lemonUby</a></li>
+                <li><a href="/lexica/pwn">Princeton WordNet</a></li>
+                <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
+		<li><a href="/lexica/dbpedia_en">DBpedia English</a></li>
+            </ul>
+            <ul class="nav2 uby">                
+                <li><a href="/lexica/uby">lemonUby:</a></li>
+                <li><a href="/lexica/uby/fn">FrameNet</a></li>
+                <li><a href="/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
+                <li><a href="/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
+                <li><a href="/lexica/uby/vn">VerbNet</a></li>
+                <li><a href="/lexica/uby/WktDE">wiktionary.de</a></li>
+                <li><a href="/lexica/uby/WktEN">wiktionary.en</a></li>
+                <li><a href="/lexica/uby/wn">WordNet</a></li>
+            </ul>
+        </div>
+        <div class="pageMid">
+>>>>>>> 5c9c430c033adecf272396de8859b709026c5d5f

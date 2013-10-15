@@ -2,3 +2,4 @@
 htdocs
 *.swp
 tmp
+src/eotd/*.htm

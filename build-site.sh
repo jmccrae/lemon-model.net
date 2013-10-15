@@ -6,6 +6,7 @@ buildsite() {
     mkdir -p htdocs/
     mkdir -p htdocs/learn
     mkdir -p htdocs/download
+    cp -r src/eotd/ htdocs/
     mkdir -p htdocs/lexica/uby/
     mkdir -p htdocs/lexica/uby/fn
     mkdir -p htdocs/lexica/uby/ow_eng
