@@ -74,9 +74,9 @@ if(!isset($_SESSION["username"])) {
 ?>
 <h3>Create a new lexicon</h3>
 <form>
-  <label for="name">Lexicon name</label><input type="text" name="lexicon_name"/><br/>
-  <label for="name">Language (ISO code, e.g., "eng")</label><input type="text" name="language"/><br/>
-  <input type="submit"/>
+  <label for="lexicon_name">Lexicon name</label><input type="text" name="lexicon_name"/><br/>
+  <label for="language">Language (ISO code, e.g., "eng")</label><input type="text" name="language"/><br/>
+  <input type="submit" value="Create"/>
 </form>
 <?php
 }

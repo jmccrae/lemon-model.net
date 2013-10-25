@@ -134,19 +134,17 @@ if(!$data) {
 }
 
 if($type == "rdf") {
-  $rdfxml = convert($data.file_get_contents("license-$res.nt"), "rdfxml-abbrev",($prefix.$uri), $settings); 
+    $rdfxml = convert($data/*.file_get_contents("license-$res.nt")*/, "rdfxml-abbrev",($prefix.$uri), $settings); 
   header('Content-type: application/rdf+xml');
   echo $rdfxml;
 } else if($type == "ttl") {
-  $turtle = convert($data.file_get_contents("license-$res.nt"), "turtle",$prefix, $settings); 
+    $turtle = convert($data/*.file_get_contents("license-$res.nt")*/, "turtle",$prefix, $settings); 
   header('Content-type: text/turtle');
   echo $turtle;
 } else if($type == "nt") {
-  $turtle = convert($data.file_get_contents("license-$res.nt"), "ntriples",$prefix, $settings); 
-  header('Content-type: text/plain');
-  if(file_exists("license-$res.nt")) {
-      echo file_get_contents("license-$res.nt");
-  }
+    $nt = convert($data/*.file_get_contents("license-$res.nt")*/, "ntriples",$prefix, $settings); 
+    header('Content-type: text/plain');
+    echo $nt;
 } else {
   include '../../../header.htmlfrag';
   $xslt = new XSLTProcessor();
