@@ -1,17 +1,17 @@
         </div>
         <footer>
             <div style="float:left;padding-left:50px;padding-top:10px;">
-                <a href="/contact.php">Contact</a> | <a href="http://github.com/jmccrae/lemon-model.net">GitHub</a>
+                <a href="<?php echo $PRE?>/contact.php">Contact</a> | <a href="http://github.com/jmccrae/lemon-model.net">GitHub</a>
             
             </div>
             <div style="padding-top:10px;padding-right:50px;">
-            <a href="http://www.cit-ec.de"><img src="/img/logo-citec.png" style="height:40px;" /></a>&nbsp;
-            <a href="https://creativecommons.org/licenses/by/2.0/"><img src="/img/cc-by.png" style="height:40px;"/></a><br/>
-        </div>
-        <!--    <a href="http://www.deri.ie"><img src="img/deri-logo.jpeg" style="height:60px;" /></a>&nbsp;
-            <a href="http://www.dfki.de"><img src="img/dfki-logo.jpeg" /></a>&nbsp;
-            <a href="http://www.oeg-upm.net"><img src="img/upm-T.gif" style="height:80px;" /></a>
-            <a href="http://www.monnet-project.eu"><img src="img/Monnet_Logo.jpg" style="height:60px;" /></a>&nbsp;</p>-->
+                <a href="https://creativecommons.org/licenses/by/2.0/"><img src="/img/cc-by.png" style="height:40px;"/></a><br/>
+		<p>lemon is a collaboration between <a href="http://www.cit-ec.de">CITEC</a>,<a href="http://www.deri.ie">DERI</a>,
+		  <a href="http://www.oeg-upm.net">UPM</a> and <a href="http://www.dfki.de">DFKI</a>.<br/>
+		 Work on lemon has been partly funded 
+		  the <a href="http://www.monnet-project.eu/">Monnet project</a>.<br/>
+		  Hosting provided by the <a href="http://www.sc.cit-ec.uni-bielefeld.de/en/home">Semantic Computing Group</a> of the University Bielefeld.</p>
+            </div>
         </footer>
 
         <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

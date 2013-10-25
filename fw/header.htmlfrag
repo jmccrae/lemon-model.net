@@ -7,8 +7,15 @@
         <title>Lemon - Lexicon Model for Ontologies</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <!-- Bootstrap -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/css/main.css" rel="stylesheet" media="screen">
+<?php
+if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
+  $PRE = "/dev";
+} else {
+  $PRE = "";
+}
+?>
+        <link href="<?php echo $PRE?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="<?php echo $PRE?>/css/main.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="local.css" media="screen">
 
         <style>
@@ -17,7 +24,7 @@
                 padding-top: 60px;
 <?php } else { ?>
                 padding-top: 100px; /* to make the container go all the way to the bottom of the topbar */
-<?php } ?>
+<?php }?> 
             }
         </style>
     </head>
@@ -30,64 +37,63 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="#"><img src="/img/logo_small.png" height="50px"/></a>
+                    <a class="brand" href="<?php echo $PRE?>"><img src="<?php echo $PRE?>/img/logo_small.png" height="50px"/></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="inactive home"><a href="/index.php">Home</a></li>
-                            <li class="inactive learn"><a href="/learn/learn.html">Learn</a></li>
-                            <li class="inactive download"><a href="/download/download.html">Download</a></li>
-                            <li class="inactive resources uby"><a href="/lexica/lexica.html">Lexica</a></li>
+                            <li class="inactive home"><a href="<?php echo $PRE?>/index.php">Home</a></li>
+                            <li class="inactive learn"><a href="<?php echo $PRE?>/learn/learn.html">Learn</a></li>
+                            <li class="inactive download"><a href="<?php echo $PRE?>/download/download.html">Download</a></li>
+                            <li class="inactive resources uby"><a href="<?php echo $PRE?>/lexica/lexica.html">Lexica</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                     <div class="user-tools" style="text-align:right;">
-                      <div style="display:inline-block;width:18px;height:15px;background-image:url('/img/glyphicons-halflings.png');background-position:-167px 2px;"></div>
+                      <div style="display:inline-block;width:18px;height:15px;background-image:url('<?php echo $PRE?>/img/glyphicons-halflings.png');background-position:-167px 2px;"></div>
                       <?php if($_SESSION["username"]) {?>
-                      <a href="/login.php">
+                      <a href="<?php echo $PRE?>/login.php">
                            <?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a>
                       <?php } else {?>
-                       <a href="/login.php">Log In</a>
+                       <a href="<?php echo $PRE?>/login.php">Log In</a>
                       <?php }?>
                       <br/>
-                      <form action="/sparql.php" method="get" style="display:inline;">Search resources <input type="text" name="text_search"></form>
+                      <form action="<?php echo $PRE?>/sparql.php" method="get" style="display:inline;">Search resources <input type="text" name="text_search"></form>
                     </div>
                 </div>
             </div>
             <div class="subnav">
                 <div class="container learn">
                     <ul class="nav learn">                    
-                        <li><a href="/learn/5mins.html">Getting Started</a></li>
-                        <li><a href="/learn/cookbook.html">Cookbook</a></li>
+                        <li><a href="<?php echo $PRE?>/learn/5mins.html">Getting Started</a></li>
+                        <li><a href="<?php echo $PRE?>/learn/cookbook.html">Cookbook</a></li>
                     </ul>
                 </div>
                 <div class="container download">
                     <ul class="nav download">
-                        <li><a href="/download/download.html">Model files</a></li>
-                        <li><a href="/download/api.html">API</a></li>
-                        <li><a href="/download/source.html">Source Editor</a></li>
-                        <li><a href="/download/lemon2gf.html">lemon2gf</a></li>
+                        <li><a href="<?php echo $PRE?>/download/download.html">Model files</a></li>
+                        <li><a href="<?php echo $PRE?>/download/api.html">API</a></li>
+                        <li><a href="<?php echo $PRE?>/download/source.html">Source Editor</a></li>
+                        <li><a href="<?php echo $PRE?>/download/lemon2gf.html">lemon2gf</a></li>
                     </ul>
                 </div>
                 <div class="container resources">
                     <ul class="nav resources">
-                        <li><a href="/lexica/uby">lemonUby</a></li>
-                        <li><a href="/lexica/pwn">Princeton WordNet</a></li>
-                        <li><a href="/lexica/de-gaap">DE-GAAP</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby">lemonUby</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/pwn">Princeton WordNet</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/de-gaap">DE-GAAP</a></li>
                     </ul>
                 </div>
                 <div class="container uby">
                     <ul class="nav uby">                
-                        <li><a href="/lexica/uby">lemonUby:</a></li>
-                        <li><a href="/lexica/uby/fn">FrameNet</a></li>
-                        <li><a href="/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
-                        <li><a href="/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
-                        <li><a href="/lexica/uby/vn">VerbNet</a></li>
-                        <li><a href="/lexica/uby/WktDE">wiktionary.de</a></li>
-                        <li><a href="/lexica/uby/WktEN">wiktionary.en</a></li>
-                        <li><a href="/lexica/uby/wn">WordNet</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby">lemonUby:</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/fn">FrameNet</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/ow_deu">OmegaWiki (German)</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/ow_eng">OmegaWiki (English)</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/vn">VerbNet</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/WktDE">wiktionary.de</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/WktEN">wiktionary.en</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/uby/wn">WordNet</a></li>
                     </ul>
                 </div>
 
             </div>
     </div>
     <div class="container">
-
