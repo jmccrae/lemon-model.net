@@ -51,12 +51,14 @@ if(!isset($_SESSION["username"])) {
             $lexiconName=$_GET["lexicon_name"];
             $userName=$_SESSION["username"];
             $language=$_GET["language"];
-            copy("../source_fw/index.php",$trgDir."/index.php");
-            copy("../source_fw/miniview.php",$trgDir."/miniview.php");
-            copy("../source_fw/rdf2html.xsl",$trgDir."/rdf2html.xsl");
-            copy("../source_fw/rdf2minihtml.xsl",$trgDir."/rdf2minihtml.xsl");
-            copy("../source_fw/rdfbl2html.xsl",$trgDir."/rdfbl2html.xsl");
-            copy("../source_fw/htaccess",$trgDir+"/.htaccess");
+            symlink("../../index.php",$trgDir."/index.php");
+            symlink("../../newentry.php",$trgDir."/newentry.php");
+            symlink("../../miniview.php",$trgDir."/miniview.php");
+            symlink("../../rdf2html.xsl",$trgDir."/rdf2html.xsl");
+            symlink("../../rdf2minihtml.xsl",$trgDir."/rdf2minihtml.xsl");
+            symlink("../../rdfbl2html.xsl",$trgDir."/rdfbl2html.xsl");
+            symlink("../../htaccess",$trgDir+"/.htaccess");
+
             exec("git init $trgDir/");            
             file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .");
             file_put_contents($trgDir."/settings.ini","[resource]\nname=$lexiconName\nrappersettings=\"--feature xmlns:$lexiconName=\\\"http://lemon-model.net/source/$userName/$lexiconName/\\\"\"\n".

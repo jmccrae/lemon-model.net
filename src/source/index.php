@@ -155,11 +155,16 @@ if($type == "rdf") {
   $xslt->importStylesheet($xslDoc);
   $rdfxml = convert($data, "rdfxml-abbrev",$prefix, $settings);
   echo $xslt->transformToXml(new SimpleXMLElement($rdfxml));
-  ?>
-        </div>
-        <div class="pageBottom">
-            <br/><div width="1000px" style="border-top: #ddd 3px ridge;">&nbsp;</div>
-            <?php
+  if($uri == "_index") {
+?>
+  <div>
+    <a href="newentry.php">
+        <div style="display:inline-block;width:18px;height:15px;background-image:url('/img/glyphicons-halflings.png');background-position:0px -95px"></div>
+        Add a new entry
+    </a>
+  </div>
+<?php
+  }
   if(file_exists("license-$res.htmlfrag")) {
       include "license-$res.htmlfrag";
   }

@@ -11,7 +11,7 @@
 if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
   $PRE = "/dev";
 } else {
-  $PRE = "/";
+  $PRE = "";
 }
 ?>
         <link href="<?php echo $PRE?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
