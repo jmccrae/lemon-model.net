@@ -57,12 +57,13 @@ if(!isset($_SESSION["username"])) {
             symlink("../../rdf2html.xsl",$trgDir."/rdf2html.xsl");
             symlink("../../rdf2minihtml.xsl",$trgDir."/rdf2minihtml.xsl");
             symlink("../../rdfbl2html.xsl",$trgDir."/rdfbl2html.xsl");
+            symlink("../../local.css",$trgDir+"/local.css");
             symlink("../../htaccess",$trgDir+"/.htaccess");
 
             exec("git init $trgDir/");            
-            file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .");
+            file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .\n");
             file_put_contents($trgDir."/settings.ini","[resource]\nname=$lexiconName\nrappersettings=\"--feature xmlns:$lexiconName=\\\"http://lemon-model.net/source/$userName/$lexiconName/\\\"\"\n".
-                "prefix=http://lemon-model.net/source/$userName/\nlexicon=\n\nlanguage=$language");
+                "prefix=http://lemon-model.net/source/$userName/\nlexicon=\n\nlanguage=$language\neditor=$userName\n");
             chdir($trgDir);
             exec("git add _index.ttl");
             exec("git add settings.ini");

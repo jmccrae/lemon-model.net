@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,11 +44,12 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
                             <li class="inactive learn"><a href="<?php echo $PRE?>/learn/learn.html">Learn</a></li>
                             <li class="inactive download"><a href="<?php echo $PRE?>/download/download.html">Download</a></li>
                             <li class="inactive resources uby"><a href="<?php echo $PRE?>/lexica/lexica.html">Lexica</a></li>
+                            <li class="inactive source"><a href="<?php echo $PRE?>/source/index.php">Source</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                     <div class="user-tools" style="text-align:right;">
                       <div style="display:inline-block;width:18px;height:15px;background-image:url('<?php echo $PRE?>/img/glyphicons-halflings.png');background-position:-167px 2px;"></div>
-                      <?php if($_SESSION["username"]) {?>
+                      <?php if(isset($_SESSION["username"])) {?>
                       <a href="<?php echo $PRE?>/login.php">
                            <?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a>
                       <?php } else {?>
@@ -93,7 +94,21 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
                         <li><a href="<?php echo $PRE?>/lexica/uby/wn">WordNet</a></li>
                     </ul>
                 </div>
-
+                <div class="container source">
+                    <ul class="nav source">
+                   <?php if(isset($source_editor_uri)) { ?> 
+                        <li><a href=".">Lexicon</a></li>
+                    <?php if($source_editor_uri != "_index") { ?>
+                        <li><a href="index.php?uri=<?php echo $source_editor_uri?>">View</a></li>
+                    <?php } ?>
+                        <li><a href="edit.php?uri=<?php echo $source_editor_uri?>">Edit</a></li>
+                        <li><a href="talk.php?uri=<?php echo $source_editor_uri?>">Talk</a></li>
+                        <li><a href="history.php?uri=<?php echo $source_editor_uri?>">History</a></li>
+                    <?php } else { ?>
+                        <li><a href="<?php echo $PRE?>/source/new.php">Create a new lexicon</a></li>
+                    <?php } ?>
+                    </ul>
+                </div>
             </div>
     </div>
     <div class="container">

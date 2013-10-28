@@ -1,20 +1,42 @@
 <?php
 session_start();
 
+$settings=parse_ini_file("settings.ini");
+$lang=$settings["language"];
+
 include '../../../header.htmlfrag';
-if($_GET["lemma"]) {
-    $lemma=str_replace("\"","\\\"",$_GET["lemma"]);
-    $url=urlencode($lemma);
-    file_put_contents("$url.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#>. \n\n<$url> a lemon:LexicalEntry ;\n lemon:canonicalForm <#CanonicalForm> . \n\n<#CanonicalForm> a lemon:Form ; \n  lemon:writtenRep \"$lemma\"@eng");
-    echo "<script>window.location='$url'</script>";
+$is_editor=isset($_SESSION["username"]) && in_array($_SESSION["username"],explode(",",$settings["editor"]));
+if(!$is_editor) {
+?>
+    <h1>Forbidden</h1>
+    You cannot create entries in this lexicon
+<?php
 } else {
+    $userName= isset($_SESSION["username"]) ? $_SESSION["username"] : $_SERVER["REMOTE_ADDR"];
+
+    if($_GET["lemma"]) {
+        $lemma=str_replace("\"","\\\"",$_GET["lemma"]);
+        $url=urlencode($lemma);
+        $url2=$url;
+        $n=1;
+        while(file_exists("$url.ttl") || $url == "_index") {
+            $url=$url2.$n;
+            $n++;
+        }
+        file_put_contents("$url.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#>. \n\n<$url> a lemon:LexicalEntry ;\n lemon:canonicalForm <$url#CanonicalForm> . \n\n<$url#CanonicalForm> a lemon:Form ; \n  lemon:writtenRep \"$lemma\"@$lang . \n");
+        file_put_contents("_index.ttl","<> lemon:entry <$url> .\n",FILE_APPEND);
+        exec("git add $url.ttl");
+        exec("git commit -am \"Lexical entry added by $userName at ". date("Y-m-d H:i:s") ."\"");
+        echo "<script>window.location='$url'</script>";
+    } else {
 ?>
     <h1>Add a new entry</h1>
     <form>
-        <label for="lemma">Lemma</label><input type="text" name="lemma"/><br/>
-        <input type="submit" value="Create"/>
+    <label for="lemma">Lemma</label><input type="text" name="lemma"/><br/>
+    <input type="submit" value="Create"/>
     </form>
 <?php
+    }
 }
-    include '../../../footer.htmlfrag';
+include '../../../footer.htmlfrag';
 ?>

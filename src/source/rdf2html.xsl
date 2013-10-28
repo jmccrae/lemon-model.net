@@ -138,7 +138,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                    <xsl:with-param name="text" select="@rdf:resource"/>
                  </xsl:call-template>
                 </a>
-                <xsl:if test="not(starts-with(@rdf:resource,'http'))">
+                <!--                <xsl:if test="not(starts-with(@rdf:resource,'http'))">
                   &#160;&#160;&#160;
                   <a class="load_entry"><xsl:attribute name="href">
                     <xsl:value-of select="concat('javascript:ajax_load_entry(',$apos,@rdf:resource,$apos,')')"/>
@@ -148,7 +148,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                       <xsl:value-of select="concat('la_',translate(@rdf:resource,':$','__'))"/>
                     </xsl:attribute>
                   </div>
-                </xsl:if>
+                </xsl:if>-->
                 </xsl:otherwise>
                 </xsl:choose>
               </xsl:when>
@@ -242,7 +242,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                    <xsl:with-param name="text" select="@rdf:resource"/>
                  </xsl:call-template>
                 </a>
-                <xsl:if test="not(starts-with(@rdf:resource,'http'))">
+                <!--                <xsl:if test="not(starts-with(@rdf:resource,'http'))">
                   &#160;&#160;&#160;
                   <a class="load_entry"><xsl:attribute name="href">
                     <xsl:value-of select="concat('javascript:ajax_load_entry(',$apos,@rdf:resource,$apos,')')"/>
@@ -252,7 +252,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
                       <xsl:value-of select="concat('la_',translate(@rdf:resource,'$:','__'))"/>
                     </xsl:attribute>
                   </div>
-                </xsl:if>
+                </xsl:if>-->
                 </xsl:otherwise>
                 </xsl:choose>
               </xsl:when>
