@@ -2,8 +2,6 @@
 session_start();
 date_default_timezone_set("UTC");
 
-$SOURCE_HOME="/var/www/html/source";
-
 include "../header.htmlfrag";
 if(!isset($_SESSION["username"])) {
     echo("<h1>Login required</h1>");
@@ -41,11 +39,11 @@ if(!isset($_SESSION["username"])) {
      <tr><td>Dutch</td><td>nld</td></tr>
   </table>
 <?php
-    } else if(file_exists($SOURCE_HOME ."/". $_SESSION["username"]."/".$_GET["lexicon_name"])) {
+    } else if(file_exists($_SESSION["username"]."/".$_GET["lexicon_name"])) {
         echo("<h1>Could not create lexicon</h1>");
         echo("<div class='login_error'>You already have a lexicon with this name</div>");
     } else {
-        $trgDir = $SOURCE_HOME ."/". $_SESSION["username"]."/".$_GET["lexicon_name"];
+        $trgDir = $_SESSION["username"]."/".$_GET["lexicon_name"];
         if(!mkdir($trgDir,0777,true)) {
             echo "Failed to make directory";
         } else {
