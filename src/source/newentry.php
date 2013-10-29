@@ -27,13 +27,16 @@ if(!$is_editor) {
         file_put_contents("$url.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#>. \n\n<$url> a lemon:LexicalEntry ;\n lemon:canonicalForm <$url#CanonicalForm> . \n\n<$url#CanonicalForm> a lemon:Form ; \n  lemon:writtenRep \"$lemma\"@$lang . \n");
         file_put_contents("_index.ttl","<> lemon:entry <$url> .\n",FILE_APPEND);
         exec("git add $url.ttl");
-        exec("git commit -am \"Lexical entry added by $userName at ". date("Y-m-d H:i:s") ."\"");
+        $comment = htmlspecialchars(isset($_GET["comment"]) ? $_GET["comment"] : "",ENT_QUOTES);
+        $comment = str_replace("!","&#33;",$comment);
+        exec("git commit -am \"$comment [$userName at ". date("Y-m-d H:i:s") ."]\"");
         echo "<script>window.location='$url'</script>";
     } else {
 ?>
     <h1>Add a new entry</h1>
     <form>
     <label for="lemma">Lemma</label><input type="text" name="lemma"/><br/>
+    <label for="comment">Comment</label><input type="text" value="Lexical entry added" name="comment" class="source-comment"/><br/>
     <input type="submit" value="Create"/>
     </form>
 <?php

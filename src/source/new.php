@@ -61,7 +61,7 @@ if(!isset($_SESSION["username"])) {
             symlink("../../rdf2html.xsl",$trgDir."/rdf2html.xsl");
             symlink("../../rdf2minihtml.xsl",$trgDir."/rdf2minihtml.xsl");
             symlink("../../rdfbl2html.xsl",$trgDir."/rdfbl2html.xsl");
-            symlink("../../local.css",$trgDir+"/local.css");
+            symlink("../../local.css",$trgDir."/local.css");
             exec("cp htaccess $trgDir/.htaccess");
 
             exec("git init $trgDir/");            
@@ -71,7 +71,9 @@ if(!isset($_SESSION["username"])) {
             chdir($trgDir);
             exec("git add _index.ttl");
             exec("git add settings.ini");
-            exec("git commit -m \"Lexicon created by $userName at " . date("Y-m-d H:i:s") ."\"");
+            $comment = htmlspecialchars(isset($_GET["comment"]) ? $_GET["comment"] : "",ENT_QUOTES);
+            $comment = str_replace("!","&#33;",$comment);
+            exec("git commit -m \"$comment [$userName at " . date("Y-m-d H:i:s") ."]\"");
             echo("OK<script>window.location='/source/$userName/$lexiconName/'</script>");
         }
     }
@@ -81,6 +83,8 @@ if(!isset($_SESSION["username"])) {
 <form>
   <label for="lexicon_name">Lexicon name</label><input type="text" name="lexicon_name"/><br/>
   <label for="language">Language (ISO code, e.g., "eng")</label><input type="text" name="language"/><br/>
+
+  <label for="comment">Comment</label><input type="text" value="Lexicon created" name="comment" class="source-comment"/><br/>
   <input type="submit" value="Create"/>
 </form>
 <?php

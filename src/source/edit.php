@@ -89,12 +89,14 @@ if(!$is_editor) {
 <?php
 } else {
     if(isset($_GET["contents"])) {
+        $comment = htmlspecialchars(isset($_GET["comment"]) ? $_GET["comment"] : "",ENT_QUOTES);
+        $comment = str_replace("!","&#33;",$comment);
         $valid_contents = validate($_GET["contents"],$settings["prefix"],$settings["name"],$uri == "_index" ? "" : $uri);
         if($valid_contents != "" && $error == "") {
             # This may be a bit error prone, but oh well
             $valid_contents = str_replace("<".$settings["prefix"].$settings["name"]."/","<",$valid_contents);
             file_put_contents("$uri.ttl",$valid_contents);
-            exec("git commit -am \"Lexical entry modified by $userName at ". date("Y-m-d H:i:s") ."\"");
+            exec("git commit -am \"$comment [$userName at ". date("Y-m-d H:i:s") ."]\"");
             echo "<script>window.location='index.php?uri=$uri';</script>";
         } 
     } 
@@ -112,6 +114,7 @@ if(!$is_editor) {
     <form>
         <textarea name="contents" class="code-textarea"><?php echo isset($_GET["contents"]) ? $_GET["contents"] : $data; ?></textarea><br/>
         <input type="text" value="<?php echo $uri?>" name="uri" style="display:none;"/>
+        <label for="comment">Comment</label><input type="text" value="Lexical entry modified" name="comment" class="source-comment"/><br/>
         <input type="submit" value="Update"/>
     </form>
 <?php
