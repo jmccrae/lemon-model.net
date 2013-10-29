@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("UTC");
 
 $SOURCE_HOME="/var/www/html/source";
 
@@ -52,13 +53,16 @@ if(!isset($_SESSION["username"])) {
             $userName=$_SESSION["username"];
             $language=$_GET["language"];
             symlink("../../index.php",$trgDir."/index.php");
+            symlink("../../edit.php",$trgDir."/edit.php");
+            symlink("../../history.php",$trgDir."/history.php");
+            symlink("../../talk.php",$trgDir."/talk.php");
             symlink("../../newentry.php",$trgDir."/newentry.php");
             symlink("../../miniview.php",$trgDir."/miniview.php");
             symlink("../../rdf2html.xsl",$trgDir."/rdf2html.xsl");
             symlink("../../rdf2minihtml.xsl",$trgDir."/rdf2minihtml.xsl");
             symlink("../../rdfbl2html.xsl",$trgDir."/rdfbl2html.xsl");
             symlink("../../local.css",$trgDir+"/local.css");
-            symlink("../../htaccess",$trgDir+"/.htaccess");
+            exec("cp htaccess $trgDir/.htaccess");
 
             exec("git init $trgDir/");            
             file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .\n");

@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("UTC");
 
 $settings=parse_ini_file("settings.ini");
 $lang=$settings["language"];

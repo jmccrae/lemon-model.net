@@ -9,8 +9,37 @@ if(!file_exists("settings.ini")) { // We are not in a user-created lexicon
 ?>
 <h1>Lemon Source Editor</h1>
 
-Blurb
+Lemon Source is a space for the collaborative development of ontology-lexica. Here you can upload your lexica and access them from anywhere as well as sharing them with your colleagues. In addition we maintain a set of publically available lexica that can be edited by anyone.
+
+<?php 
+    if(isset($_SESSION["username"])) {
+?>
+You currently have the following lexica:
+
+<ul>
 <?php
+        $userName = $_SESSION["username"];
+        if(file_exists($userName)) {
+            if($handle = opendir($userName)) {
+                while(false !== ($entry = readdir($handle))) {
+                   if(substr($entry,0,1) !== ".") {
+                       echo "<li><a href='$userName/$entry'>$entry</a></li>";
+                   }
+                }
+                closedir($handle);
+            }
+        } else {
+            echo "<li>No lexica yet!</li>";
+        }
+?>
+</ul>
+<a href="new.php">Create a new lexicon</a>
+<?php
+    } else {
+?>
+    Please <a href="/login.php">log in</a> to create an account and get started making lexica with lemon source
+<?php
+    }
     include "../footer.htmlfrag";
 } else {
     $settings=parse_ini_file("settings.ini");
