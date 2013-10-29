@@ -17,6 +17,7 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
         <link href="<?php echo $PRE?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="<?php echo $PRE?>/css/main.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="local.css" media="screen">
+        <script type="text/javascript" src="/js/vendor/jquery-1.7.2.min.js"></script>
 
         <style>
             body {

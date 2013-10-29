@@ -148,3 +148,23 @@ ins {
     text-decoration: none;
     font-weight: bold;
 }
+
+.newentry > h3 > .hideshowarrow {
+    display:inline-block;
+    width:18px;
+    height:15px;
+    background-image:url('/img/glyphicons-halflings.png');
+    background-position:-287px 41px;
+}
+
+.newentry-hide > h3 > .hideshowarrow {
+    display:inline-block;
+    width:18px;
+    height:15px;
+    background-image:url('/img/glyphicons-halflings.png');
+    background-position:-312px 41px;
+}
+
+.newentry-hide > form {
+    display:none;
+}

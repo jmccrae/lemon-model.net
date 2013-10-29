@@ -45,7 +45,7 @@ if(!isset($_SESSION["username"])) {
     } else {
         $trgDir = $_SESSION["username"]."/".$_GET["lexicon_name"];
         if(!mkdir($trgDir,0777,true)) {
-            echo "Failed to make directory";
+            echo "Failed to make directory $trgDir";
         } else {
             $lexiconName=$_GET["lexicon_name"];
             $userName=$_SESSION["username"];

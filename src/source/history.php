@@ -44,6 +44,9 @@ include '../../../header.htmlfrag';
 echo "<h1>History</h1>";
 if(isset($_GET["revert"]) && $is_editor) {
     $revision = $_GET["revert"];
+    if(!preg_match("/[0-9abcdef]{7}/",$revision)) {
+        exit(400);
+    }
     exec("git checkout $revision $uri.ttl");
     exec("git commit -am \"Reverted to $revision [$userName at " . date("Y-m-d H:i:s") ."]\"");
     echo "Reverted to $revision";
@@ -63,6 +66,12 @@ exec("git log --oneline $uri.ttl",$output);
 <?php
 $fromCommit = isset($_GET["from-commit"]) ? $_GET["from-commit"] : "";
 $toCommit = isset($_GET["to-commit"]) ? $_GET["to-commit"] : "";
+if(!preg_match("/[0-9abcdef]{7}/",$fromCommit) && $fromCommit !== "") {
+    exit(400);
+}
+if(!preg_match("/[0-9abcdef]{7}/",$toCommit) && $toCommit !== "") {
+    exit(400);
+}
 foreach($output as $line) {
     $id = substr($line,0,7);
     $msg = substr($line,8);

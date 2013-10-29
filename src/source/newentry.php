@@ -6,6 +6,9 @@ $settings=parse_ini_file("settings.ini");
 $lang=$settings["language"];
 
 include '../../../header.htmlfrag';
+
+$error = "";
+
 $is_editor=isset($_SESSION["username"]) && in_array($_SESSION["username"],explode(",",$settings["editor"]));
 if(!$is_editor) {
 ?>
@@ -31,15 +34,35 @@ if(!$is_editor) {
         $comment = str_replace("!","&#33;",$comment);
         exec("git commit -am \"$comment [$userName at ". date("Y-m-d H:i:s") ."]\"");
         echo "<script>window.location='$url'</script>";
+    } else if($_GET["pattern"]) {
+        echo callLemonPatterns($_GET["pattern"]);
+        echo $error;
     } else {
 ?>
     <h1>Add a new entry</h1>
-    <form>
-    <label for="lemma">Lemma</label><input type="text" name="lemma"/><br/>
-    <label for="comment">Comment</label><input type="text" value="Lexical entry added" name="comment" class="source-comment"/><br/>
-    <input type="submit" value="Create"/>
-    </form>
-<?php
+
+    <span class="newentry" id="newentry-simple-lemma">
+    <h3 onclick="$('.newentry').addClass('newentry-hide');$('#newentry-simple-lemma').removeClass('newentry-hide');">
+     <div class="hideshowarrow"></div>
+        Create entry by lemma</h3>
+        <form>
+            <label for="lemma">Lemma</label><input type="text" name="lemma"/><br/>
+            <label for="comment">Comment</label><input type="text" value="Lexical entry added" name="comment" class="source-comment"/><br/>
+            <input type="submit" value="Create"/>
+        </form>
+    </span>
+
+    <span class="newentry-hide newentry" id="newentry-simple-pattern">
+    <h3 onclick="$('.newentry').addClass('newentry-hide');$('#newentry-simple-pattern').removeClass('newentry-hide');">
+         <div class="hideshowarrow"></div>
+         Create entry by pattern</h3>
+        <form>
+        <label for="pattern">Pattern</label><textarea name="pattern" class="code-textarea">Lexicon(&lt;<?php echo $settings["prefix"] . $settings["name"]."/&gt;,\"" . $settings["language"] . "\"";?>,_Entry code goes here_)</textarea><br/>
+            <label for="comment">Comment</label><input type="text" value="Lexical entry added" name="comment" class="source-comment"/><br/>
+            <input type="submit" value="Create"/>
+        </form>
+    </span>
+<?php 
     }
 }
 include '../../../footer.htmlfrag';
