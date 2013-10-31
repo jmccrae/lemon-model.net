@@ -80,6 +80,7 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
                     <ul class="nav resources">
                         <li><a href="<?php echo $PRE?>/lexica/uby">lemonUby</a></li>
                         <li><a href="<?php echo $PRE?>/lexica/pwn">Princeton WordNet</a></li>
+                        <li><a href="<?php echo $PRE?>/lexica/dbpedia_en">DBpedia</a></li>
                         <li><a href="<?php echo $PRE?>/lexica/de-gaap">DE-GAAP</a></li>
                     </ul>
                 </div>

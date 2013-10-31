@@ -112,12 +112,18 @@ buildsite() {
 
     echo "It is highly recommended to rm -fr tmp now"
     ;;
+
+  validator)
+      mkdir -p htdocs/validator
+      cp validator/* htdocs/validator
+      ;;
   esac
 }
 
 case $1 in 
   all)
      buildsite "pages"
+     buildsite "validator"
      buildsite "pwn"
      buildsite "dbpedia_en"
      buildsite "uby"
