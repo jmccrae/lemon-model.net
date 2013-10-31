@@ -61,7 +61,7 @@ Enter your lexicon here:
 <form action="index.php" method="post">
   <input type="radio" name="format" value="xml" checked>RDF/XML</input>
   <input type="radio" name="format" value="turtle">Turtle/N-Triples</input><br/>
-  <textarea cols="60" rows="20" name="document">
+  <textarea class="code-textarea" name="document">
 <rdf:RDF xmlns:lemon="http://www.monnet-project.eu/lemon#"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 </rdf:RDF>
