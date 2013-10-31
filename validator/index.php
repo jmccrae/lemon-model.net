@@ -57,7 +57,6 @@ if(array_key_exists('document',$_POST)) {
 ?>
 <h1>Lemon Validator</h1>
 
-<a href="lemon-validator.py">Download validator</a>
 
 Enter your lexicon here:
 <form action="index.php" method="post">
@@ -70,6 +69,8 @@ Enter your lexicon here:
 </textarea><br/>
   <input type="submit" name="submit" value="Validate"/>
 </form>
+
+<p><a href="lemon-validator.py">Download validator</a></p>
 <?php
 }
 include 'footer.htmlfrag';
