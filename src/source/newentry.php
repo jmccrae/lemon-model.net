@@ -52,7 +52,7 @@ if(!$is_editor) {
         </form>
     </span>
 
-    <span class="newentry-hide newentry" id="newentry-simple-pattern">
+<!--    <span class="newentry-hide newentry" id="newentry-simple-pattern">
     <h3 onclick="$('.newentry').addClass('newentry-hide');$('#newentry-simple-pattern').removeClass('newentry-hide');">
          <div class="hideshowarrow"></div>
          Create entry by pattern</h3>
@@ -61,7 +61,7 @@ if(!$is_editor) {
             <label for="comment">Comment</label><input type="text" value="Lexical entry added" name="comment" class="source-comment"/><br/>
             <input type="submit" value="Create"/>
         </form>
-    </span>
+    </span>-->
 <?php 
     }
 }
