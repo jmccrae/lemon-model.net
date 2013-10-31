@@ -4,7 +4,7 @@ RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ PATH$1.php [L]
+RewriteRule ^(.*)$ %{REQUEST_URI}.php [L]
 
 RewriteRule ^(.*).html$ page.php?uri=$1&type=html [L]
 RewriteRule ^(.*).rdf$ page.php?uri=$1&type=rdf [L]

@@ -68,8 +68,6 @@ then
   cp *.php *.htmlfrag *.xsl data/*.php settings.ini $path/$res
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
-  escapedPath=`echo $path | sed 's/\//\\\//g'`
-  perl -pi -e 's/PATH/$res/g' $path/$res/.htaccess
   gzip -c data/$res.nt > data/$res.nt.gz
   mv data/$res.nt.gz $path/$res
   cat < header.htmlfrag > $path/$res/license.php
