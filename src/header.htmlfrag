@@ -74,6 +74,7 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
                         <li><a href="<?php echo $PRE?>/download/api.html">API</a></li>
                         <li><a href="<?php echo $PRE?>/download/source.html">Source Editor</a></li>
                         <li><a href="<?php echo $PRE?>/download/lemon2gf.html">lemon2gf</a></li>
+                        <li><a href="<?php echo $PRE?>/validator/">Validator</a></li>
                     </ul>
                 </div>
                 <div class="container resources">

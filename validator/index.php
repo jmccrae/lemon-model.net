@@ -57,6 +57,8 @@ if(array_key_exists('document',$_POST)) {
 ?>
 <h1>Lemon Validator</h1>
 
+<a href="lemon-validator.py">Download validator</a>
+
 Enter your lexicon here:
 <form action="index.php" method="post">
   <input type="radio" name="format" value="xml" checked>RDF/XML</input>
