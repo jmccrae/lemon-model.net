@@ -16,6 +16,7 @@ buildsite() {
     mkdir -p htdocs/lexica/uby/WktDE
     mkdir -p htdocs/lexica/uby/wn
     mkdir -p htdocs/lexica/de-gaap/
+    mkdir -p htdocs/lexica/dbpedia_en/
     mkdir -p htdocs/lexica/pwn/
     cp -r src/source/ htdocs/
 

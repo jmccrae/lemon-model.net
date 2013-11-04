@@ -26,6 +26,8 @@ li.inactive {
 .user-tools {
     float:right;
     line-height: 25px;
+    position: absolute;
+    left: 1000px;
 }
 
 input[type="text"] {
