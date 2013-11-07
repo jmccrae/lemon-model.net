@@ -15,6 +15,12 @@ buildsite() {
     mkdir -p htdocs/lexica/uby/WktEN
     mkdir -p htdocs/lexica/uby/WktDE
     mkdir -p htdocs/lexica/uby/wn
+    mkdir -p htdocs/lexica/wiktionary_en/en
+    mkdir -p htdocs/lexica/wiktionary_en/de
+    mkdir -p htdocs/lexica/wiktionary_en/fr
+    mkdir -p htdocs/lexica/wiktionary_en/es
+    mkdir -p htdocs/lexica/wiktionary_en/nl
+    mkdir -p htdocs/lexica/wiktionary_en/ja
     mkdir -p htdocs/lexica/de-gaap/
     mkdir -p htdocs/lexica/dbpedia_en/
     mkdir -p htdocs/lexica/pwn/
@@ -114,6 +120,24 @@ buildsite() {
     echo "It is highly recommended to rm -fr tmp now"
     ;;
 
+  wiktionary)
+      echo "Make wiktionary_en"
+      for res in de en es fr ja nl
+      do
+        mkdir -p tmp/wiktionary_en/$res
+        cp -r src/lexica/wiktionary_en/$res/* tmp/wiktionary_en/$res/
+        if [ ! -e tmp/wiktionary_en/$res/data/$res.nt ]
+        then
+            bunzip2 tmp/wiktionary_en/$res/data/$res.nt.bz2
+        fi
+        cp -r fw/* tmp/wiktionary_en/$res/
+        cd tmp/wiktionary_en/$res
+        ./convert.sh
+        ./install.sh ../../../htdocs/lexica/wiktionary_en/
+        cd ../../../
+    done
+    ;;
+
   validator)
       mkdir -p htdocs/validator
       cp validator/* htdocs/validator
@@ -127,6 +151,7 @@ case $1 in
      buildsite "validator"
      buildsite "pwn"
      buildsite "dbpedia_en"
+     buildsite "wiktionary"
      buildsite "uby"
      ;;
   *)

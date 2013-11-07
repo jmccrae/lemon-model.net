@@ -1,0 +1,21 @@
+<h1>Wiktionary English (French)</h1>
+
+<p>This resource is the French entries of the English version of Wiktionary</p>
+
+<p>This resource is derived from <a href="http://en.wiktionary.org/">Wiktionary</a></p>
+
+<p>Search:
+
+<form action="../search.php" method="get">
+  <input type="text" name="search"/><br/>
+  <input type="hidden" name="res" value="fr"/>
+  <input type="submit" value="Search"/>
+</form>
+</p>
+
+<p><a href="Lexicon">Lexicon</a></p>
+
+<p><a href="fr.nt.gz">Download</a></p>
+
+<p><a href="license.html">License</a></p>
+
