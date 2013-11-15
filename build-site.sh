@@ -24,6 +24,22 @@ buildsite() {
     mkdir -p htdocs/lexica/de-gaap/
     mkdir -p htdocs/lexica/dbpedia_en/
     mkdir -p htdocs/lexica/pwn/
+    mkdir -p htdocs/lexica/pwn/ara
+    mkdir -p htdocs/lexica/pwn/cat
+    mkdir -p htdocs/lexica/pwn/dan
+    mkdir -p htdocs/lexica/pwn/eus
+    mkdir -p htdocs/lexica/pwn/fin
+    mkdir -p htdocs/lexica/pwn/fra
+    mkdir -p htdocs/lexica/pwn/glg
+    mkdir -p htdocs/lexica/pwn/heb
+    mkdir -p htdocs/lexica/pwn/ita
+    mkdir -p htdocs/lexica/pwn/jap
+    mkdir -p htdocs/lexica/pwn/msa
+    mkdir -p htdocs/lexica/pwn/por
+    mkdir -p htdocs/lexica/pwn/spa
+    mkdir -p htdocs/lexica/pwn/sqi
+    mkdir -p htdocs/lexica/pwn/tha
+    mkdir -p htdocs/lexica/pwn/zho
     cp -r src/source/ htdocs/
 
     cd src/
@@ -76,6 +92,20 @@ buildsite() {
     ./convert.sh
     ./install.sh ../../htdocs/lexica/
     cd ../../
+    for lang in ara cat dan eus fin fra glg heb ita jap msa por spa sqi tha zho
+    do
+        mkdir -p tmp/pwn/$lang
+        cp -r src/lexica/pwn/$lang/* tmp/pwn/$lang
+        if [ ! -e tmp/pwn/$lang/data/$lang.nt ]
+        then
+            gunzip tmp/pwn/$lang/data/$lang.nt.gz
+        fi
+        cp -r fw/* tmp/pwn/$lang
+        cd tmp/pwn/$lang
+        ./convert.sh
+        ./install.sh ../../../htdocs/lexica/
+        cd ../../../ 
+    done
     ;;
 
   dbpedia_en)

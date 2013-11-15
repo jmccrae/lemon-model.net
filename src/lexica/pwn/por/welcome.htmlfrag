@@ -1,0 +1,18 @@
+<h1>Portuguese WordNet</h1>
+
+<p>
+<form action="search.php" method="get">
+Search WordNet: <input type="text" name="search"/>
+  <input type="submit" value="Search"/>
+  </form>
+  </p>
+
+  <p>
+  <table style="width:100%">
+  <tr>
+    <td>WordNet</td> 
+      <td width="20%" style="text-align:center;">[ <a href="OpenWordNet-PT">index</a> ] </td>
+        <td width="20%" style="text-align:center;">[ <a href="por.tar.gz">dump</a> ]</td>
+	</tr>
+	</table>
+	</p>
