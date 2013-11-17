@@ -103,7 +103,7 @@ buildsite() {
         cp -r fw/* tmp/pwn/$lang
         cd tmp/pwn/$lang
         ./convert.sh
-        ./install.sh ../../../htdocs/lexica/
+        ./install.sh ../../../htdocs/lexica/pwn/
         cd ../../../ 
     done
     ;;
