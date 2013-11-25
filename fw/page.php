@@ -44,7 +44,7 @@ function getBestSupportedMimeType($mimeTypes = null) {
 
 function convert($nt, $outformat, $prefix, $settings) {
    $rs=preg_replace('/"/','\\"',$settings["rappersettings"]);
-   $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"'  -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"' -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\"' -f 'xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\"' " . $rs;
+   $namespaces="-f 'xmlns:lemon=\"http://www.monnet-project.eu/lemon#\"' -f 'xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"' -f 'xmlns:owl=\"http://www.w3.org/2002/07/owl#\"' -f 'xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"' -f 'xmlns:lexinfo2=\"http://www.lexinfo.net/ontology/2.0/lexinfo#\"' -f 'xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\"' -f 'xmlns:lexinfo=\"http://lexinfo.net/ontology/2.0/lexinfo#\"' -f 'xmlns:dcterms=\"http://purl.org/dc/terms/\"' " . $rs;
    $cmd = "rapper -q -i turtle -o $outformat -I $prefix $namespaces -";
    $descriptorspec = array(
      0 => array("pipe", "r"),
@@ -126,7 +126,7 @@ if(!preg_match('/[A-Za-z0-9_+\-%]+/',$uri)) {
    exit();
 }
 
-$uri = str_replace(" ","+",$uri);
+$uri = urlencode($uri);
 
 $result = mysql_query("select * from $res where uri='$prefix$uri'");
 
