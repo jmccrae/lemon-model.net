@@ -349,8 +349,9 @@ def validateMorphTransform(g,types,elem):
     ngenerates = leniter(g.objects(elem,lemon.generates))
     if nrules == 0:
         err("MT_NO_RULE","Morph Transform " + elem + " does not have a rule")
-    if ngenerates == 0:
-        err("MT_NO_PROTOTYPE","Morph Transform " + elem + " does not generate any prototypes")
+#   Actually OK not to have a prototype, see Ex. 75 http://www.lemon-model.net/lemon-cookbook/node37.html
+#    if ngenerates == 0:
+#        err("MT_NO_PROTOTYPE","Morph Transform " + elem + " does not generate any prototypes")
 
 def validateUsageExample(g,types,elem):
     nvalues = leniter(g.objects(elem,lemon.value))
