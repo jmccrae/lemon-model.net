@@ -308,6 +308,12 @@
         <rdfs:label xml:lang="nl">Genereert</rdfs:label>
         <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
         <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Prototype"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#rule"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </rdf:Property>
     
 
@@ -355,7 +361,7 @@
         <rdfs:label xml:lang="es">Instancia de</rdfs:label>
         <rdfs:label xml:lang="fr">Instance de</rdfs:label>
         <rdfs:label xml:lang="nl">Instantie van</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes the the single argument of a class predicate is represented in the lexicon by the given semantic argument. That is Class(?x) or ?x rdf:type Class</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that the single argument of a class predicate is represented in the lexicon by the given semantic argument. That is Class(?x) or ?x rdf:type Class</rdfs:comment>
         <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
         <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
         <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
@@ -470,7 +476,7 @@
         <rdfs:label xml:lang="es">Más estrecho</rdfs:label>
         <rdfs:label xml:lang="fr">Plus restreint</rdfs:label>
         <rdfs:label xml:lang="nl">Enger</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that one sense is broader than another. From a lexical point of view  this means replacing one lexical entry with another specializes the meaning of the phrase. From an ontological point of view this property makes not strong assertions. From a mapping point of view if the broader sense applies the narrower sense must also</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that one sense is narrower than another. From a lexical point of view  this means replacing one lexical entry with another specializes the meaning of the phrase. From an ontological point of view this property makes not strong assertions. From a mapping point of view if the broader sense applies the narrower sense must also</rdfs:comment>
         <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
         <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
         <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#senseRelation"/>
@@ -502,7 +508,7 @@
         <rdfs:label xml:lang="es">Complemento de la propiedad</rdfs:label>
         <rdfs:label xml:lang="fr">Complément de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Object van predikaat</rdfs:label>
-        <rdfs:comment xml:lang="en">Indicates the semantic argument with represents the objects (ranges) of the property referred to by this sense</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the semantic argument which represents the objects (ranges) of the property referred to by this sense</rdfs:comment>
         <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
         <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
         <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
@@ -695,7 +701,7 @@
         <rdfs:label xml:lang="es">Sujeto de la propiedad</rdfs:label>
         <rdfs:label xml:lang="fr">Sujet de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Onderwerp van predikaat</rdfs:label>
-        <rdfs:comment xml:lang="en">Indicates the semantic argument with represents the subjects (domain) of the property referred to by this sense</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the semantic argument which represents the subjects (domain) of the property referred to by this sense</rdfs:comment>
         <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
         <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
         <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
@@ -1520,14 +1526,6 @@
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An example of the usage of a lexical entry when refering to the ontology entity given by the sememe&#39;s reference. This should in effect be an example of the form used in context. E.g., &quot;this is a *usage example*&quot;</rdfs:comment>
     </rdfs:Class>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.lemon-model.net/lemon#UsageExample"/>
-        </owl:members>
-    </rdf:Description>
-    
-
 
     <!-- http://www.lemon-model.net/lemon#Word -->
 
