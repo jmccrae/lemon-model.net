@@ -297,7 +297,7 @@ def validateLemonElement(g,types,elem):
 def validateLexicalEntry(g,types,elem):
     ncanonicalForms = leniter(g.objects(elem,lemon.canonicalForm)) 
     if ncanonicalForms == 0:
-        err("ENTRY_NO_CAN_FORM","Lexical Entry " + elem + " does not have a canonical form")
+        warn("ENTRY_NO_CAN_FORM","Lexical Entry " + elem + " does not have a canonical form")
     elif ncanonicalForms > 1:
         err("ENTRY_MANY_CAN_FORMS","Lexical Entry " + elem + " has multiple canonical forms")
     nlanguages = leniter(g.objects(elem,lemon.language))
