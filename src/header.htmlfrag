@@ -32,34 +32,31 @@ if(strpos($_SERVER["REQUEST_URI"],"/dev") === 0) {
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+            <div class="container">                
+                <div class="navbar-header">
                     <a class="brand" href="<?php echo $PRE?>"><img src="<?php echo $PRE?>/img/logo_small.png" height="50px"/></a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="inactive home"><a href="<?php echo $PRE?>/index.php">Home</a></li>
-                            <li class="inactive learn"><a href="<?php echo $PRE?>/learn/learn.html">Learn</a></li>
-                            <li class="inactive download"><a href="<?php echo $PRE?>/download/download.html">Download</a></li>
-                            <li class="inactive resources uby"><a href="<?php echo $PRE?>/lexica/lexica.html">Lexica</a></li>
-                            <li class="inactive source"><a href="<?php echo $PRE?>/source/index.php">Source</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                    <div class="user-tools" style="text-align:right;">
-                      <div style="display:inline-block;width:18px;height:15px;background-image:url('<?php echo $PRE?>/img/glyphicons-halflings.png');background-position:-167px 2px;"></div>
+                </div>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="inactive home"><a href="<?php echo $PRE?>/index.php">Home</a></li>
+                        <li class="inactive learn"><a href="<?php echo $PRE?>/learn/learn.html">Learn</a></li>
+                        <li class="inactive download"><a href="<?php echo $PRE?>/download/download.html">Download</a></li>
+                        <li class="inactive resources uby"><a href="<?php echo $PRE?>/lexica/lexica.html">Lexica</a></li>
+                        <li class="inactive source"><a href="<?php echo $PRE?>/source/index.php">Source</a></li>
+                    </ul>
+                    <span class="nav navbar-nav navbar-right">
+                    <span style="float:right;">
+                      <span style="display:inline-block;width:18px;height:15px;background-image:url('<?php echo $PRE?>/img/glyphicons-halflings.png');background-position:-167px 2px;"></span>
                       <?php if(isset($_SESSION["username"])) {?>
                       <a href="<?php echo $PRE?>/login.php">
                            <?php echo $_SESSION["username"];?> | <a href="/logout.php">Log Out</a>
-                      <?php } else {?>
+                     <?php } else {?>
                        <a href="<?php echo $PRE?>/login.php">Log In</a>
                       <?php }?>
+</span>
                       <br/>
-                      <form action="<?php echo $PRE?>/sparql.php" method="get" style="display:inline;">Search resources <input type="text" name="text_search"></form>
-                    </div>
+                      <form action="<?php echo $PRE?>/sparql.php" method="get" style="display:inline;">Search resources <input type="text" name="text_search" style="width:150px;"></form>
+                    </span>
                 </div>
             </div>
             <div class="subnav">

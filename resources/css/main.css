@@ -1,4 +1,4 @@
-.navbar-inverse .navbar-inner {
+.navbar-inverse {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #ffdd55, #ffe169);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffdd55), to(#ffe169));
