@@ -4,6 +4,8 @@
 
 <p>This resource is derived from <a href="http://de.wiktionary.org/">Wiktionary</a></p>
 
+<p>Wiktionary is a machine-readable dictionary that enumerates senses for each lemma, as well as semantic relations, translations and many other information types.</p>
+
 <p>Search:
 
 <form action="../search.php" method="get">

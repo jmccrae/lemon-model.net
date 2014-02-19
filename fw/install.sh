@@ -68,7 +68,7 @@ then
   cp *.php *.htmlfrag *.xsl data/*.php settings.ini $path/$res
   cp license-$res.nt $path/$res
   cp htaccess $path/$res/.htaccess
-  gzip -c data/$res.nt > data/$res.nt.gz
+  gzip data/$res.nt
   mv data/$res.nt.gz $path/$res
   cat < header.htmlfrag > $path/$res/license.php
   cat < license-$res.htmlfrag >> $path/$res/license.php

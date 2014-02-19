@@ -4,6 +4,8 @@
 
 <p>This resource was originally developed by <a href="http://wordnet.princeton.edu">Princeton</a></p>
 
+<p>WordNet is a well known lexical resource that is organized in synsets: synonymous senses are grouped into synsets and numerous lexical-semantic relations are defined between them. In addition, WordNet provides many other information types.</p>
+
 <p>Search:
 
 <form action="../search.php" method="get">

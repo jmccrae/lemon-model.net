@@ -1,10 +1,10 @@
-ubyLemon Modelling
+lemonUby Modelling
 ==================
 
 Basic Lexicography
 ------------------
 
-ubyLemon is based on the [lemon](http://lemon-model.net) model as proposed in
+lemonUby is based on the [lemon](http://lemon-model.net) model as proposed in
 the [Monnet project](http://www.monnet-project.eu/). As such lemonUby has the
 following maing elements used in the modelling
 
@@ -50,7 +50,7 @@ general. We also recommend that you consult the [cookbook](/learn/cookbook.php)
 and in particular the LMF-_lemon_ mapping given in the
 [appendix](/lemon-cookbook/node46.html). 
 
-ubyLemon Specific modelling
+lemonUby Specific modelling
 ---------------------------
 
 * `uby:index`: This property is used to give the order of senses of a lexical

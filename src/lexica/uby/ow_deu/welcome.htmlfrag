@@ -4,6 +4,8 @@
 
 <p>This resource was derived from <a href="http://www.omegawiki.org/">OmegaWiki</a></p>
 
+<p>OmegaWiki is a multilingual wordnet: it is organized in multilingual synsets, i.e., words from multiple languages that share the same meaning are grouped into these multilingual synsets. Similar as for WordNet, many semantic relations are defined between synsets. This resource contains the German language data.</p>
+
 <p>Search:
 
 <form action="../search.php" method="get">

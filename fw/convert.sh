@@ -68,13 +68,16 @@ then
       then
             cat <data/$res.sa.nt >> data/$res.nt
       fi
+    elif [ -e data/$res.nt.gz ]
+    then
+        gunzip data/$res.nt.gz
     fi
 
-    if [ ! -e data/$res.rdf ]
-    then
-      echo "NT => RDF/XML"
-      rapper -i turtle -o rdfxml-abbrev -I "$prefix" ${namespaces[@]} ${rs[@]} data/$res.nt > data/$res.rdf || die "Rapper failed"
-    fi
+#    if [ ! -e data/$res.rdf ]
+#    then
+#      echo "NT => RDF/XML"
+#      rapper -i turtle -o rdfxml-abbrev -I "$prefix" ${namespaces[@]} ${rs[@]} data/$res.nt > data/$res.rdf || die "Rapper failed"
+#    fi
 
     lexiconURI="$prefix$lexicon"
 
@@ -101,6 +104,7 @@ then
     then
       echo "Tricolumn => SQL"
       cat data/$res-sort.nt | $scala prepd-to-sql.scala -Dres=$res | gzip > data/$res.sql.gz
+      rm data/$res-sort.nt data/$res-prep.nt
     fi
 else
     echo "Skipping data for $name"

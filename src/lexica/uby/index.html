@@ -30,25 +30,35 @@ Resource: <select name="res">
 The following lexica are available
 <table style="width:100%">
 <tr>
-  <td>FrameNet</td> 
+    <td><a href="fn">FrameNet</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#fn_description').toggle()" style="font-size:70%;">Description</a></td> 
   <td width="20%" style="text-align:center;">[ <a href="fn/FN_Lexicon_0">index</a> ] </td>
   <td width="20%" style="text-align:center;">[ <a href="fn/fn.nt.gz">dump</a> ]</td>
   <td width="20%" style="text-align:center;">[ <a href="fn/license">license</a> ]</td>
 </tr>
+<tr id="fn_description" style="display:none;">
+    <td colspan="3">
+        <i>FrameNet is organized in so-called frames, i.e. senses that evoke the same prototypical situation with prototypical participants are grouped into semantic frames. For this reason, FrameNet includes mostly predicate-like lexical items, such as verbs, event nouns or relational adjectives.</i>
+    </td>
+</tr>
 <tr>
-  <td>OmegaWiki (English) </td>
+    <td><a href="ow_eng">OmegaWiki (English)</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#ow_description').toggle()" style="font-size:70%;">Description</a> </td>
   <td style="text-align:center;"> [ <a href="ow_eng/OW_Lexicon_eng">index</a> ] </td>
   <td style="text-align:center;"> [ <a href="ow_eng/ow_eng.nt.gz">dump</a> ]</td>
   <td style="text-align:center;"> [ <a href="ow_eng/license">license</a> ]</td>
 </tr>
 <tr>
-  <td>OmegaWiki (German) </td>
+    <td><a href="ow_deu">OmegaWiki (German)</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#ow_description').toggle()" style="font-size:70%;">Description</a> </td>
   <td style="text-align:center;"> [ <a href="ow_deu/OW_Lexicon_deu">index</a> ] </td>
   <td style="text-align:center;"> [ <a href="ow_deu/ow_deu.nt.gz">dump</a> ] </td>
   <td style="text-align:center;"> [ <a href="ow_deu/license">license</a> ]</td>
 </tr>
+<tr id="ow_description" style="display:none;">
+    <td colspan="3">
+        <i>OmegaWiki is a multilingual wordnet: it is organized in multilingual synsets, i.e., words from multiple languages that share the same meaning are grouped into these multilingual synsets. Similar as for WordNet, many semantic relations are defined between synsets.</i>
+    </td>
+</tr>
 <tr>
-  <td>VerbNet</td>
+    <td><a href="vn">VerbNet</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#vn_description').toggle()" style="font-size:70%;">Description</a></td>
   <td style="text-align:center;"> [ 
   <a href="vn/VN_Lexicon_0">index</a> ] </td>
   <td style="text-align:center;"> [
@@ -56,23 +66,34 @@ The following lexica are available
   </td>
   <td style="text-align:center;"> [ <a href="vn/license">license</a> ]</td>
   </tr>
+<tr id="vn_description" style="display:none;">
+    <td colspan="3">
+        <i>VerbNet is a broad-coverage verb lexicon that is organized in syntactic alternation classes: verbs that share the same syntactic alternation behavior and the same predicate-argument structure (in terms of semantic roles and selectional preferences) are grouped into classes. VerbNet provides rich predicate argument-structure information, including the linking of syntactic and semantic arguments of verbs.</i>
+    </td>
+</tr>
+<tr>
+    <td><a href="WktEN">Wiktionary English</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#Wkt_description').toggle()" style="font-size:70%;">Description</a></td> 
+  <td width="20%" style="text-align:center;">[ <a href="WktEN/WktEN_Lexicon_1">index</a> ] </td>
+  <td width="20%" style="text-align:center;">[ <a href="WktEN/WktEN.nt.gz">dump</a> ]</td>
+  <td width="20%" style="text-align:center;">[ <a href="WktEN/license">license</a> ]</td>
+</tr>
   <tr>
-  <td>Wiktionary German</td>
+      <td><a href="WktDE">Wiktionary German</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#Wkt_description').toggle()" style="font-size:70%;">Description</a></td>
   <td style="text-align:center;"> [ 
   <a href="WktDE/WktDE_lexicon_1">index</a> ] </td>
   <td style="text-align:center;"> [
   <a href="WktDE/WktDE.nt.gz">dump</a> ]
   </td>
   <td style="text-align:center;"> [ <a href="WktDE/license">license</a> ]</td>
-<tr>
-  <td>Wiktionary English</td> 
-  <td width="20%" style="text-align:center;">[ <a href="WktEN/WktEN_Lexicon_1">index</a> ] </td>
-  <td width="20%" style="text-align:center;">[ <a href="WktEN/WktEN.nt.gz">dump</a> ]</td>
-  <td width="20%" style="text-align:center;">[ <a href="WktEN/license">license</a> ]</td>
-</tr>
   </tr>
-  <tr>
-  <td>Princeton WordNet 3.0 </td>
+  </tr>
+  <tr id="Wkt_description" style="display:none;">
+    <td colspan="3">
+        <i>Wiktionary is a machine-readable dictionary that enumerates senses for each lemma, as well as semantic relations, translations and many other information types.</i>
+    </td>
+</tr>
+<tr>
+    <td><a href="wn">Princeton WordNet 3.0</a> &nbsp;&nbsp;&nbsp;<a href="javascript:$('#wn_description').toggle()" style="font-size:70%;">Description</a> </td>
   <td style="text-align:center;"> [ 
   <a href="wn/WN_Lexicon_0">index</a> ] </td>
   <td style="text-align:center;"> [
@@ -81,5 +102,10 @@ The following lexica are available
   </td>
   <td style="text-align:center;"> [ <a href="wn/license">license</a> ]</td>
   </tr>
-  </table>
+  <tr id="wn_description" style="display:none;">
+    <td colspan="3">
+        <i>WordNet is a well known lexical resource that is organized in synsets: synonymous senses are grouped into synsets and numerous lexical-semantic relations are defined between them. In addition, WordNet provides many other information types.</i>
+    </td>
+</tr>
+</table>
 </p>

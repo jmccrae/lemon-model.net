@@ -4,6 +4,8 @@
 
 <p>FrameNet was originally developed by <a href="https://framenet.icsi.berkeley.edu/fndrupal/">Berkeley</a></p>
 
+<p>FrameNet is organized in so-called frames, i.e. senses that evoke the same prototypical situation with prototypical participants are grouped into semantic frames. For this reason, FrameNet includes mostly predicate-like lexical items, such as verbs, event nouns or relational adjectives.</p>
+
 <p>Search:
 
 <form action="../search.php" method="get">

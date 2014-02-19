@@ -4,6 +4,8 @@
 
 <p>The original version of this resource is available from <a href="http://verbs.colorado.edu/~mpalmer/projects/verbnet.html">here</a></p>
 
+<p>VerbNet is a broad-coverage verb lexicon that is organized in syntactic alternation classes: verbs that share the same syntactic alternation behavior and the same predicate-argument structure (in terms of semantic roles and selectional preferences) are grouped into classes. VerbNet provides rich predicate argument-structure information, including the linking of syntactic and semantic arguments of verbs.</p>
+
 <p>Search:
 
 <form action="../search.php" method="get">
