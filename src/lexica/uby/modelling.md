@@ -6,7 +6,7 @@ Basic Lexicography
 
 lemonUby is based on the [lemon](http://lemon-model.net) model as proposed in
 the [Monnet project](http://www.monnet-project.eu/). As such lemonUby has the
-following maing elements used in the modelling
+following main elements used in the modelling
 
 * Lexicon
 * LexicalEntry
