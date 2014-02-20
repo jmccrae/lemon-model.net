@@ -12,6 +12,7 @@ RewriteRule ^(.*).ttl$ page.php?uri=$1&type=ttl [L]
 RewriteRule ^(.*).nt$ page.php?uri=$1&type=nt [L]
 RewriteCond %{REQUEST_URI} !^.*\.php
 RewriteCond %{REQUEST_URI} !^.*\.css
+RewriteCond %{REQUEST_URI} !^.*\.nt.gz
 RewriteRule ^(.+)$ page.php?uri=$1 [L]
 
 <Files settings.ini>
