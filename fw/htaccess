@@ -10,7 +10,9 @@ RewriteRule ^(.*).html$ page.php?uri=$1&type=html [L]
 RewriteRule ^(.*).rdf$ page.php?uri=$1&type=rdf [L]
 RewriteRule ^(.*).ttl$ page.php?uri=$1&type=ttl [L]
 RewriteRule ^(.*).nt$ page.php?uri=$1&type=nt [L]
-RewriteRule ^([A-Za-z0-9_+-.%]+)$ page.php?uri=$1 [L]
+RewriteCond %{REQUEST_URI} !^.*\.php
+RewriteCond %{REQUEST_URI} !^.*\.css
+RewriteRule ^(.+)$ page.php?uri=$1 [L]
 
 <Files settings.ini>
   Deny from all
