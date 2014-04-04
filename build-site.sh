@@ -83,6 +83,7 @@ buildsite() {
     echo "Make Princeton WordNet"
     mkdir -p tmp/pwn
     cp -r src/lexica/pwn/* tmp/pwn
+    cat db.ini >> tmp/pwn/settings.ini
     if [ ! -e tmp/pwn/data/pwn.rdf ]
     then
       bunzip2 tmp/pwn/data/pwn.rdf.bz2
@@ -96,6 +97,7 @@ buildsite() {
     do
         mkdir -p tmp/pwn/$lang
         cp -r src/lexica/pwn/$lang/* tmp/pwn/$lang
+        cat db.ini >> tmp/pwn/$lang/settings.ini
         if [ ! -e tmp/pwn/$lang/data/$lang.nt ]
         then
             gunzip tmp/pwn/$lang/data/$lang.nt.gz
@@ -112,6 +114,7 @@ buildsite() {
     echo "Make DBpedia English"
     mkdir -p tmp/dbpedia_en
     cp -r src/lexica/dbpedia_en/* tmp/dbpedia_en
+    cat db.ini >> tmp/dbpedia_en/settings.ini
     if [ ! -e tmp/dbpedia_en/data/dbpedia_wn.nt ]
     then
       bunzip2 tmp/dbpedia_en/data/dbpedia_en.nt.bz2
@@ -136,6 +139,7 @@ buildsite() {
     do
         mkdir -p tmp/uby/$res
         cp -r src/lexica/uby/$res/* tmp/uby/$res/
+        cat db.ini >> tmp/uby/$res/settings.ini
         if [ ! -e tmp/uby/$res/data/$res.nt ]
         then
             bunzip2 tmp/uby/$res/data/$res.nt.bz2
@@ -156,6 +160,7 @@ buildsite() {
       do
         mkdir -p tmp/wiktionary_en/$res
         cp -r src/lexica/wiktionary_en/$res/* tmp/wiktionary_en/$res/
+        cat db.ini >> tmp/wiktionary_en/$res/settings.ini
         if [ ! -e tmp/wiktionary_en/$res/data/$res.nt ]
         then
             bunzip2 tmp/wiktionary_en/$res/data/$res.nt.bz2

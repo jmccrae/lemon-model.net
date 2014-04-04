@@ -29,7 +29,28 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+    <owl:AnnotationProperty rdf:about="&oils;boundTo">
+        <rdfs:label xml:lang="en">Bound to</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates the datatype property that is bound to a given scalar class</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;Scalar"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&oils;degree">
+        <rdfs:label xml:lang="en">Degree</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates the magnitude of a scalar class</rdfs:comment>
+        <rdfs:range rdf:resource="&oils;DegreeOfScalar"/>
+        <rdfs:domain rdf:resource="&oils;Scalar"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&oils;threshold">
+        <rdfs:label xml:lang="en">Threshold</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates a minimum value at which the property holds</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;Scalar"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&oils;comparator">
+        <rdfs:label xml:lang="en">Comparator</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates the comparision relationship for a given scalar</rdfs:comment>
+        <rdfs:domain rdf:resource="&oils;Scalar"/>
+    </owl:AnnotationProperty>
 
 
     <!-- 
@@ -337,6 +358,55 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&oils;Event"/>
     </owl:Class>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.monnet-project.eu/oils#medium -->
+
+    <owl:NamedIndividual rdf:about="&oils;medium">
+        <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
+        <rdfs:label xml:lang="en">medium</rdfs:label>
+        <rdfs:comment xml:lang="en">The scalar is bound to the property at a medium strength, maybe understood as meaning approximately the top 25% of individuals, e.g., &quot;big&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monnet-project.eu/oils#strong -->
+
+    <owl:NamedIndividual rdf:about="&oils;strong">
+        <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
+        <rdfs:label xml:lang="en">strong</rdfs:label>
+        <rdfs:comment xml:lang="en">The scalar is bound to the property at a medium strength, maybe understood as meaning approximately the top 5% of individuals, e.g., &quot;huge&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monnet-project.eu/oils#veryStrong -->
+
+    <owl:NamedIndividual rdf:about="&oils;veryStrong">
+        <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
+        <rdfs:label xml:lang="en">very strong</rdfs:label>
+        <rdfs:comment xml:lang="en">The scalar is bound to the property at a medium strength, may be understood as meaning approximately the top 1% of individuals, e.g., &quot;gargantuan&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.monnet-project.eu/oils#weak -->
+
+    <owl:NamedIndividual rdf:about="&oils;weak">
+        <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
+        <rdfs:comment xml:lang="en">The scalar is bound to the property at a medium strength, maybe understood as meaning approximately the top 50% of individuals, e.g., &quot;ample&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="en">weak</rdfs:comment>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
