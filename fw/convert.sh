@@ -53,7 +53,7 @@ cfg.section.resource
 
 res=$name
 prefix="$prefix$res/"
-namespaces=('--feature' 'xmlns:lemon="http://www.monnet-project.eu/lemon#"' '--feature' 'xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"' '--feature' 'xmlns:owl="http://www.w3.org/2002/07/owl#"' '--feature' 'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"' '--feature' 'xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#"')
+namespaces=('--feature' 'xmlns:lemon="http://lemon-model.net/lemon#"' '--feature' 'xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"' '--feature' 'xmlns:owl="http://www.w3.org/2002/07/owl#"' '--feature' 'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"' '--feature' 'xmlns:lexinfo="http://lexinfo.net/ontology/2.0/lexinfo#"')
 IFS=" " read -a rs <<< $rappersettings
     
 lexiconFile=$lexicon

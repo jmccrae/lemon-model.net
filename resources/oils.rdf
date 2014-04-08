@@ -370,7 +370,7 @@
     
 
 
-    <!-- http://www.monnet-project.eu/oils#medium -->
+    <!-- http://lemon-model.net/oils#medium -->
 
     <owl:NamedIndividual rdf:about="&oils;medium">
         <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
@@ -380,7 +380,7 @@
     
 
 
-    <!-- http://www.monnet-project.eu/oils#strong -->
+    <!-- http://lemon-model.net/oils#strong -->
 
     <owl:NamedIndividual rdf:about="&oils;strong">
         <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
@@ -390,7 +390,7 @@
     
 
 
-    <!-- http://www.monnet-project.eu/oils#veryStrong -->
+    <!-- http://lemon-model.net/oils#veryStrong -->
 
     <owl:NamedIndividual rdf:about="&oils;veryStrong">
         <rdf:type rdf:resource="&oils;DegreeOfScalar"/>
@@ -400,7 +400,7 @@
     
 
 
-    <!-- http://www.monnet-project.eu/oils#weak -->
+    <!-- http://lemon-model.net/oils#weak -->
 
     <owl:NamedIndividual rdf:about="&oils;weak">
         <rdf:type rdf:resource="&oils;DegreeOfScalar"/>

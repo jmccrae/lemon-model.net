@@ -2,7 +2,7 @@
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix lemon: <http://www.monnet-project.eu/lemon#>.
+@prefix lemon: <http://lemon-model.net/lemon#>.
 @prefix lexinfo: <http://lexinfo.net/ontology/2.0/lexinfo#>.
 
 @prefix base: <file:////home/christina/workspace/lemon2gf/test/out/aux/abox_en#>.

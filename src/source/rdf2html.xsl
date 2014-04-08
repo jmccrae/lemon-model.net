@@ -23,7 +23,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         <xsl:value-of select="'category:'"/>
         <xsl:value-of select="substring-after($text,'category#')"/>
       </xsl:when>
-      <xsl:when test="contains($text,'monnet-project.eu/lemon#')">
+      <xsl:when test="contains($text,'lemon-model.net/lemon#')">
         lemon:<xsl:value-of select="substring-after($text,'lemon#')"/>
       </xsl:when>
       <xsl:otherwise>

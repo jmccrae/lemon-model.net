@@ -110,7 +110,7 @@ while(in.hasNextLine()) {
       throw new IllegalArgumentException("Bad line: " + line);
     }
     val obj = rebuildLiteral(elems)
-    val form = if(elems(1) == "<http://www.monnet-project.eu/lemon#writtenRep>") {
+    val form = if(elems(1) == "<http://lemon-model.net/lemon#writtenRep>") {
       literal(obj).getOrElse("")
     } else {
       ""

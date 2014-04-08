@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
   <form action="sparql.php" method="get">
     <h3>Query in SPARQL</h3><br/>
     <textarea name="search" rows="10" cols="50">
-PREFIX lemon: &lt;http://www.monnet-project.eu/lemon#&gt;
+PREFIX lemon: &lt;http://lemon-model.net/lemon#&gt;
 select * where {
   	?s lemon:writtenRep "cat"@eng
 }

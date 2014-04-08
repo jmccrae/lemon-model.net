@@ -1,7 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix lemon: <http://www.monnet-project.eu/lemon#>.
+@prefix lemon: <http://lemon-model.net/lemon#>.
 @prefix lexinfo: <http://lexinfo.net/ontology/2.0/lexinfo#>.
 
 @prefix base: <http://sc.cit-ec.uni-bielefeld.de/lexica/travelDomain_en#>.
