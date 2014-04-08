@@ -1,4 +1,4 @@
-@prefix lemon: <http://www.monnet-project.eu/lemon#> .
+@prefix lemon: <http://lemon-model.net/lemon#> .
 
 @prefix : <file:/test#> .
 

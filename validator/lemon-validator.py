@@ -15,7 +15,8 @@ endOfMessage = StringIO.StringIO()
 
 outputFormat = "txt"
 
-lemon = Namespace("http://www.monnet-project.eu/lemon#")
+lemonOld = Namespace("http://www.monnet-project.eu/lemon#")
+lemon = Namespace("http://lemon-model.net/lemon#")
 lexinfo = Namespace("http://www.lexinfo.net/ontology/2.0/lexinfo#")
 lexinfoAlt = Namespace("http://lexinfo.net/ontology/2.0/lexinfo#")
 oils = Namespace("http://lemon-model.net/oils#")
@@ -462,7 +463,10 @@ def main(argv):
         elif pred.startswith(lemon) and pred not in lemonURIs:
             err("NOT_LEMON_URI","Not a lemon URI: " + pred)
         if isinstance(subj,BNode) and pred != RDF.first and pred != RDF.rest:
-            warn("BNODE","Blank node usage: _:bnode " + pred + " " + obj);
+            warn("BNODE","Blank node usage: _:bnode " + pred + " " + obj)
+        if isinstance(subj, URIRef) and  subj.startswith(lemonOld):
+            warn("OLD_LEMON_URI","Please update lemon namespace to http://lemon-model.net/lemon#")
+
 
     checked = {}
 

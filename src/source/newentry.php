@@ -27,7 +27,7 @@ if(!$is_editor) {
             $url=$url2.$n;
             $n++;
         }
-        file_put_contents("$url.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#>. \n\n<$url> a lemon:LexicalEntry ;\n lemon:canonicalForm <$url#CanonicalForm> . \n\n<$url#CanonicalForm> a lemon:Form ; \n  lemon:writtenRep \"$lemma\"@$lang . \n");
+        file_put_contents("$url.ttl","@prefix lemon: <http://lemon-model.net/lemon#>. \n\n<$url> a lemon:LexicalEntry ;\n lemon:canonicalForm <$url#CanonicalForm> . \n\n<$url#CanonicalForm> a lemon:Form ; \n  lemon:writtenRep \"$lemma\"@$lang . \n");
         file_put_contents("_index.ttl","<> lemon:entry <$url> .\n",FILE_APPEND);
         exec("git add $url.ttl");
         $comment = htmlspecialchars(isset($_GET["comment"]) ? $_GET["comment"] : "",ENT_QUOTES);

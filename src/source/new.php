@@ -63,7 +63,7 @@ if(!isset($_SESSION["username"])) {
             exec("cp htaccess $trgDir/.htaccess");
 
             exec("git init $trgDir/");            
-            file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://www.monnet-project.eu/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .\n");
+            file_put_contents($trgDir."/_index.ttl","@prefix lemon: <http://lemon-model.net/lemon#> .\n\n<> a lemon:Lexicon ;\n  lemon:language \"$language\" .\n");
             file_put_contents($trgDir."/settings.ini","[resource]\nname=$lexiconName\nrappersettings=\"--feature xmlns:$lexiconName=\\\"http://lemon-model.net/source/$userName/$lexiconName/\\\"\"\n".
                 "prefix=http://lemon-model.net/source/$userName/\nlexicon=\n\nlanguage=$language\neditor=$userName\n");
             chdir($trgDir);

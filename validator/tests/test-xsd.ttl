@@ -1,4 +1,4 @@
-@prefix lemon: <http://www.monnet-project.eu/lemon#> .
+@prefix lemon: <http://lemon-model.net/lemon#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <#> .
 

@@ -63,7 +63,7 @@ Enter your lexicon here:
   <input type="radio" name="format" value="xml" checked>RDF/XML</input>
   <input type="radio" name="format" value="turtle">Turtle/N-Triples</input><br/>
   <textarea class="code-textarea" name="document">
-<rdf:RDF xmlns:lemon="http://www.monnet-project.eu/lemon#"
+<rdf:RDF xmlns:lemon="http://lemon-model.net/lemon#"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 </rdf:RDF>
 </textarea><br/>
