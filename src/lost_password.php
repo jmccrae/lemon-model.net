@@ -53,23 +53,22 @@ function generatePassword ($length = 8) {
 
 $settings=parse_ini_file("settings.ini");
 if(isset($_POST["email"])) {
-    $con = mysql_connect("localhost",$settings["user"],$settings["password"]);
-    mysql_select_db("lemonmodel",$con);
-    $email = mysql_real_escape_string($_POST["email"]);
-    $result = mysql_query("select * from users where email='$email'");
-    $row = mysql_fetch_array($result);
+    $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+    $email = mysqli_real_escape_string($con,$_POST["email"]);
+    $result = mysqli_query($con,"select * from users where email='$email'");
+    $row = mysqli_fetch_array($result);
     if($row) {
         $newpass = generatePassword();
         $user = $row["username"];
         mail($email,"New password at lemon-model.net",
             "We have generated a new password for you at lemon-model.net. Please use the following details to log in. \n\n  Username:$user\n\n  Password:$newpass","From: noreply@lemon-model.net");
         $hash = sha1($newpass . "obpawtmdpr" . $user);
-        mysql_query("update users set password='$hash' where email='$email'");
+        mysqli_query($con, "update users set password='$hash' where email='$email'");
         echo "<div>An email has been sent!</div>";
     } else {
         echo "<div class='login_error'>We do not have a user account for that email address</div>";
     }
-    mysql_close($con);
+    mysqli_close($con);
 } else {
 ?>
 <form method="post">

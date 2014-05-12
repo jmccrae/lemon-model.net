@@ -103,13 +103,11 @@ if(file_exists($_GET['uri'] . "." . $type)) {
 	exit();
 }
 
-$con = mysql_connect("localhost",$settings["user"],$settings["password"]);
+$con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
 
 if(!$con) {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mysqli_error($con));
 }
-
-mysql_select_db($settings["database"],$con);
 
 // 1. Fetch the data from MySQL
 
@@ -122,31 +120,31 @@ if(!preg_match('/[A-Za-z0-9_+\-%]+/',$uri)) {
    echo "<h1>404 Not Found</h1>";
    echo "Bad characters".$_GET['uri']."\n";
    echo "The page that you have requested could not be found.";
-   mysql_close($con);
+   mysqli_close($con);
    exit();
 }
 
 $uri = urlencode($uri);
 
-$result = mysql_query("select * from $res where uri='$prefix$uri'");
+$result = mysqli_query($con, "select * from $res where uri='$prefix$uri'");
 
 if(!$result) {
    header('HTTP/1.0 404 Not Found');
    echo "<h1>404 Not Found</h1>";
    echo "uri=".$_GET['uri']."\n";
    echo "The page that you have requested could not be found.";
-mysql_close($con);
+mysqli_close($con);
    exit();
 }
 
-$row = mysql_fetch_array($result);
+$row = mysqli_fetch_array($result);
 
 if(!$row) {
    header('HTTP/1.0 404 Not Found');
    echo "<h1>404 Not Found</h1>";
    echo "uri=".$_GET['uri']."\n";
    echo "The page that you have requested could not be found.";
-mysql_close($con);
+mysqli_close($con);
    exit();
 }
 
@@ -190,5 +188,5 @@ if($type == "rdf") {
   include 'footer.htmlfrag';
 }
 
-mysql_close($con);
+mysqli_close($con);
 ?>

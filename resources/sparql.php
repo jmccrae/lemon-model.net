@@ -77,39 +77,37 @@ select * where {
             continue;
         }
 
-        $con = mysql_connect("localhost",$settings["user"],$settings["password"]);
+        $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
 
         if(!$con) {
-            die('Could not connect: ' . mysql_error());
+            die('Could not connect: ' . mysqli_error());
         }
 
         if(isset($_GET['text_search'])) {
-            $search = mysql_real_escape_string($_GET['text_search']);
+            $search = mysqli_real_escape_string($_GET['text_search']);
         } else {
             echo "No search params";
             exit();
         }
-
-        mysql_select_db($settings["database"],$con);
 
         $limit=20;
 
         $offset=0;
 
         if(isset($_GET['offset']) && is_numeric($_GET['offset'])) {
-            $offset = mysql_real_escape_string($_GET['offset']);
+            $offset = mysqli_real_escape_string($_GET['offset']);
         }
 
         echo "<h2>".$displayNames[$res]."</h2>";
-        $result = mysql_query("select uri, label from $res where match (label) against ('".$search."') order by length(label) asc limit 20 offset ". $offset);
+        $result = mysqli_query($con,"select uri, label from $res where match (label) against ('".$search."') order by length(label) asc limit 20 offset ". $offset);
 
         echo "<table>";
-        while($row = mysql_fetch_array($result)) {
+        while($row = mysqli_fetch_array($result)) {
             echo "<tr><td><a href='" . $row['uri'] . "'>" . $row['uri'] . "</a></td><td>";
             echo $row['label'] . "</td></tr>";
         }
         echo "</table>";
-        $result_count=mysql_num_rows($result);
+        $result_count=mysqli_num_rows($result);
 	if($result_count != 0 || $offset != 0) {
            echo "Results: " . ($offset+1) . "-" . ($offset + $result_count) . " ";
 	} else {

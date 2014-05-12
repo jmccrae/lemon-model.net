@@ -19,28 +19,27 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["passw
     } else if($_POST["username"] == "" || $_POST["password"] == "" || $_POST["password_repeat"] == "" ) {
         echo "<div class='login_error'>Required fields were not filled</div>";
     } else {
-        $con = mysql_connect("localhost",$settings["user"],$settings["password"]);
-        mysql_select_db("lemonmodel",$con);
-        $user = mysql_real_escape_string($_POST["username"]);
-        $email = mysql_real_escape_string($_POST["email"]);
+        $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+        $user = mysqli_real_escape_string($con,$_POST["username"]);
+        $email = mysqli_real_escape_string($con,$_POST["email"]);
         $hash = sha1($_POST["password"] . "obpawtmdpr" . $user);
-        $result = mysql_query("select * from users where email='$email'");
-        $row = mysql_fetch_array($result);
+        $result = mysqli_query($con,"select * from users where email='$email'");
+        $row = mysqli_fetch_array($result);
         if($row) {
             echo "<div class='login_error'>An account already exists for this email</div>";
         } else {
-            $result = mysql_query("select * from users where username='$user'");
-            $row = mysql_fetch_array($result);
+            $result = mysqli_query($con,"select * from users where username='$user'");
+            $row = mysqli_fetch_array($result);
             if($row) {
                 echo "<div class='login_error'>Username already exists!</div>";
             } else {
-                $real_name = mysql_real_escape_string($_POST["real_name"]);
-                mysql_query("insert into users (username, password, real_name, email) values('$user','$hash','$real_name','$email')") or die(mysql_error());
+                $real_name = mysqli_real_escape_string($con,$_POST["real_name"]);
+                mysqli_query($con, "insert into users (username, password, real_name, email) values('$user','$hash','$real_name','$email')") or die(mysql_error());
                 $_SESSION["username"] = $user;
                 echo "<script>window.location='/index.php'</script>";
             }
         }
-        mysql_close($con);
+        mysqli_close($con);
     }
 }
 ?>

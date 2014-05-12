@@ -21,3 +21,89 @@
 
 <p><a href="license">License</a></p>
 
+<h3>Metadata</h3>
+
+<table class="rdf rdf_main">
+    <tr>
+      <td>
+        <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
+      </td>
+      <td><b/> 
+                 “<span property="http://www.w3.org/2000/01/rdf-schema#label">OmegaWiki (English)</span>”
+              </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://purl.org/dc/terms/hasVersion">dct:hasVersion</a>
+      </td>
+      <td><b/> 
+                 <span property="http://purl.org/dc/terms/hasVersion">2.0</span>
+              </td>
+     </tr>
+     <tr>
+      <td>
+        <a href="http://www.w3.org/ns/prov#wasGeneratedBy">prov:wasGeneratedBy</a>
+      </td>
+      <td>
+        <span id="Provenance" resource="#Provenance" rel="http://www.w3.org/ns/prov#wasGeneratedBy">
+          <i>Provenance</i>
+          <table class="rdf">
+            <tr>
+              <td>
+                <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>
+              </td>
+              <td>
+                <a property="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" href="http://www.w3.org/ns/prov#Activity">prov:Activity</a>
+              </td>
+            </tr>            
+            <tr>
+              <td>
+                <a href="http://www.w3.org/ns/prov#atTime">prov:atTime</a>
+              </td>
+              <td><b/> 
+                 <span property="http://www.w3.org/ns/prov#atTime">2014-04-08T11:55+0000</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/ns/prov#wasAssociatedWith">prov:wasAssociatedWith</a>
+              </td>
+              <td>
+                <a href="http://john.mccr.ae/" property="http://www.w3.org/ns/prov#wasAssociatedWith">http://john.mccr.ae/</a>
+              </td>
+            </tr>
+            <tr>
+               <td>
+                 <a href="http://www.w3.org/ns/prov#used">prov:used</a>
+               </td>
+               <td>
+                 <span id="Source" resource="#Source" rel="http://www.w3.org/ns/prov#used">
+                 <i>Source</i>
+                 <table class="rdf">
+                   <tr>
+                     <td>
+                       <a href="http://purl.org/dc/elements/1.1/source">dc:source</a>
+                     </td>
+                     <td>
+                       <a href="http://www.omegawiki.org/" property="http://purl.org/dc/elements/1.1/source">http://www.omegawiki.org/</a>
+                     </td>
+                   </tr>
+                   <tr>
+                     <td>
+                       <a href="http://purl.org/dc/terms/hasVersion">dct:hasVersion</a>
+                     </td>
+                     <td>
+                       <span property="http://purl.org/dc/terms/hasVersion">3 January 2010</span>
+                     </td>
+                   </tr>
+                 </table>
+               </td>
+            </tr>
+          </table>
+        </span>
+      </td>
+    </tr>
+  </table>
+
+<br/>
+<br/>

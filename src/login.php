@@ -11,12 +11,11 @@ ini_set('display_errors', '1');
 
 $settings=parse_ini_file("settings.ini");
 if(isset($_POST["username"]) && isset($_POST["password"])) {
-    $con = mysql_connect("localhost",$settings["user"],$settings["password"]);
-    mysql_select_db("lemonmodel",$con);
-    $user = mysql_real_escape_string($_POST["username"]);
+    $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+    $user = mysqli_real_escape_string($con,$_POST["username"]);
     $hash = sha1($_POST["password"] . "obpawtmdpr" . $user);
-    $result = mysql_query("select * from users where username='$user' and password='$hash'");
-    $row = mysql_fetch_array($result);
+    $result = mysqli_query($con,"select * from users where username='$user' and password='$hash'");
+    $row = mysqli_fetch_array($result);
     if($row) {
       $_SESSION["username"] = $user;
     ?>
@@ -28,7 +27,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])) {
     
     ?><h5>Log in details were not correct</h5><?php
     }
-mysql_close($con);
+mysqli_close($con);
 }
 ?>
 <form method="post">
