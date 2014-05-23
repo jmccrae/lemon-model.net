@@ -3,3 +3,4 @@ htdocs
 *.swp
 tmp
 src/eotd/*.htm
+db.ini

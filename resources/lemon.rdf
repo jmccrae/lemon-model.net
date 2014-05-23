@@ -9,13 +9,13 @@
 ]>
 
 
-<rdf:RDF xmlns="http://www.lemon-model.net/lemon#"
-     xml:base="http://www.lemon-model.net/lemon"
+<rdf:RDF xmlns="http://lemon-model.net/lemon#"
+     xml:base="http://lemon-model.net/lemon"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://www.lemon-model.net/lemon">
+    <owl:Ontology rdf:about="http://lemon-model.net/lemon">
         <rdfs:label xml:lang="en">lemon</rdfs:label>
         <rdfs:comment xml:lang="en">Lemon: The lexicon model for ontologies is designed to allow  for descriptions of lexical information regarding ontological elements and other RDF resources. Lemon covers mapping of lexical decomposition, phrase structure, syntax,  variation, morphology, and lexicon-ontology mapping.</rdfs:comment>
         <rdfs:seeAlso rdf:resource="http://www.monnet-project.eu/lemon"/>
@@ -35,9 +35,9 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#abstractForm -->
+    <!-- http://lemon-model.net/lemon#abstractForm -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#abstractForm">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#abstractForm">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Abstrakte Form</rdfs:label>
         <rdfs:label xml:lang="en">Abstract form</rdfs:label>
@@ -45,16 +45,16 @@
         <rdfs:label xml:lang="fr">Forme abstraite</rdfs:label>
         <rdfs:label xml:lang="nl">Abstracte vorm</rdfs:label>
         <rdfs:comment xml:lang="en">A representation of a lexical entry that should not be considered canonical. This is primarily from a linguistic view for non-realisable forms such as stems but may also include misspellings and other unusual forms</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#lexicalForm"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#lexicalForm"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#altRef -->
+    <!-- http://lemon-model.net/lemon#altRef -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#altRef">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#altRef">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Alternative Referenz von</rdfs:label>
         <rdfs:label xml:lang="en">Alternative reference of</rdfs:label>
@@ -62,15 +62,15 @@
         <rdfs:label xml:lang="fr">Référence alternative de</rdfs:label>
         <rdfs:label xml:lang="nl">Alternatieve referentie van</rdfs:label>
         <rdfs:comment xml:lang="en">The sense of a non-preferred but admissible lexicalization of a given ontology entity</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#isReferenceOf"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#isReferenceOf"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#broader -->
+    <!-- http://lemon-model.net/lemon#broader -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#broader">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#broader">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Breiter</rdfs:label>
         <rdfs:label xml:lang="en">Broader</rdfs:label>
@@ -78,17 +78,17 @@
         <rdfs:label xml:lang="fr">Plus large</rdfs:label>
         <rdfs:label xml:lang="nl">Breder</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes that one sense is broader than another. From a lexical point of view  this means replacing one lexical entry with another generalizes the meaning of the phrase. From an ontological point of view this property makes not strong assertions. From a mapping point of view if the broader sense applies the narrower sense must also</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:inverseOf rdf:resource="http://www.lemon-model.net/lemon#narrower"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#senseRelation"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:inverseOf rdf:resource="http://lemon-model.net/lemon#narrower"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#canonicalForm -->
+    <!-- http://lemon-model.net/lemon#canonicalForm -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#canonicalForm">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#canonicalForm">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="de">Kanonische Form</rdfs:label>
@@ -97,16 +97,16 @@
         <rdfs:label xml:lang="fr">Forme canonique</rdfs:label>
         <rdfs:label xml:lang="nl">Canonieke vorm</rdfs:label>
         <rdfs:comment xml:lang="en">The canonical (&quot;dictionary&quot;) form of the lexical entry. This can be used to indicate the &quot;lemma&quot; form of a lexical entry</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#lexicalForm"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#lexicalForm"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#condition -->
+    <!-- http://lemon-model.net/lemon#condition -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#condition">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#condition">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Bedingung</rdfs:label>
         <rdfs:label xml:lang="en">Condition</rdfs:label>
@@ -114,31 +114,31 @@
         <rdfs:label xml:lang="fr">Condition</rdfs:label>
         <rdfs:label xml:lang="nl">Voorwaarde</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates an evaluable test, the is necessary for this sense to apply</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalCondition"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalCondition"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#constituent -->
+    <!-- http://lemon-model.net/lemon#constituent -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#constituent">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#constituent">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Konstituent</rdfs:label>
         <rdfs:label xml:lang="en">Constituent</rdfs:label>
         <rdfs:label xml:lang="es">Constituyente</rdfs:label>
         <rdfs:label xml:lang="fr">Constitutif</rdfs:label>
         <rdfs:label xml:lang="nl">Constituent</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#NodeConstituent"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#NodeConstituent"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#context -->
+    <!-- http://lemon-model.net/lemon#context -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#context">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#context">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Kontext</rdfs:label>
         <rdfs:label xml:lang="en">Context</rdfs:label>
@@ -146,15 +146,15 @@
         <rdfs:label xml:lang="fr">Contexte</rdfs:label>
         <rdfs:label xml:lang="nl">Context</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the pragmatic or discursive context of a sense mapping or a constraint on the mapping by syntactic or semantic properites</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalContext"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalContext"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#decomposition -->
+    <!-- http://lemon-model.net/lemon#decomposition -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#decomposition">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#decomposition">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Dekompositum</rdfs:label>
         <rdfs:label xml:lang="en">Decomposition</rdfs:label>
@@ -162,15 +162,15 @@
         <rdfs:label xml:lang="fr">Décomposition</rdfs:label>
         <rdfs:label xml:lang="nl">Decompositie</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a component of a lexical entry</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#ComponentList"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#ComponentList"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#definition -->
+    <!-- http://lemon-model.net/lemon#definition -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#definition">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#definition">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Definition</rdfs:label>
         <rdfs:label xml:lang="en">Definition</rdfs:label>
@@ -178,15 +178,15 @@
         <rdfs:label xml:lang="fr">Définition</rdfs:label>
         <rdfs:label xml:lang="nl">Definitie</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a natural language definition. Note there is a pseudo-node to allow for further description of the definition (e.g., source, creation date etc.). The value property should be used to indicate the string value of the definition.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#edge -->
+    <!-- http://lemon-model.net/lemon#edge -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#edge">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#edge">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Kante</rdfs:label>
         <rdfs:label xml:lang="en">Edge</rdfs:label>
@@ -194,15 +194,15 @@
         <rdfs:label xml:lang="fr">Lien</rdfs:label>
         <rdfs:label xml:lang="nl">Lijn</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the relation between a node in a multi-word expression structure and an edge</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Node"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Node"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#element -->
+    <!-- http://lemon-model.net/lemon#element -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#element">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#element">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="de">Element</rdfs:label>
@@ -211,15 +211,15 @@
         <rdfs:label xml:lang="fr">Elément</rdfs:label>
         <rdfs:label xml:lang="nl">Element</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the lexical entry represented by the component</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Component"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Component"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#entry -->
+    <!-- http://lemon-model.net/lemon#entry -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#entry">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#entry">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Eintrag</rdfs:label>
         <rdfs:label xml:lang="en">Entry</rdfs:label>
@@ -227,15 +227,15 @@
         <rdfs:label xml:lang="fr">Entrée</rdfs:label>
         <rdfs:label xml:lang="nl">Item</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates an entry in a lexicon</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#equivalent -->
+    <!-- http://lemon-model.net/lemon#equivalent -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#equivalent">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#equivalent">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
@@ -245,31 +245,31 @@
         <rdfs:label xml:lang="fr">Equivalent</rdfs:label>
         <rdfs:label xml:lang="nl">Equivalent</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates that two senses are equivalent. From a lexical point of view , this indicates that the lexical entries can be substituted for each other with no change in meaning. From an ontological point of view it means that the two references are not disjoint. From a mapping point of view it means if one mapping apply the other must necessarily apply</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#senseRelation"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#example -->
+    <!-- http://lemon-model.net/lemon#example -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#example">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#example">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Beispiel</rdfs:label>
         <rdfs:label xml:lang="en">Example</rdfs:label>
         <rdfs:label xml:lang="es">Ejemplo</rdfs:label>
         <rdfs:label xml:lang="fr">Exemple</rdfs:label>
         <rdfs:label xml:lang="nl">Voorbeeld</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#extrinsicArg -->
+    <!-- http://lemon-model.net/lemon#extrinsicArg -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#extrinsicArg">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#extrinsicArg">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Äußerliche Argument</rdfs:label>
         <rdfs:label xml:lang="en">Extrinsic argument</rdfs:label>
@@ -277,40 +277,40 @@
         <rdfs:label xml:lang="fr">Actant extrinsèque</rdfs:label>
         <rdfs:label xml:lang="nl">Extrinsiek argument</rdfs:label>
         <rdfs:comment xml:lang="en">A raisable semantic argument is not in fact the semantic argument of the current frame-sense but instead is &quot;raised&quot; into a frame-sense used for an argument. For example the phrase &quot;John seemed to be happy&quot;, is interpreted as &quot;it seemed that X&quot; where X is &quot;John is happy&quot;, hence the subject of &quot;seem&quot; is a raisable argument.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#semArg"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#formVariant -->
+    <!-- http://lemon-model.net/lemon#formVariant -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#formVariant">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#formVariant">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Form-Variante</rdfs:label>
         <rdfs:label xml:lang="en">Form variant</rdfs:label>
         <rdfs:label xml:lang="es">Variante de la forma</rdfs:label>
         <rdfs:label xml:lang="fr">Variante de la forme</rdfs:label>
         <rdfs:label xml:lang="nl">Vorm variant</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Form"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#generates -->
+    <!-- http://lemon-model.net/lemon#generates -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#generates">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#generates">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Erzeugt</rdfs:label>
         <rdfs:label xml:lang="en">Generates</rdfs:label>
         <rdfs:label xml:lang="es">Genera</rdfs:label>
         <rdfs:label xml:lang="fr">Génère</rdfs:label>
         <rdfs:label xml:lang="nl">Genereert</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Prototype"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Prototype"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#rule"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#rule"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -318,9 +318,9 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#hiddenRef -->
+    <!-- http://lemon-model.net/lemon#hiddenRef -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#hiddenRef">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#hiddenRef">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Verborgene Referenz von</rdfs:label>
         <rdfs:label xml:lang="en">Hidden reference of</rdfs:label>
@@ -328,15 +328,15 @@
         <rdfs:label xml:lang="fr">Référence cachée de</rdfs:label>
         <rdfs:label xml:lang="nl">Verborgen referentie van</rdfs:label>
         <rdfs:comment xml:lang="en">The sense of a non-admissible lexicalization for a ontology entity. This is used to denote incorrect or deprecated language that may be useful for information extraction but not generation</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#isReferenceOf"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#isReferenceOf"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#incompatible -->
+    <!-- http://lemon-model.net/lemon#incompatible -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#incompatible">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#incompatible">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label xml:lang="de">Inkompatibel</rdfs:label>
@@ -345,16 +345,16 @@
         <rdfs:label xml:lang="fr">Incompatible</rdfs:label>
         <rdfs:label xml:lang="nl">Onverenigbaar</rdfs:label>
         <rdfs:comment xml:lang="en">Says that the two senses are disjoint. From a lexical point of view, this means substituting the lexical entries must change the meaning of the phrase. From an ontological point of view, this property is implied if both references are also disjoint, but does not imply disjointness, but non-equivalence of the references. For the mapping point of view  there is not instance when both mappings are valid.</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#senseRelation"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#isA -->
+    <!-- http://lemon-model.net/lemon#isA -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#isA">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#isA">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Instanz von</rdfs:label>
         <rdfs:label xml:lang="en">Instance of</rdfs:label>
@@ -362,16 +362,16 @@
         <rdfs:label xml:lang="fr">Instance de</rdfs:label>
         <rdfs:label xml:lang="nl">Instantie van</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes that the single argument of a class predicate is represented in the lexicon by the given semantic argument. That is Class(?x) or ?x rdf:type Class</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#semArg"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#isReferenceOf -->
+    <!-- http://lemon-model.net/lemon#isReferenceOf -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#isReferenceOf">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#isReferenceOf">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Referenz von</rdfs:label>
         <rdfs:label xml:lang="en">Reference of</rdfs:label>
@@ -379,15 +379,15 @@
         <rdfs:label xml:lang="fr">Référence de</rdfs:label>
         <rdfs:label xml:lang="nl">Referentie van</rdfs:label>
         <rdfs:comment xml:lang="en">Indicate that a reference has a given sense</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:inverseOf rdf:resource="http://www.lemon-model.net/lemon#reference"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:inverseOf rdf:resource="http://lemon-model.net/lemon#reference"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#isSenseOf -->
+    <!-- http://lemon-model.net/lemon#isSenseOf -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#isSenseOf">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#isSenseOf">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Sinn von</rdfs:label>
         <rdfs:label xml:lang="en">Sense of</rdfs:label>
@@ -395,16 +395,16 @@
         <rdfs:label xml:lang="fr">Signfication de</rdfs:label>
         <rdfs:label xml:lang="nl">Zin van</rdfs:label>
         <rdfs:comment xml:lang="en">Indicate that a sense is realised by the given lexical entry</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:inverseOf rdf:resource="http://www.lemon-model.net/lemon#sense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:inverseOf rdf:resource="http://lemon-model.net/lemon#sense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#leaf -->
+    <!-- http://lemon-model.net/lemon#leaf -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#leaf">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#leaf">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Blatt</rdfs:label>
         <rdfs:label xml:lang="en">Leaf</rdfs:label>
@@ -412,15 +412,15 @@
         <rdfs:label xml:lang="fr">Feuille</rdfs:label>
         <rdfs:label xml:lang="nl">Blad</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the component referred to by the lex (pre-terminal) of the phrase structure</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#PhraseElement"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#PhraseElement"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#lexicalForm -->
+    <!-- http://lemon-model.net/lemon#lexicalForm -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#lexicalForm">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#lexicalForm">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
         <rdfs:label xml:lang="de">Lexikalische Form</rdfs:label>
@@ -429,15 +429,15 @@
         <rdfs:label xml:lang="fr">Forme lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal vorm</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a written representation of a lexical entry</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#lexicalVariant -->
+    <!-- http://lemon-model.net/lemon#lexicalVariant -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#lexicalVariant">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#lexicalVariant">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Lexikalische Variante</rdfs:label>
         <rdfs:label xml:lang="en">Lexical variant</rdfs:label>
@@ -445,15 +445,15 @@
         <rdfs:label xml:lang="fr">Variante lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal variant</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a non-semantic relationship between two lexical entries. E.g., a term is derived from another term, such as &quot;lexical&quot; and &quot;lexicalize&quot;</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#marker -->
+    <!-- http://lemon-model.net/lemon#marker -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#marker">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#marker">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Marker</rdfs:label>
         <rdfs:label xml:lang="en">Marker</rdfs:label>
@@ -461,15 +461,15 @@
         <rdfs:label xml:lang="fr">Marqueur</rdfs:label>
         <rdfs:label xml:lang="nl">Merker</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the marker of a semantic argument. This should generally either be a semantic property i.e., case or another lexical entry e.g., a preposition or particle</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#narrower -->
+    <!-- http://lemon-model.net/lemon#narrower -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#narrower">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#narrower">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Enger</rdfs:label>
         <rdfs:label xml:lang="en">Narrower</rdfs:label>
@@ -477,31 +477,31 @@
         <rdfs:label xml:lang="fr">Plus restreint</rdfs:label>
         <rdfs:label xml:lang="nl">Enger</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes that one sense is narrower than another. From a lexical point of view  this means replacing one lexical entry with another specializes the meaning of the phrase. From an ontological point of view this property makes not strong assertions. From a mapping point of view if the broader sense applies the narrower sense must also</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#senseRelation"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#nextTransform -->
+    <!-- http://lemon-model.net/lemon#nextTransform -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#nextTransform">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#nextTransform">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Folgende Transformation</rdfs:label>
         <rdfs:label xml:lang="en">Next transform</rdfs:label>
         <rdfs:label xml:lang="es">Transformación siguiente</rdfs:label>
         <rdfs:label xml:lang="fr">Transformation suivante</rdfs:label>
         <rdfs:label xml:lang="nl">Volgende transformatie</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#objOfProp -->
+    <!-- http://lemon-model.net/lemon#objOfProp -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#objOfProp">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#objOfProp">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Objekt von Prädikat</rdfs:label>
         <rdfs:label xml:lang="en">Object of property</rdfs:label>
@@ -509,16 +509,16 @@
         <rdfs:label xml:lang="fr">Complément de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Object van predikaat</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the semantic argument which represents the objects (ranges) of the property referred to by this sense</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#semArg"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#otherForm -->
+    <!-- http://lemon-model.net/lemon#otherForm -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#otherForm">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#otherForm">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Andere Form</rdfs:label>
         <rdfs:label xml:lang="en">Other form</rdfs:label>
@@ -526,31 +526,31 @@
         <rdfs:label xml:lang="fr">Autre forme</rdfs:label>
         <rdfs:label xml:lang="nl">Andere vorm</rdfs:label>
         <rdfs:comment xml:lang="en">A non-preferred (&quot;non-dictionary&quot;) representation of a lexical entry. This should be variant that is either a morphological variant, an abbreviation, short form or acronym</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#lexicalForm"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#lexicalForm"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#pattern -->
+    <!-- http://lemon-model.net/lemon#pattern -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#pattern">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#pattern">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Muster</rdfs:label>
         <rdfs:label xml:lang="en">Pattern</rdfs:label>
         <rdfs:label xml:lang="es">Patrón</rdfs:label>
         <rdfs:label xml:lang="fr">Patron</rdfs:label>
         <rdfs:label xml:lang="nl">Patroon</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#HasPattern"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#MorphPattern"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#MorphPattern"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#phraseRoot -->
+    <!-- http://lemon-model.net/lemon#phraseRoot -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#phraseRoot">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#phraseRoot">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Phrasewurzel</rdfs:label>
         <rdfs:label xml:lang="en">Phrase root</rdfs:label>
@@ -558,15 +558,15 @@
         <rdfs:label xml:lang="fr">Base de la syntagme</rdfs:label>
         <rdfs:label xml:lang="nl">Zinsdeel wortel</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the head node of a phrase structure or dependency parse graph</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Node"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Node"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#prefRef -->
+    <!-- http://lemon-model.net/lemon#prefRef -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#prefRef">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#prefRef">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Bevorzugte Referenz von</rdfs:label>
         <rdfs:label xml:lang="en">Preferred reference of</rdfs:label>
@@ -574,15 +574,15 @@
         <rdfs:label xml:lang="fr">Référence préféré de</rdfs:label>
         <rdfs:label xml:lang="nl">Voorkeursreferentie van</rdfs:label>
         <rdfs:comment xml:lang="en">The sense of the preferred lexicalization of a given ontology entity</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#isReferenceOf"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#isReferenceOf"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#property -->
+    <!-- http://lemon-model.net/lemon#property -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#property">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#property">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Lexikalische Prädikat</rdfs:label>
         <rdfs:label xml:lang="en">Lexical property</rdfs:label>
@@ -590,15 +590,15 @@
         <rdfs:label xml:lang="fr">Propiété lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal predikaat</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a lexical property of a lexical entry, form, component or MWE node. For the lexical entry this is assumed to be static properties e.g., part of speech and gender and for the others this is assumed to be specific properties e.g., case, number</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#propertyDomain -->
+    <!-- http://lemon-model.net/lemon#propertyDomain -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#propertyDomain">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#propertyDomain">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Prädikatsbereich</rdfs:label>
         <rdfs:label xml:lang="en">Property domain</rdfs:label>
@@ -606,15 +606,15 @@
         <rdfs:label xml:lang="fr">Ensemble de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Domein van het predikaat</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a restrictions on the domain of the property. That is, this sense only applies if the property the sense refers to has a subject in the class referred to by this property</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#condition"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#condition"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#propertyRange -->
+    <!-- http://lemon-model.net/lemon#propertyRange -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#propertyRange">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#propertyRange">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Prädikatszielmenge</rdfs:label>
         <rdfs:label xml:lang="en">Property range</rdfs:label>
@@ -622,15 +622,15 @@
         <rdfs:label xml:lang="fr">Image de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Bereik van het predikaat</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a restrictions on the range of the property. That is, this sense only applies if the property the sense refers to has a object in the class referred to by this property</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#condition"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#condition"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#reference -->
+    <!-- http://lemon-model.net/lemon#reference -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#reference">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#reference">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label xml:lang="de">Referenz</rdfs:label>
@@ -639,14 +639,14 @@
         <rdfs:label xml:lang="fr">Référence</rdfs:label>
         <rdfs:label xml:lang="nl">Referentie</rdfs:label>
         <rdfs:comment xml:lang="en">A reference to an external resource</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#semArg -->
+    <!-- http://lemon-model.net/lemon#semArg -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#semArg">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#semArg">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Semantische Argument</rdfs:label>
         <rdfs:label xml:lang="en">Semantic argument</rdfs:label>
@@ -654,15 +654,15 @@
         <rdfs:label xml:lang="fr">Actant sémantique</rdfs:label>
         <rdfs:label xml:lang="nl">Semantisch argument</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a semantic argument slot of a semantic unit</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#sense -->
+    <!-- http://lemon-model.net/lemon#sense -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#sense">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#sense">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Sinn</rdfs:label>
         <rdfs:label xml:lang="en">Sense</rdfs:label>
@@ -670,15 +670,15 @@
         <rdfs:label xml:lang="fr">Signification</rdfs:label>
         <rdfs:label xml:lang="nl">Zin</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the sense of a lexical entry</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#senseRelation -->
+    <!-- http://lemon-model.net/lemon#senseRelation -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#senseRelation">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#senseRelation">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Sinn-Relation</rdfs:label>
         <rdfs:label xml:lang="en">Sense relation</rdfs:label>
@@ -686,15 +686,15 @@
         <rdfs:label xml:lang="fr">Relation de Signification</rdfs:label>
         <rdfs:label xml:lang="nl">Zin relatie</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a relationship between senses</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#subjOfProp -->
+    <!-- http://lemon-model.net/lemon#subjOfProp -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#subjOfProp">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#subjOfProp">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Subjekt von Prädikat</rdfs:label>
         <rdfs:label xml:lang="en">Subject of property</rdfs:label>
@@ -702,16 +702,16 @@
         <rdfs:label xml:lang="fr">Sujet de la propiété</rdfs:label>
         <rdfs:label xml:lang="nl">Onderwerp van predikaat</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the semantic argument which represents the subjects (domain) of the property referred to by this sense</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#semArg"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#semArg"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#subsense -->
+    <!-- http://lemon-model.net/lemon#subsense -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#subsense">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#subsense">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Teil des Sinnes</rdfs:label>
         <rdfs:label xml:lang="en">Subsense</rdfs:label>
@@ -719,15 +719,15 @@
         <rdfs:label xml:lang="fr">Signification composante</rdfs:label>
         <rdfs:label xml:lang="nl">Deel van de zin</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates that the relation between a compound sense and its atomic subsenses</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#synArg -->
+    <!-- http://lemon-model.net/lemon#synArg -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#synArg">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#synArg">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Syntactische Argument</rdfs:label>
         <rdfs:label xml:lang="en">Syntactic argument</rdfs:label>
@@ -735,15 +735,15 @@
         <rdfs:label xml:lang="fr">Actant syntaxique</rdfs:label>
         <rdfs:label xml:lang="nl">Syntactisch argument</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a slot in a syntactic frame</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Frame"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Frame"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#synBehavior -->
+    <!-- http://lemon-model.net/lemon#synBehavior -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#synBehavior">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#synBehavior">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Syntactische Verhalten</rdfs:label>
         <rdfs:label xml:lang="en">Syntactic behavior</rdfs:label>
@@ -751,15 +751,15 @@
         <rdfs:label xml:lang="fr">Conduite syntaxique</rdfs:label>
         <rdfs:label xml:lang="nl">Syntactisch optreden</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a syntactic behavior of a lexical entry</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#Frame"/>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#Frame"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#topic -->
+    <!-- http://lemon-model.net/lemon#topic -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#topic">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#topic">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Thema</rdfs:label>
         <rdfs:label xml:lang="en">Topic</rdfs:label>
@@ -767,12 +767,12 @@
         <rdfs:label xml:lang="fr">Thème</rdfs:label>
         <rdfs:label xml:lang="nl">Thema</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the topic of the overrall lexicon, this is property is sometimes called &quot;subject field&quot;. Note that in addition to the topic of a lexicon each lexical entry may belong to a given domain, this can be modelled as equal or not equal to the topic of the associated lexicon</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#LexicalTopic"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#LexicalTopic"/>
         <rdfs:domain>
             <rdfs:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.lemon-model.net/lemon#LexicalEntry"/>
-                    <rdf:Description rdf:about="http://www.lemon-model.net/lemon#Lexicon"/>
+                    <rdf:Description rdf:about="http://lemon-model.net/lemon#LexicalEntry"/>
+                    <rdf:Description rdf:about="http://lemon-model.net/lemon#Lexicon"/>
                 </owl:unionOf>
             </rdfs:Class>
         </rdfs:domain>
@@ -780,24 +780,24 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#transform -->
+    <!-- http://lemon-model.net/lemon#transform -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#transform">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#transform">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Transformation</rdfs:label>
         <rdfs:label xml:lang="en">Transform</rdfs:label>
         <rdfs:label xml:lang="es">Transformación</rdfs:label>
         <rdfs:label xml:lang="fr">Transformation</rdfs:label>
         <rdfs:label xml:lang="nl">Transformatie</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#MorphPattern"/>
-        <rdfs:range rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#MorphPattern"/>
+        <rdfs:range rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#tree -->
+    <!-- http://lemon-model.net/lemon#tree -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#tree">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#tree">
         <rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:label xml:lang="de">Baum</rdfs:label>
         <rdfs:label xml:lang="en">Tree</rdfs:label>
@@ -818,9 +818,9 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#language -->
+    <!-- http://lemon-model.net/lemon#language -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#language">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#language">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Sprache</rdfs:label>
         <rdfs:label xml:lang="en">Language</rdfs:label>
@@ -828,15 +828,15 @@
         <rdfs:label xml:lang="fr">Langue</rdfs:label>
         <rdfs:label xml:lang="nl">Taal</rdfs:label>
         <rdfs:comment xml:lang="en">The language of a given lexicon. This should be some ISO-639 string</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#HasLanguage"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#optional -->
+    <!-- http://lemon-model.net/lemon#optional -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#optional">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#optional">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Optional</rdfs:label>
         <rdfs:label xml:lang="en">Optional</rdfs:label>
@@ -844,15 +844,15 @@
         <rdfs:label xml:lang="fr">Optionnel</rdfs:label>
         <rdfs:label xml:lang="nl">Optionele</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes that the syntactic argument is optional (may be omitted)</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Argument"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Argument"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#representation -->
+    <!-- http://lemon-model.net/lemon#representation -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#representation">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#representation">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Darstellung</rdfs:label>
         <rdfs:label xml:lang="en">Representation</rdfs:label>
@@ -860,30 +860,30 @@
         <rdfs:label xml:lang="fr">Représentation</rdfs:label>
         <rdfs:label xml:lang="nl">Voorstelling</rdfs:label>
         <rdfs:comment xml:lang="en">A realisation of a given form</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Form"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Form"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#rule -->
+    <!-- http://lemon-model.net/lemon#rule -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#rule">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#rule">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Regel</rdfs:label>
         <rdfs:label xml:lang="en">Rule</rdfs:label>
         <rdfs:label xml:lang="es">Regla</rdfs:label>
         <rdfs:label xml:lang="fr">Règle</rdfs:label>
         <rdfs:label xml:lang="nl">Regel</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#MorphTransform"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#separator -->
+    <!-- http://lemon-model.net/lemon#separator -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#separator">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#separator">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Separator</rdfs:label>
         <rdfs:label xml:lang="en">Separator</rdfs:label>
@@ -891,15 +891,15 @@
         <rdfs:label xml:lang="fr">Séparateur</rdfs:label>
         <rdfs:label xml:lang="nl">Afscheider</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates the graphical element used to seperate the subnodes of this phrase structure. It is generally recommended that you use a string value with the language tag used to indicate script, (i.e., using ISO-15924 codes, such as &quot;Latn&quot;), as orthographic features may change with script.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Node"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Node"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </rdf:Property>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#value -->
+    <!-- http://lemon-model.net/lemon#value -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#value">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#value">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Wert</rdfs:label>
         <rdfs:label xml:lang="en">Value</rdfs:label>
@@ -911,9 +911,9 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#writtenRep -->
+    <!-- http://lemon-model.net/lemon#writtenRep -->
 
-    <rdf:Property rdf:about="http://www.lemon-model.net/lemon#writtenRep">
+    <rdf:Property rdf:about="http://lemon-model.net/lemon#writtenRep">
         <rdf:type rdf:resource="&owl;DatatypeProperty"/>
         <rdfs:label xml:lang="de">Schriftliche Darstellung</rdfs:label>
         <rdfs:label xml:lang="en">Written representation</rdfs:label>
@@ -921,8 +921,8 @@
         <rdfs:label xml:lang="fr">Représentation écrite</rdfs:label>
         <rdfs:label xml:lang="nl">Schriftelijke voorstelling</rdfs:label>
         <rdfs:comment xml:lang="en">Gives the written representation of a given form</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.lemon-model.net/lemon#representation"/>
+        <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#representation"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </rdf:Property>
     
@@ -939,68 +939,68 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Argument -->
+    <!-- http://lemon-model.net/lemon#Argument -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Argument">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Argument">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Argument</rdfs:label>
         <rdfs:label xml:lang="en">Argument</rdfs:label>
         <rdfs:label xml:lang="es">Argumento</rdfs:label>
         <rdfs:label xml:lang="fr">Actant</rdfs:label>
         <rdfs:label xml:lang="nl">Argument</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#PhraseElement"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Component"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Frame"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#PhraseElement"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Component"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Frame"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A slot representing a gap that must be filled in realising a lexical entry in a given projection</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Component -->
+    <!-- http://lemon-model.net/lemon#Component -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Component">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Component">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Komponente</rdfs:label>
         <rdfs:label xml:lang="en">Component</rdfs:label>
         <rdfs:label xml:lang="es">Componente</rdfs:label>
         <rdfs:label xml:lang="fr">Composant</rdfs:label>
         <rdfs:label xml:lang="nl">Bestanddeel</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#PhraseElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#PhraseElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#element"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#element"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Form"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Frame"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Form"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Frame"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A constituent element of a lexical entry. This may be a word in a multi-word lexical element or a constituent of a compound word</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#ComponentList -->
+    <!-- http://lemon-model.net/lemon#ComponentList -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#ComponentList">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#ComponentList">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:subClassOf rdf:resource="&rdf;List"/>
         <rdfs:subClassOf>
@@ -1015,7 +1015,7 @@
                 <owl:allValuesFrom>
                     <rdfs:Class>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.lemon-model.net/lemon#ComponentList"/>
+                            <rdf:Description rdf:about="http://lemon-model.net/lemon#ComponentList"/>
                             <rdfs:Class>
                                 <owl:oneOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="&rdf;nil"/>
@@ -1035,7 +1035,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&rdf;first"/>
-                <owl:allValuesFrom rdf:resource="http://www.lemon-model.net/lemon#Component"/>
+                <owl:allValuesFrom rdf:resource="http://lemon-model.net/lemon#Component"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A node within a list of components. This should generally be a blank node,see rdf:List</rdfs:comment>
@@ -1043,340 +1043,340 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Form -->
+    <!-- http://lemon-model.net/lemon#Form -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Form">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Form">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Form</rdfs:label>
         <rdfs:label xml:lang="en">Form</rdfs:label>
         <rdfs:label xml:lang="es">Forma</rdfs:label>
         <rdfs:label xml:lang="fr">Forme</rdfs:label>
         <rdfs:label xml:lang="nl">Vorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#representation"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#representation"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Frame"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Frame"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A given written or spoken realisation of a lexical entry</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Frame -->
+    <!-- http://lemon-model.net/lemon#Frame -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Frame">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Frame">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Rahmen</rdfs:label>
         <rdfs:label xml:lang="en">Frame</rdfs:label>
         <rdfs:label xml:lang="es">Marco</rdfs:label>
         <rdfs:label xml:lang="fr">Cadre</rdfs:label>
         <rdfs:label xml:lang="nl">Raam</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A stereotypical example of the usage of a given lexical entry. The most common example of projections are subcategorization frames which describe the slots taken by the arguments of a verb.</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#HasLanguage -->
+    <!-- http://lemon-model.net/lemon#HasLanguage -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#HasLanguage">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#HasLanguage">
         <rdf:type rdf:resource="&owl;Class"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Structural element for all elements that can be tagged with a language</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#HasPattern -->
+    <!-- http://lemon-model.net/lemon#HasPattern -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#HasPattern">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#HasPattern">
         <rdf:type rdf:resource="&owl;Class"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LemonElement -->
+    <!-- http://lemon-model.net/lemon#LemonElement -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LemonElement">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LemonElement">
         <rdf:type rdf:resource="&owl;Class"/>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LexicalCondition -->
+    <!-- http://lemon-model.net/lemon#LexicalCondition -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LexicalCondition">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LexicalCondition">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikonbedingung</rdfs:label>
         <rdfs:label xml:lang="en">Lexical Condition</rdfs:label>
         <rdfs:label xml:lang="es">Condición léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Condition lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal Voorwaarde</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">An evaluable condition on when a sense applies.</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LexicalContext -->
+    <!-- http://lemon-model.net/lemon#LexicalContext -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LexicalContext">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LexicalContext">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikonkontext</rdfs:label>
         <rdfs:label xml:lang="en">Lexical Context</rdfs:label>
         <rdfs:label xml:lang="es">Contexto léxico</rdfs:label>
         <rdfs:label xml:lang="fr">Contexte lexical</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal Context</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates the pragmatic or discourse context in which a sense applies</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LexicalEntry -->
+    <!-- http://lemon-model.net/lemon#LexicalEntry -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LexicalEntry">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LexicalEntry">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikoneintrag</rdfs:label>
         <rdfs:label xml:lang="en">Lexical entry</rdfs:label>
         <rdfs:label xml:lang="es">Entrada léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Entrée lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal item</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#HasLanguage"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#HasPattern"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#lexicalForm"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#lexicalForm"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#canonicalForm"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#canonicalForm"/>
                 <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#LexicalSense"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">An entry in the lexicon. This may be any morpheme, word, compound, phrase or clause that is included in the lexicon</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LexicalSense -->
+    <!-- http://lemon-model.net/lemon#LexicalSense -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LexicalSense">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LexicalSense">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikonsinn</rdfs:label>
         <rdfs:label xml:lang="en">Lexical sense</rdfs:label>
         <rdfs:label xml:lang="es">Acepción léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Signification lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal zin</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <rdfs:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#subsense"/>
+                        <owl:onProperty rdf:resource="http://lemon-model.net/lemon#subsense"/>
                         <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#reference"/>
+                        <owl:onProperty rdf:resource="http://lemon-model.net/lemon#reference"/>
                         <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
                     </owl:Restriction>
                 </owl:unionOf>
             </rdfs:Class>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Lexicon"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Lexicon"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">Represents the intersection in meaning between the lexical entry and the ontology entity. This is used as the ontology entity and lexical entry may not be in one-to-one correspondence as such the existence of a sense between them states meerly that there are some cases when this lexical entry refer to the ontology entity and vica versa. Mapping elements can be used to further specify this relation</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#LexicalTopic -->
+    <!-- http://lemon-model.net/lemon#LexicalTopic -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#LexicalTopic">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#LexicalTopic">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikonthema</rdfs:label>
         <rdfs:label xml:lang="en">Lexical Topic</rdfs:label>
         <rdfs:label xml:lang="es">Tema léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Thème lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal Thema</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates the topic of a lexicon or a lexical entry</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Lexicon -->
+    <!-- http://lemon-model.net/lemon#Lexicon -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Lexicon">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Lexicon">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Lexikon</rdfs:label>
         <rdfs:label xml:lang="en">Lexicon</rdfs:label>
         <rdfs:label xml:lang="es">Lexicón</rdfs:label>
         <rdfs:label xml:lang="fr">Lexique</rdfs:label>
         <rdfs:label xml:lang="nl">Lexicon</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#HasLanguage"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#HasPattern"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#entry"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#entry"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#language"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#language"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#Node"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Node"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">The lexicon object. This object is specific to the given language and/or domain it describes</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#MorphPattern -->
+    <!-- http://lemon-model.net/lemon#MorphPattern -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#MorphPattern">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#MorphPattern">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Morphologische Muster</rdfs:label>
         <rdfs:label xml:lang="en">Morphological pattern</rdfs:label>
         <rdfs:label xml:lang="es">Patrón morfológico</rdfs:label>
         <rdfs:label xml:lang="fr">Patron morphologique</rdfs:label>
         <rdfs:label xml:lang="nl">Morphologisch Patroon</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#HasLanguage"/>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#MorphTransform -->
+    <!-- http://lemon-model.net/lemon#MorphTransform -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#MorphTransform">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#MorphTransform">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Morphologische Transformation</rdfs:label>
         <rdfs:label xml:lang="en">Morphological Transform</rdfs:label>
         <rdfs:label xml:lang="es">Transformación morfológica</rdfs:label>
         <rdfs:label xml:lang="fr">Transformation morphologique</rdfs:label>
         <rdfs:label xml:lang="nl">Morphologisch transformatie</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Node -->
+    <!-- http://lemon-model.net/lemon#Node -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Node">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Node">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Knoten</rdfs:label>
         <rdfs:label xml:lang="en">Node</rdfs:label>
         <rdfs:label xml:lang="es">Vértice</rdfs:label>
         <rdfs:label xml:lang="fr">Nœud</rdfs:label>
         <rdfs:label xml:lang="nl">Punt</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <rdfs:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#edge"/>
+                        <owl:onProperty rdf:resource="http://lemon-model.net/lemon#edge"/>
                         <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#leaf"/>
+                        <owl:onProperty rdf:resource="http://lemon-model.net/lemon#leaf"/>
                         <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
                     </owl:Restriction>
                 </owl:unionOf>
             </rdfs:Class>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#PropertyValue"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#PropertyValue"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A node in a phrase structure or dependency parse graph</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#NodeConstituent -->
+    <!-- http://lemon-model.net/lemon#NodeConstituent -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#NodeConstituent">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#NodeConstituent">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Konstituent</rdfs:label>
         <rdfs:label xml:lang="en">Constituent</rdfs:label>
         <rdfs:label xml:lang="es">Constituyente</rdfs:label>
         <rdfs:label xml:lang="fr">Constituent</rdfs:label>
         <rdfs:label xml:lang="nl">Constituent</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">The class of constituents, that is types applied to nodes in a phrase structure graph</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Part -->
+    <!-- http://lemon-model.net/lemon#Part -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Part">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Part">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Wortteil</rdfs:label>
         <rdfs:label xml:lang="en">Part of word</rdfs:label>
         <rdfs:label xml:lang="es">Parte de la palabra</rdfs:label>
         <rdfs:label xml:lang="fr">Partie du mot</rdfs:label>
         <rdfs:label xml:lang="nl">Deel van een woord</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:comment xml:lang="en">An affix is a morpheme that is attached to a word stem to form a new word.  Use this for lexical entries with only abstract forms</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Phrase -->
+    <!-- http://lemon-model.net/lemon#Phrase -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Phrase">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Phrase">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Phrase</rdfs:label>
         <rdfs:label xml:lang="en">Phrase</rdfs:label>
         <rdfs:label xml:lang="es">Sintagma</rdfs:label>
         <rdfs:label xml:lang="fr">Syntagme</rdfs:label>
         <rdfs:label xml:lang="nl">Zinsdeel</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#decomposition"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#decomposition"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1385,158 +1385,158 @@
     
 
 
-    <!-- http://www.lemon-model.net/lemon#PhraseElement -->
+    <!-- http://lemon-model.net/lemon#PhraseElement -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#PhraseElement">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#PhraseElement">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Phrase-Element</rdfs:label>
         <rdfs:label xml:lang="en">Phrase element</rdfs:label>
         <rdfs:label xml:lang="es">Elemento del sintagma</rdfs:label>
         <rdfs:label xml:lang="fr">Elément du syntagme</rdfs:label>
         <rdfs:label xml:lang="nl">Zinselement</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">A terminal node in a phrase structure graph, i.e., a realisable, lexical element.</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#PropertyValue -->
+    <!-- http://lemon-model.net/lemon#PropertyValue -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#PropertyValue">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#PropertyValue">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Prädikatswert</rdfs:label>
         <rdfs:label xml:lang="en">Property Value</rdfs:label>
         <rdfs:label xml:lang="es">Valor de la propiedad</rdfs:label>
         <rdfs:label xml:lang="fr">Valeur de la propriété</rdfs:label>
         <rdfs:label xml:lang="nl">Waarde van het predikaat</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SenseDefinition"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A value that can be used in the range of linguistic property</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#Prototype -->
+    <!-- http://lemon-model.net/lemon#Prototype -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Prototype">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Prototype">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="en">Prototype</rdfs:label>
         <rdfs:label xml:lang="es">Prototipo</rdfs:label>
         <rdfs:label xml:lang="fr">Prototype</rdfs:label>
         <rdfs:label xml:lang="nl">Prototyp</rdfs:label>
         <rdfs:label xml:lang="nl">Prototype</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#SenseCondition -->
+    <!-- http://lemon-model.net/lemon#SenseCondition -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#SenseCondition">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#SenseCondition">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Bedingung</rdfs:label>
         <rdfs:label xml:lang="en">Condition</rdfs:label>
         <rdfs:label xml:lang="es">Condición</rdfs:label>
         <rdfs:label xml:lang="fr">Condition</rdfs:label>
         <rdfs:label xml:lang="nl">Voorwaarde</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates a logical condition that is used indicate when a particular term has the given meaning</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#SenseContext -->
+    <!-- http://lemon-model.net/lemon#SenseContext -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#SenseContext">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#SenseContext">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Kontext</rdfs:label>
         <rdfs:label xml:lang="en">Context</rdfs:label>
         <rdfs:label xml:lang="es">Contexto</rdfs:label>
         <rdfs:label xml:lang="fr">Contexte</rdfs:label>
         <rdfs:label xml:lang="nl">Context</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates the context in which a term is to be used. The context refers not to the immediate syntactic context, but the document and register the document is used in</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#SenseDefinition -->
+    <!-- http://lemon-model.net/lemon#SenseDefinition -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#SenseDefinition">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#SenseDefinition">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Definition</rdfs:label>
         <rdfs:label xml:lang="en">Definition</rdfs:label>
         <rdfs:label xml:lang="es">Definición</rdfs:label>
         <rdfs:label xml:lang="fr">Définition</rdfs:label>
         <rdfs:label xml:lang="nl">Definitie</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#value"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#value"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#SynRoleMarker"/>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">A definition of a sememe, that is the a text describing the exact meaning of the lexical entry when its sense is the given ontology reference</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#SynRoleMarker -->
+    <!-- http://lemon-model.net/lemon#SynRoleMarker -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#SynRoleMarker">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#SynRoleMarker">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Syntactische Rolle-Marker</rdfs:label>
         <rdfs:label xml:lang="en">Syntactic role marker</rdfs:label>
         <rdfs:label xml:lang="es">Marcador de la función sintáctica</rdfs:label>
         <rdfs:label xml:lang="fr">Marqueur du rôle syntaxique</rdfs:label>
         <rdfs:label xml:lang="nl">Syntactisch rol merker</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <rdfs:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.lemon-model.net/lemon#LexicalEntry"/>
-                    <rdf:Description rdf:about="http://www.lemon-model.net/lemon#PropertyValue"/>
+                    <rdf:Description rdf:about="http://lemon-model.net/lemon#LexicalEntry"/>
+                    <rdf:Description rdf:about="http://lemon-model.net/lemon#PropertyValue"/>
                 </owl:unionOf>
             </rdfs:Class>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.lemon-model.net/lemon#UsageExample"/>
+        <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
         <rdfs:comment xml:lang="en">The indicator of a given syntactic argument, normally a preposition or other particle marker or a linguistic property such as case</rdfs:comment>
     </rdfs:Class>
     
 
 
-    <!-- http://www.lemon-model.net/lemon#UsageExample -->
+    <!-- http://lemon-model.net/lemon#UsageExample -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#UsageExample">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#UsageExample">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Anwendungsbeispiel</rdfs:label>
         <rdfs:label xml:lang="en">Usage Example</rdfs:label>
         <rdfs:label xml:lang="es">Ejemplo de uso</rdfs:label>
         <rdfs:label xml:lang="fr">Exemple d&#39;utilisation</rdfs:label>
         <rdfs:label xml:lang="nl">Voorbeeld van het gebruik</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LemonElement"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.lemon-model.net/lemon#value"/>
+                <owl:onProperty rdf:resource="http://lemon-model.net/lemon#value"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An example of the usage of a lexical entry when refering to the ontology entity given by the sememe&#39;s reference. This should in effect be an example of the form used in context. E.g., &quot;this is a *usage example*&quot;</rdfs:comment>
     </rdfs:Class>
 
-    <!-- http://www.lemon-model.net/lemon#Word -->
+    <!-- http://lemon-model.net/lemon#Word -->
 
-    <rdfs:Class rdf:about="http://www.lemon-model.net/lemon#Word">
+    <rdfs:Class rdf:about="http://lemon-model.net/lemon#Word">
         <rdf:type rdf:resource="&owl;Class"/>
         <rdfs:label xml:lang="de">Wort</rdfs:label>
         <rdfs:label xml:lang="en">Word</rdfs:label>
         <rdfs:label xml:lang="es">Palabra</rdfs:label>
         <rdfs:label xml:lang="fr">Mot</rdfs:label>
         <rdfs:label xml:lang="nl">Woord</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.lemon-model.net/lemon#LexicalEntry"/>
+        <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:comment xml:lang="en">A word is a single unit of writing or speech. In languages written in Latin, Cyrillic, Greek, Arabic scripts etc. these are assumed to be separated by white-space characters. For Chinese, Japanese, Korean this should correspond to some agreed segmentation scheme.</rdfs:comment>
     </rdfs:Class>
     
