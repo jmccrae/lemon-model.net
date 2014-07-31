@@ -84,7 +84,7 @@ select * where {
         }
 
         if(isset($_GET['text_search'])) {
-            $search = mysqli_real_escape_string($_GET['text_search']);
+            $search = mysqli_real_escape_string($con, $_GET['text_search']);
         } else {
             echo "No search params";
             exit();
@@ -95,11 +95,12 @@ select * where {
         $offset=0;
 
         if(isset($_GET['offset']) && is_numeric($_GET['offset'])) {
-            $offset = mysqli_real_escape_string($_GET['offset']);
+            $offset = mysqli_real_escape_string($con, $_GET['offset']);
         }
 
         echo "<h2>".$displayNames[$res]."</h2>";
         $result = mysqli_query($con,"select uri, label from $res where match (label) against ('".$search."') order by length(label) asc limit 20 offset ". $offset);
+        #echo("select uri, label from $res where match (label) against ('".$search."') order by length(label) asc limit 20 offset ". $offset);
 
         echo "<table>";
         while($row = mysqli_fetch_array($result)) {

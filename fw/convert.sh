@@ -71,6 +71,9 @@ then
     elif [ -e data/$res.nt.gz ]
     then
         gunzip data/$res.nt.gz
+    else
+        wget "http://lemon-model.net/datafiles/$res.nt.bz2"
+        bunzip2 data/$res.nt.bz2
     fi
 
 #    if [ ! -e data/$res.rdf ]
