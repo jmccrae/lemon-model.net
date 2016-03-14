@@ -24,12 +24,12 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["passw
         $email = mysqli_real_escape_string($con,$_POST["email"]);
         $hash = sha1($_POST["password"] . "obpawtmdpr" . $user);
         $result = mysqli_query($con,"select * from users where email='$email'");
-        $row = mysqli_fetch_array($result);
+        $row = mysqli_fetch_array($con,$result);
         if($row) {
             echo "<div class='login_error'>An account already exists for this email</div>";
         } else {
             $result = mysqli_query($con,"select * from users where username='$user'");
-            $row = mysqli_fetch_array($result);
+            $row = mysqli_fetch_array($con,$result);
             if($row) {
                 echo "<div class='login_error'>Username already exists!</div>";
             } else {

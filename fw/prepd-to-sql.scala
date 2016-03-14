@@ -43,7 +43,7 @@ var labelSB = new StringBuilder()
 var ntSB = new StringBuilder()
 var bntSB = new StringBuilder()
 
-println("create table  if not exists "+TABLE + "( uri varchar(256) character set binary primary key, label text, nt longtext, back_nt longtext, fulltext(label));")
+println("create table  if not exists "+TABLE + "( uri varchar(256) character set binary primary key, label text, nt longtext, back_nt longtext, fulltext(label)) ENGINE=MYISAM;")
 println("truncate table "+TABLE+";");
 
 
