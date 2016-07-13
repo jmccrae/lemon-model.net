@@ -306,6 +306,7 @@
         <rdfs:label xml:lang="es">Genera</rdfs:label>
         <rdfs:label xml:lang="fr">Génère</rdfs:label>
         <rdfs:label xml:lang="nl">Genereert</rdfs:label>
+        <rdfs:label xml:lang="ru">Порождает</rdfs:label>
         <rdfs:domain rdf:resource="http://lemon-model.net/lemon#MorphTransform"/>
         <rdfs:range rdf:resource="http://lemon-model.net/lemon#Prototype"/>
         <rdfs:subClassOf>
@@ -460,6 +461,7 @@
         <rdfs:label xml:lang="es">Marcador</rdfs:label>
         <rdfs:label xml:lang="fr">Marqueur</rdfs:label>
         <rdfs:label xml:lang="nl">Merker</rdfs:label>
+        <rdfs:label xml:lang="ru">маркер</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the marker of a semantic argument. This should generally either be a semantic property i.e., case or another lexical entry e.g., a preposition or particle</rdfs:comment>
         <rdfs:domain rdf:resource="http://lemon-model.net/lemon#Argument"/>
         <rdfs:range rdf:resource="http://lemon-model.net/lemon#SynRoleMarker"/>
@@ -542,6 +544,7 @@
         <rdfs:label xml:lang="es">Patrón</rdfs:label>
         <rdfs:label xml:lang="fr">Patron</rdfs:label>
         <rdfs:label xml:lang="nl">Patroon</rdfs:label>
+        <rdfs:label xml:lang="ru">Шаблон</rdfs:label>
         <rdfs:domain rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
         <rdfs:range rdf:resource="http://lemon-model.net/lemon#MorphPattern"/>
     </rdf:Property>
@@ -948,6 +951,7 @@
         <rdfs:label xml:lang="es">Argumento</rdfs:label>
         <rdfs:label xml:lang="fr">Actant</rdfs:label>
         <rdfs:label xml:lang="nl">Argument</rdfs:label>
+        <rdfs:label xml:lang="ru">Аргумент</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#PhraseElement"/>
         <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#Component"/>
@@ -975,6 +979,7 @@
         <rdfs:label xml:lang="es">Componente</rdfs:label>
         <rdfs:label xml:lang="fr">Composant</rdfs:label>
         <rdfs:label xml:lang="nl">Bestanddeel</rdfs:label>
+        <rdfs:label xml:lang="ru">Компонента</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#PhraseElement"/>
         <rdfs:subClassOf>
@@ -1052,6 +1057,7 @@
         <rdfs:label xml:lang="es">Forma</rdfs:label>
         <rdfs:label xml:lang="fr">Forme</rdfs:label>
         <rdfs:label xml:lang="nl">Vorm</rdfs:label>
+        <rdfs:label xml:lang="ru">Форма</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1082,6 +1088,7 @@
         <rdfs:label xml:lang="es">Marco</rdfs:label>
         <rdfs:label xml:lang="fr">Cadre</rdfs:label>
         <rdfs:label xml:lang="nl">Raam</rdfs:label>
+        <rdfs:label xml:lang="ru">Рамка</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#LexicalSense"/>
@@ -1132,6 +1139,7 @@
         <rdfs:label xml:lang="es">Condición léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Condition lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal Voorwaarde</rdfs:label>
+        <rdfs:label xml:lang="ru">Лексическое условие</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">An evaluable condition on when a sense applies.</rdfs:comment>
     </rdfs:Class>
@@ -1147,6 +1155,7 @@
         <rdfs:label xml:lang="es">Contexto léxico</rdfs:label>
         <rdfs:label xml:lang="fr">Contexte lexical</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal Context</rdfs:label>
+        <rdfs:label xml:lang="ru">Лексический контекст</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates the pragmatic or discourse context in which a sense applies</rdfs:comment>
     </rdfs:Class>
@@ -1162,6 +1171,7 @@
         <rdfs:label xml:lang="es">Entrada léxica</rdfs:label>
         <rdfs:label xml:lang="fr">Entrée lexicale</rdfs:label>
         <rdfs:label xml:lang="nl">Lexikaal item</rdfs:label>
+        <rdfs:label xml:lang="ru">Лексическая единица</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
@@ -1247,6 +1257,7 @@
         <rdfs:label xml:lang="es">Lexicón</rdfs:label>
         <rdfs:label xml:lang="fr">Lexique</rdfs:label>
         <rdfs:label xml:lang="nl">Lexicon</rdfs:label>
+        <rdfs:label xml:lang="ru">Лексикон</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasPattern"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
@@ -1281,6 +1292,7 @@
         <rdfs:label xml:lang="es">Patrón morfológico</rdfs:label>
         <rdfs:label xml:lang="fr">Patron morphologique</rdfs:label>
         <rdfs:label xml:lang="nl">Morphologisch Patroon</rdfs:label>
+        <rdfs:label xml:lang="ru">Морфологический шаблон</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#HasLanguage"/>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
@@ -1296,6 +1308,7 @@
         <rdfs:label xml:lang="es">Transformación morfológica</rdfs:label>
         <rdfs:label xml:lang="fr">Transformation morphologique</rdfs:label>
         <rdfs:label xml:lang="nl">Morphologisch transformatie</rdfs:label>
+        <rdfs:label xml:lang="ru">Морфологическое преобразование</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
@@ -1310,6 +1323,7 @@
         <rdfs:label xml:lang="es">Vértice</rdfs:label>
         <rdfs:label xml:lang="fr">Nœud</rdfs:label>
         <rdfs:label xml:lang="nl">Punt</rdfs:label>
+        <rdfs:label xml:lang="ru">Узел</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <rdfs:Class>
@@ -1343,6 +1357,7 @@
         <rdfs:label xml:lang="es">Constituyente</rdfs:label>
         <rdfs:label xml:lang="fr">Constituent</rdfs:label>
         <rdfs:label xml:lang="nl">Constituent</rdfs:label>
+        <rdfs:label xml:lang="ru">Составляющая</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">The class of constituents, that is types applied to nodes in a phrase structure graph</rdfs:comment>
     </rdfs:Class>
@@ -1358,6 +1373,7 @@
         <rdfs:label xml:lang="es">Parte de la palabra</rdfs:label>
         <rdfs:label xml:lang="fr">Partie du mot</rdfs:label>
         <rdfs:label xml:lang="nl">Deel van een woord</rdfs:label>
+        <rdfs:label xml:lang="ru">Часть слова</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:comment xml:lang="en">An affix is a morpheme that is attached to a word stem to form a new word.  Use this for lexical entries with only abstract forms</rdfs:comment>
     </rdfs:Class>
@@ -1373,6 +1389,7 @@
         <rdfs:label xml:lang="es">Sintagma</rdfs:label>
         <rdfs:label xml:lang="fr">Syntagme</rdfs:label>
         <rdfs:label xml:lang="nl">Zinsdeel</rdfs:label>
+        <rdfs:label xml:lang="ru">Фраза</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1409,6 +1426,7 @@
         <rdfs:label xml:lang="es">Valor de la propiedad</rdfs:label>
         <rdfs:label xml:lang="fr">Valeur de la propriété</rdfs:label>
         <rdfs:label xml:lang="nl">Waarde van het predikaat</rdfs:label>
+        <rdfs:label xml:lang="ru">Свойство</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#SenseDefinition"/>
         <owl:disjointWith rdf:resource="http://lemon-model.net/lemon#UsageExample"/>
@@ -1426,6 +1444,7 @@
         <rdfs:label xml:lang="fr">Prototype</rdfs:label>
         <rdfs:label xml:lang="nl">Prototyp</rdfs:label>
         <rdfs:label xml:lang="nl">Prototype</rdfs:label>
+        <rdfs:label xml:lang="ru">Прототип</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
     </rdfs:Class>
     
@@ -1440,6 +1459,7 @@
         <rdfs:label xml:lang="es">Condición</rdfs:label>
         <rdfs:label xml:lang="fr">Condition</rdfs:label>
         <rdfs:label xml:lang="nl">Voorwaarde</rdfs:label>
+        <rdfs:label xml:lang="ru">Условие</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates a logical condition that is used indicate when a particular term has the given meaning</rdfs:comment>
     </rdfs:Class>
@@ -1455,6 +1475,7 @@
         <rdfs:label xml:lang="es">Contexto</rdfs:label>
         <rdfs:label xml:lang="fr">Contexte</rdfs:label>
         <rdfs:label xml:lang="nl">Context</rdfs:label>
+        <rdfs:label xml:lang="ru">Контекст</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:comment xml:lang="en">Indicates the context in which a term is to be used. The context refers not to the immediate syntactic context, but the document and register the document is used in</rdfs:comment>
     </rdfs:Class>
@@ -1470,6 +1491,7 @@
         <rdfs:label xml:lang="es">Definición</rdfs:label>
         <rdfs:label xml:lang="fr">Définition</rdfs:label>
         <rdfs:label xml:lang="nl">Definitie</rdfs:label>
+        <rdfs:label xml:lang="ru">Определение</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1493,6 +1515,7 @@
         <rdfs:label xml:lang="es">Marcador de la función sintáctica</rdfs:label>
         <rdfs:label xml:lang="fr">Marqueur du rôle syntaxique</rdfs:label>
         <rdfs:label xml:lang="nl">Syntactisch rol merker</rdfs:label>
+        <rdfs:label xml:lang="ru">Маркер синтаксической роли</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <rdfs:Class>
@@ -1517,6 +1540,7 @@
         <rdfs:label xml:lang="es">Ejemplo de uso</rdfs:label>
         <rdfs:label xml:lang="fr">Exemple d&#39;utilisation</rdfs:label>
         <rdfs:label xml:lang="nl">Voorbeeld van het gebruik</rdfs:label>
+        <rdfs:label xml:lang="ru">Пример использования</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LemonElement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1536,6 +1560,7 @@
         <rdfs:label xml:lang="es">Palabra</rdfs:label>
         <rdfs:label xml:lang="fr">Mot</rdfs:label>
         <rdfs:label xml:lang="nl">Woord</rdfs:label>
+        <rdfs:label xml:lang="ru">Слово</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://lemon-model.net/lemon#LexicalEntry"/>
         <rdfs:comment xml:lang="en">A word is a single unit of writing or speech. In languages written in Latin, Cyrillic, Greek, Arabic scripts etc. these are assumed to be separated by white-space characters. For Chinese, Japanese, Korean this should correspond to some agreed segmentation scheme.</rdfs:comment>
     </rdfs:Class>
