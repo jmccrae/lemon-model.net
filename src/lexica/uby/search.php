@@ -7,7 +7,7 @@ $settings=parse_ini_file("settings.ini");
 $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
 
 if(!$con) {
-  die('Could not connect: ' . mysqli_error());
+  die('Could not connect: ' . mysqli_error($con));
 }
 
 if(isset($_GET['search'])) {
