@@ -11,7 +11,7 @@ ini_set('display_errors', '1');
 
 $settings=parse_ini_file("settings.ini");
 if(isset($_POST["username"]) && isset($_POST["password"])) {
-    $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+    $con = mysqli_connect("127.0.0.1",$settings["user"],$settings["password"],$settings["database"]);
     $user = mysqli_real_escape_string($con,$_POST["username"]);
     $hash = sha1($_POST["password"] . "obpawtmdpr" . $user);
     $result = mysqli_query($con,"select * from users where username='$user' and password='$hash'");

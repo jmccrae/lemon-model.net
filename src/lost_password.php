@@ -53,7 +53,7 @@ function generatePassword ($length = 8) {
 
 $settings=parse_ini_file("settings.ini");
 if(isset($_POST["email"])) {
-    $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+    $con = mysqli_connect("127.0.0.1",$settings["user"],$settings["password"],$settings["database"]);
     $email = mysqli_real_escape_string($con,$_POST["email"]);
     $result = mysqli_query($con,"select * from users where email='$email'");
     $row = mysqli_fetch_array($result);

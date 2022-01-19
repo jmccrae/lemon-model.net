@@ -103,7 +103,7 @@ if(file_exists($_GET['uri'] . "." . $type)) {
 	exit();
 }
 
-$con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+$con = mysqli_connect("127.0.0.1",$settings["user"],$settings["password"],$settings["database"]);
 
 if(!$con) {
   die('Could not connect: ' . mysqli_error($con));

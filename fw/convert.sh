@@ -45,8 +45,19 @@ then
     elif [ -e data/$res.nt.gz ]
     then
         gunzip data/$res.nt.gz
-    else
-        wget "http://lemon-model.net/datafiles/$res.nt.bz2"
+    elif [ ! -e data/$res.nt ]
+    then
+        if [ ! -e data/$res.nt.bz2 ]
+        then
+            #wget "http://lemon-model.net/datafiles/$res.nt.bz2"
+            wget "https://github.com/jmccrae/lemon-model.net/raw/master/src/lexica/uby/$res/data/$res.nt.bz2" || \
+                wget "https://github.com/jmccrae/lemon-model.net/raw/master/src/lexica/de-gaap/$res/data/$res.nt.bz2" || \
+                wget "https://github.com/jmccrae/lemon-model.net/raw/master/src/lexica/pwn/$res/data/$res.nt.gz" || \
+                wget "https://github.com/jmccrae/lemon-model.net/raw/master/src/lexica/$res/data/$res.nt.bz2" || \
+                wget "https://github.com/jmccrae/lemon-model.net/raw/master/src/lexica/wiktionary_en/$res/data/$res.nt.bz2" || \
+                echo "Cannot locate $res.nt.bz2"
+            mv $res.nt.bz2 data
+        fi
         bunzip2 data/$res.nt.bz2
     fi
 

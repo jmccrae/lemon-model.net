@@ -4,3 +4,10 @@ htdocs
 tmp
 src/eotd/*.htm
 db.ini
+
+resources/catalog-v001.xml
+Dockerfile.old
+lemon-model.tar
+out
+sbt-0.13.6.deb
+scala-2.11.4.deb
