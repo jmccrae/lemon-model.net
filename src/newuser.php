@@ -19,7 +19,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["passw
     } else if($_POST["username"] == "" || $_POST["password"] == "" || $_POST["password_repeat"] == "" ) {
         echo "<div class='login_error'>Required fields were not filled</div>";
     } else {
-        $con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+        $con = mysqli_connect("127.0.0.1",$settings["user"],$settings["password"],$settings["database"]);
         $user = mysqli_real_escape_string($con,$_POST["username"]);
         $email = mysqli_real_escape_string($con,$_POST["email"]);
         $hash = sha1($_POST["password"] . "obpawtmdpr" . $user);

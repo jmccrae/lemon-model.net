@@ -4,10 +4,10 @@ ini_set('display_errors', '1');
 
 $settings=parse_ini_file("settings.ini");
 
-$con = mysqli_connect("localhost",$settings["user"],$settings["password"],$settings["database"]);
+$con = mysqli_connect("127.0.0.1",$settings["user"],$settings["password"],$settings["database"]);
 
 if(!$con) {
-  die('Could not connect: ' . mysqli_error());
+  die('Could not connect: ' . mysqli_error($con));
 }
 
 if(isset($_GET['search'])) {

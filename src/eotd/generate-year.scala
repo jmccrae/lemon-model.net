@@ -23,7 +23,7 @@ val urisByFile = (for(iniFile <- iniFiles.keys) yield {
   iniFile -> {
     val props = new Properties()
     props.load(new java.io.FileReader(iniFile))
-    val conn = DriverManager.getConnection("jdbc:mysql://localhost/" + props.getProperty("database") + "?user=" + props.getProperty("user") + "&password=" +
+    val conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/" + props.getProperty("database") + "?user=" + props.getProperty("user") + "&password=" +
       props.getProperty("password"))
     val stat = conn.createStatement()
     val results = stat.executeQuery("select uri from " + props.getProperty("name"))
@@ -47,7 +47,7 @@ val urisByFile = (for(iniFile <- iniFiles.keys) yield {
 }).toMap
 
 def getText(iniFile : String ,uri : String, props : Properties) = {
- val conn = DriverManager.getConnection("jdbc:mysql://localhost/" + props.getProperty("database") + "?user=" + props.getProperty("user") + "&password=" +
+ val conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/" + props.getProperty("database") + "?user=" + props.getProperty("user") + "&password=" +
     props.getProperty("password"))
   val stat = conn.createStatement()
   val results = stat.executeQuery("select * from " + props.getProperty("name") + " where uri='"+uri+"'")

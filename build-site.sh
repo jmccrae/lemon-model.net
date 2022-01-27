@@ -75,7 +75,7 @@ buildsite() {
 
     cp src/*.php htdocs/
 
-    cp htaccess htdocs/.htaccess
+    cp -r htaccess htdocs/.htaccess
 	;;
   pwn)
 
@@ -175,7 +175,7 @@ buildsite() {
 
   validator)
       mkdir -p htdocs/validator
-      cp validator/* htdocs/validator
+      cp -r validator/* htdocs/validator
       ;;
   esac
 }
@@ -193,4 +193,3 @@ case $1 in
      buildsite $1
      ;;
 esac
-
