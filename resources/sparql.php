@@ -55,21 +55,20 @@ select * where {
       curl_close($ch);
       echo "</div>";
   } else if(isset($_GET['text_search'])) {
-      $allsettings = array("lexica/pwn/settings.ini","lexica/uby/fn/settings.ini",
+      $allsettings = array("lexica/uby/fn/settings.ini",
           "lexica/uby/ow_deu/settings.ini","lexica/uby/ow_eng/settings.ini",
           "lexica/uby/vn/settings.ini","lexica/uby/WktDE/settings.ini",
           "lexica/uby/WktEN/settings.ini","lexica/uby/wn/settings.ini",
           "lexica/dbpedia_en/settings.ini");
     $displayNames = array(
-        "pwn" => "Princeton WordNet 3.0",
-        "fn" => "FrameNet",
-        "ow_deu" => "OmegaWiki (German)",
-        "ow_eng" => "OmegaWiki (English)",
-        "vn" => "VerbNet",
-        "WktDE" => "Wiktionary.de",
-        "WktEN" => "Wiktionary.en",
-        "wn" => "WordNet",
-        "dbpedia_en" => "DBpedia"
+"WktDE" => "Wiktionary.de",
+"WktEN" => "Wiktionary.en",
+"fn" => "FrameNet",
+"dbpedia_en" => "DBpedia",
+"ow_eng" => "OmegaWiki English",
+"ow_deu" => "OmegaWiki German",
+"wn" => "Princeton WordNet",
+"vn" => "VerbNet"
     );
     include 'header.htmlfrag';
 
